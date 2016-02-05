@@ -30,12 +30,12 @@ public class PlayerController : MonoBehaviour {
         movement = new Vector2(input_x, input_y) * speed;
 
         //Llamamos al handler de las animaciones del player que maneje Correr-Parado
-        PlayerAnimHandler.Estado_Correr_Parado(movement);    
-
+        PlayerAnimHandler.Estado_Correr_Parado(movement);
+           
     }
-	
 
-	void FixedUpdate ()
+
+    void FixedUpdate ()
     {
         Movement();
 	}
