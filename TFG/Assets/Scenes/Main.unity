@@ -146,7 +146,7 @@ Camera:
   far clip plane: 1000
   field of view: 14
   orthographic: 1
-  orthographic size: 1.04
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -223,7 +223,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1011039627
+  m_SortingLayerID: 1981598793
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0693ad763f563854e9c9b524f5f17137, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -279,10 +279,6 @@ Prefab:
     - target: {fileID: 407848, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21252168, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 1981598793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
