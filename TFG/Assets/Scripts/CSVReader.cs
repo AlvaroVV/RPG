@@ -26,6 +26,7 @@ public class CSVReader  {
             if (instance == null)
             {
                 instance = new CSVReader();
+                instance.Read("Internacionalizacion");
             }
             return instance;
         }
@@ -34,49 +35,68 @@ public class CSVReader  {
 
     private CSVReader() { }
 
-    public Dictionary<string,Dictionary<string, string>> Read(string file)
+    public void Read(string file)
     {
-        
-        TextAsset data = Resources.Load(file) as TextAsset;
+        try {
+            TextAsset data = Resources.Load(file) as TextAsset;
 
-        var lines = Regex.Split(data.text, LINE_SPLIT_RE);
+            var lines = Regex.Split(data.text, LINE_SPLIT_RE);
 
-        if (lines.Length <= 1) return dic_general;
+            if (lines.Length <= 1) return;
 
-        var header = Regex.Split(lines[0], SPLIT_RE);
+            var header = Regex.Split(lines[0], SPLIT_RE);
 
-        //Creamos un diccionario por idioma y añadimos al diccionario de idiomas
-        for(var i = 1; i<header.Length; i++)
-        {
-            Dictionary<string, string> language = new Dictionary<string, string>();
-            dic_general.Add(header[i], language);
-        }
-                    
-        for (var i = 1; i < lines.Length; i++)
-        {
-            var values = Regex.Split(lines[i], SPLIT_RE);
-            if (values.Length == 0 || values[0] == "") continue;
-
-            for (var j = 1; j < header.Length && j < values.Length; j++)
+            //Creamos un diccionario por idioma y añadimos al diccionario de idiomas
+            for (var i = 1; i < header.Length; i++)
             {
-                string value = values[j];
-                value = value.TrimStart(TRIM_CHARS).TrimEnd(TRIM_CHARS).Replace("\\", "");
-                //guardamos el id con el valor correspondiente a cada idioma
-                getLanguage(header[j]).Add(values[0], value);          
-                
+                Dictionary<string, string> language = new Dictionary<string, string>();
+                dic_general.Add(header[i], language);
+            }
+
+            for (var i = 1; i < lines.Length; i++)
+            {
+                var values = Regex.Split(lines[i], SPLIT_RE);
+                if (values.Length == 0 || values[0] == "") continue;
+
+                for (var j = 1; j < header.Length && j < values.Length; j++)
+                {
+                    string value = values[j];
+                    value = value.TrimStart(TRIM_CHARS).TrimEnd(TRIM_CHARS).Replace("\\", "");
+                    //guardamos el id con el valor correspondiente a cada idioma
+                    GetLanguage(header[j]).Add(values[0], value);
+
+                }
             }
         }
-        return dic_general;
+        catch(NullReferenceException)
+        {
+            Debug.LogError("No se encuentra el fichero .csv");
+        }
+        
     }
 
-    public  Dictionary<string,string> getLanguage(String language)
+    public  Dictionary<string,string> GetLanguage(String language)
     {
         return dic_general[language];
     }
 
-    public void changeLanguage(String language)
+    public void ChangeLanguage(String language)
     {
         currentLanguage = language;
+    }
+
+    public string GetWord(string key)
+    {
+        try
+        {
+            return GetLanguage(currentLanguage)[key];
+        }
+        catch (KeyNotFoundException)
+        {          
+            Debug.LogError("No existe esa palabra en el diccionario");
+        }
+        return "";
+        
     }
 
     
