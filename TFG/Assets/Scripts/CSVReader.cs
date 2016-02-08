@@ -87,15 +87,12 @@ public class CSVReader  {
 
     public string GetWord(string key)
     {
-        try
-        {
-            return GetLanguage(currentLanguage)[key];
-        }
-        catch (KeyNotFoundException)
-        {          
-            Debug.LogError("No existe esa palabra en el diccionario");
-        }
-        return "";
+        string word ;
+        if(!GetLanguage(currentLanguage).TryGetValue(key,out word))
+          word = key +": No existe en el diccionario";
+        return word;        
+           
+        
         
     }
 

@@ -20,10 +20,10 @@ public class Prueba : MonoBehaviour {
             Debug.Log("English language chosen");
         }
         if (GUILayout.Button(CSVReader.Instance.GetWord("Botón_Hola")))
-            Debug.Log(CSVReader.Instance.GetWord("Saludo1"));
-        if (GUILayout.Button(CSVReader.Instance.GetWord("Botón_Adiós")))
             Debug.Log(CSVReader.Instance.GetWord("Hola"));
+        if (GUILayout.Button(CSVReader.Instance.GetWord("Botón_Adiós")))
+            Debug.Log(CSVReader.Instance.GetWord("Adios"));
         if (GUILayout.Button(CSVReader.Instance.GetWord("Botón_Saludo1")))
-            Debug.Log(CSVReader.Instance.GetWord("Adiós"));
+            Debug.Log(CSVReader.Instance.GetWord("Saludo1"));
     }
 }
