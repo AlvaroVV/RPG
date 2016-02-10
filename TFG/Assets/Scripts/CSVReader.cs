@@ -82,7 +82,10 @@ public class CSVReader  {
 
     public void ChangeLanguage(String language)
     {
-        currentLanguage = language;
+        if (dic_general[language] == null)
+            Debug.LogError("No está registrado ese idioma");
+        else
+            currentLanguage = language;
     }
 
     public string GetWord(string key)
