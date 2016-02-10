@@ -51,6 +51,31 @@ public class ModalPanel : MonoBehaviour {
         cancelButton.gameObject.SetActive(true);
     }
 
+    public void Choice(string question, Sprite icon, UnityAction yesEvent, UnityAction noEvent, UnityAction cancelEvent)
+    {
+        modalPanelObject.SetActive(true);
+
+        yesButton.onClick.RemoveAllListeners();
+        yesButton.onClick.AddListener(yesEvent);
+        yesButton.onClick.AddListener(ClosePanel);
+
+        noButton.onClick.RemoveAllListeners();
+        noButton.onClick.AddListener(noEvent);
+        noButton.onClick.AddListener(ClosePanel);
+
+        cancelButton.onClick.RemoveAllListeners();
+        cancelButton.onClick.AddListener(cancelEvent);
+        cancelButton.onClick.AddListener(ClosePanel);
+
+        this.question.text = question;
+        this.iconImage.sprite = icon;
+
+        this.iconImage.gameObject.SetActive(true);
+        yesButton.gameObject.SetActive(true);
+        noButton.gameObject.SetActive(true);
+        cancelButton.gameObject.SetActive(true);
+    }
+
     void ClosePanel()
     {
         modalPanelObject.SetActive(false);

@@ -8,7 +8,7 @@ public class UILocalize : MonoBehaviour {
     private Text textObject;
 
 	// Use this for initialization
-	void Start()
+	void OnEnable()
     {
         textObject = GetComponentInChildren<Text>();
         textObject.text = CSVReader.Instance.GetWord(key);
