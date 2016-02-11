@@ -31,49 +31,56 @@ public class ModalPanel : MonoBehaviour {
     {
         modalPanelObject.SetActive(true);
 
-        yesButton.onClick.RemoveAllListeners();
-        yesButton.onClick.AddListener(yesEvent);
-        yesButton.onClick.AddListener(ClosePanel);
-
-        noButton.onClick.RemoveAllListeners();
-        noButton.onClick.AddListener(noEvent);
-        noButton.onClick.AddListener(ClosePanel);
-
-        cancelButton.onClick.RemoveAllListeners();
-        cancelButton.onClick.AddListener(cancelEvent);
-        cancelButton.onClick.AddListener(ClosePanel);
+        BotonYesClick(yesEvent);
+        BotonNoClick(noEvent);
+        BotonCancelClick(cancelEvent);
 
         this.question.text = question;
 
-        this.iconImage.gameObject.SetActive(false);
-        yesButton.gameObject.SetActive(true);
-        noButton.gameObject.SetActive(true);
-        cancelButton.gameObject.SetActive(true);
+        ActivateObjects(false, true, true, true);
     }
 
     public void Choice(string question, Sprite icon, UnityAction yesEvent, UnityAction noEvent, UnityAction cancelEvent)
     {
         modalPanelObject.SetActive(true);
+        iconImage.sprite = icon;
 
+        BotonYesClick(yesEvent);
+        BotonNoClick(noEvent);
+        BotonCancelClick(cancelEvent);
+
+        this.question.text = question;
+
+        ActivateObjects(true, true, true, true);
+    }
+
+    void BotonYesClick(UnityAction yesEvent)
+    {
         yesButton.onClick.RemoveAllListeners();
         yesButton.onClick.AddListener(yesEvent);
         yesButton.onClick.AddListener(ClosePanel);
+    }
 
+    void BotonNoClick(UnityAction noEvent)
+    {
         noButton.onClick.RemoveAllListeners();
         noButton.onClick.AddListener(noEvent);
         noButton.onClick.AddListener(ClosePanel);
+    }
 
+    void BotonCancelClick(UnityAction cancelEvent)
+    {
         cancelButton.onClick.RemoveAllListeners();
         cancelButton.onClick.AddListener(cancelEvent);
         cancelButton.onClick.AddListener(ClosePanel);
+    }
 
-        this.question.text = question;
-        this.iconImage.sprite = icon;
-
-        this.iconImage.gameObject.SetActive(true);
-        yesButton.gameObject.SetActive(true);
-        noButton.gameObject.SetActive(true);
-        cancelButton.gameObject.SetActive(true);
+    void ActivateObjects(bool image, bool yes, bool no, bool cancel)
+    {
+        this.iconImage.gameObject.SetActive(image);
+        yesButton.gameObject.SetActive(yes);
+        noButton.gameObject.SetActive(no);
+        cancelButton.gameObject.SetActive(cancel);
     }
 
     void ClosePanel()
