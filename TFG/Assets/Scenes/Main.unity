@@ -339,10 +339,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1880762895}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: -8}
-  m_SizeDelta: {x: -106, y: -83}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 470, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &294060635
 Prefab:
@@ -845,8 +845,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 647168412}
-  - 114: {fileID: 647168411}
   - 114: {fileID: 647168410}
+  - 114: {fileID: 647168411}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -926,14 +926,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1514061973}
-  - {fileID: 1880762895}
   m_Father: {fileID: 790843573}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24, y: -14}
-  m_SizeDelta: {x: 186, y: 396}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 186, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &753479939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,6 +1065,7 @@ RectTransform:
   m_Children:
   - {fileID: 1126277828}
   - {fileID: 753479938}
+  - {fileID: 1880762895}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -1455,6 +1455,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11427518, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
@@ -1577,6 +1581,10 @@ Prefab:
     - target: {fileID: 11406816, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: English
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427518, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
@@ -1804,11 +1812,11 @@ RectTransform:
   - {fileID: 359592725}
   m_Father: {fileID: 753479938}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1, y: -101}
-  m_SizeDelta: {x: 115, y: 228}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.16651614, y: 0.11149723}
+  m_AnchorMax: {x: 0.82800007, y: 0.791}
+  m_AnchoredPosition: {x: 0.75, y: -0.5}
+  m_SizeDelta: {x: -7.5, y: -26}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514061974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1825,10 +1833,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
 --- !u!222 &1514061976
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1954,6 +1962,10 @@ Prefab:
       propertyPath: m_SpriteState.m_DisabledSprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11427518, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
@@ -2033,12 +2045,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 287061699}
-  m_Father: {fileID: 753479938}
-  m_RootOrder: 1
+  m_Father: {fileID: 790843573}
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 405.5, y: -4}
-  m_SizeDelta: {x: 586, y: 160}
+  m_AnchoredPosition: {x: 33, y: 0}
+  m_SizeDelta: {x: 574, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1880762896
 MonoBehaviour:
@@ -2187,6 +2199,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: key
       value: "Boton_Espa\xF1ol"
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427518, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e9280d8e77239647abb01387e524fd9, type: 2}
