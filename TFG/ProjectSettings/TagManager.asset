@@ -45,12 +45,21 @@ TagManager:
   - name: Background
     uniqueID: 1981598793
     locked: 0
-  - name: Foreground
+  - name: Background Detail
     uniqueID: 3136616113
     locked: 0
-  - name: Player
+  - name: Foreground
     uniqueID: 4261895043
     locked: 0
-  - name: Top
+  - name: Foreground Detail
     uniqueID: 514934247
+    locked: 0
+  - name: Player
+    uniqueID: 1737843607
+    locked: 0
+  - name: Top
+    uniqueID: 3043953113
+    locked: 0
+  - name: Top Detail
+    uniqueID: 3167639089
     locked: 0
