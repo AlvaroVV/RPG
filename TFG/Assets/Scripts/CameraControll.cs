@@ -47,6 +47,9 @@ public class CameraControll : MonoBehaviour {
         float min_Y = min_y + cameraHeigth/ 2;
         float max_Y = max_y - cameraHeigth/ 2;
 
+        Debug.Log("Max_X: " + max_X + "Min_X: "+min_X);
+        Debug.Log("Max_Y: " + max_Y + "Min_Y: " + min_Y);
+
         float movimientoX = Mathf.Clamp(positionX,min_X,max_X);
         float movimientoY = Mathf.Clamp(positionY, min_Y, max_Y);
 
@@ -57,10 +60,10 @@ public class CameraControll : MonoBehaviour {
     void calcularTamañoMapa()
     {
         min_x = fondo.transform.position.x;
-        max_x = fondo.transform.position.x + fondo.GetComponent<TiledMap>().MapWidthInPixels/100;
+        max_x = fondo.transform.position.x + fondo.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
         
         max_y = fondo.transform.position.y;
-        min_y = fondo.transform.position.y - fondo.GetComponent<TiledMap>().MapHeightInPixels/100;
+        min_y = fondo.transform.position.y - fondo.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
     }
 
     void calcularParametrosCamara()
