@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 public class CSVReader  {
 
@@ -94,9 +95,18 @@ public class CSVReader  {
         if(!GetLanguage(currentLanguage).TryGetValue(key,out word))
           word = key +": No existe en el diccionario";
         return word;        
-           
-        
-        
+                 
+    }
+
+    public List<string> getDialogue(string key)
+    {       
+        List<string> t = (from word in GetLanguage(currentLanguage)
+                 where word.Key.StartsWith(key)
+                 select word.Value).ToList();
+
+        if (t.Count() == 0)
+            t.Add("No se encuentra ese diálogo");
+        return t;           
     }
 
     

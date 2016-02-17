@@ -6,15 +6,15 @@ public class BaseCharacter  {
     public string name = "Nombre";
     public string description = "Descripcion";
 
-    public string Nombre {
+    public string Name {
         get { return name; }
         set { name = value; }
     }
 
-    public string Name
+    public string Description
     {
-        get { return name; }
-        set { name = value; }
+        get { return description; }
+        set { description = value; }
     }
 
 }
