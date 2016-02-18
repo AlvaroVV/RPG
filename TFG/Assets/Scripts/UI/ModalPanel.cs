@@ -81,6 +81,7 @@ public class ModalPanel : MonoBehaviour {
         yesButton.gameObject.SetActive(yes);
         noButton.gameObject.SetActive(no);
         cancelButton.gameObject.SetActive(cancel);
+        
     }
 
     void ClosePanel()

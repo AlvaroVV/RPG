@@ -20,7 +20,7 @@ public class TestModalPanel : MonoBehaviour {
     {
         modalPanel = ModalPanel.Instance();
         displayManager = CSVReader.Instance;
-
+        
        // myYesAction = new UnityAction(TestYesFunction);
        // myNoAction = new UnityAction(TestNoFunction);
        // myCancelAction = new UnityAction(TestCancelFunction);
