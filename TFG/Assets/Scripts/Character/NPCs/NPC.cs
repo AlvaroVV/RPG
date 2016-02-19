@@ -8,13 +8,13 @@ public abstract class NPC : MonoBehaviour,Interactable {
     public string id;  
     public List<string> dialogue;
   
-    void Awake()
+    
+    public void Interact()
     {
-        //Cargamos el diálogo
-        dialogue = CSVReader.Instance.getDialogue(id);     
+        dialogue = CSVReader.Instance.getDialogue(id);
+        InteractNPC();
     }
 
-
-    public abstract void Interact();
+    public abstract void InteractNPC();
     
 }

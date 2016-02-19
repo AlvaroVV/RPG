@@ -5,23 +5,19 @@ using System;
 public class DialogueNPC : NPC {
 
 
-    public override void Interact()
-    {       
-        
-       StartCoroutine(actionNPC());
+    public override void InteractNPC()
+    {
+       StartCoroutine(ScriptingUtils.showNpcDialogue(this,true));
     }
 
     public  IEnumerator actionNPC()
     {
-        UIManager.Instance.writeTitle(id);
-
         foreach (string d in dialogue)
         {
             yield return StartCoroutine(talk(d));
             yield return null;
         }
 
-        UIManager.Instance.closeDialogWindow();
     }
 
 
@@ -29,7 +25,6 @@ public class DialogueNPC : NPC {
     {
 
         //Debug.Log(dialogue);
-        UIManager.Instance.showDialog(dialogue);
         yield return StartCoroutine(WaitForKeyDown(KeyCode.Space));      
     }
 

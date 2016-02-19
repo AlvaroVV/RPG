@@ -7,36 +7,17 @@ public class DialoguePanel: MonoBehaviour  {
 
     public Text Title;
     public Text BodyText;
-    public GameObject dialoguePanelObject;
 
-    private static DialoguePanel dPanel;
 
-    public static DialoguePanel Instance()
+
+    public void Show(string title, string body)
     {
-        if (!dPanel)
-        {
-            dPanel = FindObjectOfType(typeof(DialoguePanel)) as DialoguePanel;
-            if (!dPanel)
-                Debug.LogError("No hay ningun Dialogue Panel script en ningún objeto");
-        }
-
-        return dPanel;
+        if(title!=null)
+            Title.text = title;
+        BodyText.text = body;
     }
 
+    
 
-    public void writeTitle(string message)
-    {
-        dialoguePanelObject.SetActive(true);
-        Title.text = message;
-    }
 
-    public void writeMessage(string message)
-    {
-        BodyText.text = message;
-    }
-
-    public void closePanel()
-    {
-        dialoguePanelObject.SetActive(false);
-    }
 }
