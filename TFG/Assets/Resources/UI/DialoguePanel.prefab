@@ -158,7 +158,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: {fileID: 11464300}
   BodyText: {fileID: 11414314}
-  dialoguePanelObject: {fileID: 183638}
 --- !u!222 &22202934
 CanvasRenderer:
   m_ObjectHideFlags: 1

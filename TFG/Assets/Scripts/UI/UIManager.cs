@@ -61,15 +61,16 @@ public class UIManager: MonoBehaviour  {
 
     private GameObject addChild(GameObject child)
     {
-        GameObject panel = GameObject.Instantiate(child);
+        GameObject panel = GameObject.Instantiate(child, child.transform.position, child.transform.rotation) as GameObject;
         if (panel != null)
         {
             Transform t = panel.transform;
-            t.parent = gameObject.transform;
-            t.localPosition = Vector3.zero;
+            t.SetParent(gameObject.transform, false);
+            //t.localPosition = Vector3.zero;
             t.localRotation = Quaternion.identity;
             t.localScale = Vector3.one;
             panel.layer = gameObject.layer;
+
         }
         return panel;
         
@@ -77,14 +78,15 @@ public class UIManager: MonoBehaviour  {
 
     private GameObject addChild(GameObject child, GameObject parent)
     {
-        GameObject panel = GameObject.Instantiate(child);
+        GameObject panel = GameObject.Instantiate(child, child.transform.position, child.transform.rotation) as GameObject;
         if (panel != null)
         {
             Transform t = child.transform;
             t.parent = parent.transform;
-            t.localPosition = Vector3.zero;
+            //t.localPosition = Vector3.zero;
             t.localRotation = Quaternion.identity;
             t.localScale = Vector3.one;
+            
             panel.layer = parent.layer;
         }
         return panel;
