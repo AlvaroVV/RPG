@@ -2,25 +2,30 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerAnimHandler {
+public class PlayerAnimHandler: MonoBehaviour {
 
 
-    public static string input_x = "input_x";
-    public static string input_y = "input_y";
-    public static string isRunning = "isRunning";
-    public static Animator Animator { get; set; }
+    private string input_x = "input_x";
+    private string input_y = "input_y";
+    private string isRunning = "isRunning";
+    private Animator anim;
+    
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
-    public static void Estado_Correr_Parado(Vector2 movement)
+    public void Estado_Correr_Parado(Vector2 movement)
     {
         if (movement != Vector2.zero)
         {
-            Animator.SetFloat(PlayerAnimHandler.input_x, movement.x);
-            Animator.SetFloat(PlayerAnimHandler.input_y, movement.y);
-            Animator.SetBool(PlayerAnimHandler.isRunning, true);
+            anim.SetFloat(input_x, movement.x);
+            anim.SetFloat(input_y, movement.y);
+            anim.SetBool(isRunning, true);
         }
         else
         {
-            Animator.SetBool(PlayerAnimHandler.isRunning, false);
+            anim.SetBool(isRunning, false);
         }
     }
 

@@ -8,6 +8,11 @@ public class BaseStatCharacter : BaseCharacter {
     public float spirit;
     public float speed;
 
+    public BaseStatCharacter(string name)
+    {
+        this.name = name;
+    }
+
     public float Health
     {
         get { return health; }

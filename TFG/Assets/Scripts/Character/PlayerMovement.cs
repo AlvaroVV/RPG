@@ -14,16 +14,17 @@ public class PlayerMovement: MonoBehaviour {
     {
         Running,
         Interacting,
+        Stopped,
+        Fighting,
     }
 
     private PlayerState state;
-    private Animator anim;
+    private PlayerAnimHandler anim;
 
-    void Awake()
+    public virtual void Awake()
     {
         rgb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        PlayerAnimHandler.Animator = anim;
+        anim = GetComponent<PlayerAnimHandler>();
     }
 
     void Update()
@@ -48,7 +49,7 @@ public class PlayerMovement: MonoBehaviour {
         if (state != PlayerState.Interacting)
         {
             rgb.MovePosition(rgb.position + movement * Time.fixedDeltaTime);
-            PlayerAnimHandler.Estado_Correr_Parado(movement);
+            anim.Estado_Correr_Parado(movement);
         }
     }
 
@@ -68,13 +69,13 @@ public class PlayerMovement: MonoBehaviour {
             state = PlayerState.Interacting;
             var interactable = hit.collider.GetComponent<Interactable>();
             yield return StartCoroutine(interactable.Interact());
-            state = PlayerState.Running;
+            state = PlayerState.Stopped;
         }
     }
 
     void StopMovement()
     {
         movement = new Vector2(0, 0);
-        PlayerAnimHandler.Estado_Correr_Parado(movement);
+        anim.Estado_Correr_Parado(movement);
     }
 }

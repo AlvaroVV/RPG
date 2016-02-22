@@ -2,29 +2,27 @@
 using System.Collections;
 using System;
 
-public class ChooseFighterState : IState
+public class FinishBattleState : IState
 {
-
     private TurnBattleHandler tb;
 
-    public ChooseFighterState(TurnBattleHandler tb)
+    public FinishBattleState(TurnBattleHandler tb)
     {
         this.tb = tb;
     }
-    
+
     public void StartState()
     {
-        Debug.Log("Felix elegido");
+        
     }
 
     public void UpdateState()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-            changeState();
+        Debug.Log("Finish Battle");
     }
 
     public void changeState()
     {
-        tb.ChangeState(tb.finishBattle);
+
     }
 }
