@@ -64,13 +64,11 @@ public class PlayerMovement: MonoBehaviour {
         */
         if (hit && Input.GetKeyDown(KeyCode.Space) && state != PlayerState.Interacting)
         {
-            Debug.Log("Interactuando");
             StopMovement();
             state = PlayerState.Interacting;
             var interactable = hit.collider.GetComponent<Interactable>();
             yield return StartCoroutine(interactable.Interact());
             state = PlayerState.Running;
-            Debug.Log("NO Interactuando");
         }
     }
 
