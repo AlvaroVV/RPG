@@ -12,16 +12,11 @@ public class TurnBattleHandler : MonoBehaviour{
 
     [HideInInspector]public List<BaseStatCharacter> players;
     [HideInInspector]public List<BaseStatCharacter> enemies;
-    [HideInInspector]
-    //Pila ordenada con los luchadores
-    public List<BaseStatCharacter> fighterStack;
+    [HideInInspector]public List<BaseStatCharacter> fighterStack;
 
-    [HideInInspector]
-    public StartFightState startFight;
-    [HideInInspector]
-    public ChooseFighterState chooseFighter;
-    [HideInInspector]
-    public FinishBattleState finishBattle;
+    [HideInInspector]public StartFightState startFight;
+    [HideInInspector]public ChooseFighterState chooseFighter;
+    [HideInInspector]public FinishBattleState finishBattle;
 
     void Awake()
     {
