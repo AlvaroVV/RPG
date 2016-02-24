@@ -46,6 +46,8 @@ ModelImporter:
     100076: mesh_0038
     100078: mesh_0039
     100080: mesh_0040
+    100082: mesh_0041
+    100084: mesh_0042
     400000: //RootNode
     400002: mesh_0001
     400004: mesh_0002
@@ -87,6 +89,8 @@ ModelImporter:
     400076: mesh_0038
     400078: mesh_0039
     400080: mesh_0040
+    400082: mesh_0041
+    400084: mesh_0042
     2300000: mesh_0001
     2300002: mesh_0002
     2300004: mesh_0003
@@ -127,6 +131,8 @@ ModelImporter:
     2300074: mesh_0038
     2300076: mesh_0039
     2300078: mesh_0040
+    2300080: mesh_0041
+    2300082: mesh_0042
     3300000: mesh_0001
     3300002: mesh_0002
     3300004: mesh_0003
@@ -167,6 +173,8 @@ ModelImporter:
     3300074: mesh_0038
     3300076: mesh_0039
     3300078: mesh_0040
+    3300080: mesh_0041
+    3300082: mesh_0042
     4300000: mesh_0001
     4300002: mesh_0002
     4300004: mesh_0003
@@ -207,6 +215,8 @@ ModelImporter:
     4300074: mesh_0038
     4300076: mesh_0039
     4300078: mesh_0040
+    4300080: mesh_0041
+    4300082: mesh_0042
     11400000: mesh_0001
     11400002: mesh_0002
     11400004: mesh_0003
@@ -247,6 +257,8 @@ ModelImporter:
     11400074: mesh_0038
     11400076: mesh_0039
     11400078: mesh_0040
+    11400080: mesh_0041
+    11400082: mesh_0042
   materials:
     importMaterials: 0
     materialName: 0
