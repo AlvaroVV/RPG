@@ -21,8 +21,8 @@ public class CameraControll : MonoBehaviour {
   
     void Awake()
     {
-        playerTransform = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<Transform>();
-        fondo = GameObject.FindGameObjectWithTag(Tags.Background);
+        playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).GetComponent<Transform>();
+        fondo = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
 
         calcularParametrosCamara();
         calcularTamañoMapa();

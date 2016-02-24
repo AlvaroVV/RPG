@@ -13,7 +13,8 @@ GameObject:
   - 212: {fileID: 21252168}
   - 95: {fileID: 9518070}
   - 114: {fileID: 11452612}
-  m_Layer: 0
+  - 114: {fileID: 11465104}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -92,6 +93,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &11465104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb1e033246ab0545a0dfbca25027507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21252168
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,7 +6,7 @@ using System;
 public abstract class NPC : MonoBehaviour,Interactable {
 
     public string id;  
-    public List<string> dialogue;
+    [HideInInspector]public List<string> dialogue;
   
 
     public IEnumerator Interact()

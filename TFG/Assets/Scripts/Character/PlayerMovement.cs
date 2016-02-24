@@ -54,22 +54,20 @@ public class PlayerMovement: MonoBehaviour {
     }
 
     IEnumerator Interact()
-    {
-        Vector2 vDirection = new Vector2(input_x, input_y);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, vDirection, 0.7f, LayerMask.NameToLayer(Layers.INTERACTABLE));
-        Debug.DrawRay(transform.position, vDirection, Color.red, 1);
-
-        /*
-        if (hit)
-            Debug.Log(hit.collider.tag);
-        */
-        if (hit && Input.GetKeyDown(KeyCode.Space) && state != PlayerState.Interacting)
+    {        
+        if (Input.GetKeyDown(KeyCode.Space) && state != PlayerState.Interacting)
         {
-            StopMovement();
-            state = PlayerState.Interacting;
-            var interactable = hit.collider.GetComponent<Interactable>();
-            yield return StartCoroutine(interactable.Interact());
-            state = PlayerState.Stopped;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, movement, 0.7f, 1 << GameGlobals.LayerInteractable);
+            //Debug.DrawRay(transform.position, movement, Color.red, 1);
+
+            if (hit)
+            {
+                StopMovement();
+                state = PlayerState.Interacting;
+                var interactable = hit.collider.GetComponent<Interactable>();
+                yield return interactable.Interact();
+                state = PlayerState.Running;
+            }
         }
     }
 
