@@ -36,4 +36,10 @@ public static class ScriptingUtils  {
         }
 
     }
+
+    public static void ChangeBackground(GameObject background)
+    {
+        CameraControll camera = Camera.main.GetComponent<CameraControll>();
+        camera.calcularTamañoMapa(background);
+    }
 }

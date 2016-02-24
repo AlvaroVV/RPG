@@ -2,10 +2,13 @@
 using System.Collections;
 using Tiled2Unity;
 
-public class CameraControll : MonoBehaviour {
+public class CameraControll : MonoBehaviour
+{
 
     private Transform playerTransform;
-    private GameObject fondo { get; set; }
+    private GameObject background { get; set; }
+
+    private bool canMove = true;
 
     //Atributos cámara
     private Camera camara;
@@ -18,49 +21,61 @@ public class CameraControll : MonoBehaviour {
     private float min_y; //Y del mapa
     private float max_y; //Y + alto del mapa
 
-  
+
     void Awake()
     {
+        //Buscamos el primer mapa
         playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).GetComponent<Transform>();
-        fondo = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
+        background = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
 
         calcularParametrosCamara();
-        calcularTamañoMapa();
+        calcularTamañoMapa(background);
+        Debug.Log(cameraWidth);
+        Debug.Log(background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled());
     }
 
-		
-	// Update is called once per frame
-	void Update () {
 
+    // Update is called once per frame
+    void Update()
+    {
         MoverCamara();
-	}
+    }
 
     void MoverCamara()
     {
-         
-        float positionX = playerTransform.position.x;
-        float positionY = playerTransform.position.y;
-        
-        float min_X = min_x + cameraWidth/ 2;
-        float max_X = max_x - cameraWidth/ 2;
+        if (canMove)
+        {
+            float positionX = playerTransform.position.x;
+            float positionY = playerTransform.position.y;
 
-        float min_Y = min_y + cameraHeigth/ 2;
-        float max_Y = max_y - cameraHeigth/ 2;
+            float min_X = min_x + cameraWidth / 2;
+            float max_X = max_x - cameraWidth / 2;
 
-        float movimientoX = Mathf.Clamp(positionX,min_X,max_X);
-        float movimientoY = Mathf.Clamp(positionY, min_Y, max_Y);
+            float min_Y = min_y + cameraHeigth / 2;
+            float max_Y = max_y - cameraHeigth / 2;
 
-        transform.position = new Vector3(movimientoX,movimientoY,transform.position.z);
+            float movimientoX = Mathf.Clamp(positionX, min_X, max_X);
+            float movimientoY = Mathf.Clamp(positionY, min_Y, max_Y);
+
+            transform.position = new Vector3(movimientoX, movimientoY, transform.position.z);
+        }
     }
 
 
-    void calcularTamañoMapa()
+    public void calcularTamañoMapa(GameObject background)
     {
-        min_x = fondo.transform.position.x;
-        max_x = fondo.transform.position.x + fondo.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
-        
-        max_y = fondo.transform.position.y;
-        min_y = fondo.transform.position.y - fondo.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
+        if (background.GetComponent<TiledMap>() != null)
+        {
+            min_x = background.transform.position.x;
+            max_x = background.transform.position.x + background.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
+
+            max_y = background.transform.position.y;
+            min_y = background.transform.position.y - background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
+
+            checkBackground(background);
+        }
+        else
+            Debug.LogError("El GameObject no tiene componente TiledMap");
     }
 
     void calcularParametrosCamara()
@@ -69,4 +84,23 @@ public class CameraControll : MonoBehaviour {
         cameraHeigth = camara.orthographicSize * 2f;
         cameraWidth = cameraHeigth * camara.aspect;
     }
+
+    void checkBackground(GameObject background)
+    {
+        float backWidth = background.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
+        float backHeigth = background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
+
+        if ((backWidth < cameraWidth) && (backWidth < cameraWidth))
+        {
+            
+            camara.transform.position = new Vector3(background.transform.position.x + backWidth/2,
+                                                    background.transform.position.y - backHeigth/2,
+                                                    camara.transform.position.z);
+            canMove = false;
+        }
+        else canMove = true;
+    }
+
+
+    
 }
