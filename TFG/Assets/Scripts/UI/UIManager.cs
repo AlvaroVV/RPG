@@ -52,7 +52,7 @@ public class UIManager: MonoBehaviour  {
             GameObject lastPanel = panelStack[panelStack.Count - 1];
 
             lastPanel.gameObject.SetActive(false);
-            lastPanel.transform.parent = null;
+            lastPanel.transform.SetParent(null);
             panelStack.RemoveAt(panelStack.Count - 1);
             Destroy(lastPanel);
         }
@@ -98,6 +98,14 @@ public class UIManager: MonoBehaviour  {
         DialoguePanel dialoguePanel = panel.GetComponent<DialoguePanel>();
 
         return dialoguePanel;
+    }
+
+    public PanelFader createFader(string faderName)
+    {
+        GameObject fader = Push(faderName);
+        PanelFader pf = fader.GetComponent<PanelFader>();
+
+        return pf;
     }
 
     

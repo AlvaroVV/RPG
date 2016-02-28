@@ -10,16 +10,10 @@ public class PlayerMovement: MonoBehaviour {
     private float input_x;
     private float input_y;
     private Vector2 movement;
-    private enum PlayerState
-    {
-        Running,
-        Interacting,
-        Stopped,
-        Fighting,
-    }
 
-    private PlayerState state;
     private PlayerAnimHandler anim;
+
+    public GameGlobals.PlayerState currentState;
 
     public virtual void Awake()
     {
@@ -46,16 +40,17 @@ public class PlayerMovement: MonoBehaviour {
 
     void Movement()
     {
-        if (state != PlayerState.Interacting)
+        if (currentState != GameGlobals.PlayerState.Interacting)
         {
             rgb.MovePosition(rgb.position + movement * Time.fixedDeltaTime);
             anim.Estado_Correr_Parado(movement);
         }
+        
     }
 
     IEnumerator Interact()
     {        
-        if (Input.GetKeyDown(KeyCode.Space) && state != PlayerState.Interacting)
+        if (Input.GetKeyDown(KeyCode.Space) && currentState != GameGlobals.PlayerState.Interacting)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, movement, 0.7f, 1 << GameGlobals.LayerInteractable);
             //Debug.DrawRay(transform.position, movement, Color.red, 1);
@@ -63,15 +58,17 @@ public class PlayerMovement: MonoBehaviour {
             if (hit)
             {
                 StopMovement();
-                state = PlayerState.Interacting;
+                currentState = GameGlobals.PlayerState.Interacting;
                 var interactable = hit.collider.GetComponent<Interactable>();
                 yield return interactable.Interact();
-                state = PlayerState.Running;
+                currentState = GameGlobals.PlayerState.Idle;
             }
         }
     }
 
-    void StopMovement()
+    
+
+    public void StopMovement()
     {
         movement = new Vector2(0, 0);
         anim.Estado_Correr_Parado(movement);

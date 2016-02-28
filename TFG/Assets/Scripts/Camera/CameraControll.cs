@@ -4,9 +4,9 @@ using Tiled2Unity;
 
 public class CameraControll : MonoBehaviour
 {
-
+    //Mapa Inicio, (temporal)
+    public GameObject background;
     private Transform playerTransform;
-    private GameObject background { get; set; }
 
     private bool canMove = true;
 
@@ -26,7 +26,6 @@ public class CameraControll : MonoBehaviour
     {
         //Buscamos el primer mapa
         playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).GetComponent<Transform>();
-        background = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
 
         calcularParametrosCamara();
         calcularTamañoMapa(background);

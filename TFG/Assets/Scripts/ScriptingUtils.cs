@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class ScriptingUtils  {
 
+    public delegate void Accion(Collider2D other);
+
 	public static IEnumerator showNpcDialogue(NPC npc, bool showTexts)
     {
         if(showTexts)
@@ -37,9 +39,28 @@ public static class ScriptingUtils  {
 
     }
 
-    public static void ChangeBackground(GameObject background)
+    public static IEnumerator DoAFadeIn()
     {
-        CameraControll camera = Camera.main.GetComponent<CameraControll>();
-        camera.calcularTamañoMapa(background);
+        PanelFader pf = UIManager.Instance.createFader("UI/PanelFader");
+        if (pf != null)
+        {
+            yield return pf.StartCoroutine(pf.FadeToBlack());
+
+            UIManager.Instance.Pop();
+        }
     }
+
+    public static IEnumerator DoAFadeOut()
+    {
+        PanelFader pf = UIManager.Instance.createFader("UI/PanelFader");
+        if (pf != null)
+        {
+
+            yield return pf.StartCoroutine(pf.FadeToClear());
+
+            UIManager.Instance.Pop();
+        }
+    }
+
+
 }
