@@ -24,13 +24,10 @@ public class CameraControll : MonoBehaviour
 
     void Awake()
     {
-        //Buscamos el primer mapa
         playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).GetComponent<Transform>();
 
         calcularParametrosCamara();
         calcularTamañoMapa(background);
-        Debug.Log(cameraWidth);
-        Debug.Log(background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled());
     }
 
 
