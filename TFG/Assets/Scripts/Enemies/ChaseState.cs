@@ -34,7 +34,7 @@ public class ChaseState : IStateEnemy
 
     public void ToPatrolState()
     {
-        lost = true;
+        sm.lost = true;
         sm.currentState = sm.patrol;
     }
 
@@ -43,7 +43,7 @@ public class ChaseState : IStateEnemy
         Vector2 position = Vector3.Lerp(sm.rgb.position, sm.target.transform.position, Time.deltaTime * sm.speed);
         if ((Vector2.Distance(sm.target.transform.position,sm.transform.position)<sm.RadiusChase) && (!lost))
         {
-            sm.UpdateAnimation(position);
+            sm.UpdateAnimation(sm.target.transform.position);
             sm.transform.position = position;
         }
         else

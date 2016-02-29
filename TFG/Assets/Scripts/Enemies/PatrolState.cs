@@ -29,6 +29,7 @@ public class PatrolState : IStateEnemy
 
     public void ToChaseState()
     {
+        sm.lost = false;
         sm.currentState = sm.chase;
     }
 

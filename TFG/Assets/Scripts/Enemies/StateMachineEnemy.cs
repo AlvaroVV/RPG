@@ -12,6 +12,8 @@ public class StateMachineEnemy : MonoBehaviour {
     public float RadiusChase = 1f;
 
     private bool flipped = false;
+    [HideInInspector]
+    public bool lost = false;
     [HideInInspector]public GameObject target;
     [HideInInspector]public Rigidbody2D rgb;
     [HideInInspector]public Animator anim;
