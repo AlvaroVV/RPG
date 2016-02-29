@@ -17,15 +17,20 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0.2, z: 0}
+        outSlope: {x: 0, y: 0.2, z: 0}
+        tangentMode: 0
       - time: 0.25
-        value: {x: 0, y: 0.03, z: 0}
-        inSlope: {x: 0, y: -0.18179642, z: 0}
-        outSlope: {x: 0, y: -0.18179642, z: 0}
+        value: {x: 0, y: 0.05, z: 0}
+        inSlope: {x: 0, y: -0.050000004, z: 0}
+        outSlope: {x: 0, y: -0.050000004, z: 0}
         tangentMode: 0
       - time: 0.41666666
-        value: {x: 0, y: -0.0002994012, z: 0}
-        inSlope: {x: 0, y: Infinity, z: 0}
-        outSlope: {x: 0, y: Infinity, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: -0.3, z: 0}
+        outSlope: {x: 0, y: -0.3, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -107,6 +112,11 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
       - time: 0.25
         value: 0
         inSlope: 0
@@ -127,16 +137,21 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0.2
+        outSlope: 0.2
+        tangentMode: 10
       - time: 0.25
-        value: 0.03
-        inSlope: -0.18179642
-        outSlope: -0.18179642
+        value: 0.05
+        inSlope: -0.050000004
+        outSlope: -0.050000004
         tangentMode: 10
       - time: 0.41666666
-        value: -0.0002994012
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 0
+        value: 0
+        inSlope: -0.3
+        outSlope: -0.3
+        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -147,6 +162,11 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
       - time: 0.25
         value: 0
         inSlope: 0
