@@ -1919,7 +1919,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7, y: 0, z: 0}
+  m_LocalPosition: {x: -4.44, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480200}
@@ -4700,7 +4700,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -6020,7 +6020,9 @@ MonoBehaviour:
   - {fileID: 498668}
   speed: 0.3
   distancePoints: 0.4
-  DoPatrol: 0
+  DoPatrol: 1
+  RadiusChase: 1
+  lost: 0
   target: {fileID: 0}
   rgb: {fileID: 0}
   anim: {fileID: 0}

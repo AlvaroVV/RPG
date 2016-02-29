@@ -6,10 +6,12 @@ public class PatrolState : IStateEnemy
 {
     private StateMachineEnemy sm;
     private int nextWayPoint;
+    private Vector3 initialPos;
 
     public PatrolState(StateMachineEnemy sm)
     {
         this.sm = sm;
+        initialPos = sm.transform.position;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -40,8 +42,10 @@ public class PatrolState : IStateEnemy
 
     public void UpdateState()
     {
-        if(!sm.DoPatrol)
+        if (sm.DoPatrol)
             Patrol();
+        else
+            sm.rgb.position = Vector3.Lerp(sm.rgb.position, initialPos, Time.deltaTime * sm.speed);
         Look();
     }
 
@@ -53,14 +57,15 @@ public class PatrolState : IStateEnemy
 
     void Patrol()
     {       
-        Vector3 position = Vector3.Lerp(sm.rgb.position,sm.wayPoints[nextWayPoint].position,Time.deltaTime * sm.speed);
-        sm.rgb.position = position;
-        if(Vector2.Distance(sm.rgb.position, sm.wayPoints[nextWayPoint].position) < sm.distancePoints )
+        sm.rgb.position = Vector3.Lerp(sm.rgb.position, sm.wayPoints[nextWayPoint].position, Time.deltaTime * sm.speed);
+        sm.UpdateAnimation(sm.wayPoints[nextWayPoint].position);
+        if (Vector2.Distance(sm.rgb.position, sm.wayPoints[nextWayPoint].position) < sm.distancePoints )
         {
             nextWayPoint = NextPosition();
-            sm.UpdateAnimation(sm.wayPoints[nextWayPoint].position);
+            
         }
     }
+
 
     int NextPosition()
     {

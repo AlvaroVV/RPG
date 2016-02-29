@@ -40,11 +40,10 @@ public class ChaseState : IStateEnemy
 
     public void UpdateState()
     {
-        Vector2 position = Vector3.Lerp(sm.rgb.position, sm.target.transform.position, Time.deltaTime * sm.speed);
+        sm.UpdateAnimation(sm.target.transform.position);
         if ((Vector2.Distance(sm.target.transform.position,sm.transform.position)<sm.RadiusChase) && (!lost))
         {
-            sm.UpdateAnimation(sm.target.transform.position);
-            sm.transform.position = position;
+            sm.transform.position = Vector3.Lerp(sm.rgb.position, sm.target.transform.position, Time.deltaTime * sm.speed); ;
         }
         else
             ToPatrolState();
