@@ -80,7 +80,7 @@ public class PatrolState : IStateEnemy
     void BackPosition()
     {
         sm.rgb.position = Vector3.Lerp(sm.rgb.position, initialPos, Time.deltaTime * sm.speedPatrol);
-        sm.UpdateAnimation(sm.rgb.position);
+        sm.UpdateAnimation(initialPos);
     }
    
 }

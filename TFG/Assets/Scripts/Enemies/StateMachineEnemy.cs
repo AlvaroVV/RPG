@@ -50,22 +50,6 @@ public class StateMachineEnemy : MonoBehaviour {
         currentState.OnTriggerEnter2D(other);
     }
 
-    public void Flip(Vector2 position)
-    {
-        //Debug.Log(position.x * position.y);
-        //Si ambos son positivos o ambos negativos     
-        if ((position.x * position.y > 0.0) && !flipped)
-        {
-            flipped = true;
-            transform.localScale = new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
-        }
-        else if ((position.x * position.y < 0.0) && flipped)
-        {
-            transform.localScale = new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
-            flipped = false;
-        }
-       // Debug.Log(position + " " + flipped);
-    }
 
     void OnDrawGizmosSelected()
     {
@@ -77,10 +61,9 @@ public class StateMachineEnemy : MonoBehaviour {
     public void UpdateAnimation(Vector2 newPosition)
     {
         Vector2 position = newPosition - rgb.position;
-        //Debug.Log(position);
-        position.Normalize();       
-        anim.SetFloat(GameGlobals.INPUT_Y, position.y);
-        Flip(position);
+        anim.SetFloat(GameGlobals.INPUT_Y, position.y *10);
+        anim.SetFloat(GameGlobals.INPUT_X, position.x *10);
+        //Flip(position);
     }
 
     public void DestroyEnemy()
