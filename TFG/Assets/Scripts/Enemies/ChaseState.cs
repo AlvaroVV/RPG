@@ -18,7 +18,8 @@ public class ChaseState : IStateEnemy
     {
         if (other.gameObject.CompareTag(GameGlobals.TagPlayer))
         {
-
+            sm.StartCoroutine(StartFight());
+            
         }
         else
             ToPatrolState(); // Si choca con algo que no sea el jugador
@@ -64,5 +65,16 @@ public class ChaseState : IStateEnemy
     {
         sm.rgb.velocity = Vector3.zero;
         sR.color = initialColor;
+    }
+
+   IEnumerator StartFight()
+    {
+        yield return GameGlobals.ChangeCameraToFight();
+        sm.DestroyEnemy();
+        GameObject back = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
+        GameGlobals.saveBackReference(back);
+        back.SetActive(false);
+        //yield return new WaitForSeconds(1);
+        //GameGlobals.Backreference.SetActive(true);
     }
 }

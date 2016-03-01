@@ -9,6 +9,7 @@ public static class GameGlobals  {
     //Tags
     public static string TagPlayer = "Player";
     public static string TagBackground = "Background";
+    public static string TagFightStage = "FightStage";
 
     //Atributos enemigo Animator
     public const string INPUT_X = "input_x";
@@ -18,6 +19,9 @@ public static class GameGlobals  {
 
     //Referencia al Player para cambiar "estado" desde fuera y no tener un Switch enorme con diferentes estados.
     public static PlayerMovement player = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
+    public static CameraControll camera = Camera.main.GetComponent<CameraControll>();
+
+    public static GameObject Backreference;
 
     public enum PlayerState
     {
@@ -26,5 +30,16 @@ public static class GameGlobals  {
         Interacting,
     }
 
+    public static IEnumerator ChangeCameraToFight()
+    {
+        yield return ScriptingUtils.DoAFadeIn();       
+        camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagFightStage));       
+        yield return ScriptingUtils.DoAFadeOut();      
+    }
+
+    public static void saveBackReference(GameObject back)
+    {
+        Backreference = back;
+    }
 
 }

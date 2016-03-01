@@ -27,7 +27,7 @@ public class CameraControll : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).GetComponent<Transform>();
 
         calcularParametrosCamara();
-        calcularTamañoMapa(background);
+        GoToBackgroundGiven(background);
     }
 
 
@@ -58,7 +58,7 @@ public class CameraControll : MonoBehaviour
     }
 
 
-    public void calcularTamañoMapa(GameObject background)
+    public void GoToBackgroundGiven(GameObject background)
     {
         if (background.GetComponent<TiledMap>() != null)
         {

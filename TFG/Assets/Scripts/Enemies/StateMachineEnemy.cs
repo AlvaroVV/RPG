@@ -82,4 +82,9 @@ public class StateMachineEnemy : MonoBehaviour {
         anim.SetFloat(GameGlobals.INPUT_Y, position.y);
         Flip(position);
     }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
 }

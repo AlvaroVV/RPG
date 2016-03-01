@@ -13,7 +13,12 @@ public class AlertState : IStateEnemy
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-       
+        if (other.gameObject.CompareTag(GameGlobals.TagPlayer))
+        {
+
+        }
+        else
+            ToPatrolState(); // Si choca con algo que no sea el jugador
     }
 
     public void ToAlertState()
@@ -40,7 +45,6 @@ public class AlertState : IStateEnemy
     void Alert()
     {
         currentTime += Time.deltaTime;
-        Debug.Log(currentTime);
         if (currentTime >= sm.timeSearch)
         {
             currentTime = 0.0f;

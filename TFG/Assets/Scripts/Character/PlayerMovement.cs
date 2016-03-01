@@ -34,7 +34,7 @@ public class PlayerMovement: MonoBehaviour {
     void FixedUpdate()
     {
         Movement();
-        StartCoroutine(Interact());
+        Interact();
     }
 
 
@@ -48,24 +48,27 @@ public class PlayerMovement: MonoBehaviour {
         
     }
 
-    IEnumerator Interact()
+    void Interact()
     {        
         if (Input.GetKeyDown(KeyCode.Space) && currentState != GameGlobals.PlayerState.Interacting)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, movement, 0.7f, 1 << GameGlobals.LayerInteractable);
-            //Debug.DrawRay(transform.position, movement, Color.red, 1);
-
+            //Si hay algo interactable empezamos la corrutina
             if (hit)
             {
-                StopMovement();
-                currentState = GameGlobals.PlayerState.Interacting;
-                var interactable = hit.collider.GetComponent<Interactable>();
-                yield return interactable.Interact();
-                currentState = GameGlobals.PlayerState.Idle;
+                StartCoroutine(Interact_Coroutine(hit));
             }
         }
     }
 
+    IEnumerator Interact_Coroutine(RaycastHit2D hit)
+    {
+        StopMovement();
+        currentState = GameGlobals.PlayerState.Interacting;
+        var interactable = hit.collider.GetComponent<Interactable>();
+        yield return interactable.Interact();
+        currentState = GameGlobals.PlayerState.Idle;
+    }
     
 
     public void StopMovement()

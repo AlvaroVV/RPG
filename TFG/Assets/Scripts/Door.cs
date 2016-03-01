@@ -24,7 +24,7 @@ public class Door : MonoBehaviour {
     void changePosition(Collider2D other)
     {
         CameraControll cam = Camera.main.GetComponent<CameraControll>();
-        cam.calcularTamañoMapa(background);
+        cam.GoToBackgroundGiven(background);
         other.gameObject.transform.position = exit.transform.position;
     }
 }
