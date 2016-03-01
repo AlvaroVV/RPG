@@ -8,8 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455990}
+  - 50: {fileID: 5087764}
   - 61: {fileID: 6174894}
   - 114: {fileID: 11439870}
+  - 114: {fileID: 11437426}
   m_Layer: 0
   m_Name: Ripper
   m_TagString: Untagged
@@ -53,12 +55,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.836, y: 0, z: 0}
+  m_LocalPosition: {x: -1.836, y: 1.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 403588}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5087764
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109506}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6174894
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -90,6 +109,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11437426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9452e53e8cdab49ae2dda6318f6a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayPoints: []
+  speedPatrol: 1
+  distancePoints: 0.4
+  RadiusChase: 1
+  speedChase: 0.5
+  timeBetweenPoints: 1
+  timeSearch: 2
+  target: {fileID: 0}
+  rgb: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &11439870
 MonoBehaviour:
   m_ObjectHideFlags: 1

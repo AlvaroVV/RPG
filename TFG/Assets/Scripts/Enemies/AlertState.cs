@@ -5,6 +5,7 @@ using System;
 public class AlertState : IStateEnemy
 {
     private StateMachineEnemy sm;
+    private float currentTime;
 
     public AlertState(StateMachineEnemy sm)
     {
@@ -12,26 +13,45 @@ public class AlertState : IStateEnemy
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        throw new NotImplementedException();
+       
     }
 
     public void ToAlertState()
     {
-        throw new NotImplementedException();
+
     }
 
     public void ToChaseState()
     {
-        throw new NotImplementedException();
+        sm.currentState = sm.chase;
     }
 
     public void ToPatrolState()
     {
-        throw new NotImplementedException();
+        sm.currentState = sm.patrol;
     }
 
     public void UpdateState()
     {
-        throw new NotImplementedException();
+        Alert();
+        Look();
+    }
+
+    void Alert()
+    {
+        currentTime += Time.deltaTime;
+        Debug.Log(currentTime);
+        if (currentTime >= sm.timeSearch)
+        {
+            currentTime = 0.0f;
+            ToPatrolState();
+            
+        }
+    }
+
+    void Look()
+    {
+        if (Vector2.Distance(sm.target.transform.position, sm.transform.position) < sm.RadiusChase)
+            ToChaseState();
     }
 }

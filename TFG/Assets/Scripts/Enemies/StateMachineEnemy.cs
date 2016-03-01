@@ -5,15 +5,16 @@ public class StateMachineEnemy : MonoBehaviour {
 
     public Transform[] wayPoints;
     [Range(0.1f, 3)]
-    public float speed = 0.5f;
+    public float speedPatrol = 0.5f;
     public float distancePoints = 0.4f;
-    public bool DoPatrol = true;
     [Range(0,2)]
     public float RadiusChase = 1f;
+    [Range(0.2f,2)]
+    public float speedChase = 0.5f;
+    public float timeBetweenPoints = 1.0f;
+    public float timeSearch = 2.0f;
 
     private bool flipped = false;
-    [HideInInspector]
-    public bool lost = false;
     [HideInInspector]public GameObject target;
     [HideInInspector]public Rigidbody2D rgb;
     [HideInInspector]public Animator anim;
@@ -51,14 +52,14 @@ public class StateMachineEnemy : MonoBehaviour {
 
     public void Flip(Vector2 position)
     {
-        Debug.Log(position.x * position.y);
+        //Debug.Log(position.x * position.y);
         //Si ambos son positivos o ambos negativos     
         if ((position.x * position.y > 0.0) && !flipped)
         {
             flipped = true;
-            transform.localScale = new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);         
+            transform.localScale = new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
         }
-        else if((position.x * position.y < 0.0) && flipped)
+        else if ((position.x * position.y < 0.0) && flipped)
         {
             transform.localScale = new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
             flipped = false;

@@ -5,11 +5,13 @@ using System;
 public class ChaseState : IStateEnemy
 {
     private StateMachineEnemy sm;
-    private bool lost = false;
-
+    private SpriteRenderer sR;
+    private Color initialColor;
     public ChaseState(StateMachineEnemy sm)
     {
         this.sm = sm;
+        sR = sm.GetComponentInChildren<SpriteRenderer>();
+        initialColor = sR.color;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -19,33 +21,48 @@ public class ChaseState : IStateEnemy
 
         }
         else
-            ToPatrolState();
+            ToPatrolState(); // Si choca con algo que no sea el jugador
     }
 
     public void ToAlertState()
     {
-        throw new NotImplementedException();
+        sm.currentState = sm.alert;
     }
 
     public void ToChaseState()
     {
-        throw new NotImplementedException();
+        
     }
 
     public void ToPatrolState()
     {
-        sm.lost = true;
+      
         sm.currentState = sm.patrol;
     }
 
     public void UpdateState()
     {
         sm.UpdateAnimation(sm.target.transform.position);
-        if ((Vector2.Distance(sm.target.transform.position,sm.transform.position)<sm.RadiusChase) && (!lost))
+        if ((Vector2.Distance(sm.target.transform.position, sm.transform.position) < sm.RadiusChase)) 
         {
-            sm.transform.position = Vector3.Lerp(sm.rgb.position, sm.target.transform.position, Time.deltaTime * sm.speed); ;
+            Chase();
         }
         else
-            ToPatrolState();
+        {
+            StopChasing();
+            ToAlertState();
+        }
+    }
+
+    void Chase()
+    {
+        sm.rgb.velocity = (sm.target.transform.position - sm.transform.position).normalized * sm.speedChase;
+        sR.color = Color.red;
+    }
+
+    void StopChasing()
+    {
+        sm.rgb.velocity = Vector3.zero;
+        sR.color = initialColor;
     }
 }
