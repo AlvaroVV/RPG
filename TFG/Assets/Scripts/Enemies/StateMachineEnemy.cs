@@ -47,7 +47,15 @@ public class StateMachineEnemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        currentState.OnTriggerEnter2D(other);
+        if(other.gameObject.CompareTag(GameGlobals.TagPlayer))
+        {
+            StartCoroutine(StartFight());
+        }
+        else
+        {
+            currentState.OnTriggerEnter2D(other);
+        }
+       
     }
 
 
@@ -69,5 +77,16 @@ public class StateMachineEnemy : MonoBehaviour {
     public void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+
+    IEnumerator StartFight()
+    {
+        yield return GameGlobals.ChangeCameraToFight();
+        DestroyEnemy();
+        GameObject back = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
+        GameGlobals.saveBackReference(back);
+        back.SetActive(false);
+        //yield return new WaitForSeconds(1);
+        //GameGlobals.Backreference.SetActive(true);
     }
 }

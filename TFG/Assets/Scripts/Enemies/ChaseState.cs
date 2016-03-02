@@ -7,6 +7,8 @@ public class ChaseState : IStateEnemy
     private StateMachineEnemy sm;
     private SpriteRenderer sR;
     private Color initialColor;
+    public bool targetDetected = true;
+
     public ChaseState(StateMachineEnemy sm)
     {
         this.sm = sm;
@@ -16,13 +18,8 @@ public class ChaseState : IStateEnemy
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag(GameGlobals.TagPlayer))
-        {
-            sm.StartCoroutine(StartFight());
-            
-        }
-        else
-            ToPatrolState(); // Si choca con algo que no sea el jugador
+        targetDetected = false;
+        ToAlertState(); // Si choca con algo que no sea el jugador
     }
 
     public void ToAlertState()
@@ -36,15 +33,14 @@ public class ChaseState : IStateEnemy
     }
 
     public void ToPatrolState()
-    {
-      
+    {        
         sm.currentState = sm.patrol;
     }
 
     public void UpdateState()
     {
         sm.UpdateAnimation(sm.target.transform.position);
-        if ((Vector2.Distance(sm.target.transform.position, sm.transform.position) < sm.RadiusChase)) 
+        if ((Vector2.Distance(sm.target.transform.position, sm.transform.position) < sm.RadiusChase) && targetDetected) 
         {
             Chase();
         }
@@ -65,16 +61,7 @@ public class ChaseState : IStateEnemy
     {
         sm.rgb.velocity = Vector3.zero;
         sR.color = initialColor;
+
     }
 
-   IEnumerator StartFight()
-    {
-        yield return GameGlobals.ChangeCameraToFight();
-        sm.DestroyEnemy();
-        GameObject back = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
-        GameGlobals.saveBackReference(back);
-        back.SetActive(false);
-        //yield return new WaitForSeconds(1);
-        //GameGlobals.Backreference.SetActive(true);
-    }
 }

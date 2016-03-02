@@ -17,12 +17,7 @@ public class PatrolState : IStateEnemy
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag(GameGlobals.TagPlayer))
-        {
-
-        }
-        else
-            nextWayPoint = NextPosition();
+          nextWayPoint = NextPosition();
     }
 
     public void ToAlertState()
@@ -32,8 +27,8 @@ public class PatrolState : IStateEnemy
 
     public void ToChaseState()
     {
-
-        sm.currentState = sm.chase;
+        sm.chase.targetDetected = true;
+        sm.currentState = sm.chase;   
     }
 
     public void ToPatrolState()
