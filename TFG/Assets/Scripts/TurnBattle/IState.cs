@@ -3,9 +3,6 @@ using System.Collections;
 
 public interface IState {
 
-    //Inicializaciones del estado
-    void StartState();
-
     //Efecto del estado, tendrá corrutinas para que sea el usuario quien vaya pasando.
     void UpdateState();
 

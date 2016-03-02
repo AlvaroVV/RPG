@@ -14,7 +14,6 @@ public class StateMachineEnemy : MonoBehaviour {
     public float timeBetweenPoints = 1.0f;
     public float timeSearch = 2.0f;
 
-    private bool flipped = false;
     [HideInInspector]public GameObject target;
     [HideInInspector]public Rigidbody2D rgb;
     [HideInInspector]public Animator anim;
@@ -86,7 +85,6 @@ public class StateMachineEnemy : MonoBehaviour {
         GameObject back = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
         GameGlobals.saveBackReference(back);
         back.SetActive(false);
-        //yield return new WaitForSeconds(1);
-        //GameGlobals.Backreference.SetActive(true);
+        
     }
 }

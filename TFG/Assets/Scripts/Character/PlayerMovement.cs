@@ -10,9 +10,9 @@ public class PlayerMovement: MonoBehaviour {
     private float input_x;
     private float input_y;
     private Vector2 movement;
-
     private PlayerAnimHandler anim;
 
+    [HideInInspector]
     public GameGlobals.PlayerState currentState;
 
     public virtual void Awake()

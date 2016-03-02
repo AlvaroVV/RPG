@@ -96,9 +96,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 427586}
   - 114: {fileID: 11497554}
+  - 114: {fileID: 11464088}
   m_Layer: 0
   m_Name: FightStage
-  m_TagString: Untagged
+  m_TagString: FightStage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,8 +171,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: 662.00006, y: -1429, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476752}
   - {fileID: 416534}
@@ -419,6 +420,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialOpacity: 1
+--- !u!114 &11464088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101b939dcd86790449b691b2d33c2b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11465568
 MonoBehaviour:
   m_ObjectHideFlags: 1

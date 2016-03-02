@@ -11,14 +11,10 @@ public class FinishBattleState : IState
         this.tb = tb;
     }
 
-    public void StartState()
-    {
-        
-    }
 
     public void UpdateState()
     {
-        Debug.Log("Finish Battle");
+
     }
 
     public void changeState()

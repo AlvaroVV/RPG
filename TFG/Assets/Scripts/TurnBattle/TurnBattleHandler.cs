@@ -8,40 +8,17 @@ using System;
 public class TurnBattleHandler : MonoBehaviour{
 
     private IState currentState;
-    private PlayerController pController;
-
-    [HideInInspector]public List<BaseStatCharacter> players;
-    [HideInInspector]public List<BaseStatCharacter> enemies;
-    [HideInInspector]public List<BaseStatCharacter> fighterStack;
+    private PlayerTeam pController;
 
     [HideInInspector]public StartFightState startFight;
     [HideInInspector]public ChooseFighterState chooseFighter;
     [HideInInspector]public FinishBattleState finishBattle;
 
-    void Awake()
-    {
-        pController = FindObjectOfType<PlayerController>();
-        startFight = new StartFightState(this);
-        chooseFighter = new ChooseFighterState(this);
-        finishBattle = new FinishBattleState(this);
-    }
-
-    void Start()
-    {
-        players = pController.getTeam();
-    }
-
-  
     void Update()
     {
-        if (currentState != null && currentState != finishBattle)
-        {
+        //Cuando llamamos desde fuera al StartFight le pasamos el Estado Start.
+        if(currentState != null)
             currentState.UpdateState();
-            Debug.Log(currentState);
-        }else if(currentState == finishBattle)
-        {
-            Destroy(gameObject);
-        }
     }
 
     public void ChangeState(IState nextState)
@@ -50,13 +27,18 @@ public class TurnBattleHandler : MonoBehaviour{
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void StartFight(EnemyTeam enemy)
     {
-        Debug.Log("COMIENZA BATALLA");
-        currentState = startFight;
-        currentState.StartState();
-    }
+        //Inicializamos los estados
+        startFight = new StartFightState(this);
+        chooseFighter = new ChooseFighterState(this);
+        finishBattle = new FinishBattleState(this);
 
-  
+        //Conseguimos los equipos
+
+
+        //Empezamos la pelea
+        currentState = startFight;
+    }
 
 }

@@ -12,11 +12,6 @@ public class ChooseFighterState : IState
         this.tb = tb;
     }
     
-    public void StartState()
-    {
-        Debug.Log("Felix elegido");
-    }
-
     public void UpdateState()
     {
         if (Input.GetKeyDown(KeyCode.T))
