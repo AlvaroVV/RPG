@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BaseCharacter  {
+public class BaseCharacter: ScriptableObject  {
 
     public string name = "Nombre";
     public string description = "Descripcion";

@@ -8,7 +8,7 @@ using System;
 public class TurnBattleHandler : MonoBehaviour{
 
     private IState currentState;
-    private PlayerTeam pController;
+   
 
     [HideInInspector]public StartFightState startFight;
     [HideInInspector]public ChooseFighterState chooseFighter;
@@ -27,7 +27,7 @@ public class TurnBattleHandler : MonoBehaviour{
 
     }
 
-    public void StartFight(EnemyTeam enemy)
+    public void StartFight()
     {
         //Inicializamos los estados
         startFight = new StartFightState(this);

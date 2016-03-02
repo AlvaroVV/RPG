@@ -29,7 +29,7 @@ GameObject:
   - 61: {fileID: 6181982}
   - 114: {fileID: 11414382}
   m_Layer: 0
-  m_Name: Goblin
+  m_Name: GoblinFight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTeam: []
   RandomFighters: 0
-  numberOfFighters: 1
 --- !u!212 &21275130
 SpriteRenderer:
   m_ObjectHideFlags: 1

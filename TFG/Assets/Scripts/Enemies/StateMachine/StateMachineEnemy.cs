@@ -31,6 +31,7 @@ public class StateMachineEnemy : MonoBehaviour {
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         target = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer);
+        
 	}
 
     void Start()
