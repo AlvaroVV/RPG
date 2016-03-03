@@ -7516,6 +7516,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11440220, guid: 8164c3111e54a5f438e480471f82e199, type: 2}
+      propertyPath: EnemyTeam.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 479962, guid: 8164c3111e54a5f438e480471f82e199, type: 2}
       propertyPath: m_LocalPosition.x
       value: -23.279001
@@ -7548,6 +7552,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11440220, guid: 8164c3111e54a5f438e480471f82e199, type: 2}
+      propertyPath: EnemyTeam.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b91bdbfb19aed9f45834ead50e4da603,
+        type: 2}
+    - target: {fileID: 11440220, guid: 8164c3111e54a5f438e480471f82e199, type: 2}
+      propertyPath: EnemyTeam.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ef362be1aade945458591296db78ea39,
+        type: 2}
+    - target: {fileID: 11440220, guid: 8164c3111e54a5f438e480471f82e199, type: 2}
+      propertyPath: EnemyTeam.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ef362be1aade945458591296db78ea39,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8164c3111e54a5f438e480471f82e199, type: 2}
   m_IsPrefabParent: 0

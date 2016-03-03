@@ -25,7 +25,7 @@ public class EnemyFighter : MonoBehaviour {
     {
         if(enemyData != null)
         {
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
             this.enemyData = enemyData;
             anim.runtimeAnimatorController = enemyData.animatorController;
         }            

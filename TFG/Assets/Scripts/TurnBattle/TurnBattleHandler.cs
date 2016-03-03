@@ -62,6 +62,7 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         GameObject enemyObject = Resources.Load("Enemies/EnemyFighter") as GameObject;
         EnemyFighter enemyFighter = enemyObject.GetComponent<EnemyFighter>();
+
         enemyFighter.setEnemyProperties(enemy);
         enemyFighters.Add(enemyObject);
 
