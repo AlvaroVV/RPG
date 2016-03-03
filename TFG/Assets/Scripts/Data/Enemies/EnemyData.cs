@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections.Generic;
+
 
 public class EnemyData : BaseCharacter {
 
@@ -11,6 +13,8 @@ public class EnemyData : BaseCharacter {
     public int xp = 7;
     public int gold = 10;
     public RuntimeAnimatorController AnimatorController;
+    public List<EnemyAttack> attacks;
+ 
 
     public int HP { get { return hp; } set { hp = value; } }
     public int HitCount { get { return hitCount; } set { hitCount = value; } }

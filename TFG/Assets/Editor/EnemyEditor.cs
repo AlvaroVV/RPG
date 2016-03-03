@@ -15,6 +15,7 @@ public class EnemyEditor : Editor
     SerializedProperty xp;
     SerializedProperty gold;
     SerializedProperty animController;
+    SerializedProperty attacks;
 
 
     void OnEnable()
@@ -28,6 +29,7 @@ public class EnemyEditor : Editor
         xp = serializedObject.FindProperty("xp");
         gold = serializedObject.FindProperty("gold");
         animController = serializedObject.FindProperty("AnimatorController");
+        attacks = serializedObject.FindProperty("attacks");
     }
 
     public override void OnInspectorGUI()
@@ -63,7 +65,18 @@ public class EnemyEditor : Editor
 
         EditorGUILayout.PropertyField(animController, new GUIContent("AnimController"));
         // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.
+
+        EditorGUILayout.PropertyField(attacks, true);
+
+
         serializedObject.ApplyModifiedProperties();
+
+        
+    }
+
+    void CustomList()
+    {
+
     }
 
     // Custom GUILayout progress bar.
