@@ -2444,7 +2444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e606825151d104aabf8a40016de78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: []
 --- !u!1 &571575624
 GameObject:
   m_ObjectHideFlags: 0
@@ -6847,6 +6846,26 @@ Transform:
   - {fileID: 891730254}
   m_Father: {fileID: 1450943562}
   m_RootOrder: 0
+--- !u!1 &1652186747 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 154438, guid: 8164c3111e54a5f438e480471f82e199, type: 2}
+  m_PrefabInternal: {fileID: 1765404701}
+--- !u!114 &1652186748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1652186747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae5f0310f8dd914db2b7ab2fc3b0fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTeam:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1673195130
 GameObject:
   m_ObjectHideFlags: 0

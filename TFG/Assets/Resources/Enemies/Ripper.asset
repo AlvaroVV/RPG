@@ -9,13 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e260f62b54e3d524ab1adeb17d5047bb, type: 3}
-  m_Name: Zipper
+  m_Name: Ripper
   m_EditorClassIdentifier: 
   name: Zipper
   description: Descripcion
-  hp: 12
+  hp: 10
   hitCount: 1
-  damage: 3
-  agility: 3
-  xp: 10
-  gold: 15
+  damage: 2
+  defense: 3
+  agility: 2
+  xp: 7
+  gold: 10
+  AnimatorController: {fileID: 9100000, guid: be0241429e968344c8fb46c7cd5d1a48, type: 2}

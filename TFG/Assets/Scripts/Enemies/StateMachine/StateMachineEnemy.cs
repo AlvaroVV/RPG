@@ -6,12 +6,15 @@ public class StateMachineEnemy : MonoBehaviour {
     public Transform[] wayPoints;
     [Range(0.1f, 3)]
     public float speedPatrol = 0.5f;
+    [Range(0.1f, 1)]
     public float distancePoints = 0.4f;
     [Range(0,2)]
     public float RadiusChase = 1f;
     [Range(0.2f,2)]
     public float speedChase = 0.5f;
+    [Range(0, 5)]
     public float timeBetweenPoints = 1.0f;
+    [Range(0, 5)]
     public float timeSearch = 2.0f;
 
     [HideInInspector]public GameObject target;

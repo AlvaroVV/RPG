@@ -13,10 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Goblin
   description: Descripcion
-  hp: 10
-  hitCount: 1
-  damage: 2
-  agility: 2
+  hp: 100
+  hitCount: 3
+  damage: 5
+  defense: 3
+  agility: 10
   xp: 7
   gold: 10
   AnimatorController: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
