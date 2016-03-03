@@ -130,6 +130,10 @@ MonoBehaviour:
   speedChase: 0.5
   timeBetweenPoints: 5
   timeSearch: 2
+  EnemyTeam:
+  - {fileID: 11400000, guid: ef362be1aade945458591296db78ea39, type: 2}
+  - {fileID: 11400000, guid: ef362be1aade945458591296db78ea39, type: 2}
+  - {fileID: 11400000, guid: ef362be1aade945458591296db78ea39, type: 2}
   target: {fileID: 0}
   rgb: {fileID: 0}
   anim: {fileID: 0}

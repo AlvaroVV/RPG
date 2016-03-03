@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class StateMachineEnemy : MonoBehaviour {
 
@@ -17,6 +18,9 @@ public class StateMachineEnemy : MonoBehaviour {
     [Range(0, 5)]
     public float timeSearch = 2.0f;
 
+    //Lista de enemigos que saldrán al tocarlo
+    public List<EnemyData> EnemyTeam;
+
     [HideInInspector]public GameObject target;
     [HideInInspector]public Rigidbody2D rgb;
     [HideInInspector]public Animator anim;
@@ -27,15 +31,21 @@ public class StateMachineEnemy : MonoBehaviour {
     [HideInInspector]public ChaseState chase;
 
 
+    private bool catched = false;
+
+    //Referencias para cuando se empiece la batalla
+    private GameObject background;
+    private GameObject turnBattle;
+
     void Awake () {
+        
         patrol = new PatrolState(this);
         alert = new AlertState(this);
         chase = new ChaseState(this);
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        target = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer);
-        
-	}
+        target = GameGlobals.player.gameObject;
+    }
 
     void Start()
     {
@@ -45,14 +55,16 @@ public class StateMachineEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        currentState.UpdateState();
+        if(!catched)
+            currentState.UpdateState();
 	}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag(GameGlobals.TagPlayer))
         {
-            StartCoroutine(StartFight());
+            Catched();
+            StartFight();
         }
         else
         {
@@ -82,13 +94,19 @@ public class StateMachineEnemy : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    IEnumerator StartFight()
+    void StartFight()
     {
-        yield return GameGlobals.ChangeCameraToFight();
-        DestroyEnemy();
-        GameObject back = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
-        GameGlobals.saveBackReference(back);
-        back.SetActive(false);
-        
+
+        StartCoroutine(GameGlobals.StartFight(this));
+        //DestroyEnemy();
+          
     }
+
+    void Catched()
+    {
+        catched = true;
+        rgb.velocity = Vector3.zero;
+    }
+
+    
 }

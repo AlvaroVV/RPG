@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public static class GameGlobals  {
 
@@ -10,6 +11,7 @@ public static class GameGlobals  {
     public static string TagPlayer = "Player";
     public static string TagBackground = "Background";
     public static string TagFightStage = "FightStage";
+    public static string TagTurnBattle = "TurnBattleHandler";
 
     //Atributos enemigo Animator
     public const string INPUT_X = "input_x";
@@ -21,7 +23,11 @@ public static class GameGlobals  {
     public static PlayerMovement player = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
     public static CameraControll camera = Camera.main.GetComponent<CameraControll>();
 
-    public static GameObject Backreference;
+    //Referencia al background cuando lo inactivas al empezar una batalla
+    public static GameObject BackReference = GameObject.FindGameObjectWithTag(TagBackground);
+
+    //Referencia al objeto TurnBattle para empezar la batalla
+    public static GameObject TurnBattle =  GameObject.FindGameObjectWithTag(TagTurnBattle);
 
     public enum PlayerState
     {
@@ -30,16 +36,29 @@ public static class GameGlobals  {
         Interacting,
     }
 
-    public static IEnumerator ChangeCameraToFight()
+    public static IEnumerator StartFight(StateMachineEnemy enemy)
     {
+
         yield return ScriptingUtils.DoAFadeIn();       
-        camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagFightStage));       
-        yield return ScriptingUtils.DoAFadeOut();      
+        camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagFightStage));          
+        yield return ScriptingUtils.DoAFadeOut();
+
+        TurnBattle.GetComponent<TurnBattleHandler>().StartFight(enemy);
+        
+        BackReference.gameObject.SetActive(false);
+        Debug.Log(BackReference);
+        Debug.Log(TurnBattle);
+        
     }
 
     public static void saveBackReference(GameObject back)
     {
-        Backreference = back;
+        BackReference = back;
+    }
+
+    public static void saveTurnBattleReference(GameObject turnBattle)
+    {
+        TurnBattle = turnBattle;
     }
 
 }

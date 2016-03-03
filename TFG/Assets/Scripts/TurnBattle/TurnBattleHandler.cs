@@ -7,12 +7,28 @@ using System;
 */
 public class TurnBattleHandler : MonoBehaviour{
 
-    private IState currentState;
-   
+    //Puntos de aparación
+    public Transform[] EnemyPoints;
+    public Transform[] CharacterPoints;
 
+    //Lists
+    [HideInInspector]public List<EnemyData> enemyTeam;
+    [HideInInspector]public List<GameObject> enemyFighters;
+
+    //States
     [HideInInspector]public StartFightState startFight;
     [HideInInspector]public ChooseFighterState chooseFighter;
     [HideInInspector]public FinishBattleState finishBattle;
+
+    private IState currentState;
+
+    void Awake()
+    {
+        //Inicializamos los estados
+        startFight = new StartFightState(this);
+        chooseFighter = new ChooseFighterState(this);
+        finishBattle = new FinishBattleState(this);
+    }
 
     void Update()
     {
@@ -24,21 +40,35 @@ public class TurnBattleHandler : MonoBehaviour{
     public void ChangeState(IState nextState)
     {
         currentState = nextState;
-
     }
 
-    public void StartFight()
+    public void StartFight(StateMachineEnemy enemy)
     {
-        //Inicializamos los estados
-        startFight = new StartFightState(this);
-        chooseFighter = new ChooseFighterState(this);
-        finishBattle = new FinishBattleState(this);
+        //Guardamos la lista de enemigos
+        enemyTeam = new List<EnemyData>(enemy.EnemyTeam);
 
-        //Conseguimos los equipos
+        //Destruimos la IA del enemigo
+        Destroy(enemy.gameObject);
 
-
-        //Empezamos la pelea
+        foreach (EnemyData en in enemyTeam)
+        {
+            CreateFighter(en);
+        }
+      
         currentState = startFight;
     }
 
+    private void CreateFighter(EnemyData enemy)
+    {
+        GameObject enemyObject = Resources.Load("Enemies/EnemyFighter") as GameObject;
+        EnemyFighter enemyFighter = enemyObject.GetComponent<EnemyFighter>();
+        enemyFighter.setEnemyProperties(enemy);
+        enemyFighters.Add(enemyObject);
+
+    }
+
+    public void InstantiateEnemy(GameObject enemy, Transform transform)
+    {
+        Instantiate(enemy,transform.position,Quaternion.identity);
+    }
 }

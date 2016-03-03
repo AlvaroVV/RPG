@@ -28,7 +28,7 @@ public class EnemyEditor : Editor
         defense = serializedObject.FindProperty("defense");
         xp = serializedObject.FindProperty("xp");
         gold = serializedObject.FindProperty("gold");
-        animController = serializedObject.FindProperty("AnimatorController");
+        animController = serializedObject.FindProperty("animatorController");
         attacks = serializedObject.FindProperty("attacks");
     }
 
@@ -62,6 +62,16 @@ public class EnemyEditor : Editor
         // Only show the armor progress bar if all the objects have the same armor value:
         if (!hitCount.hasMultipleDifferentValues)
             ProgressBar(agility.intValue / 100.0f, "Agility");
+
+        EditorGUILayout.IntSlider(xp, 0, 100, new GUIContent("XP"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!hitCount.hasMultipleDifferentValues)
+            ProgressBar(xp.intValue / 100.0f, "XP");
+
+        EditorGUILayout.IntSlider(gold, 0, 100, new GUIContent("Gold"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!hitCount.hasMultipleDifferentValues)
+            ProgressBar(gold.intValue / 100.0f, "Gold");
 
         EditorGUILayout.PropertyField(animController, new GUIContent("AnimController"));
         // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.

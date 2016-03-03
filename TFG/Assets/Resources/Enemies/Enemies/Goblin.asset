@@ -18,8 +18,8 @@ MonoBehaviour:
   damage: 5
   defense: 3
   agility: 10
-  xp: 7
-  gold: 10
-  AnimatorController: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
+  xp: 10
+  gold: 15
+  animatorController: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
   attacks:
   - {fileID: 11400000, guid: e57fb9277e1208945bebd010d51b65dc, type: 2}

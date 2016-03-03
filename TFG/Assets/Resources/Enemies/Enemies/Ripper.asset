@@ -20,5 +20,6 @@ MonoBehaviour:
   agility: 5
   xp: 7
   gold: 10
-  AnimatorController: {fileID: 9100000, guid: be0241429e968344c8fb46c7cd5d1a48, type: 2}
-  attacks: []
+  animatorController: {fileID: 9100000, guid: be0241429e968344c8fb46c7cd5d1a48, type: 2}
+  attacks:
+  - {fileID: 11400000, guid: 2f5c8ae561e2a0340b19b878b98e81eb, type: 2}
