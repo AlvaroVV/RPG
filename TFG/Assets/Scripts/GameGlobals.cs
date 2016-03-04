@@ -36,6 +36,20 @@ public static class GameGlobals  {
         Interacting,
     }
 
+    public enum CharacterType
+    {
+        EARTH,
+        FIRE,
+        WIND,
+        WATER,
+    }
+
+    public enum AttackType
+    {
+        Attack,
+        Magic,
+    }
+
     public static IEnumerator StartFight(StateMachineEnemy enemy)
     {
         yield return ScriptingUtils.DoAFadeIn();       

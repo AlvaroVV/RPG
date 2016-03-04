@@ -6,7 +6,8 @@ using System.Collections;
 [CanEditMultipleObjects]
 public class EnemyEditor : Editor
 {
-
+    SerializedProperty name;
+    SerializedProperty description;
     SerializedProperty hp;
     SerializedProperty hitCount;
     SerializedProperty damage;
@@ -21,6 +22,8 @@ public class EnemyEditor : Editor
     void OnEnable()
     {
         // Setup the SerializedProperties
+        name = serializedObject.FindProperty("name");
+        description = serializedObject.FindProperty("description");
         hp = serializedObject.FindProperty("hp");
         hitCount = serializedObject.FindProperty("hitCount");
         damage = serializedObject.FindProperty("damage");
@@ -37,7 +40,10 @@ public class EnemyEditor : Editor
         // Update the serializedProperty - always do this in the beginning of OnInspectorGUI.
         serializedObject.Update();
         // Show the custom GUI controls
-      
+
+        EditorGUILayout.PropertyField(name, new GUIContent("Name"));
+        EditorGUILayout.PropertyField(description, new GUIContent("Description"));
+
         EditorGUILayout.IntSlider(hp, 0, 1000, new GUIContent("HP"));
         // Only show the damage progress bar if all the objects have the same damage value:
         if (!hp.hasMultipleDifferentValues)

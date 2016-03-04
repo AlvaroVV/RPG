@@ -12,7 +12,6 @@ public class EnemyData : BaseCharacter {
     public int agility = 2;
     public int xp = 7;
     public int gold = 10;
-    public RuntimeAnimatorController animatorController;
     public List<EnemyAttack> attacks;
  
 
@@ -23,5 +22,4 @@ public class EnemyData : BaseCharacter {
     public int Agility { get { return agility; } set { agility = value; } }
     public int Xp { get { return xp; } set { xp = value; } }
     public int Gold { get { return gold; } set { gold = value; } }
-    public RuntimeAnimatorController AnimatorController { get { return animatorController; } set { animatorController = value; } }
 }

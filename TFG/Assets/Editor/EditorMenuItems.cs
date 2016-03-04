@@ -4,14 +4,14 @@ using UnityEditor;
 static class EditorMenuItems
 {
 
-    [MenuItem("Assets/Create/Scriptable Object/WeaponData")]
+    [MenuItem("Assets/Create/Scriptable Object/Character/WeaponData")]
     public static void CreateWeaponData()
     {
         ScriptableObjectUtility.CreateAsset<WeaponData>();
     }
 
 
-    [MenuItem("Assets/Create/Scriptable Object/Equipment")]
+    [MenuItem("Assets/Create/Scriptable Object/Character/Equipment")]
     public static void CreateEquipmentData()
     {
         ScriptableObjectUtility.CreateAsset<EquipmentData>();
@@ -27,5 +27,17 @@ static class EditorMenuItems
     public static void CreateEnemyAttack()
     {
         ScriptableObjectUtility.CreateAsset<EnemyAttack>();
+    }
+
+    [MenuItem("Assets/Create/Scriptable Object/Character/new Character")]
+    public static void CreateNewCharacter()
+    {
+        ScriptableObjectUtility.CreateAsset<BaseStatCharacter>();
+    }
+
+    [MenuItem("Assets/Create/Scriptable Object/Character/new Attack")]
+    public static void CreateCharacterAttack()
+    {
+        ScriptableObjectUtility.CreateAsset<CharacterAttack>();
     }
 }
