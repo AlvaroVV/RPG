@@ -15,11 +15,20 @@ public class StartFightState : IState
 
     public void UpdateState()
     {
-        for(int i = 0; i<tb.enemyFighters.Count ; i++)
-        {
-            tb.InstantiateEnemy(tb.enemyFighters[i], tb.EnemyPoints[i]);
-        }
+        Debug.Log("START FIGHT");
+        InstantiateEnemies();
+       
         changeState();
+    }
+
+    IEnumerator WaitForKeyPress(KeyCode key)
+    {
+        while(!Input.GetKeyDown(key))
+        {
+            yield return null;
+        }
+        yield return null;
+
     }
 
     public void changeState()
@@ -27,5 +36,25 @@ public class StartFightState : IState
         tb.ChangeState(tb.chooseFighter); 
     }
 
-   
+    private void InstantiateEnemies()
+    {
+        for(int i = 0; i< tb.enemyDatas.Count; i++)
+        {
+            InstantiateEnemy(tb.enemyDatas[i], tb.EnemyPoints[i]);
+        }
+    }
+
+    private void InstantiateEnemy(EnemyData enemyData,Transform transform)
+    {
+        GameObject enemyObject = Resources.Load("Enemies/EnemyFighter") as GameObject;
+        EnemyFighter enemyFighter = enemyObject.GetComponent<EnemyFighter>();
+
+        enemyFighter.setEnemyProperties(enemyData);
+
+        GameObject enemyInstantiate = GameObject.Instantiate(enemyObject, transform.position, Quaternion.identity) as GameObject;
+        enemyInstantiate.name = enemyData.name;
+        enemyInstantiate.transform.parent = tb.transform;
+
+        tb.enemyFighters.Add(enemyInstantiate);
+    }
 }

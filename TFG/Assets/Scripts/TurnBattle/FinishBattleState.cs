@@ -14,11 +14,12 @@ public class FinishBattleState : IState
 
     public void UpdateState()
     {
-
+        Debug.Log("FINISH BATTLE");
+        changeState();
     }
 
     public void changeState()
     {
-
+        tb.FinishBattle();
     }
 }

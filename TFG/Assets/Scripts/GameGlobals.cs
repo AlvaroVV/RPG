@@ -38,17 +38,21 @@ public static class GameGlobals  {
 
     public static IEnumerator StartFight(StateMachineEnemy enemy)
     {
-
         yield return ScriptingUtils.DoAFadeIn();       
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagFightStage));          
         yield return ScriptingUtils.DoAFadeOut();
 
         TurnBattle.GetComponent<TurnBattleHandler>().StartFight(enemy);
         
-        BackReference.gameObject.SetActive(false);
-        Debug.Log(BackReference);
-        Debug.Log(TurnBattle);
-        
+        BackReference.gameObject.SetActive(false);       
+    }
+
+    public static IEnumerator FinishFight()
+    {
+        yield return ScriptingUtils.DoAFadeIn();
+        BackReference.gameObject.SetActive(true);
+        camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagBackground));
+        yield return ScriptingUtils.DoAFadeOut();
     }
 
     public static void saveBackReference(GameObject back)
