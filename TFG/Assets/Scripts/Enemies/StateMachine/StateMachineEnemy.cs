@@ -105,6 +105,7 @@ public class StateMachineEnemy : MonoBehaviour {
     void Catched()
     {
         catched = true;
+        GameGlobals.player.StateInteracting();
         rgb.velocity = Vector3.zero;
     }
 

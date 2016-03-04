@@ -52,11 +52,37 @@ public class TurnBattleHandler : MonoBehaviour{
         Destroy(enemy.gameObject);
       
         currentState = startFight;
+
     }
+
+    /*
+    public void CharacterPerformAction(CharacterAction action)
+    {
+        CombatGUI.ShowCharacterCombatInterface(character, OnCharacterPerformAction);
+    }
+
+    void OnCharacterPerformAction(CharacterAction action)
+    {
+
+    }
+    */
+
 
     public void FinishBattle()
     {
+        foreach (GameObject enemy in enemyFighters)
+            DestroyEnemy(enemy);
+        enemyFighters = new List<GameObject>();
+        StartCoroutine(GameGlobals.FinishFight());
+        GameGlobals.player.StateIdle();
         currentState = null;
+    }
+
+    public void DestroyEnemy(GameObject enemy)
+    {
+        enemy.gameObject.SetActive(false);
+        enemy.transform.SetParent(null);
+        Destroy(enemy.gameObject);
     }
 
 }

@@ -15,10 +15,15 @@ public class ChooseFighterState : IState
     public void UpdateState()
     {
         Debug.Log("CHOOSE FIGHTER");
-       
-        changeState();
+        
+        Wait();
     }
 
+    void Wait()
+    {
+        if(Input.GetKeyDown(KeyCode.T))
+            changeState();
+    }
     IEnumerator WaitForKeyPress(KeyCode key)
     {
         while (!Input.GetKeyDown(key))

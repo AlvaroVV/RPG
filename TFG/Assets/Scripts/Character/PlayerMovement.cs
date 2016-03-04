@@ -63,14 +63,22 @@ public class PlayerMovement: MonoBehaviour {
 
     IEnumerator Interact_Coroutine(RaycastHit2D hit)
     {
-        StopMovement();
-        currentState = GameGlobals.PlayerState.Interacting;
+        StateInteracting();
         var interactable = hit.collider.GetComponent<Interactable>();
         yield return interactable.Interact();
-        currentState = GameGlobals.PlayerState.Idle;
+        StateIdle();
     }
     
+    public void StateInteracting()
+    {
+        currentState = GameGlobals.PlayerState.Interacting;
+        StopMovement();
+    }
 
+    public void StateIdle()
+    {
+        currentState = GameGlobals.PlayerState.Idle;
+    }
     public void StopMovement()
     {
         movement = new Vector2(0, 0);
