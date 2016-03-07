@@ -1,24 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovement: MonoBehaviour {
 
     [Range(1, 5)]
     public float speed = 1.0f;
+    public List<BaseStatCharacter> playerTeam;
 
     private Rigidbody2D rgb;
     private float input_x;
     private float input_y;
     private Vector2 movement;
     private PlayerAnimHandler anim;
+    private PlayerTeamController playerTeamController;
 
     [HideInInspector]
     public GameGlobals.PlayerState currentState;
 
-    public virtual void Awake()
+    void Awake()
     {
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<PlayerAnimHandler>();
+        playerTeamController = new PlayerTeamController();
+    }
+
+    void Start()
+    {
+        playerTeamController.team = playerTeam;
     }
 
     void Update()

@@ -216,7 +216,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 427586}
   - 114: {fileID: 11497554}
-  - 114: {fileID: 11464088}
   m_Layer: 0
   m_Name: FightStage
   m_TagString: FightStage
@@ -700,17 +699,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialOpacity: 1
---- !u!114 &11464088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 101b939dcd86790449b691b2d33c2b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11465568
 MonoBehaviour:
   m_ObjectHideFlags: 1

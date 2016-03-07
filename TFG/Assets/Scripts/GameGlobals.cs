@@ -52,21 +52,25 @@ public static class GameGlobals  {
 
     public static IEnumerator StartFight(StateMachineEnemy enemy)
     {
-        yield return ScriptingUtils.DoAFadeIn();       
+        TurnBattleHandler handler = TurnBattle.GetComponent<TurnBattleHandler>();
+
+        yield return ScriptingUtils.DoAFadeIn();
+        handler.InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.       
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagFightStage));          
         yield return ScriptingUtils.DoAFadeOut();
-
-        TurnBattle.GetComponent<TurnBattleHandler>().StartFight(enemy);
+        handler.StartFight(enemy);
         
         BackReference.gameObject.SetActive(false);       
     }
 
     public static IEnumerator FinishFight()
     {
+        TurnBattleHandler handler = TurnBattle.GetComponent<TurnBattleHandler>();
         yield return ScriptingUtils.DoAFadeIn();
         BackReference.gameObject.SetActive(true);
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagBackground));
         yield return ScriptingUtils.DoAFadeOut();
+        handler.CleanCharactersList(); 
     }
 
     public static void saveBackReference(GameObject back)

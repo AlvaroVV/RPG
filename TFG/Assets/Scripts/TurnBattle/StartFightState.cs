@@ -20,16 +20,7 @@ public class StartFightState : IState
        
         changeState();
     }
-
-    IEnumerator WaitForKeyPress(KeyCode key)
-    {
-        while(!Input.GetKeyDown(key))
-        {
-            yield return null;
-        }
-        yield return null;
-
-    }
+ 
 
     public void changeState()
     {

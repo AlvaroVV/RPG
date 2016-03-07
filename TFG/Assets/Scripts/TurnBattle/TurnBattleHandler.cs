@@ -11,7 +11,11 @@ public class TurnBattleHandler : MonoBehaviour{
     public Transform[] EnemyPoints;
     public Transform[] CharacterPoints;
 
-    //Lists
+    //List team
+    [HideInInspector] public List<BaseStatCharacter> playerTeam;
+    [HideInInspector]public List<GameObject> playerTeamFighters;
+
+    //Lists Enemies
     [HideInInspector]public List<EnemyData> enemyDatas;
     [HideInInspector]public List<GameObject> enemyFighters;
 
@@ -47,12 +51,29 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         //Guardamos la lista de enemigos
         enemyDatas = new List<EnemyData>(enemy.EnemyTeam);
-
         //Destruimos la IA del enemigo
         Destroy(enemy.gameObject);
-      
         currentState = startFight;
 
+    }
+
+    public void InstantiateTeam()
+    {
+        playerTeam = GameGlobals.player.playerTeam;
+
+        for (int i = 0; i<playerTeam.Count; i++)
+        {
+            GameObject enemyObject = Resources.Load("Characters/CharacterFighter") as GameObject;
+            CharacterFighter characterFighter = enemyObject.GetComponent<CharacterFighter>();
+
+            characterFighter.setCharacterProperties(playerTeam[i]);
+
+            GameObject characInstantiate = GameObject.Instantiate(enemyObject, CharacterPoints[i].transform.position, Quaternion.identity) as GameObject;
+            characInstantiate.name = playerTeam[i].name;
+            characInstantiate.transform.parent = gameObject.transform;
+
+            playerTeamFighters.Add(characInstantiate);
+        }
     }
 
     /*
@@ -70,12 +91,24 @@ public class TurnBattleHandler : MonoBehaviour{
 
     public void FinishBattle()
     {
-        foreach (GameObject enemy in enemyFighters)
-            DestroyEnemy(enemy);
-        enemyFighters = new List<GameObject>();
+        CleanEnemiesList(); //TEMPORAL
         StartCoroutine(GameGlobals.FinishFight());
         GameGlobals.player.StateIdle();
         currentState = null;
+    }
+
+    private void CleanEnemiesList()
+    {
+        foreach (GameObject enemy in enemyFighters)
+            DestroyEnemy(enemy);
+        enemyFighters = new List<GameObject>();
+    }
+
+    public void CleanCharactersList()
+    {
+        foreach (GameObject charac in playerTeamFighters)
+            DestroyEnemy(charac);
+        playerTeamFighters = new List<GameObject>();
     }
 
     public void DestroyEnemy(GameObject enemy)
