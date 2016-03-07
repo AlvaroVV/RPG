@@ -95,6 +95,7 @@ public class TurnBattleHandler : MonoBehaviour{
         StartCoroutine(GameGlobals.FinishFight());
         GameGlobals.player.StateIdle();
         currentState = null;
+       
     }
 
     private void CleanEnemiesList()

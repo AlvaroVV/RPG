@@ -108,6 +108,12 @@ public class UIManager: MonoBehaviour  {
         return pf;
     }
 
-    
+    public CombatGUI CreateCombatGUI(string combatGUIName)
+    {
+        GameObject combatGUI = Push(combatGUIName);
+        CombatGUI combat = combatGUI.GetComponent<CombatGUI>();
+
+        return combat;
+    }
 
 }

@@ -14,8 +14,8 @@ MonoBehaviour:
   name: Piers
   description: Descripcion
   animatorController: {fileID: 9100000, guid: 1e10854bbd8f8274abed7864d8b8f886, type: 2}
-  healthPoints: 75
-  magicPoints: 20
+  healthPoints: 80
+  magicPoints: 40
   type: 3
   experience: 0
   abilityPoints: 0

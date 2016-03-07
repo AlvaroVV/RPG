@@ -14,8 +14,8 @@ MonoBehaviour:
   name: Gareth
   description: Descripcion
   animatorController: {fileID: 9100000, guid: c9cfc611b246ecf4fa0b8e65e018c818, type: 2}
-  healthPoints: 60
-  magicPoints: 35
+  healthPoints: 90
+  magicPoints: 20
   type: 1
   experience: 0
   abilityPoints: 0

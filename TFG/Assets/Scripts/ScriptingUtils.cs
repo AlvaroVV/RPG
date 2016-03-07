@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ScriptingUtils  {
 
-    public delegate void Accion(Collider2D other);
+    
 
 	public static IEnumerator showNpcDialogue(NPC npc, bool showTexts)
     {
@@ -62,5 +62,6 @@ public static class ScriptingUtils  {
         }
     }
 
+   
 
 }

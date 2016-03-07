@@ -14,8 +14,8 @@ MonoBehaviour:
   name: Sole
   description: Descripcion
   animatorController: {fileID: 9100000, guid: 2eb338dd69479464fa7e286a5d1a91a7, type: 2}
-  healthPoints: 75
-  magicPoints: 20
+  healthPoints: 70
+  magicPoints: 45
   type: 2
   experience: 0
   abilityPoints: 0
