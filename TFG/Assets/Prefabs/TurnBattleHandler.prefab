@@ -39,8 +39,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 101b939dcd86790449b691b2d33c2b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPoints: []
-  enemyTeam: []
+  EnemyPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  CharacterPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerTeam: []
+  playerTeamFighters: []
+  enemyDatas: []
+  enemyFighters: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
