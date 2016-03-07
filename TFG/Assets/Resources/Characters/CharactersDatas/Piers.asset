@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Piers
   description: Descripcion
-  animatorController: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: 1e10854bbd8f8274abed7864d8b8f886, type: 2}
   healthPoints: 75
   magicPoints: 20
   type: 3

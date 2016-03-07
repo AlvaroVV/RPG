@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Felix
   description: Descripcion
-  animatorController: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: 189a654aa90a02941bbf21087043c936, type: 2}
   healthPoints: 75
   magicPoints: 20
   type: 0
