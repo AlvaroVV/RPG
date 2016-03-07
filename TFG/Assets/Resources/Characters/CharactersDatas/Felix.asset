@@ -16,6 +16,7 @@ MonoBehaviour:
   animatorController: {fileID: 0}
   healthPoints: 75
   magicPoints: 20
+  type: 0
   experience: 0
   abilityPoints: 0
   attackPower: 10
@@ -24,3 +25,5 @@ MonoBehaviour:
   magicDefense: 5
   speed: 10
   evasion: 5
+  Attacks:
+  - {fileID: 11400000, guid: 458c358684c3efe4487bfacd0ad5e99c, type: 2}

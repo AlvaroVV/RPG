@@ -14,13 +14,15 @@ MonoBehaviour:
   name: Nadia
   description: Descripcion
   animatorController: {fileID: 0}
-  healthPoints: 75
-  magicPoints: 20
+  healthPoints: 60
+  magicPoints: 35
+  type: 1
   experience: 0
   abilityPoints: 0
-  attackPower: 10
+  attackPower: 5
   defensePower: 5
   magicPower: 5
   magicDefense: 5
   speed: 10
   evasion: 5
+  Attacks: []
