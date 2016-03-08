@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class CombatGUI : MonoBehaviour {
 
     public GameObject HealthPanel;
-    private List<BaseStatCharacter> PlayerTeam;
 
     public static CombatGUI instance;
 

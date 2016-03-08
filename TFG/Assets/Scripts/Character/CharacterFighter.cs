@@ -27,4 +27,16 @@ public class CharacterFighter : MonoBehaviour {
         this.statsPanel = statsPanel;
         statsPanel.addCharacter(characterData);
     }
+
+    public void Damage(int damage)
+    {
+        characterData.currentHP -= damage;
+        statsPanel.updateCurrentHP();
+    }
+
+    public void UseMagic(int MPs)
+    {
+        characterData.currentMP -= MPs;
+        statsPanel.updateCurrentMP();
+    }
 }

@@ -11,6 +11,7 @@ public class HealthPanel : MonoBehaviour {
     public Text HP_Total;
     public Text MP_Total;
 
+    private BaseStatCharacter character;
 
     public void addCharacter(BaseStatCharacter character)
     {
@@ -20,5 +21,15 @@ public class HealthPanel : MonoBehaviour {
         HP_Current.text = character.currentHP.ToString();
         MP_Current.text = character.currentMP.ToString();
     }
-	
+
+    public void updateCurrentHP()
+    {
+        this.HP_Current.text = character.currentHP.ToString();
+    }
+
+    public void updateCurrentMP()
+    {
+        this.MP_Current.text = character.currentMP.ToString();
+    }
+
 }
