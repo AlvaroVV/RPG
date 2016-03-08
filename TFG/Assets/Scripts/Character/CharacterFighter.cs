@@ -5,6 +5,7 @@ public class CharacterFighter : MonoBehaviour {
 
     private Animator anim;
     private BaseStatCharacter characterData;
+    private HealthPanel healthPanel;
 
     public void setCharacterProperties(BaseStatCharacter characterData)
     {

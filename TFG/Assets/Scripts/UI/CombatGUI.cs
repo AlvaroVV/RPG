@@ -5,11 +5,24 @@ using System.Collections.Generic;
 public class CombatGUI : MonoBehaviour {
 
     public GameObject HealthPanel;
-
     private List<BaseStatCharacter> PlayerTeam;
 
-	// Use this for initialization
-	void Start () {
+    public static CombatGUI instance;
+
+    public static CombatGUI Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    void Awake()
+    {
+        instance = this;
+    }
+    // Use this for initialization
+    void Start () {
         PlayerTeam = GameGlobals.player.playerTeam;
         ChargeHealthPanels();
 	}

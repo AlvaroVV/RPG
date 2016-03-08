@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Linq;
 
 public class UIManager: MonoBehaviour  {
 
@@ -27,7 +28,11 @@ public class UIManager: MonoBehaviour  {
     public GameObject Push(string panelPrefabName)
     {
         //Si ya existe el panel no creamos otro
-        if (panelStack.Count > 0 && panelStack[panelStack.Count - 1].gameObject.name == panelPrefabName) return null;
+        GameObject panel = panelStack.Where(x => x.name.Equals(panelPrefabName)).SingleOrDefault();
+        if (panel != null)
+        {         
+            return panel;
+        }
         GameObject loadPanel = Resources.Load(panelPrefabName) as GameObject;
         //Si lo cargamos y no lo encontramos lanzamos Error
         if (loadPanel == null) {

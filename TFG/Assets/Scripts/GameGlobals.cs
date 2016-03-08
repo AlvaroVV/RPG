@@ -29,8 +29,6 @@ public static class GameGlobals  {
     //Referencia al objeto TurnBattle para empezar la batalla
     public static GameObject TurnBattle =  GameObject.FindGameObjectWithTag(TagTurnBattle);
 
-    public static CombatGUI CombatGUI;
-
     public enum PlayerState
     {
         Idle,
@@ -59,7 +57,6 @@ public static class GameGlobals  {
         yield return ScriptingUtils.DoAFadeIn();
         handler.InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.       
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagFightStage));    
-        CombatGUI = UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
 
         yield return ScriptingUtils.DoAFadeOut();
         handler.StartFight(enemy);       
