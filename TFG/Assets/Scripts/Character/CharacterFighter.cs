@@ -6,6 +6,7 @@ public class CharacterFighter : MonoBehaviour {
     private Animator anim;
     private BaseStatCharacter characterData;
     private HealthPanel statsPanel;
+    private ActionPanel actionPanel;
 
     public void setCharacterProperties(BaseStatCharacter characterData)
     {
@@ -28,6 +29,12 @@ public class CharacterFighter : MonoBehaviour {
         statsPanel.addCharacter(characterData);
     }
 
+    public void addActionPanel(ActionPanel actionPanel)
+    {
+        this.actionPanel = actionPanel;
+        actionPanel.addCharacter(this);
+    }
+
     public void Damage(int damage)
     {
         characterData.currentHP -= damage;
@@ -38,5 +45,15 @@ public class CharacterFighter : MonoBehaviour {
     {
         characterData.currentMP -= MPs;
         statsPanel.updateCurrentMP();
+    }
+
+    public Animator getAnim()
+    {
+        return anim;
+    }
+
+    public BaseStatCharacter getBaseStatCharacter()
+    {
+        return characterData;
     }
 }
