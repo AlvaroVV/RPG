@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11487430}
   - 114: {fileID: 11412266}
   m_Layer: 5
-  m_Name: HealthPanel
+  m_Name: HealthPanels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Name
+      value: HealthPanels
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191212}

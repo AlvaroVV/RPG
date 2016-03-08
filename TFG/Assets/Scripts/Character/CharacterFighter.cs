@@ -5,7 +5,7 @@ public class CharacterFighter : MonoBehaviour {
 
     private Animator anim;
     private BaseStatCharacter characterData;
-    private HealthPanel healthPanel;
+    private HealthPanel statsPanel;
 
     public void setCharacterProperties(BaseStatCharacter characterData)
     {
@@ -20,5 +20,11 @@ public class CharacterFighter : MonoBehaviour {
     public BaseStatCharacter getEnemyData()
     {
         return characterData;
+    }
+
+    public void addHealthBar(HealthPanel statsPanel)
+    {
+        this.statsPanel = statsPanel;
+        statsPanel.addCharacter(characterData);
     }
 }

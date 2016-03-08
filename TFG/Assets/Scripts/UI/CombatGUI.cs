@@ -21,26 +21,23 @@ public class CombatGUI : MonoBehaviour {
     {
         instance = this;
     }
-    // Use this for initialization
-    void Start () {
-        PlayerTeam = GameGlobals.player.playerTeam;
-        ChargeHealthPanels();
-	}
-
-    private void ChargeHealthPanels()
+  
+    public void CreateHealthBars(List<GameObject> playerFighters)
     {
-        foreach (BaseStatCharacter charac in PlayerTeam)
+        foreach(GameObject objFighter in playerFighters)
         {
-            addHealthPanel(charac);
+            CharacterFighter fighter = objFighter.GetComponent<CharacterFighter>();
+            addHealthPanel(fighter);
         }
     }
+   
 
-    private void addHealthPanel(BaseStatCharacter charac)
+    private void addHealthPanel(CharacterFighter charac)
     {
-        GameObject healthPanel = Resources.Load("UI/HealthPanel") as GameObject;
-        healthPanel.GetComponent<HealthPanel>().addCharacter(charac);
+        GameObject healthPanelObj = Resources.Load("UI/HealthPanel") as GameObject;
+        GameObject panel = GameObject.Instantiate(healthPanelObj, healthPanelObj.transform.position, healthPanelObj.transform.rotation) as GameObject;
 
-        GameObject panel = GameObject.Instantiate(healthPanel, healthPanel.transform.position, healthPanel.transform.rotation) as GameObject;
+        HealthPanel healthPanel = panel.GetComponent<HealthPanel>();
         if (panel != null)
         {
             Transform t = panel.transform;
@@ -53,5 +50,6 @@ public class CombatGUI : MonoBehaviour {
         }
         panel.name = charac.name;
 
+        charac.addHealthBar(healthPanel);
     }
 }

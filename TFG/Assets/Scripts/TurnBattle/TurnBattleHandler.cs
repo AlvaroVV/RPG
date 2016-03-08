@@ -59,25 +59,27 @@ public class TurnBattleHandler : MonoBehaviour{
 
     public void InstantiateTeam()
     {
-        UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
-
+       
         playerTeam = GameGlobals.player.playerTeam;
 
         for (int i = 0; i<playerTeam.Count; i++)
         {
             GameObject characObject = Resources.Load("Characters/CharacterFighter") as GameObject;
-            CharacterFighter characterFighter = characObject.GetComponent<CharacterFighter>();
-
-            characterFighter.setCharacterProperties(playerTeam[i]);
-
             GameObject characInstantiate = GameObject.Instantiate(characObject, CharacterPoints[i].transform.position, Quaternion.identity) as GameObject;
+
+            CharacterFighter characterFighter = characInstantiate.GetComponent<CharacterFighter>();
+            characterFighter.setCharacterProperties(playerTeam[i]);
             characInstantiate.name = playerTeam[i].name;
             characInstantiate.transform.parent = gameObject.transform;
 
             playerTeamFighters.Add(characInstantiate);
         }
 
-    
+        //Creamos el panel CombatGUI y asignamos barras de vida
+        UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
+        CombatGUI.Instance.CreateHealthBars(playerTeamFighters);
+
+
     }
 
     /*

@@ -11,17 +11,14 @@ public class HealthPanel : MonoBehaviour {
     public Text HP_Total;
     public Text MP_Total;
 
-    private BaseStatCharacter character;
-
 
     public void addCharacter(BaseStatCharacter character)
     {
-        this.character = character;
         textName.text = character.name;
         HP_Total.text = character.HealthPoints.ToString();
         MP_Total.text = character.MagicPoints.ToString();
-        HP_Current.text = character.HealthPoints.ToString();
-        MP_Current.text = character.MagicPoints.ToString();
+        HP_Current.text = character.currentHP.ToString();
+        MP_Current.text = character.currentMP.ToString();
     }
 	
 }
