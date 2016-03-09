@@ -57,6 +57,8 @@ public class CameraControll : MonoBehaviour
         }
     }
 
+   
+
 
     public void GoToBackgroundGiven(GameObject background)
     {

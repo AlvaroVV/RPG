@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class StartFightState : IState
 {
@@ -31,7 +32,7 @@ public class StartFightState : IState
     {
         for(int i = 0; i< tb.enemyDatas.Count; i++)
         {
-            InstantiateEnemy(tb.enemyDatas[i], tb.EnemyPoints[i]);
+            InstantiateEnemy(tb.enemyDatas[i], tb.EnemyPoints[i]);        
         }
     }
 
@@ -43,9 +44,17 @@ public class StartFightState : IState
         enemyFighter.setEnemyProperties(enemyData);
 
         GameObject enemyInstantiate = GameObject.Instantiate(enemyObject, transform.position, Quaternion.identity) as GameObject;
-        enemyInstantiate.name = enemyData.name;
         enemyInstantiate.transform.parent = tb.transform;
 
         tb.enemyFighters.Add(enemyInstantiate);
+        enemyInstantiate.name = ChooseName(enemyData.Name);
+        enemyFighter.fighterName = enemyInstantiate.name;
+        Debug.Log(enemyFighter.fighterName + " ha aparecido!");
+        
+    }
+
+    private string ChooseName(string name)
+    {
+        return name+"_" + tb.enemyFighters.Where( fighter => fighter.GetComponent<EnemyFighter>().fighterName.StartsWith(name)).Count();
     }
 }

@@ -7,19 +7,21 @@ public class ActionPanel : MonoBehaviour {
 
     public Button buttonAttack;
     public Text textName;
+    public Image image;
     private CharacterFighter characterFighter;
 
-    void Start()
-    {
-        buttonAttack.onClick.AddListener(() => Attack());
-        textName.text = characterFighter.getBaseStatCharacter().Name;
-    }
-
-    
-
+   
     public void addCharacter(CharacterFighter characterFighter)
     {
         this.characterFighter = characterFighter;
+        buttonAttack.onClick.AddListener(() => Attack());
+        createStats();
+    }
+
+    private void createStats()
+    {
+        textName.text = characterFighter.getBaseStatCharacter().Name;
+        image.sprite = characterFighter.getBaseStatCharacter().face;
     }
 
     public void Attack()

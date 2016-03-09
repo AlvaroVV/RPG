@@ -15,7 +15,9 @@ MonoBehaviour:
   description: Descripcion
   animatorController: {fileID: 9100000, guid: 2eb338dd69479464fa7e286a5d1a91a7, type: 2}
   healthPoints: 70
+  currentHP: 60
   magicPoints: 45
+  currentMP: 15
   type: 2
   experience: 0
   abilityPoints: 0
@@ -25,4 +27,5 @@ MonoBehaviour:
   magicDefense: 5
   speed: 10
   evasion: 5
+  face: {fileID: 21300004, guid: 04d0e9e2502c30f4989deef3a506c5a7, type: 3}
   Attacks: []

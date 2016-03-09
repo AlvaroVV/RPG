@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnemyFighter : MonoBehaviour {
 
+    public string fighterName = "Enemy";
     private Animator anim;
     private EnemyData enemyData;
 
@@ -13,6 +14,7 @@ public class EnemyFighter : MonoBehaviour {
             anim = GetComponentInChildren<Animator>();
             this.enemyData = enemyData;
             anim.runtimeAnimatorController = enemyData.animatorController;
+            fighterName = enemyData.Name;
         }            
     }
 

@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ba56923d8466449b70bfcc5537a1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fighterName: Zipper_1
 --- !u!212 &21287320
 SpriteRenderer:
   m_ObjectHideFlags: 1

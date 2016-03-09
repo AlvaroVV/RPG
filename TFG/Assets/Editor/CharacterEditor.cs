@@ -21,6 +21,7 @@ public class CharacterEditor : Editor {
     SerializedProperty evasion;
     SerializedProperty animController;
     SerializedProperty attacks;
+    SerializedProperty face;
 
 
     void OnEnable()
@@ -41,6 +42,7 @@ public class CharacterEditor : Editor {
         evasion = serializedObject.FindProperty("evasion");
         animController = serializedObject.FindProperty("animatorController");
         attacks = serializedObject.FindProperty("Attacks");
+        face = serializedObject.FindProperty("face");
     }
 
     public override void OnInspectorGUI()
@@ -102,6 +104,8 @@ public class CharacterEditor : Editor {
         // Only show the armor progress bar if all the objects have the same armor value:
         if (!evasion.hasMultipleDifferentValues)
             ProgressBar(evasion.intValue / 100.0f, "evasion");
+
+        EditorGUILayout.PropertyField(face, new GUIContent("Face"));
 
         EditorGUILayout.PropertyField(animController, new GUIContent("AnimController"));
         // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.

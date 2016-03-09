@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class BaseStatCharacter : BaseCharacter {
 
@@ -17,7 +18,7 @@ public class BaseStatCharacter : BaseCharacter {
     public int magicDefense = 5;
     public int speed = 10;
     public int evasion = 5;
-
+    public Sprite face;
     public List<CharacterAttack> Attacks;
 
     public int HealthPoints
