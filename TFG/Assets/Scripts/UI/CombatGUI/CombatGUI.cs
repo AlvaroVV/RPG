@@ -6,6 +6,7 @@ public class CombatGUI : MonoBehaviour {
 
     public GameObject HealthPanel;
     public GameObject ActionPanel;
+    public GameObject TurnFighterPanels;
 
     public static CombatGUI instance;
 
@@ -22,7 +23,7 @@ public class CombatGUI : MonoBehaviour {
         instance = this;
     }
   
-    public void CreateHealthBars(List<GameObject> playerFighters)
+    public void CreateCharactersPanels(List<GameObject> playerFighters)
     {
         foreach(GameObject objFighter in playerFighters)
         {
@@ -32,6 +33,13 @@ public class CombatGUI : MonoBehaviour {
         }
     }
    
+    public void CreateTurnFighterPanels(List<Fighter> fighters)
+    {
+        foreach(Fighter fighter in fighters)
+        {
+            addTurnFightPanel(fighter);
+        }
+    }
 
     private void addHealthPanel(CharacterFighter charac)
     {
@@ -45,6 +53,30 @@ public class CombatGUI : MonoBehaviour {
         charac.addHealthBar(healthPanel);
     }
 
+    private void addActionPanel(CharacterFighter charac)
+    {
+        GameObject actionPanelObj = Resources.Load("UI/ActionPanel") as GameObject;
+        GameObject panel = GameObject.Instantiate(actionPanelObj, actionPanelObj.transform.position, actionPanelObj.transform.rotation) as GameObject;
+
+        addChild(panel, ActionPanel);
+        panel.SetActive(false);
+        panel.name = "ActionBar_" + charac.name;
+        ActionPanel actionPanel = panel.GetComponent<ActionPanel>();
+        charac.addActionPanel(actionPanel);
+    }
+
+    private void addTurnFightPanel(Fighter fighter)
+    {
+        GameObject actionPanelObj = Resources.Load("UI/TurnfighterPanel") as GameObject;
+        GameObject panel = GameObject.Instantiate(actionPanelObj, actionPanelObj.transform.position, actionPanelObj.transform.rotation) as GameObject;
+
+        addChild(panel, TurnFighterPanels);
+        panel.SetActive(true);
+        panel.name = "TurnFighter_" + fighter.name;
+        TurnFighterPanel actionPanel = panel.GetComponent<TurnFighterPanel>();
+        fighter.addTurnPanel(actionPanel);
+    }
+
     private void addChild(GameObject child, GameObject parent)
     {
         if (child != null)
@@ -56,17 +88,5 @@ public class CombatGUI : MonoBehaviour {
             t.localScale = Vector3.one;
             child.layer = parent.layer;
         }
-    }
-
-    private void addActionPanel(CharacterFighter charac)
-    {
-        GameObject actionPanelObj = Resources.Load("UI/ActionPanel") as GameObject;
-        GameObject panel = GameObject.Instantiate(actionPanelObj, actionPanelObj.transform.position, actionPanelObj.transform.rotation) as GameObject;
-
-        addChild(panel, ActionPanel);
-        panel.SetActive(false);
-        panel.name = "ActionBar_" + charac.name;
-        ActionPanel actionPanel = panel.GetComponent<ActionPanel>();
-        charac.addActionPanel(actionPanel);
     }
 }

@@ -19,6 +19,9 @@ public class TurnBattleHandler : MonoBehaviour{
     [HideInInspector]public List<EnemyData> enemyDatas;
     [HideInInspector]public List<GameObject> enemyFighters;
 
+    //TurnStack
+    [HideInInspector]public List<Fighter> stackTurnfighter;
+
     //States
     [HideInInspector]public StartFightState startFight;
     [HideInInspector]public ChooseFighterState chooseFighter;
@@ -32,6 +35,7 @@ public class TurnBattleHandler : MonoBehaviour{
         startFight = new StartFightState(this);
         chooseFighter = new ChooseFighterState(this);
         finishBattle = new FinishBattleState(this);
+        stackTurnfighter = new List<Fighter>();
     }
 
     void Update()
@@ -73,11 +77,12 @@ public class TurnBattleHandler : MonoBehaviour{
             characInstantiate.transform.parent = gameObject.transform;
 
             playerTeamFighters.Add(characInstantiate);
+            stackTurnfighter.Add(characterFighter);
         }
 
         //Creamos el panel CombatGUI y asignamos barras de vida
         UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
-        CombatGUI.Instance.CreateHealthBars(playerTeamFighters);
+        CombatGUI.Instance.CreateCharactersPanels(playerTeamFighters);
 
 
     }

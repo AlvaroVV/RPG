@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyFighter : MonoBehaviour {
+public class EnemyFighter : Fighter {
 
-    public string fighterName = "Enemy";
-    private Animator anim;
     private EnemyData enemyData;
 
     public void setEnemyProperties(EnemyData enemyData)

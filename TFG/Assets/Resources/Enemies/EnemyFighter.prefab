@@ -87,6 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Zipper_1
+  fighterImage: {fileID: 0}
+  anim: {fileID: 9526326}
 --- !u!212 &21287320
 SpriteRenderer:
   m_ObjectHideFlags: 1

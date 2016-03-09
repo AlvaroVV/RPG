@@ -18,7 +18,7 @@ public class StartFightState : IState
     {
         Debug.Log("START FIGHT");
         InstantiateEnemies();
-       
+        CombatGUI.Instance.CreateTurnFighterPanels(tb.stackTurnfighter);
         changeState();
     }
  
@@ -34,7 +34,9 @@ public class StartFightState : IState
         {
             InstantiateEnemy(tb.enemyDatas[i], tb.EnemyPoints[i]);        
         }
+        
     }
+
 
     private void InstantiateEnemy(EnemyData enemyData,Transform transform)
     {
@@ -47,10 +49,11 @@ public class StartFightState : IState
         enemyInstantiate.transform.parent = tb.transform;
 
         tb.enemyFighters.Add(enemyInstantiate);
+
         enemyInstantiate.name = ChooseName(enemyData.Name);
         enemyFighter.fighterName = enemyInstantiate.name;
-        Debug.Log(enemyFighter.fighterName + " ha aparecido!");
-        
+
+        tb.stackTurnfighter.Add(enemyFighter);
     }
 
     private string ChooseName(string name)

@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterFighter : MonoBehaviour {
+public class CharacterFighter : Fighter {
 
-    private Animator anim;
     private BaseStatCharacter characterData;
     private HealthPanel statsPanel;
     private ActionPanel actionPanel;
@@ -14,6 +13,8 @@ public class CharacterFighter : MonoBehaviour {
         {
             anim = GetComponentInChildren<Animator>();
             this.characterData = characterData;
+            fighterName = characterData.Name;
+            fighterImage = characterData.face;
             anim.runtimeAnimatorController = characterData.animatorController;
         }
     }
@@ -45,11 +46,6 @@ public class CharacterFighter : MonoBehaviour {
     {
         characterData.currentMP -= MPs;
         statsPanel.updateCurrentMP();
-    }
-
-    public Animator getAnim()
-    {
-        return anim;
     }
 
     public BaseStatCharacter getBaseStatCharacter()
