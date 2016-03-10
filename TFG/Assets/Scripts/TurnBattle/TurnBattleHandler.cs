@@ -58,7 +58,7 @@ public class TurnBattleHandler : MonoBehaviour{
         //Guardamos la lista de enemigos
         enemyDatas = new List<EnemyData>(enemy.EnemyTeam);
         //Destruimos la IA del enemigo
-        Destroy(enemy.gameObject);
+        UnityEngine.Object.Destroy(enemy.gameObject);
         currentState = startFight;
 
     }
@@ -105,6 +105,7 @@ public class TurnBattleHandler : MonoBehaviour{
     public void FinishBattle()
     {
         CleanEnemiesList(); //TEMPORAL
+        CleanStackList(); //TEMPORAL
         StartCoroutine(GameGlobals.FinishFight());
         GameGlobals.player.StateIdle();
         currentState = null;
@@ -114,22 +115,29 @@ public class TurnBattleHandler : MonoBehaviour{
     private void CleanEnemiesList()
     {
         foreach (GameObject enemy in enemyFighters)
-            DestroyEnemy(enemy);
+            Destroy(enemy);
         enemyFighters = new List<GameObject>();
+    }
+
+    private void CleanStackList()
+    {
+        foreach(Fighter fighter in stackTurnfighter)
+            Destroy(fighter);
+        stackTurnfighter = new List<Fighter>();
     }
 
     public void CleanCharactersList()
     {
         foreach (GameObject charac in playerTeamFighters)
-            DestroyEnemy(charac);
+            Destroy(charac);
         playerTeamFighters = new List<GameObject>();
     }
 
-    public void DestroyEnemy(GameObject enemy)
+    public void Destroy(GameObject enemy)
     {
         enemy.gameObject.SetActive(false);
         enemy.transform.SetParent(null);
-        Destroy(enemy.gameObject);
+        UnityEngine.Object.Destroy(enemy.gameObject);
     }
 
 }

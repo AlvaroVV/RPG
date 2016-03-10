@@ -56,7 +56,7 @@ public static class GameGlobals  {
 
         yield return ScriptingUtils.DoAFadeIn();
         handler.InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.       
-        camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagFightStage));    
+        camera.GoToFightStage(GameObject.FindGameObjectWithTag(TagFightStage));    
 
         yield return ScriptingUtils.DoAFadeOut();
         handler.StartFight(enemy);       

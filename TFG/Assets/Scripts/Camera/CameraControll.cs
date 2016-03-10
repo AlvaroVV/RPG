@@ -76,6 +76,24 @@ public class CameraControll : MonoBehaviour
             Debug.LogError("El GameObject no tiene componente TiledMap");
     }
 
+    public void GoToFightStage(GameObject fightStage)
+    {
+        //En la pelea la camara no se moverá
+        canMove = false;
+
+        if (fightStage.GetComponent<TiledMap>() != null)
+        {
+            float backWidth = fightStage.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
+            float backHeigth = fightStage.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
+
+            camara.transform.position = new Vector3(fightStage.transform.position.x + backWidth / 2,
+                                                     fightStage.transform.position.y - backHeigth / 2,
+                                                     camara.transform.position.z);
+        }
+        else
+            Debug.LogError("El GameObject no tiene componente TiledMap");
+    }
+
     void calcularParametrosCamara()
     {
         camara = Camera.main;
@@ -88,7 +106,7 @@ public class CameraControll : MonoBehaviour
         float backWidth = background.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
         float backHeigth = background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
 
-        if ((backWidth < cameraWidth) && (backWidth < cameraWidth))
+        if ((backWidth < cameraWidth) && (backHeigth < cameraHeigth))
         {
             
             camara.transform.position = new Vector3(background.transform.position.x + backWidth/2,
