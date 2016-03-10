@@ -15,5 +15,7 @@ public class TurnFighterPanel : MonoBehaviour {
         FighterName.text = fighter.fighterName;
         if (fighter.fighterImage != null)
             FighterImage.sprite = fighter.fighterImage;
+        else
+            FighterImage.gameObject.SetActive(false);
     }
 }
