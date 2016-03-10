@@ -22,7 +22,8 @@ public class ChooseFighterState : IState
 
     private void ActivateActionPanel()
     {
-        tb.stackTurnfighter[0].setActivePanelAction(true);
+        tb.currentFighter = tb.stackTurnfighter[0];
+
                        
     }
     public void changeState()

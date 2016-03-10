@@ -20,6 +20,7 @@ public class ChooseActionState : IState
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ACTION");
+        tb.currentFighter.setActivePanelAction(true);
         yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
 

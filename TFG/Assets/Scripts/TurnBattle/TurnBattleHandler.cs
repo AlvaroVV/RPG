@@ -24,6 +24,7 @@ public class TurnBattleHandler : MonoBehaviour{
 
     //TurnStack
     [HideInInspector]public List<Fighter> stackTurnfighter;
+    [HideInInspector]public Fighter currentFighter;
 
     //States
     [HideInInspector]public StartfightTeamState startTeam;
