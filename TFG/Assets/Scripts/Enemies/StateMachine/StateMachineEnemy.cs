@@ -96,10 +96,7 @@ public class StateMachineEnemy : MonoBehaviour {
 
     void StartFight()
     {
-
-        StartCoroutine(GameGlobals.StartFight(this));
-        //DestroyEnemy();
-          
+        GameGlobals.StartFight(this);        
     }
 
     void Catched()

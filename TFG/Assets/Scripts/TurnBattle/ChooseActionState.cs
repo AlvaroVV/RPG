@@ -17,10 +17,10 @@ public class ChooseActionState : IState
         tb.ChangeState(tb.finishBattle);
     }
 
-    public void UpdateState()
+    public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ACTION");
-        Wait();
+        yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
 
     void Wait()

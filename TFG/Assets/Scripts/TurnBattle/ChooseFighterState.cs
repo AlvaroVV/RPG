@@ -12,12 +12,12 @@ public class ChooseFighterState : IState
         this.tb = tb;
     }
     
-    public void UpdateState()
+    public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE FIGHTER");
         CombatGUI.Instance.CreateTurnFighterPanels(tb.stackTurnfighter);
         ActivateActionPanel();
-        changeState();
+        yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
 
     private void ActivateActionPanel()

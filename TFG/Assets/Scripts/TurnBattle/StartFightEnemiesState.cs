@@ -4,21 +4,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class StartFightState : IState
+public class StartFightEnemiesState : IState
 {
 
     private TurnBattleHandler tb;
 
-    public StartFightState (TurnBattleHandler tb)
+    public StartFightEnemiesState(TurnBattleHandler tb)
     {
         this.tb = tb;
     }
 
-    public void UpdateState()
+    public IEnumerator UpdateState()
     {
-        Debug.Log("START FIGHT");
+        Debug.Log("START ENEMIES");
         InstantiateEnemies();
-        changeState();
+        yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
  
 

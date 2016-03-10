@@ -50,17 +50,10 @@ public static class GameGlobals  {
         Magic,
     }
 
-    public static IEnumerator StartFight(StateMachineEnemy enemy)
+    public static void StartFight(StateMachineEnemy enemy)
     {
         TurnBattleHandler handler = TurnBattle.GetComponent<TurnBattleHandler>();
-
-        yield return ScriptingUtils.DoAFadeIn();
-        handler.InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.       
-        camera.GoToFightStage(GameObject.FindGameObjectWithTag(TagFightStage));    
-
-        yield return ScriptingUtils.DoAFadeOut();
-        handler.StartFight(enemy);       
-        BackReference.gameObject.SetActive(false);       
+        handler.StartCoroutine(handler.StartFight(enemy));              
     }
 
     public static IEnumerator FinishFight()

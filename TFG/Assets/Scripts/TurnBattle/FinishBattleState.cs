@@ -12,10 +12,10 @@ public class FinishBattleState : IState
     }
 
 
-    public void UpdateState()
+    public IEnumerator UpdateState()
     {
         Debug.Log("FINISH BATTLE");
-        changeState();
+        yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
 
     public void changeState()
