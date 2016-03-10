@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Fighter : MonoBehaviour {
+public abstract class Fighter : MonoBehaviour {
 
     public string fighterName = "Fighter";
     public Sprite fighterImage;
@@ -19,4 +19,6 @@ public class Fighter : MonoBehaviour {
     {
         return anim;
     }
+
+    public abstract void setActivePanelAction(bool activate);
 }

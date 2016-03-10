@@ -15,27 +15,18 @@ public class ChooseFighterState : IState
     public void UpdateState()
     {
         Debug.Log("CHOOSE FIGHTER");
-        
-        Wait();
+        CombatGUI.Instance.CreateTurnFighterPanels(tb.stackTurnfighter);
+        ActivateActionPanel();
+        changeState();
     }
 
-    void Wait()
+    private void ActivateActionPanel()
     {
-        if(Input.GetKeyDown(KeyCode.T))
-            changeState();
+        tb.stackTurnfighter[0].setActivePanelAction(true);
+                       
     }
-    IEnumerator WaitForKeyPress(KeyCode key)
-    {
-        while (!Input.GetKeyDown(key))
-        {
-            yield return null;
-        }
-        yield return null;
-
-    }
-
     public void changeState()
     {
-        tb.ChangeState(tb.finishBattle);
+        tb.ChangeState(tb.chooseAction);
     }
 }

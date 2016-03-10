@@ -20,4 +20,9 @@ public class EnemyFighter : Fighter {
     {
         return enemyData;
     }
+
+    public override void setActivePanelAction(bool activate)
+    {
+        Debug.Log("El enemigo no tiene Action Panel");
+    }
 }

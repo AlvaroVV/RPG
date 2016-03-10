@@ -52,4 +52,9 @@ public class CharacterFighter : Fighter {
     {
         return characterData;
     }
+
+    public override void setActivePanelAction(bool activate)
+    {
+        actionPanel.gameObject.SetActive(activate);
+    }
 }

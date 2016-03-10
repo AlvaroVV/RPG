@@ -18,7 +18,6 @@ public class StartFightState : IState
     {
         Debug.Log("START FIGHT");
         InstantiateEnemies();
-        CombatGUI.Instance.CreateTurnFighterPanels(tb.stackTurnfighter);
         changeState();
     }
  
