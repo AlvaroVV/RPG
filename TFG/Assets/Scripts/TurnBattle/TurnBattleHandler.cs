@@ -11,6 +11,9 @@ public class TurnBattleHandler : MonoBehaviour{
     public Transform[] EnemyPoints;
     public Transform[] CharacterPoints;
 
+    //Enemy
+    [HideInInspector]public StateMachineEnemy enemy;
+
     //List team
     [HideInInspector] public List<BaseStatCharacter> playerTeam;
     [HideInInspector]public List<GameObject> playerTeamFighters;
@@ -23,7 +26,8 @@ public class TurnBattleHandler : MonoBehaviour{
     [HideInInspector]public List<Fighter> stackTurnfighter;
 
     //States
-    [HideInInspector]public StartFightState startFight;
+    [HideInInspector]public StartfightTeamState startTeam;
+    [HideInInspector]public StartFightEnemiesState startEnemies;
     [HideInInspector]public ChooseFighterState chooseFighter;
     [HideInInspector]public FinishBattleState finishBattle;
     [HideInInspector]public ChooseActionState chooseAction;
@@ -33,61 +37,45 @@ public class TurnBattleHandler : MonoBehaviour{
     void Awake()
     {
         //Inicializamos los estados
-        startFight = new StartFightState(this);
+        startTeam = new StartfightTeamState(this);
+        startEnemies = new StartFightEnemiesState(this);
         chooseFighter = new ChooseFighterState(this);
-        finishBattle = new FinishBattleState(this);
         chooseAction = new ChooseActionState(this);
+        finishBattle = new FinishBattleState(this);
         stackTurnfighter = new List<Fighter>();
     }
-
-    void Update()
-    {
-        //Cuando llamamos desde fuera al StartFight le pasamos el Estado Start.
-        if(currentState != null)
-            currentState.UpdateState();
-    }
-
 
     public void ChangeState(IState nextState)
     {
         currentState = nextState;
     }
 
-    public void StartFight(StateMachineEnemy enemy)
+    public IEnumerator StartFight(StateMachineEnemy enemy)
     {
-        //Guardamos la lista de enemigos
-        enemyDatas = new List<EnemyData>(enemy.EnemyTeam);
-        //Destruimos la IA del enemigo
-        UnityEngine.Object.Destroy(enemy.gameObject);
-        currentState = startFight;
 
-    }
-
-    public void InstantiateTeam()
-    {
-       
+        //Cogemos listas de Enemigos y Team
+        this.enemy = enemy;
         playerTeam = GameGlobals.player.playerTeam;
 
-        for (int i = 0; i<playerTeam.Count; i++)
+        currentState = startTeam;
+
+        while(currentState != null)
         {
-            GameObject characObject = Resources.Load("Characters/CharacterFighter") as GameObject;
-            GameObject characInstantiate = GameObject.Instantiate(characObject, CharacterPoints[i].transform.position, Quaternion.identity) as GameObject;
+            yield return currentState.UpdateState();
+            currentState.changeState();
+        }
+    }
 
-            CharacterFighter characterFighter = characInstantiate.GetComponent<CharacterFighter>();
-            characterFighter.setCharacterProperties(playerTeam[i]);
-            characInstantiate.name = playerTeam[i].name;
-            characInstantiate.transform.parent = gameObject.transform;
-
-            playerTeamFighters.Add(characInstantiate);
-            stackTurnfighter.Add(characterFighter);
+    public IEnumerator WaitForKeyPressed(KeyCode key)
+    {
+        while(!Input.GetKeyDown(key))
+        {
+            yield return null;
         }
 
-        //Creamos el panel CombatGUI y asignamos barras de vida
-        UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
-        CombatGUI.Instance.CreateCharactersPanels(playerTeamFighters);
-
-
+        yield return null;
     }
+
 
     /*
     public void CharacterPerformAction(CharacterAction action)
@@ -100,7 +88,6 @@ public class TurnBattleHandler : MonoBehaviour{
 
     }
     */
-
 
     public void FinishBattle()
     {
