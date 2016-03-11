@@ -9,13 +9,12 @@ public class ActionPanel : MonoBehaviour {
     public Text textName;
     public Image image;
     private CharacterFighter characterFighter;
-    private FighterAction action; 
 
 
     public void addCharacter(CharacterFighter characterFighter)
     {
         this.characterFighter = characterFighter;
-        buttonAttack.onClick.AddListener(() => CreateAction(Attack));
+        buttonAttack.onClick.AddListener(() => SetAction(Attack));
         createStats();
     }
 
@@ -30,21 +29,16 @@ public class ActionPanel : MonoBehaviour {
         characterFighter.getAnim().SetTrigger("Attack");
     }
 
-    public void CreateAction(Action actionAttack)
+    public void SetAction(Action actionAttack)
     {
-        action = new FighterAction(actionAttack);
+        characterFighter.fighterAction.setAttack(actionAttack);
     }
 
     public IEnumerator waitForAttack()
     {
-        while(action == null)
+        while(characterFighter.fighterAction == null)
         {
             yield return null;
         }
-    }
-
-    public void ExecuteAction()
-    {
-        action.ExecuteAction();
     }
 }

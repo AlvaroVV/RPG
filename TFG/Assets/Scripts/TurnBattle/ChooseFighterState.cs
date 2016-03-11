@@ -15,14 +15,13 @@ public class ChooseFighterState : IState
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE FIGHTER");
-        ActivateActionPanel();
+        ChooseFighter();
         yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
 
-    private void ActivateActionPanel()
+    private void ChooseFighter()
     {
         tb.currentFighter = tb.stackTurnfighter[0];
-        tb.currentFighter.setActivePanelAction(true);
 
     }
     public void changeState()

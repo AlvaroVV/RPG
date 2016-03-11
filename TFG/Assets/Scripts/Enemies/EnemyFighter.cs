@@ -26,10 +26,4 @@ public class EnemyFighter : Fighter {
     {
         Debug.Log("El enemigo no tiene Action Panel");
     }
-
-    public override ActionPanel getActionPanel()
-    {
-        Debug.Log("El enemigo no tiene Action Panel");
-        return null;
-    }
 }

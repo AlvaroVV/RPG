@@ -59,8 +59,4 @@ public class CharacterFighter : Fighter {
         actionPanel.gameObject.SetActive(activate);
     }
 
-    public override ActionPanel getActionPanel()
-    {
-        return actionPanel;
-    }
 }

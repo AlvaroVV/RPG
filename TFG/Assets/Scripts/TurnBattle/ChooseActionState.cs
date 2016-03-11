@@ -7,6 +7,7 @@ public class ChooseActionState : IState
 
     private TurnBattleHandler tb;
 
+
     public ChooseActionState(TurnBattleHandler tb)
     {
         this.tb = tb;
@@ -20,7 +21,7 @@ public class ChooseActionState : IState
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ACTION");
-
-        yield return tb.currentFighter.getActionPanel().waitForAttack();
+        tb.currentFighter.setActivePanelAction(true);
+        yield return tb.currentFighter.getFighterAction().waitForAttack();
     }
 }

@@ -4,12 +4,12 @@ using System;
 
 public class FighterAction  {
 
-    private Action attack;
-    private GameObject objetive;
+    private Action attack; //Acción elegida
+    private GameObject objetive; //Enemigo elegido
 
-    public FighterAction(Action action)
+    public void setAttack(Action attack)
     {
-        this.attack = action;
+        this.attack = attack;
     }
 
     public void setObjetive(GameObject objetive)
@@ -20,6 +20,12 @@ public class FighterAction  {
     public void ExecuteAction()
     {
         attack();
+    }
+
+    public IEnumerator waitForAttack()
+    {
+        while (attack == null)
+            yield return null;
     }
     
 }
