@@ -6,6 +6,7 @@ public abstract class Fighter : MonoBehaviour {
     public string fighterName = "Fighter";
     public Sprite fighterImage;
     public Animator anim;
+    public ActionPanel actionPanel;
 
     private TurnFighterPanel turnFighterPanel;
 
@@ -21,4 +22,5 @@ public abstract class Fighter : MonoBehaviour {
     }
 
     public abstract void setActivePanelAction(bool activate);
+    public abstract ActionPanel getActionPanel();
 }

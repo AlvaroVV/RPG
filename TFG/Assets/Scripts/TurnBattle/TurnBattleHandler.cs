@@ -32,6 +32,8 @@ public class TurnBattleHandler : MonoBehaviour{
     [HideInInspector]public ChooseFighterState chooseFighter;
     [HideInInspector]public FinishBattleState finishBattle;
     [HideInInspector]public ChooseActionState chooseAction;
+    [HideInInspector]public ChooseEnemyState chooseEnemy;
+    [HideInInspector]public ResolveActionState resolveAction;
 
     private IState currentState;
 
@@ -42,6 +44,8 @@ public class TurnBattleHandler : MonoBehaviour{
         startEnemies = new StartFightEnemiesState(this);
         chooseFighter = new ChooseFighterState(this);
         chooseAction = new ChooseActionState(this);
+        chooseEnemy = new ChooseEnemyState(this);
+        resolveAction = new ResolveActionState(this);
         finishBattle = new FinishBattleState(this);
         stackTurnfighter = new List<Fighter>();
     }

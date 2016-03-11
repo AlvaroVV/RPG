@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class EnemyFighter : Fighter {
 
@@ -22,6 +23,11 @@ public class EnemyFighter : Fighter {
     }
 
     public override void setActivePanelAction(bool activate)
+    {
+        Debug.Log("El enemigo no tiene Action Panel");
+    }
+
+    public override ActionPanel getActionPanel()
     {
         Debug.Log("El enemigo no tiene Action Panel");
     }

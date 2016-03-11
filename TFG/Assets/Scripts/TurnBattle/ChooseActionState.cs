@@ -14,19 +14,13 @@ public class ChooseActionState : IState
 
     public void changeState()
     {
-        tb.ChangeState(tb.finishBattle);
+        tb.ChangeState(tb.chooseEnemy);
     }
 
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ACTION");
-        tb.currentFighter.setActivePanelAction(true);
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
-    }
 
-    void Wait()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-            changeState();
+        yield return tb.currentFighter.getActionPanel().waitForAttack();
     }
 }

@@ -18,6 +18,7 @@ public class StartFightEnemiesState : IState
     {
         Debug.Log("START ENEMIES");
         InstantiateEnemies();
+        CombatGUI.Instance.CreateTurnFighterPanels(tb.stackTurnfighter);
         yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
  

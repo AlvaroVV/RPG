@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CharacterFighter : Fighter {
 
@@ -56,5 +57,10 @@ public class CharacterFighter : Fighter {
     public override void setActivePanelAction(bool activate)
     {
         actionPanel.gameObject.SetActive(activate);
+    }
+
+    public override ActionPanel getActionPanel()
+    {
+        return actionPanel;
     }
 }
