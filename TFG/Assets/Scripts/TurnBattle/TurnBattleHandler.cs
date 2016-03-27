@@ -57,7 +57,6 @@ public class TurnBattleHandler : MonoBehaviour{
 
     public IEnumerator StartFight(StateMachineEnemy enemy)
     {
-
         //Cogemos listas de Enemigos y Team
         this.enemy = enemy;
         playerTeam = GameGlobals.player.playerTeam;
