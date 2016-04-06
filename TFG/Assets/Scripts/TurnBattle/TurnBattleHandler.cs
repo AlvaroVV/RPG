@@ -15,19 +15,19 @@ public class TurnBattleHandler : MonoBehaviour{
     [HideInInspector]public StateMachineEnemy enemy;
 
     //List team
-    [HideInInspector] public List<BaseStatCharacter> playerTeam;
-    [HideInInspector]public List<GameObject> playerTeamFighters;
+    [HideInInspector]public List<BaseStatCharacter> playerTeam;
+    [HideInInspector]public List<CharacterFighter> playerTeamFighters;
 
     //Lists Enemies
     [HideInInspector]public List<EnemyData> enemyDatas;
-    [HideInInspector]public List<GameObject> enemyFighters;
+    [HideInInspector]public List<EnemyFighter> enemyFighters;
 
     //TurnStack
     [HideInInspector]public List<Fighter> stackTurnfighter;
     [HideInInspector]public Fighter currentFighter;
 
     //States
-    [HideInInspector]public StartfightTeamState startTeam;
+    [HideInInspector]public StartFightTeamState startTeam;
     [HideInInspector]public StartFightEnemiesState startEnemies;
     [HideInInspector]public ChooseFighterState chooseFighter;
     [HideInInspector]public FinishBattleState finishBattle;
@@ -40,7 +40,7 @@ public class TurnBattleHandler : MonoBehaviour{
     void Awake()
     {
         //Inicializamos los estados
-        startTeam = new StartfightTeamState(this);
+        startTeam = new StartFightTeamState(this);
         startEnemies = new StartFightEnemiesState(this);
         chooseFighter = new ChooseFighterState(this);
         chooseAction = new ChooseActionState(this);
@@ -105,30 +105,28 @@ public class TurnBattleHandler : MonoBehaviour{
 
     private void CleanEnemiesList()
     {
-        foreach (GameObject enemy in enemyFighters)
-            Destroy(enemy);
-        enemyFighters = new List<GameObject>();
+        foreach (EnemyFighter enemy in enemyFighters)
+            DestroyObject(enemy.gameObject);
+        enemyFighters = new List<EnemyFighter>();
     }
 
     private void CleanStackList()
     {
-        foreach(Fighter fighter in stackTurnfighter)
-            Destroy(fighter);
         stackTurnfighter = new List<Fighter>();
     }
 
     public void CleanCharactersList()
     {
-        foreach (GameObject charac in playerTeamFighters)
-            Destroy(charac);
-        playerTeamFighters = new List<GameObject>();
+        foreach (CharacterFighter charac in playerTeamFighters)
+            DestroyObject(charac.gameObject);
+        playerTeamFighters = new List<CharacterFighter>();
     }
 
-    public void Destroy(GameObject enemy)
+    public void DestroyObject(GameObject gameObject)
     {
-        enemy.gameObject.SetActive(false);
-        enemy.transform.SetParent(null);
-        UnityEngine.Object.Destroy(enemy.gameObject);
+        gameObject.gameObject.SetActive(false);
+        gameObject.transform.SetParent(null);
+        Destroy(gameObject.gameObject);
     }
 
 }

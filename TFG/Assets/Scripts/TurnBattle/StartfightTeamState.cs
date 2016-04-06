@@ -3,12 +3,12 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class StartfightTeamState : IState
+public class StartFightTeamState : IState
 {
 
     TurnBattleHandler tb;
 
-    public StartfightTeamState(TurnBattleHandler tb)
+    public StartFightTeamState(TurnBattleHandler tb)
     {
         this.tb = tb;
     }
@@ -28,11 +28,6 @@ public class StartfightTeamState : IState
 
         yield return ScriptingUtils.DoAFadeOut();
 
-        //Guardamos la lista de enemigos
-        tb.enemyDatas = new List<EnemyData>(tb.enemy.EnemyTeam);
-        //Destruimos la IA del enemigo
-        tb.Destroy(tb.enemy.gameObject);
-
         yield return null;
     }
 
@@ -50,7 +45,6 @@ public class StartfightTeamState : IState
 
     public void InstantiateCharacter(BaseStatCharacter characterData, Transform playerPosition)
     {
-
         GameObject characObject = Resources.Load("Characters/CharacterFighter") as GameObject;
         GameObject characInstantiate = GameObject.Instantiate(characObject, playerPosition.position, Quaternion.identity) as GameObject;
 
@@ -59,7 +53,7 @@ public class StartfightTeamState : IState
         characInstantiate.name = characterData.name;
         characInstantiate.transform.parent = tb.transform;
 
-        tb.playerTeamFighters.Add(characInstantiate);
+        tb.playerTeamFighters.Add(characterFighter);
         tb.stackTurnfighter.Add(characterFighter);
     }
 }

@@ -22,6 +22,7 @@ public class ChooseEnemyState : IState {
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ENEMY");
+        Debug.Log(tb.stackTurnfighter.Count);
         createCursor();
         yield return ChooseTarget();
     }
@@ -32,18 +33,16 @@ public class ChooseEnemyState : IState {
         GameObject cursorObj = GameObject.Instantiate(cursorRes, tb.stackTurnfighter[targetNum].transform.position, Quaternion.identity) as GameObject;
         cursorObj.transform.parent = tb.transform;
         cursor = cursorObj.GetComponent<Cursor>();
-        cursor.ChangeTarget(tb.stackTurnfighter[targetNum]);
-        Debug.Log("Change Target: " + tb.stackTurnfighter[targetNum].name);
+        cursor.ChangeTarget(tb.enemyFighters[targetNum]);
     }
 
     private void changeTarget()
     {
         if(Input.GetKeyDown(KeyCode.W))
         {
-            Debug.Log("Change Target: " + tb.stackTurnfighter[targetNum].name);
             targetNum++;
-            cursor.ChangeTarget(tb.stackTurnfighter[targetNum]);
-            if (targetNum == tb.stackTurnfighter.Count-1) targetNum = -1;
+            cursor.ChangeTarget(tb.enemyFighters[targetNum]);
+            if (targetNum == tb.enemyFighters.Count-1) targetNum = -1;
         }
         else if(Input.GetKeyDown(KeyCode.Space))
         {

@@ -23,11 +23,10 @@ public class CombatGUI : MonoBehaviour {
         instance = this;
     }
   
-    public void CreateCharactersPanels(List<GameObject> playerFighters)
+    public void CreateCharactersPanels(List<CharacterFighter> playerFighters)
     {
-        foreach(GameObject objFighter in playerFighters)
+        foreach(CharacterFighter fighter in playerFighters)
         {
-            CharacterFighter fighter = objFighter.GetComponent<CharacterFighter>();
             addHealthPanel(fighter);
             addActionPanel(fighter);
         }

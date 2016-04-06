@@ -30,7 +30,12 @@ public class StartFightEnemiesState : IState
 
     private void InstantiateEnemies()
     {
-        for(int i = 0; i< tb.enemyDatas.Count; i++)
+        //Guardamos la lista de enemigos
+        tb.enemyDatas = new List<EnemyData>(tb.enemy.EnemyTeam);
+        //Destruimos la IA del enemigo
+        tb.DestroyObject(tb.enemy.gameObject);
+
+        for (int i = 0; i< tb.enemyDatas.Count; i++)
         {
             InstantiateEnemy(tb.enemyDatas[i], tb.EnemyPoints[i]);        
         }
@@ -51,7 +56,7 @@ public class StartFightEnemiesState : IState
         enemyInstantiate.name = ChooseName(enemyData.Name);
         enemyFighter.fighterName = enemyInstantiate.name;
 
-        tb.enemyFighters.Add(enemyInstantiate);
+        tb.enemyFighters.Add(enemyFighter);
         tb.stackTurnfighter.Add(enemyFighter);
     }
 
