@@ -44,6 +44,10 @@ public class PlayerMovement: MonoBehaviour {
     {
         Movement();
         Interact();
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        }
     }
 
 

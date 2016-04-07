@@ -22,7 +22,6 @@ public class ChooseEnemyState : IState {
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ENEMY");
-        Debug.Log(tb.stackTurnfighter.Count);
         createCursor();
         yield return ChooseTarget();
     }
@@ -36,21 +35,6 @@ public class ChooseEnemyState : IState {
         cursor.ChangeTarget(tb.enemyFighters[targetNum]);
     }
 
-    private void changeTarget()
-    {
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            targetNum++;
-            cursor.ChangeTarget(tb.enemyFighters[targetNum]);
-            if (targetNum == tb.enemyFighters.Count-1) targetNum = -1;
-        }
-        else if(Input.GetKeyDown(KeyCode.Space))
-        {
-            target = tb.stackTurnfighter[targetNum];
-        }
-
-    }
-
     private IEnumerator ChooseTarget()
     {
         while (target == null)
@@ -60,5 +44,38 @@ public class ChooseEnemyState : IState {
         }
         yield return null;
     }
+
+    private void changeTarget()
+    {
+        KeyBoardControl();
+        MouseControl();
+    }
+
+    private void KeyBoardControl()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            targetNum++;
+            cursor.ChangeTarget(tb.enemyFighters[targetNum]);
+            if (targetNum == tb.enemyFighters.Count - 1) targetNum = -1;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            target = tb.stackTurnfighter[targetNum];
+        }
+    }
+
+    private void MouseControl()
+    {
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 1500, 1 << GameGlobals.LayerEnemy);
+            if (hit)
+            {
+                cursor.ChangeTargetByClick(hit.collider.gameObject);
+            }
+        }
+   }
 
 }

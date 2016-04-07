@@ -10,4 +10,11 @@ public class Cursor : MonoBehaviour {
         target = newTarget;
         transform.position = target.gameObject.transform.position;
     }
+
+    public void ChangeTargetByClick(GameObject gameObject)
+    {
+        Fighter fighter = gameObject.GetComponent<Fighter>();
+        target = fighter;
+        transform.position = target.gameObject.transform.position;
+    }
 }
