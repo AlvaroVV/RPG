@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Cursor : MonoBehaviour {
 
@@ -11,10 +12,12 @@ public class Cursor : MonoBehaviour {
         transform.position = target.gameObject.transform.position;
     }
 
-    public void ChangeTargetByClick(GameObject gameObject)
+    public void ChangeTargetByClick(GameObject target)
     {
-        Fighter fighter = gameObject.GetComponent<Fighter>();
-        target = fighter;
+        Fighter fighter = target.GetComponent<Fighter>();
         transform.position = target.gameObject.transform.position;
+        this.target = fighter;
     }
+
+    
 }

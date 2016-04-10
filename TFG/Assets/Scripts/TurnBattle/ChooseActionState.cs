@@ -21,7 +21,7 @@ public class ChooseActionState : IState
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ACTION");
-        tb.currentFighter.setActivePanelAction(true);
+        tb.currentFighter.ChooseAttack();
         yield return tb.currentFighter.getFighterAction().waitForAttack();
     }
 }

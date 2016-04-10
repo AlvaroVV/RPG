@@ -22,8 +22,20 @@ public class EnemyFighter : Fighter {
         return enemyData;
     }
 
-    public override void setActivePanelAction(bool activate)
+    public override void ChooseAttack()
     {
+        //IA para elegir el ataque
         Debug.Log("El enemigo no tiene Action Panel");
+    }
+
+    public override IEnumerator ChooseTarget(TurnBattleHandler tb)
+    {
+        //IA para elegir target
+        yield return null;
+    }
+
+    public override void ResolveFighterAction()
+    {
+       
     }
 }

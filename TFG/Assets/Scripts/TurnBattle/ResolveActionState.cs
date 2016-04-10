@@ -18,7 +18,7 @@ public class ResolveActionState : IState {
     public IEnumerator UpdateState()
     {
         Debug.Log("RESOLVE_ACTION");
-        tb.currentFighter.getFighterAction().ExecuteAction();
+        tb.currentFighter.ResolveFighterAction();
         yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
 }

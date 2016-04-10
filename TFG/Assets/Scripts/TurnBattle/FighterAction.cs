@@ -5,19 +5,19 @@ using System;
 public class FighterAction  {
 
     private Action attack; //Acción elegida
-    private GameObject objetive; //Enemigo elegido
+    private Fighter target; //Enemigo elegido
 
     public void setAttack(Action attack)
     {
         this.attack = attack;
     }
 
-    public void setObjetive(GameObject objetive)
+    public void setObjetive(Fighter objetive)
     {
-        this.objetive = objetive;
+        this.target = objetive;
     }
 
-    public void ExecuteAction()
+    public void ExecuteFighterAction()
     {
         attack();
     }
@@ -26,6 +26,15 @@ public class FighterAction  {
     {
         while (attack == null)
             yield return null;
+    }
+
+    public IEnumerator waitForTarget(Action choose)
+    {
+        while (target == null)
+        {
+            choose();
+            yield return null;
+        }
     }
     
 }

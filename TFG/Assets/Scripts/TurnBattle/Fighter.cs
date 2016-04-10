@@ -8,6 +8,7 @@ public abstract class Fighter : MonoBehaviour {
     public Animator anim;
     public FighterAction fighterAction;
     private TurnFighterPanel turnFighterPanel;
+    public Cursor fightCursor;
 
     public Fighter()
     {
@@ -30,5 +31,13 @@ public abstract class Fighter : MonoBehaviour {
         return fighterAction;
     }
 
-    public abstract void setActivePanelAction(bool activate);
+    public void SetCursor(Cursor cursor)
+    {
+        fightCursor = cursor;
+    }
+
+
+    public abstract void ChooseAttack();
+    public abstract IEnumerator ChooseTarget(TurnBattleHandler tb);
+    public abstract void ResolveFighterAction();
 }

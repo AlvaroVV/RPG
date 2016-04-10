@@ -11,16 +11,19 @@ public class TurnBattleHandler : MonoBehaviour{
     public Transform[] EnemyPoints;
     public Transform[] CharacterPoints;
 
+    //Cursor de selección de Target
+    [HideInInspector]public Cursor cursor;
+
     //Enemy
     [HideInInspector]public StateMachineEnemy enemy;
 
     //List team
     [HideInInspector]public List<BaseStatCharacter> playerTeam;
-    [HideInInspector]public List<CharacterFighter> playerTeamFighters;
+    [HideInInspector]public List<Fighter> playerTeamFighters;
 
     //Lists Enemies
     [HideInInspector]public List<EnemyData> enemyDatas;
-    [HideInInspector]public List<EnemyFighter> enemyFighters;
+    [HideInInspector]public List<Fighter> enemyFighters;
 
     //TurnStack
     [HideInInspector]public List<Fighter> stackTurnfighter;
@@ -107,11 +110,12 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         foreach (EnemyFighter enemy in enemyFighters)
             DestroyObject(enemy.gameObject);
-        enemyFighters = new List<EnemyFighter>();
+        enemyFighters = new List<Fighter>();
     }
 
     private void CleanStackList()
     {
+        Destroy(cursor.gameObject);
         stackTurnfighter = new List<Fighter>();
     }
 
@@ -119,7 +123,7 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         foreach (CharacterFighter charac in playerTeamFighters)
             DestroyObject(charac.gameObject);
-        playerTeamFighters = new List<CharacterFighter>();
+        playerTeamFighters = new List<Fighter>();
     }
 
     public void DestroyObject(GameObject gameObject)

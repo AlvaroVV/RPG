@@ -22,7 +22,8 @@ public class StartFightTeamState : IState
         Debug.Log("START_TEAM");
         yield return ScriptingUtils.DoAFadeIn();
 
-        InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.       
+        InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.
+        CreateFightCursor();//Creamos aqui el Cursor de selección pero DESACTIVADO 
         GameGlobals.camera.GoToFightStage(GameObject.FindGameObjectWithTag(GameGlobals.TagFightStage));
         GameGlobals.BackReference.gameObject.SetActive(false);
 
@@ -55,5 +56,14 @@ public class StartFightTeamState : IState
 
         tb.playerTeamFighters.Add(characterFighter);
         tb.stackTurnfighter.Add(characterFighter);
+    }
+
+    public void CreateFightCursor()
+    {
+        GameObject cursorRes = Resources.Load("UI/Cursor") as GameObject;
+        GameObject cursorObj = GameObject.Instantiate(cursorRes, tb.transform.position, Quaternion.identity) as GameObject;
+        cursorObj.transform.parent = tb.transform;
+        tb.cursor = cursorObj.GetComponent<Cursor>();
+        tb.cursor.gameObject.SetActive(false);
     }
 }
