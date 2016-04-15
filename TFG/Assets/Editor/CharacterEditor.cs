@@ -6,7 +6,7 @@ using System.Collections;
 [CanEditMultipleObjects]
 public class CharacterEditor : Editor {
 
-    SerializedProperty name;
+    SerializedProperty characterName;
     SerializedProperty description;
     SerializedProperty healthPoints;
     SerializedProperty magicPoints;
@@ -20,6 +20,7 @@ public class CharacterEditor : Editor {
     SerializedProperty speed;
     SerializedProperty evasion;
     SerializedProperty animController;
+    SerializedProperty normalAttack;
     SerializedProperty attacks;
     SerializedProperty face;
 
@@ -27,7 +28,7 @@ public class CharacterEditor : Editor {
     void OnEnable()
     {
         // Setup the SerializedProperties
-        name = serializedObject.FindProperty("name");
+        characterName = serializedObject.FindProperty("CharacterName");
         description = serializedObject.FindProperty("description");
         healthPoints = serializedObject.FindProperty("healthPoints");
         magicPoints = serializedObject.FindProperty("magicPoints");
@@ -41,6 +42,7 @@ public class CharacterEditor : Editor {
         speed = serializedObject.FindProperty("speed");
         evasion = serializedObject.FindProperty("evasion");
         animController = serializedObject.FindProperty("animatorController");
+        normalAttack = serializedObject.FindProperty("normalAttack");
         attacks = serializedObject.FindProperty("Attacks");
         face = serializedObject.FindProperty("face");
     }
@@ -51,7 +53,7 @@ public class CharacterEditor : Editor {
         serializedObject.Update();
         // Show the custom GUI controls
 
-        EditorGUILayout.PropertyField(name, new GUIContent("Name"));
+        EditorGUILayout.PropertyField(characterName, new GUIContent("Name"));
         EditorGUILayout.PropertyField(description, new GUIContent("Description"));
         EditorGUILayout.PropertyField(characterType, new GUIContent("Type"), true);
 
@@ -64,16 +66,6 @@ public class CharacterEditor : Editor {
         // Only show the armor progress bar if all the objects have the same armor value:
         if (!magicPoints.hasMultipleDifferentValues)
             ProgressBar(magicPoints.intValue / 1000f, "magicPoints");
-
-        EditorGUILayout.IntSlider(experience, 0, 100, new GUIContent("experience"));
-        // Only show the armor progress bar if all the objects have the same armor value:
-        if (!experience.hasMultipleDifferentValues)
-            ProgressBar(experience.intValue / 100.0f, "experience");
-
-        EditorGUILayout.IntSlider(abilityPoints, 0, 100, new GUIContent("abilityPoints"));
-        // Only show the armor progress bar if all the objects have the same armor value:
-        if (!abilityPoints.hasMultipleDifferentValues)
-            ProgressBar(abilityPoints.intValue / 100.0f, "abilityPoints");
 
         EditorGUILayout.IntSlider(attackPower, 0, 100, new GUIContent("attackPower"));
         // Only show the armor progress bar if all the objects have the same armor value:
@@ -105,10 +97,22 @@ public class CharacterEditor : Editor {
         if (!evasion.hasMultipleDifferentValues)
             ProgressBar(evasion.intValue / 100.0f, "evasion");
 
+        EditorGUILayout.IntSlider(experience, 0, 100, new GUIContent("experience"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!experience.hasMultipleDifferentValues)
+            ProgressBar(experience.intValue / 100.0f, "experience");
+
+        EditorGUILayout.IntSlider(abilityPoints, 0, 100, new GUIContent("abilityPoints"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!abilityPoints.hasMultipleDifferentValues)
+            ProgressBar(abilityPoints.intValue / 100.0f, "abilityPoints");
+
         EditorGUILayout.PropertyField(face, new GUIContent("Face"));
 
         EditorGUILayout.PropertyField(animController, new GUIContent("AnimController"));
         // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.
+
+        EditorGUILayout.PropertyField(normalAttack, new GUIContent("Normal Attack"));
 
         EditorGUILayout.PropertyField(attacks, new GUIContent("Attacks"), true);
 

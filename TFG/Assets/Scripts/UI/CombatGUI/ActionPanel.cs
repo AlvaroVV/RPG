@@ -14,31 +14,24 @@ public class ActionPanel : MonoBehaviour {
     public void addCharacter(CharacterFighter characterFighter)
     {
         this.characterFighter = characterFighter;
-        buttonAttack.onClick.AddListener(() => SetAction(Attack));
+        buttonAttack.onClick.AddListener(() => SetAction(Attack()));
         createStats();
     }
 
     private void createStats()
     {
-        textName.text = characterFighter.getBaseStatCharacter().Name;
-        image.sprite = characterFighter.getBaseStatCharacter().face;
+        textName.text = characterFighter.getCharacterData().Name;
+        image.sprite = characterFighter.getCharacterData().face;
     }
 
-    public void Attack()
+    public AttackInfo Attack()
     {
-        characterFighter.getAnim().SetTrigger("Attack");
+        return characterFighter.getCharacterData().normalAttack;
     }
 
-    public void SetAction(Action actionAttack)
+    public void SetAction(AttackInfo attackInfo)
     {
-        characterFighter.fighterAction.setAttack(actionAttack);
+        characterFighter.fighterAction.setAttack(attackInfo);
     }
 
-    public IEnumerator waitForAttack()
-    {
-        while(characterFighter.fighterAction == null)
-        {
-            yield return null;
-        }
-    }
 }

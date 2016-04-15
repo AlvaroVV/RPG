@@ -11,15 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e260f62b54e3d524ab1adeb17d5047bb, type: 3}
   m_Name: Ripper
   m_EditorClassIdentifier: 
-  name: Zipper
+  CharacterName: Ripper
   description: Descripcion
-  hp: 120
-  hitCount: 1
-  damage: 5
-  defense: 2
-  agility: 5
+  healthPoints: 75
+  currentHP: 60
+  magicPoints: 20
+  currentMP: 15
+  attackPower: 10
+  defensePower: 5
+  magicPower: 5
+  magicDefense: 5
+  speed: 10
+  evasion: 5
+  normalAttack: {fileID: 0}
+  Attacks: []
+  animatorController: {fileID: 9100000, guid: be0241429e968344c8fb46c7cd5d1a48, type: 2}
   xp: 7
   gold: 10
-  animatorController: {fileID: 9100000, guid: be0241429e968344c8fb46c7cd5d1a48, type: 2}
-  attacks:
-  - {fileID: 11400000, guid: 2f5c8ae561e2a0340b19b878b98e81eb, type: 2}

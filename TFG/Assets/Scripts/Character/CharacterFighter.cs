@@ -4,10 +4,10 @@ using System;
 
 public class CharacterFighter : Fighter {
 
-    private BaseStatCharacter characterData;
     private HealthPanel statsPanel;
     private ActionPanel actionPanel;
     private GameObject target;
+    private BaseStatCharacter characterData;
 
     public void setCharacterProperties(BaseStatCharacter characterData)
     {
@@ -21,10 +21,11 @@ public class CharacterFighter : Fighter {
         }
     }
 
-    public BaseStatCharacter getEnemyData()
+    public BaseStatCharacter getCharacterData()
     {
         return characterData;
     }
+
 
     public void addHealthBar(HealthPanel statsPanel)
     {
@@ -38,21 +39,16 @@ public class CharacterFighter : Fighter {
         actionPanel.addCharacter(this);
     }
 
-    public void Damage(int damage)
+    public override void GetDamage(int damage)
     {
         characterData.currentHP -= damage;
         statsPanel.updateCurrentHP();
     }
 
-    public void UseMagic(int MPs)
+    public override void UseMagic(int MP)
     {
-        characterData.currentMP -= MPs;
+        characterData.currentMP -= MP;
         statsPanel.updateCurrentMP();
-    }
-
-    public BaseStatCharacter getBaseStatCharacter()
-    {
-        return characterData;
     }
 
     public override void ChooseAttack()
@@ -70,9 +66,32 @@ public class CharacterFighter : Fighter {
   
     public override void ResolveFighterAction()
     {
-        //Eliminamos cursor y ejecutamos FighterAction
+        //Eliminamos cursor 
         fightCursor.gameObject.SetActive(false);
-        fighterAction.ExecuteFighterAction();
+        //Animacion del fighter
+        getAnim().SetTrigger(ChooseTrigger(fighterAction.getAttackType()));
+        //Animación del ataque
+        Instantiate(fighterAction.getAttackAnimation(), fighterAction.getTarget().transform.position, Quaternion.identity);
+        //Calcular daño
+            //GameGlobal.calculateDamage(fighterAction.getDamage());
+            //Mostrar el Daño   
+        //Animación del objetivo
+            fighterAction.getTarget().getAnim().SetTrigger("hurt");
+    }
+
+    private string ChooseTrigger(GameGlobals.AttackType attackType)
+    {
+        switch (attackType)
+        {
+            case GameGlobals.AttackType.Attack:
+                return "Attack";
+
+            case GameGlobals.AttackType.Magic:
+                return "Magic";
+
+            default:
+                return "Idle";
+        }
     }
 
     private void MouseControl()
@@ -93,6 +112,5 @@ public class CharacterFighter : Fighter {
             fighterAction.setObjetive(target.GetComponent<Fighter>());
         }
     }
-
 
 }

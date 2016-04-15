@@ -4,12 +4,12 @@ using System;
 
 public class FighterAction  {
 
-    private Action attack; //Acción elegida
-    private Fighter target; //Enemigo elegido
+    public AttackInfo attackInfo; //Ataque elegido
+    public Fighter target; //Enemigo elegido
 
-    public void setAttack(Action attack)
+    public void setAttack(AttackInfo attackInfo)
     {
-        this.attack = attack;
+        this.attackInfo = attackInfo;
     }
 
     public void setObjetive(Fighter objetive)
@@ -17,14 +17,30 @@ public class FighterAction  {
         this.target = objetive;
     }
 
-    public void ExecuteFighterAction()
+    public GameObject getAttackAnimation()
     {
-        attack();
+        return attackInfo.Animation;
+    }
+
+    public int getDamage()
+    {
+        return attackInfo.Damage;
+    }
+
+    public GameGlobals.AttackType getAttackType()
+    {
+        return attackInfo.FighterState;
+    }
+
+    public Fighter getTarget()
+    {
+        return target;
+        
     }
 
     public IEnumerator waitForAttack()
     {
-        while (attack == null)
+        while (attackInfo == null)
             yield return null;
     }
 

@@ -6,33 +6,42 @@ using System.Collections;
 [CanEditMultipleObjects]
 public class EnemyEditor : Editor
 {
-    SerializedProperty name;
+    SerializedProperty characterName;
     SerializedProperty description;
-    SerializedProperty hp;
-    SerializedProperty hitCount;
-    SerializedProperty damage;
-    SerializedProperty defense;
-    SerializedProperty agility;
+    SerializedProperty healthPoints;
+    SerializedProperty magicPoints;
+    SerializedProperty attackPower;
+    SerializedProperty defensePower;
+    SerializedProperty magicPower;
+    SerializedProperty magicDefense;
+    SerializedProperty speed;
+    SerializedProperty evasion;
     SerializedProperty xp;
     SerializedProperty gold;
     SerializedProperty animController;
     SerializedProperty attacks;
+    SerializedProperty normalAttack;
+
 
 
     void OnEnable()
     {
         // Setup the SerializedProperties
-        name = serializedObject.FindProperty("name");
+        characterName = serializedObject.FindProperty("CharacterName");
         description = serializedObject.FindProperty("description");
-        hp = serializedObject.FindProperty("hp");
-        hitCount = serializedObject.FindProperty("hitCount");
-        damage = serializedObject.FindProperty("damage");
-        agility = serializedObject.FindProperty("agility");
-        defense = serializedObject.FindProperty("defense");
+        healthPoints = serializedObject.FindProperty("healthPoints");
+        magicPoints = serializedObject.FindProperty("magicPoints");
+        attackPower = serializedObject.FindProperty("attackPower");
+        defensePower = serializedObject.FindProperty("defensePower");
+        magicPower = serializedObject.FindProperty("magicPower");
+        magicDefense = serializedObject.FindProperty("magicDefense");
+        speed = serializedObject.FindProperty("speed");
+        evasion = serializedObject.FindProperty("evasion");
         xp = serializedObject.FindProperty("xp");
         gold = serializedObject.FindProperty("gold");
         animController = serializedObject.FindProperty("animatorController");
-        attacks = serializedObject.FindProperty("attacks");
+        attacks = serializedObject.FindProperty("Attacks");
+        normalAttack = serializedObject.FindProperty("normalAttack");
     }
 
     public override void OnInspectorGUI()
@@ -41,48 +50,71 @@ public class EnemyEditor : Editor
         serializedObject.Update();
         // Show the custom GUI controls
 
-        EditorGUILayout.PropertyField(name, new GUIContent("Name"));
+        EditorGUILayout.PropertyField(characterName, new GUIContent("Name"));
         EditorGUILayout.PropertyField(description, new GUIContent("Description"));
 
-        EditorGUILayout.IntSlider(hp, 0, 1000, new GUIContent("HP"));
+        EditorGUILayout.IntSlider(healthPoints, 0, 1000, new GUIContent("healthPoints"));
         // Only show the damage progress bar if all the objects have the same damage value:
-        if (!hp.hasMultipleDifferentValues)
-            ProgressBar(hp.intValue / 1000.0f, "HP");
+        if (!healthPoints.hasMultipleDifferentValues)
+            ProgressBar(healthPoints.intValue / 1000.0f, "healthPoints");
 
-        EditorGUILayout.IntSlider(hitCount, 0, 10, new GUIContent("Hit Count"));
+        EditorGUILayout.IntSlider(magicPoints, 0, 1000, new GUIContent("magicPoints"));
         // Only show the armor progress bar if all the objects have the same armor value:
-        if (!hitCount.hasMultipleDifferentValues)
-            ProgressBar(hitCount.intValue / 10.0f, "Hit Count");
+        if (!magicPoints.hasMultipleDifferentValues)
+            ProgressBar(magicPoints.intValue / 1000f, "magicPoints");
 
-        EditorGUILayout.IntSlider(damage, 0, 100, new GUIContent("Damage"));
-        // Only show the armor progress bar if all the objects have the same armor value:
-        if (!hitCount.hasMultipleDifferentValues)
-            ProgressBar(damage.intValue / 100.0f, "Damage");
 
-        EditorGUILayout.IntSlider(defense, 0, 100, new GUIContent("Defense"));
+        EditorGUILayout.IntSlider(attackPower, 0, 100, new GUIContent("attackPower"));
         // Only show the armor progress bar if all the objects have the same armor value:
-        if (!hitCount.hasMultipleDifferentValues)
-            ProgressBar(defense.intValue / 100.0f, "Defense");
+        if (!attackPower.hasMultipleDifferentValues)
+            ProgressBar(attackPower.intValue / 100.0f, "attackPower");
 
-        EditorGUILayout.IntSlider(agility, 0, 100, new GUIContent("Agility"));
+        EditorGUILayout.IntSlider(defensePower, 0, 100, new GUIContent("defensePower"));
         // Only show the armor progress bar if all the objects have the same armor value:
-        if (!hitCount.hasMultipleDifferentValues)
-            ProgressBar(agility.intValue / 100.0f, "Agility");
+        if (!defensePower.hasMultipleDifferentValues)
+            ProgressBar(defensePower.intValue / 100.0f, "defensePower");
+
+        EditorGUILayout.IntSlider(magicPower, 0, 100, new GUIContent("magicPower"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!magicPower.hasMultipleDifferentValues)
+            ProgressBar(magicPower.intValue / 100.0f, "magicPower");
+
+        EditorGUILayout.IntSlider(magicDefense, 0, 100, new GUIContent("magicDefense"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!magicDefense.hasMultipleDifferentValues)
+            ProgressBar(magicDefense.intValue / 100.0f, "magicDefense");
+
+        EditorGUILayout.IntSlider(speed, 0, 100, new GUIContent("speed"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!speed.hasMultipleDifferentValues)
+            ProgressBar(speed.intValue / 100.0f, "speed");
+
+        EditorGUILayout.IntSlider(speed, 0, 100, new GUIContent("evasion"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!evasion.hasMultipleDifferentValues)
+            ProgressBar(evasion.intValue / 100.0f, "evasion");
+
+        EditorGUILayout.IntSlider(speed, 0, 100, new GUIContent("evasion"));
+        // Only show the armor progress bar if all the objects have the same armor value:
+        if (!evasion.hasMultipleDifferentValues)
+            ProgressBar(evasion.intValue / 100.0f, "evasion");
 
         EditorGUILayout.IntSlider(xp, 0, 100, new GUIContent("XP"));
         // Only show the armor progress bar if all the objects have the same armor value:
-        if (!hitCount.hasMultipleDifferentValues)
+        if (!xp.hasMultipleDifferentValues)
             ProgressBar(xp.intValue / 100.0f, "XP");
 
         EditorGUILayout.IntSlider(gold, 0, 100, new GUIContent("Gold"));
         // Only show the armor progress bar if all the objects have the same armor value:
-        if (!hitCount.hasMultipleDifferentValues)
+        if (!gold.hasMultipleDifferentValues)
             ProgressBar(gold.intValue / 100.0f, "Gold");
 
         EditorGUILayout.PropertyField(animController, new GUIContent("AnimController"));
         // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.
 
-        EditorGUILayout.PropertyField(attacks, true);
+        EditorGUILayout.PropertyField(normalAttack, new GUIContent("Normal Attack"));
+
+        EditorGUILayout.PropertyField(attacks, new GUIContent("Attacks"), true);
 
 
         serializedObject.ApplyModifiedProperties();

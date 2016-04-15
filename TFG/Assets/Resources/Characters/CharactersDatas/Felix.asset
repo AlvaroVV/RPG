@@ -11,22 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cb018440ab7944e840a18d5ead137e, type: 3}
   m_Name: Felix
   m_EditorClassIdentifier: 
-  name: Felix
+  CharacterName: Felix
   description: Descripcion
-  animatorController: {fileID: 9100000, guid: 189a654aa90a02941bbf21087043c936, type: 2}
   healthPoints: 80
   currentHP: 60
   magicPoints: 25
   currentMP: 15
-  type: 0
-  experience: 0
-  abilityPoints: 0
   attackPower: 10
   defensePower: 5
   magicPower: 5
   magicDefense: 5
   speed: 10
   evasion: 5
+  normalAttack: {fileID: 11400000, guid: a03cecfce023ef54fa13924c17113019, type: 2}
+  Attacks: []
+  animatorController: {fileID: 9100000, guid: 189a654aa90a02941bbf21087043c936, type: 2}
+  type: 0
+  experience: 0
+  abilityPoints: 0
   face: {fileID: 21300002, guid: 04d0e9e2502c30f4989deef3a506c5a7, type: 3}
-  Attacks:
-  - {fileID: 11400000, guid: 458c358684c3efe4487bfacd0ad5e99c, type: 2}

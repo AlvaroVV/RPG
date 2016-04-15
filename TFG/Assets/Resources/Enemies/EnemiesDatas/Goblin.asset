@@ -11,15 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e260f62b54e3d524ab1adeb17d5047bb, type: 3}
   m_Name: Goblin
   m_EditorClassIdentifier: 
-  name: Goblin
+  CharacterName: Goblin
   description: Descripcion
-  hp: 100
-  hitCount: 1
-  damage: 5
-  defense: 3
-  agility: 10
+  healthPoints: 75
+  currentHP: 60
+  magicPoints: 20
+  currentMP: 15
+  attackPower: 10
+  defensePower: 5
+  magicPower: 5
+  magicDefense: 5
+  speed: 10
+  evasion: 5
+  normalAttack: {fileID: 0}
+  Attacks: []
+  animatorController: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
   xp: 10
   gold: 15
-  animatorController: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
-  attacks:
-  - {fileID: 11400000, guid: e57fb9277e1208945bebd010d51b65dc, type: 2}

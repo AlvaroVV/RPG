@@ -11,21 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08cb018440ab7944e840a18d5ead137e, type: 3}
   m_Name: Piers
   m_EditorClassIdentifier: 
-  name: Piers
+  CharacterName: Piers
   description: Descripcion
-  animatorController: {fileID: 9100000, guid: 1e10854bbd8f8274abed7864d8b8f886, type: 2}
   healthPoints: 80
   currentHP: 60
   magicPoints: 40
   currentMP: 15
-  type: 3
-  experience: 0
-  abilityPoints: 0
   attackPower: 10
   defensePower: 5
   magicPower: 5
   magicDefense: 5
   speed: 10
   evasion: 5
-  face: {fileID: 21300000, guid: 04d0e9e2502c30f4989deef3a506c5a7, type: 3}
+  normalAttack: {fileID: 0}
   Attacks: []
+  animatorController: {fileID: 9100000, guid: 1e10854bbd8f8274abed7864d8b8f886, type: 2}
+  type: 3
+  experience: 0
+  abilityPoints: 0
+  face: {fileID: 21300000, guid: 04d0e9e2502c30f4989deef3a506c5a7, type: 3}

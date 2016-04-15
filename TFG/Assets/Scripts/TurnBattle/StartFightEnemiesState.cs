@@ -53,7 +53,7 @@ public class StartFightEnemiesState : IState
         enemyFighter.setEnemyProperties(enemyData);
         enemyInstantiate.transform.parent = tb.transform;
 
-        enemyInstantiate.name = ChooseName(enemyData.Name);
+        enemyInstantiate.name = ChooseName(enemyData.CharacterName);
         enemyFighter.fighterName = enemyInstantiate.name;
 
         tb.enemyFighters.Add(enemyFighter);

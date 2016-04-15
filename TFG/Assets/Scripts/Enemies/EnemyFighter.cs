@@ -38,4 +38,16 @@ public class EnemyFighter : Fighter {
     {
        
     }
+
+    public override void GetDamage(int damage)
+    {
+        enemyData.currentHP -= damage;
+    }
+
+    public override void UseMagic(int MP)
+    {
+        enemyData.currentMP -= MP;
+    }
+
+   
 }

@@ -23,21 +23,15 @@ static class EditorMenuItems
         ScriptableObjectUtility.CreateAsset<EnemyData>();
     }
 
-    [MenuItem("Assets/Create/Scriptable Object/Enemy/Attack Enemy")]
-    public static void CreateEnemyAttack()
-    {
-        ScriptableObjectUtility.CreateAsset<EnemyAttack>();
-    }
-
     [MenuItem("Assets/Create/Scriptable Object/Character/new Character")]
     public static void CreateNewCharacter()
     {
         ScriptableObjectUtility.CreateAsset<BaseStatCharacter>();
     }
 
-    [MenuItem("Assets/Create/Scriptable Object/Character/new Attack")]
+    [MenuItem("Assets/Create/Scriptable Object/new Attack")]
     public static void CreateCharacterAttack()
     {
-        ScriptableObjectUtility.CreateAsset<CharacterAttack>();
+        ScriptableObjectUtility.CreateAsset<AttackInfo>();
     }
 }

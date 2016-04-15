@@ -15,7 +15,7 @@ public abstract class Fighter : MonoBehaviour {
         fighterAction = new FighterAction();
     }
 
-	public void addTurnPanel(TurnFighterPanel turn)
+    public void addTurnPanel(TurnFighterPanel turn)
     {
         this.turnFighterPanel = turn;
         turn.addFighter(this);
@@ -36,7 +36,8 @@ public abstract class Fighter : MonoBehaviour {
         fightCursor = cursor;
     }
 
-
+    public abstract void UseMagic(int MP);
+    public abstract void GetDamage(int damage);
     public abstract void ChooseAttack();
     public abstract IEnumerator ChooseTarget(TurnBattleHandler tb);
     public abstract void ResolveFighterAction();

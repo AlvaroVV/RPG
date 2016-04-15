@@ -51,7 +51,7 @@ public class StartFightTeamState : IState
 
         CharacterFighter characterFighter = characInstantiate.GetComponent<CharacterFighter>();
         characterFighter.setCharacterProperties(characterData);
-        characInstantiate.name = characterData.name;
+        characInstantiate.name = characterData.CharacterName;
         characInstantiate.transform.parent = tb.transform;
 
         tb.playerTeamFighters.Add(characterFighter);

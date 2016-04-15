@@ -5,9 +5,6 @@ using System;
 public class ChooseEnemyState : IState {
 
     private TurnBattleHandler tb;
-    private Cursor cursor;
-    private int targetNum = 0;
-    private Fighter target;
 
     public ChooseEnemyState(TurnBattleHandler tb)
     {
