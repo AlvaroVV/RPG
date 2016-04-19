@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class PlayerTeamController  {
 
-    public List<BaseStatCharacter> team { get; set; }
+    public List<CharacterData> team { get; set; }
 
-	public void AddCharacter(BaseStatCharacter character)
+	public void AddCharacter(CharacterData character)
     {
         team.Add(character);
     }

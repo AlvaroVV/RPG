@@ -6,7 +6,7 @@ public class PlayerMovement: MonoBehaviour {
 
     [Range(1, 5)]
     public float speed = 1.0f;
-    public List<BaseStatCharacter> playerTeam;
+    public List<CharacterData> playerTeam;
 
     private Rigidbody2D rgb;
     private float input_x;

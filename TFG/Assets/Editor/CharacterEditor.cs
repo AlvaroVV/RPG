@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections;
 
-[CustomEditor(typeof(BaseStatCharacter))]
+[CustomEditor(typeof(CharacterData))]
 [CanEditMultipleObjects]
 public class CharacterEditor : Editor {
 

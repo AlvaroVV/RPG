@@ -19,7 +19,7 @@ public class ChooseEnemyState : IState {
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ENEMY");
-        tb.currentFighter.SetCursor(tb.cursor);
+        //tb.currentFighter.SetCursor(tb.cursor);
         yield return tb.currentFighter.ChooseTarget(tb);
     }
 

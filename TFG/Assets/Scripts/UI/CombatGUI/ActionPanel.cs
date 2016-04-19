@@ -24,14 +24,15 @@ public class ActionPanel : MonoBehaviour {
         image.sprite = characterFighter.getCharacterData().face;
     }
 
+    public void SetAction(AttackInfo attackInfo)
+    {
+        characterFighter.SetFighterActionInfo(attackInfo);
+    }
+
     public AttackInfo Attack()
     {
         return characterFighter.getCharacterData().normalAttack;
     }
 
-    public void SetAction(AttackInfo attackInfo)
-    {
-        characterFighter.fighterAction.setAttack(attackInfo);
-    }
 
 }

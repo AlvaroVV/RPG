@@ -44,13 +44,13 @@ public class StartFightTeamState : IState
         CombatGUI.Instance.CreateCharactersPanels(tb.playerTeamFighters);
     }
 
-    public void InstantiateCharacter(BaseStatCharacter characterData, Transform playerPosition)
+    public void InstantiateCharacter(CharacterData characterData, Transform playerPosition)
     {
         GameObject characObject = Resources.Load("Characters/CharacterFighter") as GameObject;
         GameObject characInstantiate = GameObject.Instantiate(characObject, playerPosition.position, Quaternion.identity) as GameObject;
 
         CharacterFighter characterFighter = characInstantiate.GetComponent<CharacterFighter>();
-        characterFighter.setCharacterProperties(characterData);
+        characterFighter.setCharacterProperties(characterData,tb);
         characInstantiate.name = characterData.CharacterName;
         characInstantiate.transform.parent = tb.transform;
 

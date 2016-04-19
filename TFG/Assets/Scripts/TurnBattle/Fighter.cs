@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public abstract class Fighter : MonoBehaviour {
 
+    //Atributos comunes de Fighter
     public string fighterName = "Fighter";
     public Sprite fighterImage;
     public Animator anim;
     public FighterAction fighterAction;
+
+    //Atributos para referencias en el TurnBattle
+    private TurnBattleHandler tb; //Referencia al objeto que tiene listas de enemigos y characters
     private TurnFighterPanel turnFighterPanel;
-    public Cursor fightCursor;
 
     public Fighter()
     {
@@ -31,9 +35,24 @@ public abstract class Fighter : MonoBehaviour {
         return fighterAction;
     }
 
-    public void SetCursor(Cursor cursor)
+    public Cursor getFightCursor()
     {
-        fightCursor = cursor;
+        return tb.cursor;
+    }
+
+    public List<EnemyFighter> getEnemyFighterList()
+    {
+        return tb.enemyFighters;
+    }
+
+    public List<CharacterFighter> getCharacterFighterList()
+    {
+        return tb.playerTeamFighters;
+    }
+
+    public void SetTurnBattleHandler(TurnBattleHandler tb)
+    {
+        this.tb = tb;
     }
 
     public abstract void UseMagic(int MP);

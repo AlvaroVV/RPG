@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 using System;
 
@@ -7,9 +8,9 @@ public class CharacterFighter : Fighter {
     private HealthPanel statsPanel;
     private ActionPanel actionPanel;
     private GameObject target;
-    private BaseStatCharacter characterData;
+    private CharacterData characterData;
 
-    public void setCharacterProperties(BaseStatCharacter characterData)
+    public void setCharacterProperties(CharacterData characterData,TurnBattleHandler tb)
     {
         if (characterData != null)
         {
@@ -18,14 +19,14 @@ public class CharacterFighter : Fighter {
             fighterName = characterData.Name;
             fighterImage = characterData.face;
             anim.runtimeAnimatorController = characterData.animatorController;
+            SetTurnBattleHandler(tb);
         }
     }
 
-    public BaseStatCharacter getCharacterData()
+    public CharacterData getCharacterData()
     {
         return characterData;
     }
-
 
     public void addHealthBar(HealthPanel statsPanel)
     {
@@ -51,6 +52,13 @@ public class CharacterFighter : Fighter {
         statsPanel.updateCurrentMP();
     }
 
+    public void SetFighterActionInfo(AttackInfo attack)
+    {
+        fighterAction.setAttack(attack);
+        actionPanel.gameObject.SetActive(false);
+        getFightCursor().ChangeTarget(getEnemyFighterList()[0]);
+    }
+
     public override void ChooseAttack()
     {
         //Activamos el panel
@@ -60,14 +68,14 @@ public class CharacterFighter : Fighter {
     public override IEnumerator ChooseTarget(TurnBattleHandler tb)
     {
         //Pasamos al cursor la lista 
-        fightCursor.gameObject.SetActive(true);
+        getFightCursor().gameObject.SetActive(true);
         yield return fighterAction.waitForTarget(MouseControl);
     }
   
     public override void ResolveFighterAction()
     {
         //Eliminamos cursor 
-        fightCursor.gameObject.SetActive(false);
+        getFightCursor().gameObject.SetActive(false);
         //Animacion del fighter
         getAnim().SetTrigger(ChooseTrigger(fighterAction.getAttackType()));
         //Animación del ataque
@@ -76,7 +84,7 @@ public class CharacterFighter : Fighter {
             //GameGlobal.calculateDamage(fighterAction.getDamage());
             //Mostrar el Daño   
         //Animación del objetivo
-            fighterAction.getTarget().getAnim().SetTrigger("hurt");
+        fighterAction.getTarget().getAnim().SetTrigger("hurt");
     }
 
     private string ChooseTrigger(GameGlobals.AttackType attackType)
@@ -102,7 +110,7 @@ public class CharacterFighter : Fighter {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 1500, 1 << GameGlobals.LayerEnemy);
             if (hit)
             {
-                fightCursor.ChangeTargetByClick(hit.collider.gameObject);
+                getFightCursor().ChangeTargetByClick(hit.collider.gameObject);
                 target = hit.collider.gameObject;
             }
         }

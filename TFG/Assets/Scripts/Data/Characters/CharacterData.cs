@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class BaseStatCharacter : BaseCharacter {
+public class CharacterData : BaseCharacter {
 
     public GameGlobals.CharacterType type;
     public int experience = 0;

@@ -11,7 +11,7 @@ public class HealthPanel : MonoBehaviour {
     public Text HP_Total;
     public Text MP_Total;
 
-    private BaseStatCharacter character;
+    private CharacterData character;
 
     public void addCharacter(BaseCharacter character)
     {

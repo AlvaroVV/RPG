@@ -26,7 +26,7 @@ static class EditorMenuItems
     [MenuItem("Assets/Create/Scriptable Object/Character/new Character")]
     public static void CreateNewCharacter()
     {
-        ScriptableObjectUtility.CreateAsset<BaseStatCharacter>();
+        ScriptableObjectUtility.CreateAsset<CharacterData>();
     }
 
     [MenuItem("Assets/Create/Scriptable Object/new Attack")]

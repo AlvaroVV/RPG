@@ -18,12 +18,12 @@ public class TurnBattleHandler : MonoBehaviour{
     [HideInInspector]public StateMachineEnemy enemy;
 
     //List team
-    [HideInInspector]public List<BaseStatCharacter> playerTeam;
-    [HideInInspector]public List<Fighter> playerTeamFighters;
+    [HideInInspector]public List<CharacterData> playerTeam;
+    [HideInInspector]public List<CharacterFighter> playerTeamFighters;
 
     //Lists Enemies
     [HideInInspector]public List<EnemyData> enemyDatas;
-    [HideInInspector]public List<Fighter> enemyFighters;
+    [HideInInspector]public List<EnemyFighter> enemyFighters;
 
     //TurnStack
     [HideInInspector]public List<Fighter> stackTurnfighter;
@@ -84,18 +84,6 @@ public class TurnBattleHandler : MonoBehaviour{
     }
 
 
-    /*
-    public void CharacterPerformAction(CharacterAction action)
-    {
-        CombatGUI.ShowCharacterCombatInterface(character, OnCharacterPerformAction);
-    }
-
-    void OnCharacterPerformAction(CharacterAction action)
-    {
-
-    }
-    */
-
     public void FinishBattle()
     {
         CleanEnemiesList(); //TEMPORAL
@@ -110,7 +98,7 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         foreach (EnemyFighter enemy in enemyFighters)
             DestroyObject(enemy.gameObject);
-        enemyFighters = new List<Fighter>();
+        enemyFighters = new List<EnemyFighter>();
     }
 
     private void CleanStackList()
@@ -123,7 +111,7 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         foreach (CharacterFighter charac in playerTeamFighters)
             DestroyObject(charac.gameObject);
-        playerTeamFighters = new List<Fighter>();
+        playerTeamFighters = new List<CharacterFighter>();
     }
 
     public void DestroyObject(GameObject gameObject)
