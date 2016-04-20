@@ -5,14 +5,16 @@ using System.Collections.Generic;
 public abstract class Fighter : MonoBehaviour {
 
     //Atributos comunes de Fighter
-    public string fighterName = "Fighter";
-    public Sprite fighterImage;
-    public Animator anim;
-    public FighterAction fighterAction;
+    public string FighterName { get; set; }
+    public Sprite FighterImage { get; set; }
+    public Animator FighterAnimator { get; set; }
+    public FighterAction fighterAction { get; set; }
 
     //Atributos para referencias en el TurnBattle
-    private TurnBattleHandler tb; //Referencia al objeto que tiene listas de enemigos y characters
-    private TurnFighterPanel turnFighterPanel;
+    public TurnBattleHandler TB { get; set; } //Referencia al objeto que tiene listas de enemigos y characters
+    public TurnFighterPanel TurnFighterPanel { get; set; }
+
+    public GameObject attackEffect { get; set; }
 
     public Fighter()
     {
@@ -21,39 +23,48 @@ public abstract class Fighter : MonoBehaviour {
 
     public void addTurnPanel(TurnFighterPanel turn)
     {
-        this.turnFighterPanel = turn;
+        TurnFighterPanel = turn;
         turn.addFighter(this);
     }
 
-    public Animator getAnim()
-    {
-        return anim;
-    }
-
-    public FighterAction getFighterAction()
-    {
-        return fighterAction;
-    }
 
     public Cursor getFightCursor()
     {
-        return tb.cursor;
+        return TB.cursor;
     }
 
     public List<EnemyFighter> getEnemyFighterList()
     {
-        return tb.enemyFighters;
+        return TB.EnemyFighters;
     }
 
     public List<CharacterFighter> getCharacterFighterList()
     {
-        return tb.playerTeamFighters;
+        return TB.PlayerTeamFighters;
     }
 
-    public void SetTurnBattleHandler(TurnBattleHandler tb)
+    public void CreateAttackEffect()
     {
-        this.tb = tb;
+        if (fighterAction.getAttackAnimation() != null)
+        {
+            attackEffect = Instantiate(fighterAction.getAttackAnimation(), fighterAction.getTarget().transform.position, Quaternion.identity) as GameObject;
+            fighterAction.getTarget().FighterAnimator.SetTrigger("hurt");
+        }
+        else
+            Debug.LogError("No se ha cargado el ataque");
     }
+
+
+    public IEnumerator WaitForFinishAttackEffect()
+    {
+        //Esperamos a que se cree el ataque
+        while (attackEffect == null)
+            yield return null;
+        //Esperamos a que finalice
+        while (attackEffect != null)
+            yield return null;
+    }
+
 
     public abstract void UseMagic(int MP);
     public abstract void GetDamage(int damage);

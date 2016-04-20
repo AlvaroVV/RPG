@@ -12,45 +12,47 @@ public class TurnBattleHandler : MonoBehaviour{
     public Transform[] CharacterPoints;
 
     //Cursor de selección de Target
-    [HideInInspector]public Cursor cursor;
+    public Cursor cursor { get; set; }
 
     //Enemy
-    [HideInInspector]public StateMachineEnemy enemy;
+    public StateMachineEnemy Enemy { get; set; }
 
     //List team
-    [HideInInspector]public List<CharacterData> playerTeam;
-    [HideInInspector]public List<CharacterFighter> playerTeamFighters;
+    public List<CharacterData> PlayerTeam { get; set; }
+    public List<CharacterFighter> PlayerTeamFighters { get; set; }
 
     //Lists Enemies
-    [HideInInspector]public List<EnemyData> enemyDatas;
-    [HideInInspector]public List<EnemyFighter> enemyFighters;
+    public List<EnemyData> EnemyDatas { get; set; }
+    public List<EnemyFighter> EnemyFighters { get; set; }
 
     //TurnStack
-    [HideInInspector]public List<Fighter> stackTurnfighter;
-    [HideInInspector]public Fighter currentFighter;
+    public List<Fighter> StackTurnFighter { get; set; }
+    public Fighter CurrentFighter { get; set; }
 
     //States
-    [HideInInspector]public StartFightTeamState startTeam;
-    [HideInInspector]public StartFightEnemiesState startEnemies;
-    [HideInInspector]public ChooseFighterState chooseFighter;
-    [HideInInspector]public FinishBattleState finishBattle;
-    [HideInInspector]public ChooseActionState chooseAction;
-    [HideInInspector]public ChooseEnemyState chooseEnemy;
-    [HideInInspector]public ResolveActionState resolveAction;
+    public StartFightTeamState StartTeam { get; set; }
+    public StartFightEnemiesState StartEnemies { get; set; }
+    public ChooseFighterState ChooseFighter { get; set; }
+    public FinishBattleState FinishBattle { get; set; }
+    public ChooseActionState ChooseAction { get; set; }
+    public ChooseEnemyState ChooseEnemy { get; set; }
+    public ExecuteActionState ExecuteAction { get; set; }
 
     private IState currentState;
 
     void Awake()
     {
         //Inicializamos los estados
-        startTeam = new StartFightTeamState(this);
-        startEnemies = new StartFightEnemiesState(this);
-        chooseFighter = new ChooseFighterState(this);
-        chooseAction = new ChooseActionState(this);
-        chooseEnemy = new ChooseEnemyState(this);
-        resolveAction = new ResolveActionState(this);
-        finishBattle = new FinishBattleState(this);
-        stackTurnfighter = new List<Fighter>();
+        StartTeam = new StartFightTeamState(this);
+        StartEnemies = new StartFightEnemiesState(this);
+        ChooseFighter = new ChooseFighterState(this);
+        ChooseAction = new ChooseActionState(this);
+        ChooseEnemy = new ChooseEnemyState(this);
+        ExecuteAction = new ExecuteActionState(this);
+        FinishBattle = new FinishBattleState(this);
+        StackTurnFighter = new List<Fighter>();
+        PlayerTeamFighters = new List<CharacterFighter>();
+        EnemyFighters = new List<EnemyFighter>();
     }
 
     public void ChangeState(IState nextState)
@@ -61,10 +63,10 @@ public class TurnBattleHandler : MonoBehaviour{
     public IEnumerator StartFight(StateMachineEnemy enemy)
     {
         //Cogemos listas de Enemigos y Team
-        this.enemy = enemy;
-        playerTeam = GameGlobals.player.playerTeam;
+        this.Enemy = enemy;
+        PlayerTeam = GameGlobals.player.playerTeam;
 
-        currentState = startTeam;
+        currentState = StartTeam;
 
         while(currentState != null)
         {
@@ -84,7 +86,7 @@ public class TurnBattleHandler : MonoBehaviour{
     }
 
 
-    public void FinishBattle()
+    public void CleanAndFinish()
     {
         CleanEnemiesList(); //TEMPORAL
         CleanStackList(); //TEMPORAL
@@ -96,22 +98,22 @@ public class TurnBattleHandler : MonoBehaviour{
 
     private void CleanEnemiesList()
     {
-        foreach (EnemyFighter enemy in enemyFighters)
+        foreach (EnemyFighter enemy in EnemyFighters)
             DestroyObject(enemy.gameObject);
-        enemyFighters = new List<EnemyFighter>();
+        EnemyFighters = new List<EnemyFighter>();
     }
 
     private void CleanStackList()
     {
         Destroy(cursor.gameObject);
-        stackTurnfighter = new List<Fighter>();
+        StackTurnFighter = new List<Fighter>();
     }
 
     public void CleanCharactersList()
     {
-        foreach (CharacterFighter charac in playerTeamFighters)
+        foreach (CharacterFighter charac in PlayerTeamFighters)
             DestroyObject(charac.gameObject);
-        playerTeamFighters = new List<CharacterFighter>();
+        PlayerTeamFighters = new List<CharacterFighter>();
     }
 
     public void DestroyObject(GameObject gameObject)

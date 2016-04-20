@@ -14,7 +14,7 @@ public class StartFightTeamState : IState
     }
     public void changeState()
     {
-        tb.ChangeState(tb.startEnemies);
+        tb.ChangeState(tb.StartEnemies);
     }
 
     public IEnumerator UpdateState()
@@ -34,14 +34,14 @@ public class StartFightTeamState : IState
 
     private void InstantiateTeam()
     {
-        for (int i = 0; i < tb.playerTeam.Count; i++)
+        for (int i = 0; i < tb.PlayerTeam.Count; i++)
         {
-            InstantiateCharacter(tb.playerTeam[i], tb.CharacterPoints[i]);
+            InstantiateCharacter(tb.PlayerTeam[i], tb.CharacterPoints[i]);
         }
 
         //Creamos el panel CombatGUI y asignamos barras de vida
         UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
-        CombatGUI.Instance.CreateCharactersPanels(tb.playerTeamFighters);
+        CombatGUI.Instance.CreateCharactersPanels(tb.PlayerTeamFighters);
     }
 
     public void InstantiateCharacter(CharacterData characterData, Transform playerPosition)
@@ -54,8 +54,8 @@ public class StartFightTeamState : IState
         characInstantiate.name = characterData.CharacterName;
         characInstantiate.transform.parent = tb.transform;
 
-        tb.playerTeamFighters.Add(characterFighter);
-        tb.stackTurnfighter.Add(characterFighter);
+        tb.PlayerTeamFighters.Add(characterFighter);
+        tb.StackTurnFighter.Add(characterFighter);
     }
 
     public void CreateFightCursor()

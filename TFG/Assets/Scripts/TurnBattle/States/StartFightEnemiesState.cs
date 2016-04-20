@@ -18,26 +18,26 @@ public class StartFightEnemiesState : IState
     {
         Debug.Log("START ENEMIES");
         InstantiateEnemies();
-        CombatGUI.Instance.CreateTurnFighterPanels(tb.stackTurnfighter);
+        CombatGUI.Instance.CreateTurnFighterPanels(tb.StackTurnFighter);
         yield return tb.WaitForKeyPressed(KeyCode.Space);
     }
  
 
     public void changeState()
     {
-        tb.ChangeState(tb.chooseFighter); 
+        tb.ChangeState(tb.ChooseFighter); 
     }
 
     private void InstantiateEnemies()
     {
         //Guardamos la lista de enemigos
-        tb.enemyDatas = new List<EnemyData>(tb.enemy.EnemyTeam);
+        tb.EnemyDatas = new List<EnemyData>(tb.Enemy.EnemyTeam);
         //Destruimos la IA del enemigo
-        tb.DestroyObject(tb.enemy.gameObject);
+        tb.DestroyObject(tb.Enemy.gameObject);
 
-        for (int i = 0; i< tb.enemyDatas.Count; i++)
+        for (int i = 0; i< tb.EnemyDatas.Count; i++)
         {
-            InstantiateEnemy(tb.enemyDatas[i], tb.EnemyPoints[i]);        
+            InstantiateEnemy(tb.EnemyDatas[i], tb.EnemyPoints[i]);        
         }
         
     }
@@ -54,14 +54,14 @@ public class StartFightEnemiesState : IState
         enemyInstantiate.transform.parent = tb.transform;
 
         enemyInstantiate.name = ChooseName(enemyData.CharacterName);
-        enemyFighter.fighterName = enemyInstantiate.name;
+        enemyFighter.FighterName = enemyInstantiate.name;
 
-        tb.enemyFighters.Add(enemyFighter);
-        tb.stackTurnfighter.Add(enemyFighter);
+        tb.EnemyFighters.Add(enemyFighter);
+        tb.StackTurnFighter.Add(enemyFighter);
     }
 
     private string ChooseName(string name)
     {
-        return name+"_" + (tb.enemyFighters.Where( fighter => fighter.GetComponent<EnemyFighter>().fighterName.StartsWith(name)).Count() +1);
+        return name+"_" + (tb.EnemyFighters.Where( fighter => fighter.GetComponent<EnemyFighter>().FighterName.StartsWith(name)).Count() +1);
     }
 }

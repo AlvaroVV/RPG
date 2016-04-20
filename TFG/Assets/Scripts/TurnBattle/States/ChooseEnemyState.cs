@@ -13,14 +13,13 @@ public class ChooseEnemyState : IState {
 
     public void changeState()
     {
-        tb.ChangeState(tb.resolveAction);
+        tb.ChangeState(tb.ExecuteAction);
     }
 
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ENEMY");
-        //tb.currentFighter.SetCursor(tb.cursor);
-        yield return tb.currentFighter.ChooseTarget(tb);
+        yield return tb.CurrentFighter.ChooseTarget(tb);
     }
 
 }

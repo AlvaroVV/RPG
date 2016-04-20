@@ -21,21 +21,17 @@ public class StateMachineEnemy : MonoBehaviour {
     //Lista de enemigos que saldrán al tocarlo
     public List<EnemyData> EnemyTeam;
 
-    [HideInInspector]public GameObject target;
-    [HideInInspector]public Rigidbody2D rgb;
-    [HideInInspector]public Animator anim;
-    [HideInInspector]public IStateEnemy currentState;
+    public GameObject target { get; set; }
+    public Rigidbody2D rgb { get; set; }
+    public Animator anim { get; set; }
+    public IStateEnemy currentState { get; set; }
     //States
-    [HideInInspector]public PatrolState patrol;
-    [HideInInspector]public AlertState alert;
-    [HideInInspector]public ChaseState chase;
+    public PatrolState patrol { get; set; }
+    public AlertState alert { get; set; }
+    public ChaseState chase { get; set; }
 
 
     private bool catched = false;
-
-    //Referencias para cuando se empiece la batalla
-    private GameObject background;
-    private GameObject turnBattle;
 
     void Awake () {
         

@@ -16,16 +16,16 @@ public class ChooseFighterState : IState
     {
         Debug.Log("CHOOSE FIGHTER");
         ChooseFighter();
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
+        yield return null;
     }
 
     private void ChooseFighter()
     {
-        tb.currentFighter = tb.stackTurnfighter[0];
+        tb.CurrentFighter = tb.StackTurnFighter[0];
 
     }
     public void changeState()
     {
-        tb.ChangeState(tb.chooseAction);
+        tb.ChangeState(tb.ChooseAction);
     }
 }

@@ -12,9 +12,9 @@ public class TurnFighterPanel : MonoBehaviour {
     public void addFighter(Fighter fighter)
     {
         this.fighter = fighter;
-        FighterName.text = fighter.fighterName;
-        if (fighter.fighterImage != null)
-            FighterImage.sprite = fighter.fighterImage;
+        FighterName.text = fighter.FighterName;
+        if (fighter.FighterImage != null)
+            FighterImage.sprite = fighter.FighterImage;
         else
             FighterImage.gameObject.SetActive(false);
     }

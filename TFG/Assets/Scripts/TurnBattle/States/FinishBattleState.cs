@@ -20,6 +20,12 @@ public class FinishBattleState : IState
 
     public void changeState()
     {
-        tb.FinishBattle();
+        if (tb.EnemyFighters.Count > 0)
+            tb.ChangeState(tb.ChooseFighter);
+        else
+        {
+           
+            tb.CleanAndFinish();
+        }
     }
 }

@@ -15,13 +15,13 @@ public class ChooseActionState : IState
 
     public void changeState()
     {
-        tb.ChangeState(tb.chooseEnemy);
+        tb.ChangeState(tb.ChooseEnemy);
     }
 
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ACTION");
-        tb.currentFighter.ChooseAttack();
-        yield return tb.currentFighter.getFighterAction().waitForAttack();
+        tb.CurrentFighter.ChooseAttack();
+        yield return tb.CurrentFighter.fighterAction.waitForAttack();
     }
 }

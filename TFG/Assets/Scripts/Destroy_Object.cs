@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Attack_Effect : MonoBehaviour {
+public class Destroy_Object : MonoBehaviour {
 
     //Llamado cuando se acaba la animación.
-    public void finishEffect()
+    public void destroy()
     {
         Destroy(gameObject);
     }

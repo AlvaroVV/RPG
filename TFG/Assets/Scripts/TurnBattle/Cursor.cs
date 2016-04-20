@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Cursor : MonoBehaviour {
 
-    private Fighter target;
+    public Fighter target { get; set; }
 
     public void ChangeTarget(Fighter newTarget)
     {

@@ -4,22 +4,17 @@ using System;
 
 public class EnemyFighter : Fighter {
 
-    private EnemyData enemyData;
+    public EnemyData EnemyData { get; set; }
 
     public void setEnemyProperties(EnemyData enemyData)
     {
         if(enemyData != null)
         {
-            anim = GetComponentInChildren<Animator>();
-            this.enemyData = enemyData;
-            anim.runtimeAnimatorController = enemyData.animatorController;
-            fighterName = enemyData.Name;
+            FighterAnimator = GetComponentInChildren<Animator>();
+            EnemyData = enemyData;
+            FighterAnimator.runtimeAnimatorController = enemyData.animatorController;
+            FighterName = enemyData.Name;
         }            
-    }
-
-    public EnemyData getEnemyData()
-    {
-        return enemyData;
     }
 
     public override void ChooseAttack()
@@ -41,12 +36,12 @@ public class EnemyFighter : Fighter {
 
     public override void GetDamage(int damage)
     {
-        enemyData.currentHP -= damage;
+        EnemyData.currentHP -= damage;
     }
 
     public override void UseMagic(int MP)
     {
-        enemyData.currentMP -= MP;
+        EnemyData.currentMP -= MP;
     }
 
    

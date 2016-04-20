@@ -2,23 +2,23 @@
 using System.Collections;
 using System;
 
-public class ResolveActionState : IState {
+public class ExecuteActionState : IState {
 
     private TurnBattleHandler tb;
 
-    public ResolveActionState(TurnBattleHandler tb)
+    public ExecuteActionState(TurnBattleHandler tb)
     {
         this.tb = tb;
     }
     public void changeState()
     {
-        tb.ChangeState(tb.finishBattle);
+        tb.ChangeState(tb.FinishBattle);
     }
 
     public IEnumerator UpdateState()
     {
         Debug.Log("RESOLVE_ACTION");
-        tb.currentFighter.ResolveFighterAction();
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
+        tb.CurrentFighter.ResolveFighterAction();
+        yield return tb.CurrentFighter.WaitForFinishAttackEffect();
     }
 }
