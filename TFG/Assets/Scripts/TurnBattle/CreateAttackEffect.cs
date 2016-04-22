@@ -12,6 +12,6 @@ public class CreateAttackEffect : MonoBehaviour {
 	
 	public void createAttackEffect()
     {
-        fighter.CreateAttackEffect();
+        FighterActionManager.Instance.CreateAttackEffect();
     }
 }

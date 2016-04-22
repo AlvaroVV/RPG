@@ -26,7 +26,12 @@ public class ActionPanel : MonoBehaviour {
 
     public void SetAction(AttackInfo attackInfo)
     {
-        characterFighter.SetFighterActionInfo(attackInfo);
+        //Guardamos la info del ataque elegido
+        FighterActionManager.Instance.attackInfo = attackInfo;
+        //Elegimos el primer enemigo
+        FighterActionManager.Instance.TargetFirstEnemy();
+        //Desactivamos el panel
+        gameObject.SetActive(false);
     }
 
     public AttackInfo Attack()

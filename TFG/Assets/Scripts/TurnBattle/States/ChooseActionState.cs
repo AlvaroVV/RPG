@@ -21,7 +21,6 @@ public class ChooseActionState : IState
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ACTION");
-        tb.CurrentFighter.ChooseAttack();
-        yield return tb.CurrentFighter.fighterAction.waitForAttack();
+        yield return FighterActionManager.Instance.WaitForAttack();
     }
 }

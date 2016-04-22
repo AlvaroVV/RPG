@@ -2021,6 +2021,21 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 423750, guid: 0e789f9a58aa9504fb62944604bcf7d1, type: 2}
   m_PrefabInternal: {fileID: 1061521}
+--- !u!1 &1352007993 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 120296, guid: 7989f476089870c49994105ec51516dc, type: 2}
+  m_PrefabInternal: {fileID: 1140559179}
+--- !u!114 &1352007994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352007993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e8f9797ae1feb48a9db5b57f265034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1514061972
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,6 @@ public class StartFightTeamState : IState
         yield return ScriptingUtils.DoAFadeIn();
 
         InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.
-        CreateFightCursor();//Creamos aqui el Cursor de selección pero DESACTIVADO 
         GameGlobals.camera.GoToFightStage(GameObject.FindGameObjectWithTag(GameGlobals.TagFightStage));
         GameGlobals.BackReference.gameObject.SetActive(false);
 
@@ -41,7 +40,7 @@ public class StartFightTeamState : IState
 
         //Creamos el panel CombatGUI y asignamos barras de vida
         UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
-        CombatGUI.Instance.CreateCharactersPanels(tb.PlayerTeamFighters);
+        CombatGUI.Instance.CreateCharactersPanels(FighterActionManager.Instance.PlayerTeamFighters);
     }
 
     public void InstantiateCharacter(CharacterData characterData, Transform playerPosition)
@@ -54,16 +53,8 @@ public class StartFightTeamState : IState
         characInstantiate.name = characterData.CharacterName;
         characInstantiate.transform.parent = tb.transform;
 
-        tb.PlayerTeamFighters.Add(characterFighter);
-        tb.StackTurnFighter.Add(characterFighter);
+        FighterActionManager.Instance.PlayerTeamFighters.Add(characterFighter);
+        FighterActionManager.Instance.StackTurnFighter.Add(characterFighter);
     }
 
-    public void CreateFightCursor()
-    {
-        GameObject cursorRes = Resources.Load("UI/Cursor") as GameObject;
-        GameObject cursorObj = GameObject.Instantiate(cursorRes, tb.transform.position, Quaternion.identity) as GameObject;
-        cursorObj.transform.parent = tb.transform;
-        tb.cursor = cursorObj.GetComponent<Cursor>();
-        tb.cursor.gameObject.SetActive(false);
-    }
 }

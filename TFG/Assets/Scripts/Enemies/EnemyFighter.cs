@@ -23,26 +23,16 @@ public class EnemyFighter : Fighter {
         Debug.Log("El enemigo no tiene Action Panel");
     }
 
-    public override IEnumerator ChooseTarget(TurnBattleHandler tb)
+    public override void ChooseTarget()
     {
         //IA para elegir target
-        yield return null;
-    }
-
-    public override void ResolveFighterAction()
-    {
-       
-    }
-
-    public override void GetDamage(int damage)
-    {
-        EnemyData.currentHP -= damage;
-    }
-
-    public override void UseMagic(int MP)
-    {
-        EnemyData.currentMP -= MP;
-    }
-
    
+    }
+
+    public override void ChooseState()
+    {
+        throw new NotImplementedException();
+    }
+
+
 }

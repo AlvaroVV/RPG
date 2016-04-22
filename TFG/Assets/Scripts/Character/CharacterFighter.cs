@@ -35,25 +35,6 @@ public class CharacterFighter : Fighter {
         actionPanel.addCharacter(this);
     }
 
-    public override void GetDamage(int damage)
-    {
-        CharacterData.currentHP -= damage;
-        statsPanel.updateCurrentHP();
-    }
-
-    public override void UseMagic(int MP)
-    {
-        CharacterData.currentMP -= MP;
-        statsPanel.updateCurrentMP();
-    }
-
-    public void SetFighterActionInfo(AttackInfo attack)
-    {
-        fighterAction.setAttack(attack);
-        actionPanel.gameObject.SetActive(false);
-        getFightCursor().ChangeTarget(getEnemyFighterList()[0]);
-        
-    }
 
     public override void ChooseAttack()
     {
@@ -61,54 +42,32 @@ public class CharacterFighter : Fighter {
         actionPanel.gameObject.SetActive(true);
     }
 
-    public override IEnumerator ChooseTarget(TurnBattleHandler tb)
+    public override void ChooseTarget()
     {
-        //Pasamos al cursor la lista 
-        getFightCursor().gameObject.SetActive(true);
-        yield return fighterAction.waitForTarget(MouseControl);
-    }
-  
-    public override void ResolveFighterAction()
-    {
-        //Desactivo cursor 
-        getFightCursor().gameObject.SetActive(false);
-        //Animacion del fighter
-        //La animación tiene un evento que crea que el efecto, desde Fighter
-        FighterAnimator.SetTrigger(ChooseTrigger(fighterAction.getAttackType()));
-        
+        MouseControl();
     }
 
-    private string ChooseTrigger(GameGlobals.AttackType attackType)
+    public override void ChooseState()
     {
-        switch (attackType)
-        {
-            case GameGlobals.AttackType.Attack:
-                return "Attack";
-
-            case GameGlobals.AttackType.Magic:
-                return "Magic";
-
-            default:
-                return "Idle";
-        }
+        String state = FighterActionManager.Instance.attackInfo.FighterState.ToString(); 
+        FighterAnimator.SetTrigger(state);
     }
 
     private void MouseControl()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 1500, 1 << GameGlobals.LayerEnemy);
             if (hit)
             {
-                getFightCursor().ChangeTargetByClick(hit.collider.gameObject);
+                FighterActionManager.Instance.FighterCursor.ChangeTargetByClick(hit.collider.gameObject);
                 target = hit.collider.gameObject;
             }
         }
         else if(Input.GetKeyDown(KeyCode.Space) && target != null)
         {
-
-            fighterAction.setObjetive(target.GetComponent<Fighter>());
+            FighterActionManager.Instance.target=target.GetComponent<Fighter>();
+            FighterActionManager.Instance.FighterCursor.gameObject.SetActive(false);
         }
     }
 

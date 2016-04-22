@@ -21,11 +21,16 @@ public class ChooseFighterState : IState
 
     private void ChooseFighter()
     {
-        tb.CurrentFighter = tb.StackTurnFighter[0];
-
+        //tb.CurrentFighter = tb.StackTurnFighter[0];
+        FighterActionManager.Instance.currentFighter = AlgorithmChooseFighter();
     }
     public void changeState()
     {
         tb.ChangeState(tb.ChooseAction);
+    }
+
+    public Fighter AlgorithmChooseFighter()
+    {
+        return FighterActionManager.Instance.StackTurnFighter[0];
     }
 }

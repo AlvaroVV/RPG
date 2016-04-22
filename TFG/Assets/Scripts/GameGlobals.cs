@@ -66,7 +66,7 @@ public static class GameGlobals  {
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagBackground));
         UIManager.Instance.Pop();
         yield return ScriptingUtils.DoAFadeOut();
-        handler.CleanCharactersList();
+        FighterActionManager.Instance.CleanCharactersList();
     }
 
     public static void saveBackReference(GameObject back)

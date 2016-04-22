@@ -19,7 +19,7 @@ public class ChooseEnemyState : IState {
     public IEnumerator UpdateState()
     {
         Debug.Log("CHOOSE_ENEMY");
-        yield return tb.CurrentFighter.ChooseTarget(tb);
+        yield return FighterActionManager.Instance.waitForTarget();
     }
 
 }

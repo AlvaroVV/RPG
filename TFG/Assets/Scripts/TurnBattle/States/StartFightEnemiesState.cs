@@ -18,8 +18,9 @@ public class StartFightEnemiesState : IState
     {
         Debug.Log("START ENEMIES");
         InstantiateEnemies();
-        CombatGUI.Instance.CreateTurnFighterPanels(tb.StackTurnFighter);
+        CombatGUI.Instance.CreateTurnFighterPanels(FighterActionManager.Instance.StackTurnFighter);
         yield return tb.WaitForKeyPressed(KeyCode.Space);
+        
     }
  
 
@@ -56,12 +57,12 @@ public class StartFightEnemiesState : IState
         enemyInstantiate.name = ChooseName(enemyData.CharacterName);
         enemyFighter.FighterName = enemyInstantiate.name;
 
-        tb.EnemyFighters.Add(enemyFighter);
-        tb.StackTurnFighter.Add(enemyFighter);
+        FighterActionManager.Instance.EnemyFighters.Add(enemyFighter);
+        FighterActionManager.Instance.StackTurnFighter.Add(enemyFighter);
     }
 
     private string ChooseName(string name)
     {
-        return name+"_" + (tb.EnemyFighters.Where( fighter => fighter.GetComponent<EnemyFighter>().FighterName.StartsWith(name)).Count() +1);
+        return name+"_" + (FighterActionManager.Instance.EnemyFighters.Where( fighter => fighter.GetComponent<EnemyFighter>().FighterName.StartsWith(name)).Count() +1);
     }
 }

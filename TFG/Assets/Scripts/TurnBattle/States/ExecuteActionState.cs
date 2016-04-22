@@ -12,13 +12,12 @@ public class ExecuteActionState : IState {
     }
     public void changeState()
     {
-        tb.ChangeState(tb.FinishBattle);
+        tb.ChangeState(tb.ResolveAction);
     }
 
     public IEnumerator UpdateState()
     {
-        Debug.Log("RESOLVE_ACTION");
-        tb.CurrentFighter.ResolveFighterAction();
-        yield return tb.CurrentFighter.WaitForFinishAttackEffect();
+        Debug.Log("RESOLVE_ACTION");        
+        yield return FighterActionManager.Instance.WaitForFinishAttackEffect();
     }
 }

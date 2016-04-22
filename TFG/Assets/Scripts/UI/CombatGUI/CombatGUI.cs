@@ -8,7 +8,7 @@ public class CombatGUI : MonoBehaviour {
     public GameObject ActionPanel;
     public GameObject TurnFighterPanels;
 
-    public static CombatGUI instance;
+    private static CombatGUI instance;
 
     public static CombatGUI Instance
     {
