@@ -7,7 +7,7 @@ public class AttackInfo : ScriptableObject {
     public string descriptionAttack = "description sword attack";
     public int damage = 10; //Porcentaje de daño para la formula del ataque
     public GameObject animation; //Animación del ataque
-    public GameGlobals.AttackType fighterState; //Estado del Fighter: Attack or Magic
+    public GameGlobals.AttackType attackType; //Estado del Fighter: Attack or Magic
 
     public string Id { get { return CSVReader.Instance.GetWord(idAttack); } set { idAttack = value; } }
 
@@ -25,8 +25,8 @@ public class AttackInfo : ScriptableObject {
     }
 
     public GameGlobals.AttackType FighterState {
-        get { return fighterState; }
-        set { fighterState = value; }
+        get { return attackType; }
+        set { attackType = value; }
     }
 
 }

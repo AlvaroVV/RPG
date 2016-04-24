@@ -34,7 +34,7 @@ public class StartFightEnemiesState : IState
         //Guardamos la lista de enemigos
         tb.EnemyDatas = new List<EnemyData>(tb.Enemy.EnemyTeam);
         //Destruimos la IA del enemigo
-        tb.DestroyObject(tb.Enemy.gameObject);
+        FighterActionManager.Instance.DestroyObject(tb.Enemy.gameObject);
 
         for (int i = 0; i< tb.EnemyDatas.Count; i++)
         {
@@ -46,15 +46,16 @@ public class StartFightEnemiesState : IState
 
     private void InstantiateEnemy(EnemyData enemyData,Transform transform)
     {
+
         GameObject enemyObject = Resources.Load("Enemies/EnemyFighter") as GameObject;
         GameObject enemyInstantiate = GameObject.Instantiate(enemyObject, transform.position, Quaternion.identity) as GameObject;
-
+        EnemyData enemyDataClone = GameObject.Instantiate(enemyData);
         EnemyFighter enemyFighter = enemyInstantiate.GetComponent<EnemyFighter>();
 
-        enemyFighter.setEnemyProperties(enemyData);
+        enemyFighter.setEnemyProperties(enemyDataClone);
         enemyInstantiate.transform.parent = tb.transform;
 
-        enemyInstantiate.name = ChooseName(enemyData.CharacterName);
+        enemyInstantiate.name = ChooseName(enemyDataClone.CharacterName);
         enemyFighter.FighterName = enemyInstantiate.name;
 
         FighterActionManager.Instance.EnemyFighters.Add(enemyFighter);

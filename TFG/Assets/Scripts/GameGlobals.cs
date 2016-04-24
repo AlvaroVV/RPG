@@ -59,8 +59,7 @@ public static class GameGlobals  {
 
     public static IEnumerator FinishFight()
     {
-        TurnBattleHandler handler = TurnBattle.GetComponent<TurnBattleHandler>();
-
+        
         yield return ScriptingUtils.DoAFadeIn();
         BackReference.gameObject.SetActive(true);
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagBackground));
@@ -78,5 +77,7 @@ public static class GameGlobals  {
     {
         TurnBattle = turnBattle;
     }
+
+   
 
 }

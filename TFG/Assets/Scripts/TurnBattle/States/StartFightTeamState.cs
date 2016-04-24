@@ -39,7 +39,6 @@ public class StartFightTeamState : IState
         }
 
         //Creamos el panel CombatGUI y asignamos barras de vida
-        UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
         CombatGUI.Instance.CreateCharactersPanels(FighterActionManager.Instance.PlayerTeamFighters);
     }
 

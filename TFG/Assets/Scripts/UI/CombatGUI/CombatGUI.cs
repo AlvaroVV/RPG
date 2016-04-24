@@ -14,6 +14,8 @@ public class CombatGUI : MonoBehaviour {
     {
         get
         {
+            if (instance == null)
+                UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
             return instance;
         }
     }

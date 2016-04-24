@@ -8,14 +8,13 @@ public class CharacterFighter : Fighter {
     private HealthPanel statsPanel;
     private ActionPanel actionPanel;
     private GameObject target;
-    public CharacterData CharacterData { get; set; }
 
     public void setCharacterProperties(CharacterData characterData,TurnBattleHandler tb)
     {
         if (characterData != null)
         {
             FighterAnimator = GetComponentInChildren<Animator>();
-            CharacterData = characterData;
+            FighterData = characterData;
             FighterName = characterData.Name;
             FighterImage = characterData.face;
             FighterAnimator.runtimeAnimatorController = characterData.animatorController;
@@ -26,7 +25,7 @@ public class CharacterFighter : Fighter {
     public void addHealthBar(HealthPanel statsPanel)
     {
         this.statsPanel = statsPanel;
-        statsPanel.addCharacter(CharacterData);
+        statsPanel.addCharacter(FighterData);
     }
 
     public void addActionPanel(ActionPanel actionPanel)

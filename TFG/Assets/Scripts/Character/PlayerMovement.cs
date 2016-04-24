@@ -32,6 +32,10 @@ public class PlayerMovement: MonoBehaviour {
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+            CombatTextManager.Instance.CreateBounceText(transform.position, 15);
+        if (Input.GetKeyDown(KeyCode.L))
+            CombatTextManager.Instance.CreateDamageText(transform.position, "15");
         input_x = Input.GetAxisRaw("Horizontal");
         input_y = Input.GetAxisRaw("Vertical");
 

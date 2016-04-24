@@ -20,8 +20,9 @@ public class ActionPanel : MonoBehaviour {
 
     private void createStats()
     {
-        textName.text = characterFighter.CharacterData.Name;
-        image.sprite = characterFighter.CharacterData.face;
+        CharacterData data = characterFighter.FighterData as CharacterData;
+        textName.text = data.Name;
+        image.sprite = data.face;
     }
 
     public void SetAction(AttackInfo attackInfo)
@@ -36,7 +37,7 @@ public class ActionPanel : MonoBehaviour {
 
     public AttackInfo Attack()
     {
-        return characterFighter.CharacterData.normalAttack;
+        return characterFighter.FighterData.normalAttack;
     }
 
 

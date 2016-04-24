@@ -5,9 +5,7 @@ public class Door : MonoBehaviour {
 
     public GameObject exit;
     public GameObject background;
-    
-
-	
+    	
     IEnumerator OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Equals(GameGlobals.TagPlayer))

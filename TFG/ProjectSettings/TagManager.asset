@@ -8,6 +8,7 @@ TagManager:
   - TurnBattleHandler
   - FightStage
   - NPC
+  - DialoguePanel
   layers:
   - Default
   - TransparentFX
@@ -65,4 +66,7 @@ TagManager:
     locked: 0
   - name: Top Detail
     uniqueID: 3167639089
+    locked: 0
+  - name: UI
+    uniqueID: 767173861
     locked: 0

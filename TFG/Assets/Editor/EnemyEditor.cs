@@ -21,6 +21,7 @@ public class EnemyEditor : Editor
     SerializedProperty animController;
     SerializedProperty attacks;
     SerializedProperty normalAttack;
+    SerializedProperty currentHP;
 
 
 
@@ -30,6 +31,7 @@ public class EnemyEditor : Editor
         characterName = serializedObject.FindProperty("CharacterName");
         description = serializedObject.FindProperty("description");
         healthPoints = serializedObject.FindProperty("healthPoints");
+        currentHP = serializedObject.FindProperty("currentHP");
         magicPoints = serializedObject.FindProperty("magicPoints");
         attackPower = serializedObject.FindProperty("attackPower");
         defensePower = serializedObject.FindProperty("defensePower");
@@ -57,6 +59,11 @@ public class EnemyEditor : Editor
         // Only show the damage progress bar if all the objects have the same damage value:
         if (!healthPoints.hasMultipleDifferentValues)
             ProgressBar(healthPoints.intValue / 1000.0f, "healthPoints");
+
+        EditorGUILayout.IntSlider(currentHP, 0, 1000, new GUIContent("currentHP"));
+        // Only show the damage progress bar if all the objects have the same damage value:
+        if (!currentHP.hasMultipleDifferentValues)
+            ProgressBar(currentHP.intValue / 1000.0f, "currentHP");
 
         EditorGUILayout.IntSlider(magicPoints, 0, 1000, new GUIContent("magicPoints"));
         // Only show the armor progress bar if all the objects have the same armor value:

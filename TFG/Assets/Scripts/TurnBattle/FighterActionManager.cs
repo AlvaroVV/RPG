@@ -50,6 +50,7 @@ public class FighterActionManager: MonoBehaviour  {
 
     public IEnumerator WaitForFinishAttackEffect()
     {
+        Debug.Log(target.FighterData.currentHP);
         currentFighter.ChooseState();
         //Esperamos a que se cree el ataque
         while (attackEffect == null)
@@ -59,12 +60,52 @@ public class FighterActionManager: MonoBehaviour  {
             yield return null;
     }
 
+    public IEnumerator ResolveAction()
+    {
+        int damage = calculateDamage();
+
+        GameObject DamageText = CombatTextManager.Instance.CreateBounceText(target.transform.position, damage);
+        while (DamageText != null)
+            yield return null;
+
+        currentFighter.SetIdleState();
+        target.SetIdleState();
+        target.SetDamage(damage);
+        yield return null;
+    }
+
+    public IEnumerator VerifyState()
+    {
+        //Si es un enemigo lo destruimos, si es un personaje ponemos estado derrotado para que pueda ser resucitado
+        Debug.Log(target.FighterData.currentHP);
+        if(target.FighterData.currentHP <= 0)
+        {
+            if (target is EnemyFighter)
+            {
+                Debug.Log("MUERTO");
+                EnemyFighters.Remove((EnemyFighter)target);
+                DestroyObject(target.gameObject);
+            }
+            else
+                target.FighterAnimator.SetTrigger("Dead");
+
+        }
+
+        //Eliminamos la información
+        currentFighter = null;
+        attackInfo = null;
+        target = null;
+
+        yield return null;
+    }
+
+
     public void CreateAttackEffect()
     {
         if (attackInfo != null)
         {
             attackEffect = Instantiate(attackInfo.Animation, target.transform.position, Quaternion.identity) as GameObject;
-            target.FighterAnimator.SetTrigger("hurt");
+            target.FighterAnimator.SetTrigger("Hurt");
         }
         else
             Debug.LogError("No se ha cargado el ataque");
@@ -74,7 +115,7 @@ public class FighterActionManager: MonoBehaviour  {
 
     public void TargetFirstEnemy()
     {
-        Fighter target = EnemyFighters.Where(x => x.EnemyData.currentHP > 0).FirstOrDefault();
+        Fighter target = EnemyFighters.Where(x => x.FighterData.currentHP > 0).FirstOrDefault();
         FighterCursor.gameObject.SetActive(true);
         FighterCursor.ChangeTarget(target);
     }
@@ -119,6 +160,29 @@ public class FighterActionManager: MonoBehaviour  {
         foreach (CharacterFighter charac in PlayerTeamFighters)
             DestroyObject(charac.gameObject);
         PlayerTeamFighters = new List<CharacterFighter>();
+    }
+
+    public void DestroyObject(GameObject gameObject)
+    {
+        gameObject.gameObject.SetActive(false);
+        gameObject.transform.SetParent(null);
+        Destroy(gameObject.gameObject);
+    }
+
+    //Damage Algorithms
+
+    public int calculateDamage()
+    {
+        switch (attackInfo.attackType)
+        {
+            case GameGlobals.AttackType.Attack:
+                return System.Convert.ToInt32(attackInfo.damage + currentFighter.FighterData.AttackPower * 0.4f - target.FighterData.defensePower * 0.4f);
+            case GameGlobals.AttackType.Magic:
+                return System.Convert.ToInt32(attackInfo.damage + currentFighter.FighterData.MagicPower * 0.2f - target.FighterData.MagicDefense * 0.2f);
+            default:
+                return 0;
+
+        }
     }
 
 }

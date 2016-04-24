@@ -14,7 +14,7 @@ MonoBehaviour:
   CharacterName: Goblin
   description: Descripcion
   healthPoints: 75
-  currentHP: 60
+  currentHP: 75
   magicPoints: 20
   currentMP: 15
   attackPower: 10

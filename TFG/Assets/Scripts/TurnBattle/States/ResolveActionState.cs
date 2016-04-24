@@ -12,12 +12,12 @@ public class ResolveActionState : IState
     }
     public void changeState()
     {
-        throw new NotImplementedException();
+        tb.ChangeState(tb.VerifyFighter);
     }
 
     public IEnumerator UpdateState()
     {
         Debug.Log("RESOLVE_ACTION");
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
+        yield return FighterActionManager.Instance.ResolveAction();
     }
 }

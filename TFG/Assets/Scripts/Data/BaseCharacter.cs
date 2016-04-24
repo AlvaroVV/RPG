@@ -7,7 +7,7 @@ public class BaseCharacter: ScriptableObject  {
     public string description = "Descripcion";
     //Stats
     public int healthPoints = 75;
-    public int currentHP = 60;
+    public int currentHP = 75;
     public int magicPoints = 20;
     public int currentMP = 15;
     public int attackPower = 10;

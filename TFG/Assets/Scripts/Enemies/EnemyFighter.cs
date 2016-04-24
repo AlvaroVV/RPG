@@ -4,14 +4,13 @@ using System;
 
 public class EnemyFighter : Fighter {
 
-    public EnemyData EnemyData { get; set; }
 
     public void setEnemyProperties(EnemyData enemyData)
     {
         if(enemyData != null)
         {
             FighterAnimator = GetComponentInChildren<Animator>();
-            EnemyData = enemyData;
+            FighterData = enemyData;
             FighterAnimator.runtimeAnimatorController = enemyData.animatorController;
             FighterName = enemyData.Name;
         }            
