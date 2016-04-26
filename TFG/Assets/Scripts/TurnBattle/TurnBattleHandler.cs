@@ -83,6 +83,8 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         FighterActionManager.Instance.CleanAndFinish();
         currentState = null;
+        //COmentario
+        //Otra linea
     }
 
 }

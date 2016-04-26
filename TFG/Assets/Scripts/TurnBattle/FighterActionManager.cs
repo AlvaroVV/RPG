@@ -173,16 +173,21 @@ public class FighterActionManager: MonoBehaviour  {
 
     public int calculateDamage()
     {
+        float damage = 0;
         switch (attackInfo.attackType)
         {
             case GameGlobals.AttackType.Attack:
-                return System.Convert.ToInt32(attackInfo.damage + currentFighter.FighterData.AttackPower * 0.4f - target.FighterData.defensePower * 0.4f);
+                damage= (attackInfo.damage + currentFighter.FighterData.AttackPower * 0.4f - target.FighterData.defensePower * 0.4f);
+                break;
             case GameGlobals.AttackType.Magic:
-                return System.Convert.ToInt32(attackInfo.damage + currentFighter.FighterData.MagicPower * 0.2f - target.FighterData.MagicDefense * 0.2f);
+                damage =(attackInfo.damage + currentFighter.FighterData.MagicPower * 0.2f - target.FighterData.MagicDefense * 0.2f);
+                break;
             default:
                 return 0;
 
         }
+
+        return (int)Random.Range(damage*0.8f,damage*1.2f);
     }
 
 }
