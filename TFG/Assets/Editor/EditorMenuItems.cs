@@ -29,9 +29,9 @@ static class EditorMenuItems
         ScriptableObjectUtility.CreateAsset<CharacterData>();
     }
 
-    [MenuItem("Assets/Create/Scriptable Object/new Attack")]
+    [MenuItem("Assets/Create/Scriptable Object/new DamageAttack")]
     public static void CreateCharacterAttack()
     {
-        ScriptableObjectUtility.CreateAsset<AttackInfo>();
+        ScriptableObjectUtility.CreateAsset<DamageAttack>();
     }
 }

@@ -25,7 +25,7 @@ public class ActionPanel : MonoBehaviour {
         image.sprite = data.face;
     }
 
-    public void SetAction(AttackInfo attackInfo)
+    public void SetAction(BaseAttack attackInfo)
     {
         //Guardamos la info del ataque elegido
         FighterActionManager.Instance.attackInfo = attackInfo;
@@ -35,7 +35,7 @@ public class ActionPanel : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    public AttackInfo Attack()
+    public BaseAttack Attack()
     {
         return characterFighter.FighterData.normalAttack;
     }

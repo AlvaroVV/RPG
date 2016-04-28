@@ -18,8 +18,8 @@ public class BaseCharacter: ScriptableObject  {
     public int evasion = 5;
 
     //Attacks
-    public AttackInfo normalAttack;
-    public List<AttackInfo> Attacks;
+    public BaseAttack normalAttack;
+    public List<BaseAttack> Attacks;
 
     //Animator
     public RuntimeAnimatorController animatorController;

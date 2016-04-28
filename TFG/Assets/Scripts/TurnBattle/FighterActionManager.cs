@@ -14,7 +14,7 @@ public class FighterActionManager: MonoBehaviour  {
     public List<CharacterFighter> PlayerTeamFighters { get; set; }
 
     public Fighter currentFighter { get; set; }
-    public AttackInfo attackInfo { get; set; } //Ataque elegido
+    public BaseAttack attackInfo { get; set; } //Ataque elegido
     public Fighter target { get; set; } //Enemigo elegido
 
     public Cursor FighterCursor { get; set; }
@@ -62,15 +62,12 @@ public class FighterActionManager: MonoBehaviour  {
 
     public IEnumerator ResolveAction()
     {
-        int damage = calculateDamage();
-
-        GameObject DamageText = CombatTextManager.Instance.CreateBounceText(target.transform.position, damage);
+        GameObject DamageText = attackInfo.ApplyEffect(currentFighter, target);
         while (DamageText != null)
             yield return null;
 
         currentFighter.SetIdleState();
         target.SetIdleState();
-        target.SetDamage(damage);
         yield return null;
     }
 
@@ -169,25 +166,5 @@ public class FighterActionManager: MonoBehaviour  {
         Destroy(gameObject.gameObject);
     }
 
-    //Damage Algorithms
-
-    public int calculateDamage()
-    {
-        float damage = 0;
-        switch (attackInfo.attackType)
-        {
-            case GameGlobals.AttackType.Attack:
-                damage= (attackInfo.damage + currentFighter.FighterData.AttackPower * 0.4f - target.FighterData.defensePower * 0.4f);
-                break;
-            case GameGlobals.AttackType.Magic:
-                damage =(attackInfo.damage + currentFighter.FighterData.MagicPower * 0.2f - target.FighterData.MagicDefense * 0.2f);
-                break;
-            default:
-                return 0;
-
-        }
-
-        return (int)Random.Range(damage*0.8f,damage*1.2f);
-    }
-
+   
 }

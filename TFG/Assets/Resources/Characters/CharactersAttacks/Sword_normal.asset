@@ -8,11 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f763fa83073062c4696a1a0fffb0ade1, type: 3}
+  m_Script: {fileID: 11500000, guid: a1f566685ec903a4bbbc557924452d22, type: 3}
   m_Name: Sword_normal
   m_EditorClassIdentifier: 
   idAttack: sword
-  descriptionAttack: description Attack
-  damage: 10
+  descriptionAttack: description sword attack
   animation: {fileID: 164608, guid: 7c2765f3fece99c4c8414bdf83dc1023, type: 2}
-  fighterState: 0
+  attackType: 0
+  damage: 30

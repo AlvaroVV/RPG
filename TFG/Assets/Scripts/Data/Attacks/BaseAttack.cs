@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackInfo : ScriptableObject {
+public abstract class BaseAttack : ScriptableObject {
 
     public string idAttack = "sword";
     public string descriptionAttack = "description sword attack";
-    public int damage = 10; //Porcentaje de daño para la formula del ataque
     public GameObject animation; //Animación del ataque
     public GameGlobals.AttackType attackType; //Estado del Fighter: Attack or Magic
 
@@ -17,8 +16,6 @@ public class AttackInfo : ScriptableObject {
         set { descriptionAttack = value; }
     }
 
-    public int Damage { get { return damage; } set { damage = value; } }
-
     public GameObject Animation {
         get { return animation; }
         set { animation = value; }
@@ -28,5 +25,7 @@ public class AttackInfo : ScriptableObject {
         get { return attackType; }
         set { attackType = value; }
     }
+
+    public abstract GameObject ApplyEffect(Fighter fighter, Fighter target);
 
 }
