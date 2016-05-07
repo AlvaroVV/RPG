@@ -51,6 +51,7 @@ public class FighterActionManager: MonoBehaviour  {
     public IEnumerator WaitForFinishAttackEffect()
     {
         Debug.Log(target.FighterData.currentHP);
+        //Dentro de la animación, con un evento se crea el ataque llamando a CreateAttackEffect
         currentFighter.ChooseState();
         //Esperamos a que se cree el ataque
         while (attackEffect == null)
@@ -66,8 +67,6 @@ public class FighterActionManager: MonoBehaviour  {
         while (DamageText != null)
             yield return null;
 
-        currentFighter.SetIdleState();
-        target.SetIdleState();
         StackTurnFighter.RemoveAt(0);
         StackTurnFighter.Add(currentFighter);
         yield return null;
@@ -77,17 +76,25 @@ public class FighterActionManager: MonoBehaviour  {
     {
         //Si es un enemigo lo destruimos, si es un personaje ponemos estado derrotado para que pueda ser resucitado
         Debug.Log(target.FighterData.currentHP);
+        //El estado del atacante pasa a Idle
+        currentFighter.FighterAnimator.SetTrigger("Idle");
+        //Comprobamos estado del objetivo
         if(target.FighterData.currentHP <= 0)
         {
             if (target is EnemyFighter)
             {
                 Debug.Log("MUERTO");
                 EnemyFighters.Remove((EnemyFighter)target);
+                StackTurnFighter.Remove(target);
                 DestroyObject(target.gameObject);
             }
             else
                 target.FighterAnimator.SetTrigger("Dead");
 
+        }
+        else
+        {
+            target.FighterAnimator.SetTrigger("Idle");
         }
 
         //Eliminamos la información
@@ -131,14 +138,13 @@ public class FighterActionManager: MonoBehaviour  {
     //StackTurn methods
     public List<Fighter> GetStackTurnOrder()
     {
+        //Ordenadmos la lista y creamos paneles
         StackTurnFighter = StackTurnFighter.OrderBy(fighter => fighter.FighterData.Speed).Reverse().ToList();
+        CombatGUI.Instance.CreateTurnFighterPanels(StackTurnFighter);
         return StackTurnFighter;
     }
 
-
-
     //CLEAN LISTS METHODS
-
     public void CleanAndFinish()
     {
         CleanEnemiesList(); //TEMPORAL

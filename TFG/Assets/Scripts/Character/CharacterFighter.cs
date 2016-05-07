@@ -9,7 +9,7 @@ public class CharacterFighter : Fighter {
     private ActionPanel actionPanel;
     private GameObject target;
 
-    public void setCharacterProperties(CharacterData characterData,TurnBattleHandler tb)
+    public void setCharacterProperties(CharacterData characterData)
     {
         if (characterData != null)
         {
@@ -18,7 +18,8 @@ public class CharacterFighter : Fighter {
             FighterName = characterData.Name;
             FighterImage = characterData.face;
             FighterAnimator.runtimeAnimatorController = characterData.animatorController;
-            TB = tb;
+            //Provisional
+            FighterData.currentHP = FighterData.healthPoints;
         }
     }
 
@@ -32,6 +33,12 @@ public class CharacterFighter : Fighter {
     {
         this.actionPanel = actionPanel;
         actionPanel.addCharacter(this);
+    }
+
+    public override void SetDamage(int damage)
+    {
+        FighterData.currentHP -= damage;
+        statsPanel.updateCurrentHP();
     }
 
 

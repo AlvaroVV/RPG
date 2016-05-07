@@ -16,6 +16,11 @@ public class EnemyFighter : Fighter {
         }            
     }
 
+    public override void SetDamage(int damage)
+    {
+        FighterData.currentHP -= damage; 
+    }
+
     public override void ChooseAttack()
     {
         FighterActionManager.Instance.attackInfo = FighterData.normalAttack;

@@ -21,7 +21,7 @@ public class StartFightTeamState : IState
     {
         Debug.Log("START_TEAM");
         yield return ScriptingUtils.DoAFadeIn();
-
+        FighterActionManager.Instance.CreateFightCursor();//Creamos aqui el Cursor de selección pero DESACTIVADO 
         InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.
         GameGlobals.camera.GoToFightStage(GameObject.FindGameObjectWithTag(GameGlobals.TagFightStage));
         GameGlobals.BackReference.gameObject.SetActive(false);
@@ -48,7 +48,7 @@ public class StartFightTeamState : IState
         GameObject characInstantiate = GameObject.Instantiate(characObject, playerPosition.position, Quaternion.identity) as GameObject;
 
         CharacterFighter characterFighter = characInstantiate.GetComponent<CharacterFighter>();
-        characterFighter.setCharacterProperties(characterData,tb);
+        characterFighter.setCharacterProperties(characterData);
         characInstantiate.name = characterData.CharacterName;
         characInstantiate.transform.parent = tb.transform;
 

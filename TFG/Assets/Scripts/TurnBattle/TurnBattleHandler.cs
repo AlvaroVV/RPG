@@ -58,8 +58,6 @@ public class TurnBattleHandler : MonoBehaviour{
         this.Enemy = enemy;
         PlayerTeam = GameGlobals.player.playerTeam;
       
-        FighterActionManager.Instance.CreateFightCursor();//Creamos aqui el Cursor de selección pero DESACTIVADO 
-
         currentState = StartTeam;
 
         while(currentState != null)
@@ -83,8 +81,6 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         FighterActionManager.Instance.CleanAndFinish();
         currentState = null;
-        //COmentario
-        //Otra linea
     }
 
 }

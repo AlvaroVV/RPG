@@ -58,8 +58,7 @@ public static class GameGlobals  {
     }
 
     public static IEnumerator FinishFight()
-    {
-        
+    {       
         yield return ScriptingUtils.DoAFadeIn();
         BackReference.gameObject.SetActive(true);
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagBackground));

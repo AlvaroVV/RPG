@@ -10,8 +10,6 @@ public abstract class Fighter : MonoBehaviour {
     public Animator FighterAnimator { get; set; }
     public BaseCharacter FighterData { get; set; }
 
-    //Atributos para referencias en el TurnBattle
-    public TurnBattleHandler TB { get; set; } //Referencia al objeto que tiene listas de enemigos y characters
     public TurnFighterPanel TurnFighterPanel { get; set; }
 
     public GameObject attackEffect { get; set; }
@@ -21,10 +19,7 @@ public abstract class Fighter : MonoBehaviour {
         FighterAnimator.SetTrigger("Idle");
     }
 
-    public void SetDamage(int damage)
-    {
-        FighterData.currentHP -= damage;
-    }
+    
 
     public void addTurnPanel(TurnFighterPanel turn)
     {
@@ -32,6 +27,7 @@ public abstract class Fighter : MonoBehaviour {
         turn.addFighter(this);
     }
 
+    public abstract void SetDamage(int damage);
     public abstract void ChooseAttack();
     public abstract void ChooseTarget();
     public abstract void ChooseState();

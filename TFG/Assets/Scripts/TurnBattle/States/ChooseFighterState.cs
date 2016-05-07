@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
+using System.Linq;
 
 public class ChooseFighterState : IState
 {
@@ -31,6 +31,6 @@ public class ChooseFighterState : IState
 
     public Fighter AlgorithmChooseFighter()
     {
-        return FighterActionManager.Instance.StackTurnFighter[0];
+        return FighterActionManager.Instance.StackTurnFighter.Where(x => x.FighterData.currentHP > 0).FirstOrDefault();
     }
 }
