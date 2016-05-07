@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f566685ec903a4bbbc557924452d22, type: 3}
+  m_Name: Blow
+  m_EditorClassIdentifier: 
+  idAttack: Blow
+  descriptionAttack: description blow attack
+  animation: {fileID: 126202, guid: 7c6290c33ce006e498634642a9f97587, type: 2}
+  attackType: 0
+  damage: 10

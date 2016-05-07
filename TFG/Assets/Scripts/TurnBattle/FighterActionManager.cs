@@ -68,6 +68,8 @@ public class FighterActionManager: MonoBehaviour  {
 
         currentFighter.SetIdleState();
         target.SetIdleState();
+        StackTurnFighter.RemoveAt(0);
+        StackTurnFighter.Add(currentFighter);
         yield return null;
     }
 
@@ -124,6 +126,13 @@ public class FighterActionManager: MonoBehaviour  {
         cursorObj.transform.parent = transform;
         FighterCursor = cursorObj.GetComponent<Cursor>();
         FighterCursor.gameObject.SetActive(false);
+    }
+
+    //StackTurn methods
+    public List<Fighter> GetStackTurnOrder()
+    {
+        StackTurnFighter = StackTurnFighter.OrderBy(fighter => fighter.FighterData.Speed).Reverse().ToList();
+        return StackTurnFighter;
     }
 
 

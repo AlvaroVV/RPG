@@ -27,6 +27,7 @@ GameObject:
   - 4: {fileID: 402824}
   - 95: {fileID: 9526326}
   - 212: {fileID: 21287320}
+  - 114: {fileID: 11473286}
   m_Layer: 10
   m_Name: EnemyAnim
   m_TagString: Untagged
@@ -82,7 +83,7 @@ Animator:
   m_GameObject: {fileID: 169848}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be0241429e968344c8fb46c7cd5d1a48, type: 2}
+  m_Controller: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -101,9 +102,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ba56923d8466449b70bfcc5537a1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterName: Zipper_1
-  fighterImage: {fileID: 0}
-  anim: {fileID: 9526326}
+--- !u!114 &11473286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cb003be203ec24e87e736724582e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21287320
 SpriteRenderer:
   m_ObjectHideFlags: 1

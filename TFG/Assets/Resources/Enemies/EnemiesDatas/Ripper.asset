@@ -21,9 +21,9 @@ MonoBehaviour:
   defensePower: 5
   magicPower: 5
   magicDefense: 5
-  speed: 10
+  speed: 12
   evasion: 5
-  normalAttack: {fileID: 0}
+  normalAttack: {fileID: 11400000, guid: 11db97f8c4ca09645a4eb71163bb00ed, type: 2}
   Attacks: []
   animatorController: {fileID: 9100000, guid: be0241429e968344c8fb46c7cd5d1a48, type: 2}
   xp: 7

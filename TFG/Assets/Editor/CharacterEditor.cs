@@ -92,7 +92,7 @@ public class CharacterEditor : Editor {
         if (!speed.hasMultipleDifferentValues)
             ProgressBar(speed.intValue / 100.0f, "speed");
 
-        EditorGUILayout.IntSlider(speed, 0, 100, new GUIContent("evasion"));
+        EditorGUILayout.IntSlider(evasion, 0, 100, new GUIContent("evasion"));
         // Only show the armor progress bar if all the objects have the same armor value:
         if (!evasion.hasMultipleDifferentValues)
             ProgressBar(evasion.intValue / 100.0f, "evasion");

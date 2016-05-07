@@ -18,19 +18,19 @@ public class EnemyFighter : Fighter {
 
     public override void ChooseAttack()
     {
-        //IA para elegir el ataque
-        Debug.Log("El enemigo no tiene Action Panel");
+        FighterActionManager.Instance.attackInfo = FighterData.normalAttack;
     }
 
     public override void ChooseTarget()
     {
-        //IA para elegir target
-   
+        int random = UnityEngine.Random.Range(0, FighterActionManager.Instance.PlayerTeamFighters.Count);
+        FighterActionManager.Instance.target = FighterActionManager.Instance.PlayerTeamFighters[random];
     }
 
     public override void ChooseState()
     {
-        throw new NotImplementedException();
+        String state = FighterActionManager.Instance.attackInfo.FighterState.ToString();
+        FighterAnimator.SetTrigger(state);
     }
 
 
