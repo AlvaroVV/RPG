@@ -34,4 +34,10 @@ static class EditorMenuItems
     {
         ScriptableObjectUtility.CreateAsset<DamageAttack>();
     }
+
+    [MenuItem("Assets/Create/Scriptable Object/new Item")]
+    public static void CreateItem()
+    {
+        ScriptableObjectUtility.CreateAsset<ItemData>();
+    }
 }

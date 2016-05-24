@@ -30,7 +30,7 @@ public class UIManager: MonoBehaviour  {
         //Si ya existe el panel no creamos otro
         GameObject panel = panelStack.Where(x => x.name.Equals(panelPrefabName)).SingleOrDefault();
         if (panel != null)
-        {         
+        {   
             return panel;
         }
         GameObject loadPanel = Resources.Load(panelPrefabName) as GameObject;
@@ -119,6 +119,14 @@ public class UIManager: MonoBehaviour  {
         CombatGUI combat = combatGUI.GetComponent<CombatGUI>();
 
         return combat;
+    }
+
+    public InventoryPanel CreateInventoryPanel()
+    {
+        GameObject inventoryObj = Push("UI/InventoryPanel");
+        InventoryPanel inventory = inventoryObj.GetComponent<InventoryPanel>();
+        inventoryObj.gameObject.SetActive(false);
+        return inventory;
     }
 
 }

@@ -22,6 +22,7 @@ public static class GameGlobals  {
 
     //Referencia al Player para cambiar "estado" desde fuera y no tener un Switch enorme con diferentes estados.
     public static PlayerMovement player = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
+    public static PlayerTeamController playerTeam = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerTeamController>();
     public static CameraControll camera = Camera.main.GetComponent<CameraControll>();
 
     //Referencia al background cuando lo inactivas al empezar una batalla

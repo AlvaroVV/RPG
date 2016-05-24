@@ -6,7 +6,6 @@ public class PlayerMovement: MonoBehaviour {
 
     [Range(1, 5)]
     public float speed = 1.0f;
-    public List<CharacterData> playerTeam;
 
     private Rigidbody2D rgb;
     private float input_x;
@@ -25,17 +24,9 @@ public class PlayerMovement: MonoBehaviour {
         playerTeamController = new PlayerTeamController();
     }
 
-    void Start()
-    {
-        playerTeamController.team = playerTeam;
-    }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-            CombatTextManager.Instance.CreateBounceText(transform.position, 15);
-        if (Input.GetKeyDown(KeyCode.L))
-            CombatTextManager.Instance.CreateDamageText(transform.position, "15");
+    {       
         input_x = Input.GetAxisRaw("Horizontal");
         input_y = Input.GetAxisRaw("Vertical");
 
