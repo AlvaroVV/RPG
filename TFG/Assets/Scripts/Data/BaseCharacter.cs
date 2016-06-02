@@ -83,6 +83,12 @@ public class BaseCharacter: ScriptableObject  {
         set { evasion = value; }
     }
 
-
     public RuntimeAnimatorController AnimatorController { get { return animatorController; } set { animatorController = value; } }
+
+    public void RestoreHP(int hp)
+    {
+        this.currentHP += hp;
+        Debug.Log(Name + "-> " + currentHP);
+
+    }
 }

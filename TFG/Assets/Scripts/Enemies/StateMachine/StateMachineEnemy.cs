@@ -40,7 +40,7 @@ public class StateMachineEnemy : MonoBehaviour {
         chase = new ChaseState(this);
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        target = GameGlobals.player.gameObject;
+        target = GameGlobals.playerMovement.gameObject;
     }
 
     void Start()
@@ -59,7 +59,6 @@ public class StateMachineEnemy : MonoBehaviour {
     {
         if(other.gameObject.CompareTag(GameGlobals.TagPlayer))
         {
-            Catched();
             StartFight();
         }
         else
@@ -92,15 +91,12 @@ public class StateMachineEnemy : MonoBehaviour {
 
     void StartFight()
     {
+        catched = true;
+        rgb.velocity = Vector3.zero;
         GameGlobals.StartFight(this);        
     }
 
-    void Catched()
-    {
-        catched = true;
-        GameGlobals.player.StateInteracting();
-        rgb.velocity = Vector3.zero;
-    }
+    
 
     
 }

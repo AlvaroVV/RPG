@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 public class UIManager: MonoBehaviour  {
 
     private List<GameObject> panelStack; //Pila de paneles
-    
+
     public static UIManager instance = null;
     public static UIManager Instance    
     {
@@ -123,10 +124,18 @@ public class UIManager: MonoBehaviour  {
 
     public InventoryPanel CreateInventoryPanel()
     {
-        GameObject inventoryObj = Push("UI/InventoryPanel");
+        GameObject inventoryObj = Push("UI/Inventory/InventoryPanel");
         InventoryPanel inventory = inventoryObj.GetComponent<InventoryPanel>();
         inventoryObj.gameObject.SetActive(false);
         return inventory;
+    }
+
+    public ChooseCharacterPanel CreateChooseCharacterPanel(ItemData item)
+    {
+        GameObject characterPanel = Push("UI/Inventory/ChooseCharacterPanel");
+        ChooseCharacterPanel chooseCharacterPanel = characterPanel.GetComponent<ChooseCharacterPanel>();
+        chooseCharacterPanel.CreateCharacterPanels(item);
+        return chooseCharacterPanel;
     }
 
 }

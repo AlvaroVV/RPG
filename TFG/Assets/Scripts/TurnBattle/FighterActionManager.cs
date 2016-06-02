@@ -150,8 +150,6 @@ public class FighterActionManager: MonoBehaviour  {
         CleanEnemiesList(); //TEMPORAL
         CleanStackList(); //TEMPORAL
         StartCoroutine(GameGlobals.FinishFight());
-        GameGlobals.player.StateIdle();
-
     }
 
     private void CleanEnemiesList()

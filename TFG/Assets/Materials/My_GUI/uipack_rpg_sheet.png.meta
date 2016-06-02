@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: ed4a30a805281944498eb54168e17ad4
-timeCreated: 1464106137
+timeCreated: 1464280487
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Inventory_Background
     21300002: Inventory_Slot
     21300004: Item_Sword
+    21300006: CharacterPanel
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -100,6 +101,23 @@ TextureImporter:
         - {x: 16.5, y: -17}
         - {x: 16.5, y: 1}
         - {x: 5.5, y: 17}
+    - name: CharacterPanel
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 35
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -49}
+        - {x: -49, y: -50}
+        - {x: 49, y: -50}
+        - {x: 50, y: -49}
+        - {x: 50, y: 50}
     outline: []
   spritePackingTag: 
   userData: 

@@ -1,17 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class ItemData : ScriptableObject {
-
-
+public class ItemData : ScriptableObject
+{
     public string id = "Item";
     public string description = "Description";
     public Sprite image;
-    public float min_lvl = 1;
-    public bool equipable = true;
+    public bool NeedsPanel = false;
 
-    public float Lvl { get { return min_lvl; } set { min_lvl = value; } }
     public string Description { get { return description; } set { description = value; } }
     public string Id { get { return id; } set { id = value; } }
-    public bool Equipable { get { return equipable; } set { equipable = value; } }
+    public Sprite Image { get { return image; } set { this.image = value; } }
+
+    public BaseCharacter Character { get; set; }
+
+    public virtual void UseItem()
+    {
+        Debug.Log("Usando " + id);
+    }
+
+    public virtual string GetStadisticText(BaseCharacter character)
+    {
+        return "StatisticText";
+    }
+
+    public bool CanBeUsed(BaseCharacter character)
+    {
+        //Si Character es null, quiere decir que es un objeto que no necesita de objetivo para ser usado
+        if (character != null)
+        {
+            this.Character = character;
+            return ConditionToUse();
+        }
+        else
+            return true;
+    }
+
+    public virtual bool ConditionToUse()
+    {
+        return true;
+    }
+
+
 }
+  

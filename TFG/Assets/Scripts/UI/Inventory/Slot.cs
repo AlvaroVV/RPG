@@ -2,36 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
 
-public class Slot : MonoBehaviour {
+public class Slot : MonoBehaviour, IPointerClickHandler {
 
-    public Text slotText;
     public GameObject itemPref;
 
-    private Stack<ItemData> items;
-
-	// Use this for initialization
-	void Awake() {
-        items = new Stack<ItemData>();
-	}
+    private GameObject itemSlot;
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void AddItem(ItemData item)
     {
-        items.Push(item);
-
-        GameObject itemObj = Instantiate(itemPref) as GameObject;
-        itemObj.GetComponent<Image>().sprite = item.image;
-        addChild(itemObj, gameObject);
-
-        if(items.Count>1)
+        if (itemSlot == null)
         {
-            slotText.text = items.Count.ToString();
+            itemSlot = Instantiate(itemPref);
+            addChild(itemSlot, gameObject);
         }
+
+        itemSlot.GetComponent<ItemSlot>().AddItem(item);
+    }
+
+    public void AddItems(Stack<ItemData> items)
+    {
+        if (itemSlot == null)
+        {
+            itemSlot = Instantiate(itemPref);
+            addChild(itemSlot, gameObject);
+        }
+
+        itemSlot.GetComponent<ItemSlot>().AddItems(items);
+
     }
 
     private void addChild(GameObject child, GameObject parent)
@@ -47,4 +47,33 @@ public class Slot : MonoBehaviour {
         }
         
     }
+
+   
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(eventData.button == PointerEventData.InputButton.Right)
+            ChargeSlot();
+    }
+
+    private void ChargeSlot()
+    {
+        if (itemSlot != null)
+        {   
+            ChooseCharacterManager.Instance.ChargeSlot(itemSlot.GetComponent<ItemSlot>());            
+        }
+    }
+
+    public bool isEmpty()
+    {
+        return (itemSlot == null) ? true : false;
+    }
+
+    public string getItemSlotName()
+    {
+        if (itemSlot != null)
+            return itemSlot.GetComponent<ItemSlot>().getItemName();
+        else
+            return "";
+    }
+
 }

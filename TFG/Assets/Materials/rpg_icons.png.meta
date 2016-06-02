@@ -1,0 +1,1421 @@
+fileFormatVersion: 2
+guid: 7ccdc527ae466c347a4780abdbc95f2e
+timeCreated: 1464306319
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rpg_icons_0
+    21300002: rpg_icons_1
+    21300004: rpg_icons_2
+    21300006: rpg_icons_3
+    21300008: rpg_icons_4
+    21300010: rpg_icons_5
+    21300012: rpg_icons_6
+    21300014: rpg_icons_7
+    21300016: rpg_icons_8
+    21300018: rpg_icons_9
+    21300020: rpg_icons_10
+    21300022: rpg_icons_11
+    21300024: rpg_icons_12
+    21300026: rpg_icons_13
+    21300028: rpg_icons_14
+    21300030: rpg_icons_15
+    21300032: rpg_icons_16
+    21300034: rpg_icons_17
+    21300036: rpg_icons_18
+    21300038: rpg_icons_19
+    21300040: rpg_icons_20
+    21300042: rpg_icons_21
+    21300044: rpg_icons_22
+    21300046: rpg_icons_23
+    21300048: rpg_icons_24
+    21300050: rpg_icons_25
+    21300052: rpg_icons_26
+    21300054: health_potion
+    21300056: rpg_icons_28
+    21300058: rpg_icons_29
+    21300060: rpg_icons_30
+    21300062: rpg_icons_31
+    21300064: rpg_icons_32
+    21300066: rpg_icons_33
+    21300068: rpg_icons_34
+    21300070: rpg_icons_35
+    21300072: rpg_icons_36
+    21300074: rpg_icons_37
+    21300076: rpg_icons_38
+    21300078: rpg_icons_39
+    21300080: rpg_icons_40
+    21300082: rpg_icons_41
+    21300084: rpg_icons_42
+    21300086: rpg_icons_43
+    21300088: rpg_icons_44
+    21300090: rpg_icons_45
+    21300092: rpg_icons_46
+    21300094: rpg_icons_47
+    21300096: rpg_icons_48
+    21300098: rpg_icons_49
+    21300100: rpg_icons_50
+    21300102: rpg_icons_51
+    21300104: rpg_icons_52
+    21300106: rpg_icons_53
+    21300108: rpg_icons_54
+    21300110: rpg_icons_55
+    21300112: rpg_icons_56
+    21300114: rpg_icons_57
+    21300116: rpg_icons_58
+    21300118: rpg_icons_59
+    21300120: rpg_icons_60
+    21300122: rpg_icons_61
+    21300124: rpg_icons_62
+    21300126: rpg_icons_63
+    21300128: rpg_icons_64
+    21300130: rpg_icons_65
+    21300132: rpg_icons_66
+    21300134: rpg_icons_67
+    21300136: rpg_icons_68
+    21300138: rpg_icons_69
+    21300140: rpg_icons_70
+    21300142: rpg_icons_71
+    21300144: rpg_icons_72
+    21300146: rpg_icons_73
+    21300148: rpg_icons_74
+    21300150: rpg_icons_75
+    21300152: rpg_icons_76
+    21300154: rpg_icons_77
+    21300156: rpg_icons_78
+    21300158: rpg_icons_79
+    21300160: rpg_icons_80
+    21300162: rpg_icons_81
+    21300164: rpg_icons_82
+    21300166: rpg_icons_83
+    21300168: rpg_icons_84
+    21300170: rpg_icons_85
+    21300172: rpg_icons_86
+    21300174: rpg_icons_87
+    21300176: rpg_icons_88
+    21300178: rpg_icons_89
+    21300180: rpg_icons_90
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rpg_icons_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 241
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 240
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 241
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 239
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 239
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 16}
+        - {x: -17, y: 4}
+        - {x: -14, y: -2}
+        - {x: 9, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: -3}
+        - {x: 10, y: 16}
+    - name: rpg_icons_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 238
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: -2}
+        - {x: -16, y: -6}
+        - {x: 8, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: -5}
+        - {x: 2, y: 17}
+    - name: rpg_icons_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 238
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 17}
+        - {x: -17, y: 17}
+        - {x: -17, y: -12}
+        - {x: 8, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: -11}
+        - {x: 5, y: 16}
+    - name: rpg_icons_7
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 238
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: 1}
+        - {x: -12, y: -16}
+        - {x: -11, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: -8}
+        - {x: 11, y: 11}
+        - {x: 3, y: 17}
+    - name: rpg_icons_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 238
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: -8}
+        - {x: -4, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: -4}
+        - {x: 7, y: 17}
+    - name: rpg_icons_9
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 239
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_10
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 240
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_11
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 240
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_12
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 240
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_13
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_14
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_15
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_16
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_17
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_18
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_19
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_20
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_21
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 204
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 16.5}
+        - {x: -12, y: 13.5}
+        - {x: -17, y: 9.5}
+        - {x: -17, y: -8.5}
+        - {x: -7, y: -16.5}
+        - {x: 9, y: -16.5}
+        - {x: 17, y: -6.5}
+        - {x: 17, y: 16.5}
+    - name: rpg_icons_22
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 206
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_23
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 205
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_24
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 207
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_25
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 208
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_26
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 205
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 16.5}
+        - {x: -17, y: -8.5}
+        - {x: -6, y: -16.5}
+        - {x: 17, y: -16.5}
+        - {x: 17, y: 16.5}
+    - name: health_potion
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 170
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_28
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 170
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_29
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 170
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_30
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 170
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_31
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 170
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_32
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 170
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_33
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 170
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_34
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 172
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_35
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 172
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_36
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 138
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_37
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 138
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_38
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 139
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_39
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 138
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_40
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 138
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_41
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 139
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_42
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 138
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_43
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 138
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_44
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 140
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_45
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 139
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_46
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 139
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_47
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 103
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: -13}
+        - {x: -15, y: -16}
+        - {x: 15, y: -16}
+        - {x: 16, y: -14}
+        - {x: 16, y: 14}
+        - {x: 13, y: 16}
+    - name: rpg_icons_48
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 103
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_49
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 102
+        width: 102
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: 17}
+        - {x: 31, y: 17}
+        - {x: 27, y: 11}
+        - {x: 12, y: 17}
+        - {x: -45, y: 17}
+        - {x: -51, y: 11}
+        - {x: -51, y: -7}
+        - {x: -44, y: -15}
+        - {x: -38, y: -17}
+        - {x: 51, y: -17}
+        - {x: 51, y: 10}
+    - name: rpg_icons_50
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 102
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 17}
+        - {x: -17, y: 15}
+        - {x: -17, y: -17}
+        - {x: 10, y: -17}
+        - {x: 17, y: -16}
+        - {x: 17, y: 17}
+    - name: rpg_icons_51
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 102
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 17}
+        - {x: -17, y: 15}
+        - {x: -17, y: -13}
+        - {x: -11, y: -17}
+        - {x: 16, y: -17}
+        - {x: 17, y: -16}
+        - {x: 17, y: 13}
+        - {x: 14, y: 17}
+    - name: rpg_icons_52
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 122
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_53
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 102
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_54
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 114
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_55
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 103
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 0}
+        - {x: 3, y: -4}
+        - {x: 3, y: -8}
+        - {x: 1, y: -2}
+        - {x: 3, y: 4}
+        - {x: 15, y: -1}
+        - {x: 16, y: -1}
+        - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: -2}
+        - {x: 11, y: 0}
+    - name: rpg_icons_56
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 104
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_57
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 122
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_58
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 102
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_59
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 69
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: rpg_icons_60
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 69
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: rpg_icons_61
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 69
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: rpg_icons_62
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 69
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: rpg_icons_63
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 69
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: rpg_icons_64
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 69
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: rpg_icons_65
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 69
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: rpg_icons_66
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 69
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_67
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 75
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_68
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 34
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 34}
+        - {x: -11.5, y: 30}
+        - {x: -12.5, y: 23}
+        - {x: -12.5, y: 16}
+        - {x: -12.5, y: 18}
+        - {x: -13.5, y: 21}
+        - {x: -21.5, y: 24}
+        - {x: -21.5, y: -27}
+        - {x: -3.5, y: -32}
+        - {x: -0.5, y: -27}
+        - {x: -0.5, y: -25}
+        - {x: -0.5, y: -32}
+        - {x: 4.5, y: -34}
+        - {x: 21.5, y: -34}
+        - {x: 21.5, y: 34}
+    - name: rpg_icons_69
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 69
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_70
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 68
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: -16}
+        - {x: -16, y: -17}
+        - {x: 15, y: -17}
+        - {x: 17, y: -16}
+        - {x: 17, y: 14}
+        - {x: 13, y: 17}
+    - name: rpg_icons_71
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 68
+        width: 67
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 17}
+        - {x: -33.5, y: -17}
+        - {x: 33.5, y: -17}
+        - {x: 33.5, y: 17}
+    - name: rpg_icons_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_73
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 58
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_74
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 2}
+        - {x: -34, y: -12}
+        - {x: -19, y: -34}
+        - {x: 2, y: -34}
+        - {x: 2, y: -20}
+        - {x: -23, y: 2}
+      - - {x: 34, y: -19}
+        - {x: 34, y: 34}
+        - {x: -34, y: 34}
+        - {x: -34, y: 14}
+        - {x: -28, y: 0}
+        - {x: 10, y: -34}
+        - {x: 34, y: -34}
+        - {x: 34, y: -23}
+        - {x: 33, y: -22}
+    - name: rpg_icons_75
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 57
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_76
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 34
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 17}
+        - {x: -10.5, y: 16}
+        - {x: -16.5, y: 3}
+        - {x: -16.5, y: -16}
+        - {x: -14.5, y: -17}
+        - {x: 13.5, y: -17}
+        - {x: 16.5, y: -15}
+        - {x: 16.5, y: 11}
+        - {x: 9.5, y: 17}
+    - name: rpg_icons_77
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 61
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_78
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 34
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16.5}
+        - {x: -16, y: -16.5}
+        - {x: 16, y: -16.5}
+        - {x: 16, y: 11.5}
+        - {x: 11, y: 16.5}
+    - name: rpg_icons_79
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 238
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 32}
+        - {x: 83, y: 26}
+        - {x: 83, y: 15}
+        - {x: 85, y: 10}
+        - {x: 90, y: 4}
+        - {x: 87, y: 2}
+        - {x: 85, y: 0}
+        - {x: 86, y: 4}
+        - {x: 86, y: 6}
+        - {x: 75, y: 21}
+        - {x: 83, y: 26}
+        - {x: 81, y: 32}
+        - {x: 48, y: 32}
+        - {x: 55, y: 5}
+        - {x: 61, y: 4}
+        - {x: 63, y: 4}
+        - {x: 66, y: 7}
+        - {x: 64, y: 4}
+        - {x: 53, y: 2}
+        - {x: 51, y: 0}
+        - {x: 53, y: 3}
+        - {x: 54, y: 6}
+        - {x: 43, y: 32}
+        - {x: 16, y: 32}
+        - {x: 14, y: 24}
+        - {x: 20, y: 10}
+        - {x: 22, y: 9}
+        - {x: 31, y: 9}
+        - {x: 33, y: 11}
+        - {x: 33, y: 13}
+        - {x: 34, y: 9}
+        - {x: 36, y: 7}
+        - {x: 19, y: 2}
+        - {x: 17, y: 0}
+        - {x: 19, y: 3}
+        - {x: 19, y: 5}
+        - {x: 14, y: 24}
+        - {x: 15, y: 28}
+        - {x: 13, y: 32}
+        - {x: -117, y: 32}
+        - {x: -119, y: 17}
+        - {x: -119, y: -32}
+        - {x: 119, y: -32}
+        - {x: 119, y: 29}
+        - {x: 117, y: 32}
+      - - {x: 42, y: 22}
+        - {x: 42, y: 18}
+        - {x: 46, y: 14}
+        - {x: 49, y: 15}
+        - {x: 49, y: 24}
+        - {x: 47, y: 26}
+        - {x: 46, y: 26}
+    - name: rpg_icons_80
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 59
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_81
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 59
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_82
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 16}
+        - {x: -8, y: 14}
+        - {x: -16, y: -2}
+        - {x: -16, y: -16}
+        - {x: -5, y: -16}
+        - {x: 16, y: 3}
+        - {x: 16, y: 15}
+        - {x: 14, y: 16}
+    - name: rpg_icons_83
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 34
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: -5}
+        - {x: -16, y: -9}
+        - {x: -2, y: -12}
+        - {x: -1, y: -8}
+        - {x: -1, y: -6}
+        - {x: 0, y: -10}
+        - {x: 2, y: -12}
+        - {x: 10, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: 17}
+      - - {x: 8, y: 3}
+        - {x: 8, y: -1}
+        - {x: 12, y: -5}
+        - {x: 15, y: -4}
+        - {x: 15, y: 5}
+        - {x: 13, y: 7}
+        - {x: 12, y: 7}
+    - name: rpg_icons_84
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 35
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_85
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 35
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_86
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 40
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_87
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 37
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: rpg_icons_88
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16.5}
+        - {x: -16, y: 10.5}
+        - {x: 11, y: -16.5}
+        - {x: 16, y: -16.5}
+        - {x: 16, y: -11.5}
+        - {x: -12, y: 16.5}
+    - name: rpg_icons_89
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 17}
+        - {x: -34, y: -17}
+        - {x: 26, y: -17}
+        - {x: 34, y: -10}
+        - {x: 34, y: 17}
+    - name: rpg_icons_90
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: -13}
+        - {x: -15, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: -4}
+        - {x: 10, y: 17}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

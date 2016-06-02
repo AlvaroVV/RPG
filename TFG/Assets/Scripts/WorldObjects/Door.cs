@@ -10,12 +10,12 @@ public class Door : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals(GameGlobals.TagPlayer))
         {
-            GameGlobals.player.currentState = GameGlobals.PlayerState.Interacting;
-            GameGlobals.player.StopMovement();
+            GameGlobals.playerMovement.currentState = GameGlobals.PlayerState.Interacting;
+            GameGlobals.playerMovement.StopMovement();
             yield return ScriptingUtils.DoAFadeIn();         
             changePosition(other);
             yield return ScriptingUtils.DoAFadeOut();
-            GameGlobals.player.currentState = GameGlobals.PlayerState.Idle;
+            GameGlobals.playerMovement.currentState = GameGlobals.PlayerState.Idle;
         }
     }
 

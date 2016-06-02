@@ -13,6 +13,7 @@ public static class GameGlobals  {
     public static string TagBackground = "Background";
     public static string TagFightStage = "FightStage";
     public static string TagTurnBattle = "TurnBattleHandler";
+    public static string TagCanvas = "Canvas";
 
     //Atributos enemigo Animator
     public const string INPUT_X = "input_x";
@@ -21,8 +22,8 @@ public static class GameGlobals  {
     public const string HURT = "hurt";
 
     //Referencia al Player para cambiar "estado" desde fuera y no tener un Switch enorme con diferentes estados.
-    public static PlayerMovement player = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
-    public static PlayerTeamController playerTeam = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerTeamController>();
+    public static PlayerMovement playerMovement = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
+    public static PlayerTeamController playerTeamController = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerTeamController>();
     public static CameraControll camera = Camera.main.GetComponent<CameraControll>();
 
     //Referencia al background cuando lo inactivas al empezar una batalla
@@ -30,6 +31,9 @@ public static class GameGlobals  {
 
     //Referencia al objeto TurnBattle para empezar la batalla
     public static GameObject TurnBattle =  GameObject.FindGameObjectWithTag(TagTurnBattle);
+
+    //Referencia al Canvas
+    public static GameObject Canvas = GameObject.FindGameObjectWithTag(TagCanvas);
 
     public enum PlayerState
     {
@@ -54,8 +58,11 @@ public static class GameGlobals  {
 
     public static void StartFight(StateMachineEnemy enemy)
     {
+        GameGlobals.playerMovement.StateInteracting();
+
         TurnBattleHandler handler = TurnBattle.GetComponent<TurnBattleHandler>();
-        handler.StartCoroutine(handler.StartFight(enemy));              
+        handler.StartCoroutine(handler.StartFight(enemy));
+        ChangeCanvasRenderMode(RenderMode.ScreenSpaceCamera);              
     }
 
     public static IEnumerator FinishFight()
@@ -64,8 +71,11 @@ public static class GameGlobals  {
         BackReference.gameObject.SetActive(true);
         camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagBackground));
         UIManager.Instance.Pop();
+
         yield return ScriptingUtils.DoAFadeOut();
         FighterActionManager.Instance.CleanCharactersList();
+        ChangeCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
+        GameGlobals.playerMovement.StateIdle();
     }
 
     public static void saveBackReference(GameObject back)
@@ -76,6 +86,11 @@ public static class GameGlobals  {
     public static void saveTurnBattleReference(GameObject turnBattle)
     {
         TurnBattle = turnBattle;
+    }
+
+    public static void ChangeCanvasRenderMode(RenderMode mode)
+    {
+        Canvas.GetComponent<CanvasScript>().ChangeCanvasMode(mode);
     }
 
    

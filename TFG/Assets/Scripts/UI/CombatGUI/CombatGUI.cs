@@ -15,7 +15,7 @@ public class CombatGUI : MonoBehaviour {
         get
         {
             if (instance == null)
-                UIManager.Instance.CreateCombatGUI("UI/CombatGUI");
+                UIManager.Instance.CreateCombatGUI("UI/CombatGUI/CombatGUI");
             return instance;
         }
     }
@@ -44,7 +44,7 @@ public class CombatGUI : MonoBehaviour {
 
     private void addHealthPanel(CharacterFighter charac)
     {
-        GameObject healthPanelObj = Resources.Load("UI/HealthPanel") as GameObject;
+        GameObject healthPanelObj = Resources.Load("UI/CombatGUI/HealthPanel") as GameObject;
         GameObject panel = GameObject.Instantiate(healthPanelObj, healthPanelObj.transform.position, healthPanelObj.transform.rotation) as GameObject;
 
         addChild(panel, HealthPanel);
@@ -56,7 +56,7 @@ public class CombatGUI : MonoBehaviour {
 
     private void addActionPanel(CharacterFighter charac)
     {
-        GameObject actionPanelObj = Resources.Load("UI/ActionPanel") as GameObject;
+        GameObject actionPanelObj = Resources.Load("UI/CombatGUI/ActionPanel") as GameObject;
         GameObject panel = GameObject.Instantiate(actionPanelObj, actionPanelObj.transform.position, actionPanelObj.transform.rotation) as GameObject;
 
         addChild(panel, ActionPanel);
@@ -68,7 +68,7 @@ public class CombatGUI : MonoBehaviour {
 
     private void addTurnFightPanel(Fighter fighter)
     {
-        GameObject actionPanelObj = Resources.Load("UI/TurnfighterPanel") as GameObject;
+        GameObject actionPanelObj = Resources.Load("UI/CombatGUI/TurnfighterPanel") as GameObject;
         GameObject panel = GameObject.Instantiate(actionPanelObj, actionPanelObj.transform.position, actionPanelObj.transform.rotation) as GameObject;
 
         addChild(panel, TurnFighterPanels);
