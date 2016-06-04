@@ -130,7 +130,7 @@ public class UIManager: MonoBehaviour  {
         return inventory;
     }
 
-    public ChooseCharacterPanel CreateChooseCharacterPanel(ItemData item)
+    public ChooseCharacterPanel CreateChooseCharacterPanel(ItemSlot item)
     {
         GameObject characterPanel = Push("UI/Inventory/ChooseCharacterPanel");
         ChooseCharacterPanel chooseCharacterPanel = characterPanel.GetComponent<ChooseCharacterPanel>();

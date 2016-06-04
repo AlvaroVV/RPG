@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class Slot : MonoBehaviour, IPointerClickHandler {
+public class Slot : MonoBehaviour,IDropHandler {
 
     public GameObject itemPref;
 
@@ -16,6 +16,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         if (itemSlot == null)
         {
             itemSlot = Instantiate(itemPref);
+            itemSlot.name = "item_" + item.name;
             addChild(itemSlot, gameObject);
         }
 
@@ -48,21 +49,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         
     }
 
-   
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if(eventData.button == PointerEventData.InputButton.Right)
-            ChargeSlot();
-    }
-
-    private void ChargeSlot()
-    {
-        if (itemSlot != null)
-        {   
-            ChooseCharacterManager.Instance.ChargeSlot(itemSlot.GetComponent<ItemSlot>());            
-        }
-    }
-
     public bool isEmpty()
     {
         return (itemSlot == null) ? true : false;
@@ -76,4 +62,41 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
             return "";
     }
 
+    /// <summary>
+    /// Callback llamado cuando un objeto es "soltado" al ser arrastrado.
+    /// Se llama antes que el EndDragHandler
+    /// </summary>
+    /// <param name="eventData">Datos del evento, como el objeto "soltado"</param>
+    public void OnDrop(PointerEventData eventData)
+    {
+        //El slot a cambiar
+        InventoryPanel.Instance.SlotChangeTo = gameObject;
+
+        //ItemSlot que se va a mover
+        ItemSlot itemSlotFrom = eventData.pointerDrag.GetComponent<ItemSlot>();
+
+        //Si este slot ya tiene un Item, hay que hacer un cambio
+        if (itemSlot != null)
+        {
+            ItemSlot itemSlotTo = itemSlot.GetComponent<ItemSlot>();
+
+            //Cambiamos el slot de este item por el que movemos
+            itemSlotTo.ChangeParent(InventoryPanel.Instance.SlotChangeFrom);
+            InventoryPanel.Instance.SlotChangeFrom.GetComponent<Slot>().itemSlot = itemSlotTo.gameObject;
+
+        }
+        else
+        {
+            //Si no tiene un item, el slot del que proviene se queda vacío
+            InventoryPanel.Instance.SlotChangeFrom.GetComponent<Slot>().itemSlot = null;
+        }
+
+        itemSlot = itemSlotFrom.gameObject;
+
+    }
+
+    public void ChangeItemslot(GameObject item)
+    {
+        this.itemSlot = item;
+    }
 }

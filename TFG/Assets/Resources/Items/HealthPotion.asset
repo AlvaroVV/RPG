@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
   id: HealthPotion
-  description: Description
+  description: "Poci\xF3n que recupera 10 HP"
   image: {fileID: 21300054, guid: 7ccdc527ae466c347a4780abdbc95f2e, type: 3}
   NeedsPanel: 1
-  Stadistic: Hp
   Hp_restore: 10

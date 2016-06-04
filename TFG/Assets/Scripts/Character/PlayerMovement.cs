@@ -21,7 +21,7 @@ public class PlayerMovement: MonoBehaviour {
     {
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<PlayerAnimHandler>();
-        playerTeamController = new PlayerTeamController();
+        playerTeamController = GetComponent<PlayerTeamController>();
     }
 
 

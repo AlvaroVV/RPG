@@ -11,7 +11,6 @@ GameObject:
   - 222: {fileID: 22256546}
   - 114: {fileID: 11427872}
   - 114: {fileID: 11489996}
-  - 114: {fileID: 11475888}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -91,17 +90,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11475888
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae78f35147e2ad4f801953e22315123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11489996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,7 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotsPanel: {fileID: 198672}
   slotObj: {fileID: 171038, guid: 4587a6a086df9a74a87ba7ac3add8782, type: 2}
-  SlotAmount: 15
+  Tooltip: {fileID: 174092, guid: 851095d0e57eaac4190655eff6b78411, type: 2}
+  SlotAmount: 20
 --- !u!114 &11491782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,14 +117,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
+    m_Left: 25
     m_Right: 0
-    m_Top: 10
+    m_Top: 5
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 80, y: 80}
+  m_CellSize: {x: 60, y: 60}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -164,11 +153,11 @@ RectTransform:
   - {fileID: 22494608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 490, y: 370}
-  m_Pivot: {x: 1, y: 0.5}
+  m_SizeDelta: {x: 425, y: 340}
+  m_Pivot: {x: 1, y: 0}
 --- !u!224 &22494608
 RectTransform:
   m_ObjectHideFlags: 1
@@ -217,6 +206,10 @@ Prefab:
       propertyPath: m_Pivot.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Tooltip
+      value: 
+      objectReference: {fileID: 174092, guid: 851095d0e57eaac4190655eff6b78411, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 107184}

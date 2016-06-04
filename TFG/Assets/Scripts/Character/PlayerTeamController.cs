@@ -11,7 +11,7 @@ public class PlayerTeamController: MonoBehaviour  {
     {
         UIManager.Instance.CreateInventoryPanel();
         InventoryPanel.Instance.items = items;
-        
+        playerTeam[0].currentHP = 5;
     }
 
     void Update()
@@ -20,6 +20,8 @@ public class PlayerTeamController: MonoBehaviour  {
             InventoryPanel.Instance.gameObject.SetActive(true);
         if (Input.GetKeyDown(KeyCode.P))
             InventoryPanel.Instance.gameObject.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.Escape))
+            UIManager.Instance.Pop();
     }
 
 	public void AddCharacter(CharacterData character)

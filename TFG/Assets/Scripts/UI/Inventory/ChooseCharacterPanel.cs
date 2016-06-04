@@ -1,20 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
-public class ChooseCharacterPanel : MonoBehaviour {
-
+public class ChooseCharacterPanel : MonoBehaviour
+{
+    public Text itemName;
+    public Image itemImage;
+    public Text itemUnits;
     public GameObject characterPanelsParent;
-    public List<CharacterPanel> panels = new List<CharacterPanel>();
 
-    public void CreateCharacterPanels(ItemData item)
+    private List<CharacterPanel> panels = new List<CharacterPanel>();
+
+    private static ChooseCharacterPanel instance;
+    public static ChooseCharacterPanel Instance
     {
-        //Controlamos que solo se pulse una vez en el objeto para que no siga creando CharacterPanels
-        if (panels.Count == 0)
-            ChargePanels(item);
+        get { return instance; }
     }
 
-    private void ChargePanels(ItemData item)
+    void Awake()
+    {
+        instance = this;
+    }
+
+    public void CreateCharacterPanels(ItemSlot itemSlot)
+    {
+        ShowItem(itemSlot);
+        //Controlamos que solo se pulse una vez en el objeto para que no siga creando CharacterPanels
+        if (panels.Count == 0)
+            ChargePanels(itemSlot);
+    }
+
+    private void ChargePanels(ItemSlot itemSlot)
     {
         foreach (CharacterData charac in GameGlobals.playerTeamController.playerTeam)
         {
@@ -25,7 +42,7 @@ public class ChooseCharacterPanel : MonoBehaviour {
             panelInstantiate.name = "ChoosePanel_" + charac.CharacterName;
 
             CharacterPanel panel = panelInstantiate.GetComponent<CharacterPanel>();
-            panel.setCharacter(charac, item);
+            panel.setCharacter(charac, ref itemSlot);
             panels.Add(panel);
         }
     }
@@ -43,4 +60,15 @@ public class ChooseCharacterPanel : MonoBehaviour {
         }
     }
 
+    private void ShowItem(ItemSlot item)
+    {
+       itemImage.sprite = item.getItem().Image;
+       itemUnits.text = item.getUnits().ToString();
+    }
+
+    public void UpdateUnits(ItemSlot item)
+    {
+        itemUnits.text = item.getUnits().ToString();
+    }
+   
 }

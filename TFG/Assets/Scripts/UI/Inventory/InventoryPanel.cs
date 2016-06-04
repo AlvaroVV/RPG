@@ -6,10 +6,16 @@ public class InventoryPanel : MonoBehaviour {
 
     public GameObject SlotsPanel;
     public GameObject slotObj;
+    public GameObject Tooltip;
     public int SlotAmount;
 
     public List<Slot> inventorySlots { get; set; }
     public List<ItemData> items { get; set; }
+
+    public GameObject SlotChangeTo { get; set; }
+    public GameObject SlotChangeFrom { get; set; }
+
+    private Tooltip tooltip;
 
     private static InventoryPanel instance = null;
     public static InventoryPanel Instance
@@ -33,6 +39,7 @@ public class InventoryPanel : MonoBehaviour {
 
         ChargeSlots();
         ChargeInventory();
+        CreateTooltip();
 	}
 
     private void ChargeSlots()
@@ -81,7 +88,25 @@ public class InventoryPanel : MonoBehaviour {
             slot.AddItem(item);
         else
             Debug.Log("El Inventario está lleno");
-    } 
+    }
+
+    private void CreateTooltip()
+    {
+        GameObject tooltipObj = Instantiate(Tooltip.gameObject) as GameObject;
+        addChild(tooltipObj, gameObject);
+        tooltip = tooltipObj.GetComponent<Tooltip>();
+    }
+
+    public void ActivateTooltip(ItemData item)
+    {
+        tooltip.Activate(item);
+    }
+
+    public void DeactivateTooltip()
+    {
+        tooltip.Deactivate();
+    }
+    
 
     private void addChild(GameObject child, GameObject parent)
     {

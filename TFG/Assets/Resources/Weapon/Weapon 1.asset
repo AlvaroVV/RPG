@@ -11,11 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070a3081476af4941b0e08364f308098, type: 3}
   m_Name: Weapon 1
   m_EditorClassIdentifier: 
-  id: Sword
-  description: Description
+  id: "Espada peque\xF1a"
+  description: "Espada peque\xF1a hecha de madera"
   image: {fileID: 21300004, guid: ed4a30a805281944498eb54168e17ad4, type: 3}
   NeedsPanel: 0
-  Stadistic: Attack
   damage: 10
   speed: 5
   type: 0

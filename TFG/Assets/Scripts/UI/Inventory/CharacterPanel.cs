@@ -11,24 +11,30 @@ public class CharacterPanel : MonoBehaviour, IPointerClickHandler
     public Text text;
 
     private CharacterData character;
-    private ItemData item;
+    private ItemSlot itemSlot;
 
-    public void setCharacter(CharacterData character, ItemData item)
+    public void setCharacter(CharacterData character,ref  ItemSlot itemSlot)
     {
         this.character = character;
-        this.item = item;
+        this.itemSlot = itemSlot;
         this.image.sprite = character.face;
-        this.text.text = item.GetStadisticText(character);
+        this.text.text = itemSlot.getItem().GetStadisticText(character);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        ChooseCharacterManager.Instance.ApplyEffectOnCharacter(character);
-        UpdateText();
+        ItemData item = itemSlot.getItem();
+        if (item == null)
+        {
+            Debug.Log("NO QUEDAN OBJETOS");
+            Destroy(ChooseCharacterPanel.Instance.gameObject);
+        }
+        else
+        {
+            itemSlot.UseItem(character);
+            this.text.text = item.GetStadisticText(character);
+            ChooseCharacterPanel.Instance.UpdateUnits(itemSlot);
+        }
     }
 
-    private void UpdateText()
-    {
-        this.text.text = item.GetStadisticText(character);
-    }
 }
