@@ -24,6 +24,11 @@ public class BaseCharacter: ScriptableObject  {
     //Animator
     public RuntimeAnimatorController animatorController;
 
+    void OnEnable()
+    {
+        hideFlags = HideFlags.DontSave;
+    }
+
     public string Name {
         get { return CharacterName; }
         set { CharacterName = value; }

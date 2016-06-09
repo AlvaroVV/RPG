@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 
+[Serializable]
 public class ItemData : ScriptableObject
 {
     public string id = "Item";

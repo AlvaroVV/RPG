@@ -36,6 +36,7 @@ public class InventoryPanel : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        items = GameGlobals.playerTeamController.items;
 
         ChargeSlots();
         ChargeInventory();
@@ -54,6 +55,7 @@ public class InventoryPanel : MonoBehaviour {
 
     private void ChargeInventory()
     {
+
         foreach(ItemData item in items)
         {
             Slot slot = LookForSlot(item);
@@ -120,5 +122,4 @@ public class InventoryPanel : MonoBehaviour {
             child.layer = parent.layer;
         }
     }
-
 }

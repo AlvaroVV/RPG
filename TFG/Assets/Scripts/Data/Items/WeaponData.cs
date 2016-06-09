@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class WeaponData : ItemData
 {
-    #region Public Stats
     public float damage = 10;
     public float speed = 5;
     public WeaponType type;
-    #endregion
+
     public enum WeaponType
     {
         Sword,

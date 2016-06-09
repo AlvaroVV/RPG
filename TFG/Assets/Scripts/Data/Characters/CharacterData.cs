@@ -22,6 +22,7 @@ public class CharacterData : BaseCharacter {
         get { return abilityPoints; }
         set { abilityPoints = value; }
     }
+}
 
    
-}
+

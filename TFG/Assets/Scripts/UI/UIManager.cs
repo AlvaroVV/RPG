@@ -126,7 +126,6 @@ public class UIManager: MonoBehaviour  {
     {
         GameObject inventoryObj = Push("UI/Inventory/InventoryPanel");
         InventoryPanel inventory = inventoryObj.GetComponent<InventoryPanel>();
-        inventoryObj.gameObject.SetActive(false);
         return inventory;
     }
 

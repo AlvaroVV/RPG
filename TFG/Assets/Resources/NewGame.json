@@ -1,0 +1,31 @@
+{
+    "gameSlotName": "",
+    "playerPositionX": -14.480001449584961,
+    "playerPositionY": 10.600000381469727,
+    "itemsNames": [
+		{
+			"instanceID": 2554
+		}
+	],
+    "characterStates": [
+        {
+			"OriginalData": {
+				"instanceID": 4376
+			},
+            "CharacterName": "Felix",
+            "currentHP": 80,
+            "currentMP": 15,
+            "AbilityPoints": 0,
+            "AttackPower": 10,
+            "DefensePower": 5,
+            "Evasion": 7,
+            "Experience": 0,
+            "HealthPoints": 80,
+            "MagicDefense": 5,
+            "MagicPoints": 25,
+            "MagicPower": 5,
+            "Speed": 25,
+            "Attacks": []
+        }       
+    ]
+}

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 070a3081476af4941b0e08364f308098, type: 3}
-  m_Name: Weapon 1
+  m_Name: Weapon_1
   m_EditorClassIdentifier: 
-  id: "Espada peque\xF1a"
+  id: Weapon/Weapon_1
   description: "Espada peque\xF1a hecha de madera"
   image: {fileID: 21300004, guid: ed4a30a805281944498eb54168e17ad4, type: 3}
   NeedsPanel: 0

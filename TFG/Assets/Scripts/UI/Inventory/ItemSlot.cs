@@ -74,6 +74,7 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
     public void UpdateUnits()
     {
         unitsText.text = (items.Count > 1) ? items.Count.ToString() : string.Empty;
+
     }
 
     public int getUnits()
@@ -85,8 +86,10 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
     {
         if (!isEmpty() && items.Peek().CanBeUsed(character))
         {
-            items.Pop().UseItem();
+            ItemData item = items.Pop();
+            item.UseItem();
             UpdateUnits();
+            InventoryPanel.Instance.items.Remove(item);
             if (isEmpty())
                 Destroy(gameObject);
         }

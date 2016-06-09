@@ -24,6 +24,12 @@ public class PlayerMovement: MonoBehaviour {
         playerTeamController = GetComponent<PlayerTeamController>();
     }
 
+    void Start()
+    {
+        //Cuando cargamos el personaje le preguntamos al GameSlot donde se guardó la última vez
+        transform.position = new Vector3(GameSlotInfo.currentGameSlot.playerPositionX, GameSlotInfo.currentGameSlot.playerPositionY, 0);
+    }
+
 
     void Update()
     {       

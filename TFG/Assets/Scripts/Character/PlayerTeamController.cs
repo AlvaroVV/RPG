@@ -4,32 +4,55 @@ using System.Collections.Generic;
 
 public class PlayerTeamController: MonoBehaviour  {
 
-    public List<CharacterData> playerTeam;
+    public List<CharacterState> currentCharacterStates;
+    public List<CharacterData> currentPlayerTeam;
     public List<ItemData> items;
 
     void Start()
     {
-        UIManager.Instance.CreateInventoryPanel();
-        InventoryPanel.Instance.items = items;
-        playerTeam[0].currentHP = 5;
+        //Cargamos los objetos desde el GameSlot
+        items = GameSlotInfo.currentGameSlot.itemsNames;
+        LoadCharacterDatas();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.O))
-            InventoryPanel.Instance.gameObject.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.P))
-            InventoryPanel.Instance.gameObject.SetActive(false);
+            UIManager.Instance.CreateInventoryPanel();
         if (Input.GetKeyDown(KeyCode.Escape))
             UIManager.Instance.Pop();
     }
 
 	public void AddCharacter(CharacterData character)
     {
-        playerTeam.Add(character);
+       currentPlayerTeam.Add(character);
     }
 
-    
+
+    public void LoadCharacterDatas()
+    {
+        currentCharacterStates = GameSlotInfo.currentGameSlot.characterStates;
+        foreach (CharacterState state in currentCharacterStates)
+        {
+            currentPlayerTeam.Add(state.OriginalData);
+            state.LoadCharacter();
+        }
+    }
+
+
+
+    public List<CharacterState> SaveCharacterDatas()
+    {
+        List<CharacterState> states = new List<CharacterState>();
+        foreach (CharacterData character in currentPlayerTeam)
+        {
+            CharacterState state = new CharacterState();
+            state.SaveCharacter(character);
+            states.Add(state);
+        }
+
+        return states;
+    }
 
 
 
