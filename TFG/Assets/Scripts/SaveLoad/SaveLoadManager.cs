@@ -41,6 +41,7 @@ public static class SaveLoadManager {
     {
         if (File.Exists(Application.persistentDataPath + "/savedGames.json"))
         {
+            Debug.Log(Application.persistentDataPath);
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.json",FileMode.Open);
             StreamReader reader = new StreamReader(file);
             string json = reader.ReadToEnd();

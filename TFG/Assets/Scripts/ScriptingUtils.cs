@@ -4,8 +4,7 @@ using UnityEngine;
 
 public static class ScriptingUtils  {
 
-    
-
+   
 	public static IEnumerator showNpcDialogue(NPC npc, bool showTexts)
     {
         if(showTexts)
@@ -62,6 +61,17 @@ public static class ScriptingUtils  {
         }
     }
 
-   
+    public static void addChild(GameObject child, GameObject parent)
+    {
+        if (child != null)
+        {
+            Transform t = child.transform;
+            t.SetParent(parent.transform, false);
+            //t.localPosition = Vector3.zero;
+            t.localRotation = Quaternion.identity;
+            t.localScale = Vector3.one;
+            child.layer = parent.layer;
+        }
+    }
 
 }
