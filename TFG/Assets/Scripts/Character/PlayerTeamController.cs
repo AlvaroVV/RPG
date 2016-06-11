@@ -8,20 +8,32 @@ public class PlayerTeamController: MonoBehaviour  {
     public List<CharacterData> currentPlayerTeam;
     public List<ItemData> items;
 
+    private GameObject menuPanel;
+
     void Start()
     {
         //Cargamos los objetos desde el GameSlot
-        items = GameSlotInfo.currentGameSlot.itemsNames;
+        LoadItems();
         LoadCharacterDatas();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-            UIManager.Instance.CreateInventoryPanel();
-        if (Input.GetKeyDown(KeyCode.Escape))
-            UIManager.Instance.Pop();
+        OpenCloseMenuPanel();
     }
+
+    private void OpenCloseMenuPanel()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && menuPanel == null)
+            menuPanel = UIManager.Instance.CreateMenuPanel();
+        else if(Input.GetKeyDown(KeyCode.Escape) && menuPanel != null)
+        {
+            string lastPanelName = UIManager.Instance.Pop();
+            if (lastPanelName.Equals("UI/MenuPanel"))
+                menuPanel = null;
+        }
+    }
+
 
 	public void AddCharacter(CharacterData character)
     {
@@ -34,12 +46,12 @@ public class PlayerTeamController: MonoBehaviour  {
         currentCharacterStates = GameSlotInfo.currentGameSlot.characterStates;
         foreach (CharacterState state in currentCharacterStates)
         {
-            currentPlayerTeam.Add(state.OriginalData);
-            state.LoadCharacter();
+            CharacterData character = Resources.Load(state.CharacterPath) as CharacterData;
+            state.LoadCharacter(character);
+            currentPlayerTeam.Add(character);
+            
         }
     }
-
-
 
     public List<CharacterState> SaveCharacterDatas()
     {
@@ -54,6 +66,26 @@ public class PlayerTeamController: MonoBehaviour  {
         return states;
     }
 
+    private void LoadItems()
+    {
+        List<string> itemPaths = GameSlotInfo.currentGameSlot.itemsNames;
+        foreach(string itemPath in itemPaths)
+        {
+            ItemData item = Resources.Load(itemPath) as ItemData;
+            items.Add(item);
+        }
+    }
+
+    public List<string> SaveItems()
+    {
+        List<string> itemPaths = new List<string>();
+        foreach(ItemData item in items)
+        {
+            itemPaths.Add(item.ItemPath);
+        }
+
+        return itemPaths;
+    }
 
 
 }

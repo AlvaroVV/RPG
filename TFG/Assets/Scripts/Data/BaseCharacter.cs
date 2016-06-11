@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
+
 
 public class BaseCharacter: ScriptableObject  {
 
@@ -23,11 +25,6 @@ public class BaseCharacter: ScriptableObject  {
 
     //Animator
     public RuntimeAnimatorController animatorController;
-
-    void OnEnable()
-    {
-        hideFlags = HideFlags.DontSave;
-    }
 
     public string Name {
         get { return CharacterName; }
