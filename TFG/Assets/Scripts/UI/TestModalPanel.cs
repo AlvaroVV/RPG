@@ -31,4 +31,9 @@ public class TestModalPanel : MonoBehaviour {
     {
         CSVReader.Instance.ChangeLanguage(key);
     }
+
+    public void ShowInventory()
+    {
+        UIManager.Instance.CreateInventoryPanel();
+    }
 }
