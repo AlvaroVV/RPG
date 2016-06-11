@@ -50,7 +50,7 @@ public class MainMenuSceneTest : MonoBehaviour {
             GameSlotInfo.currentGameSlot.gameSlotName = GUILayout.TextField(GameSlotInfo.currentGameSlot.gameSlotName, 20);
 
             if (GUILayout.Button("Create"))
-            {             
+            {   
                 Application.LoadLevel(1);
             }
 

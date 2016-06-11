@@ -7,6 +7,11 @@ public class PotionData : ItemData {
 
     public int Hp_restore;
 
+    void OnEnable()
+    {
+        ItemPath = "Items/" + id;
+    }
+
     public override void UseItem()
     {
         Character.RestoreHP(Hp_restore);

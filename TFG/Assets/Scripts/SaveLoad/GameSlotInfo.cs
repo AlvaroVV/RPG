@@ -14,7 +14,7 @@ public class GameSlotInfo
     //public List<CharacterData> characters;
 
     //Lista de items
-    public List<ItemData> itemsNames = new List<ItemData>();
+    public List<string> itemsNames = new List<string>();
 
     //Lista de states de los personajes
     public List<CharacterState> characterStates = new List<CharacterState>();

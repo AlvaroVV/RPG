@@ -51,17 +51,20 @@ public class UIManager: MonoBehaviour  {
         return loadPanel;
     }
 
-    public void Pop()
+    public string Pop()
     {
+        string lastPanelName = "";
         if (panelStack.Count > 0)
         {
             GameObject lastPanel = panelStack[panelStack.Count - 1];
-
+            lastPanelName = lastPanel.name;
             lastPanel.gameObject.SetActive(false);
             lastPanel.transform.SetParent(null);
             panelStack.RemoveAt(panelStack.Count - 1);
             Destroy(lastPanel);
         }
+
+        return lastPanelName;
     }
     
 
@@ -135,6 +138,13 @@ public class UIManager: MonoBehaviour  {
         ChooseCharacterPanel chooseCharacterPanel = characterPanel.GetComponent<ChooseCharacterPanel>();
         chooseCharacterPanel.CreateCharacterPanels(item);
         return chooseCharacterPanel;
+    }
+
+    public GameObject CreateMenuPanel()
+    {
+       GameObject menuPanel = Push("UI/MenuPanel");
+       return menuPanel;
+
     }
 
 }

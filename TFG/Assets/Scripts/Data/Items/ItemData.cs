@@ -2,13 +2,14 @@
 using System.Collections;
 using System;
 
-[Serializable]
+
 public class ItemData : ScriptableObject
 {
     public string id = "Item";
     public string description = "Description";
     public Sprite image;
     public bool NeedsPanel = false;
+    public string ItemPath = "";
 
     public string Description { get { return description; } set { description = value; } }
     public string Id { get { return id; } set { id = value; } }

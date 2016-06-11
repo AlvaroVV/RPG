@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2755cd3f776902844879ac46dc5370cb, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  id: Items/HealthPotion
+  id: HealthPotion
   description: "Poci\xF3n que recupera 10 HP"
   image: {fileID: 21300054, guid: 7ccdc527ae466c347a4780abdbc95f2e, type: 3}
   NeedsPanel: 1
+  ItemPath: Items/Items/HealthPotion
   Hp_restore: 10
