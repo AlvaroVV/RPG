@@ -8,7 +8,6 @@ public class PlayerTeamController: MonoBehaviour  {
     public List<CharacterData> currentPlayerTeam;
     public List<ItemData> items;
 
-    private GameObject menuPanel;
 
     void Start()
     {
@@ -24,13 +23,13 @@ public class PlayerTeamController: MonoBehaviour  {
 
     private void OpenCloseMenuPanel()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && menuPanel == null)
-            menuPanel = UIManager.Instance.CreateMenuPanel();
-        else if(Input.GetKeyDown(KeyCode.Escape) && menuPanel != null)
+        if (Input.GetKeyDown(KeyCode.Escape) && UIManager.Instance.isEmpty())
         {
-            string lastPanelName = UIManager.Instance.Pop();
-            if (lastPanelName.Equals("UI/MenuPanel"))
-                menuPanel = null;
+            UIManager.Instance.CreateMenuPanel();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIManager.Instance.Pop(); 
         }
     }
 

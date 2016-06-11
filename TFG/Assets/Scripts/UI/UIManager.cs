@@ -66,6 +66,24 @@ public class UIManager: MonoBehaviour  {
 
         return lastPanelName;
     }
+
+    public GameObject Peek()
+    {
+        return panelStack[panelStack.Count - 1];
+    }
+
+    public void RemovePanel(GameObject panel)
+    {
+        panel.gameObject.SetActive(false);
+        panel.transform.SetParent(null);
+        panelStack.Remove(panel);
+        Destroy(panel);
+    }
+
+    public bool isEmpty()
+    {
+        return (panelStack.Count == 0)? true: false;
+    }
     
 
     private GameObject addChild(GameObject child)
