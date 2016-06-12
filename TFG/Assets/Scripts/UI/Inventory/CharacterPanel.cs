@@ -27,7 +27,7 @@ public class CharacterPanel : MonoBehaviour, IPointerClickHandler
         if (item == null)
         {
             Debug.Log("NO QUEDAN OBJETOS");
-            Destroy(ChooseCharacterPanel.Instance.gameObject);
+            UIManager.Instance.RemovePanel(ChooseCharacterPanel.Instance.gameObject);
         }
         else
         {

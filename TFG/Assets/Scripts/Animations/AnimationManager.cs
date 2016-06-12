@@ -3,6 +3,9 @@ using System.Collections;
 
 public class AnimationManager : MonoBehaviour {
 
+    public GameObject shine_1;
+    public GameObject shine_2;
+
     private Animation cameraAnim;
     private AudioSource audioSource;
     // Use this for initialization
@@ -16,9 +19,15 @@ public class AnimationManager : MonoBehaviour {
     {
         cameraAnim.Play("CameraMenu");
         StartCoroutine(EndAnimation());
+
         yield return WaitForAnimation(cameraAnim);
-        StartCoroutine(MainPanelMenu.Instance.StartMenu());
         audioSource.Play();
+        StartCoroutine(MainPanelMenu.Instance.StartMenu());
+        Instantiate(shine_1);
+
+        yield return new WaitForSeconds(1.5f);
+        Instantiate(shine_2);
+        
     }
 
     private IEnumerator EndAnimation()
