@@ -25,12 +25,14 @@ public class HealthPanel : MonoBehaviour {
 
     public void updateCurrentHP()
     {
-        HP_Current.text = character.currentHP.ToString();
+        string health = (character.currentHP >= 0) ? character.currentHP.ToString() : "0";
+        HP_Current.text = health;
     }
 
     public void updateCurrentMP()
     {
-        MP_Current.text = character.currentMP.ToString();
+        string magic = (character.currentMP >= 0) ? character.currentMP.ToString() : "0";
+        MP_Current.text = magic;
     }
 
 }

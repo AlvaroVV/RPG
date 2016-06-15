@@ -59,7 +59,7 @@ public static class GameGlobals  {
 
     public static void StartFight(StateMachineEnemy enemy)
     {
-        GameGlobals.playerMovement.StateInteracting();
+        playerMovement.StateInteracting();
 
         TurnBattleHandler handler = TurnBattle.GetComponent<TurnBattleHandler>();
         handler.StartCoroutine(handler.StartFight(enemy));
@@ -76,7 +76,8 @@ public static class GameGlobals  {
         yield return ScriptingUtils.DoAFadeOut();
         FighterActionManager.Instance.CleanCharactersList();
         ChangeCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
-        GameGlobals.playerMovement.StateIdle();
+
+        playerMovement.StateIdle();
     }
 
     public static void saveBackReference(GameObject back)
