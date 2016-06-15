@@ -7,7 +7,9 @@ TagManager:
   - Background
   - TurnBattleHandler
   - FightStage
+  - BlackPlane
   - Canvas
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - Interactable
   - Enemy
-  - 
+  - Dreams
   - 
   - 
   - 

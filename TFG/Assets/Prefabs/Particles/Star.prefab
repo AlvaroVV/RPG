@@ -27,7 +27,6 @@ GameObject:
   - 4: {fileID: 459594}
   - 198: {fileID: 19827820}
   - 199: {fileID: 19969326}
-  - 114: {fileID: 11447818}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -60,19 +59,6 @@ Transform:
   - {fileID: 425876}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11447818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c46c15aad959a641a441024b98f65be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  order: 2
-  layer: Foreground
 --- !u!198 &19827820
 ParticleSystem:
   m_ObjectHideFlags: 1

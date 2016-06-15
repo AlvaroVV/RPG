@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
+using System.Linq;
+
 
 public class VerifyFighterState: IState {
 
@@ -13,14 +14,21 @@ public class VerifyFighterState: IState {
 
     public void changeState()
     {
-        if (FighterActionManager.Instance.EnemyFighters.Count > 0)
-            tb.ChangeState(tb.ChooseFighter);
-        else
+        if (CheckHealthTeam() || FighterActionManager.Instance.EnemyFighters.Count == 0)
             tb.ChangeState(tb.FinishBattle);
+        else 
+            tb.ChangeState(tb.ChooseFighter);
     }
 
     public IEnumerator UpdateState()
     {
         yield return FighterActionManager.Instance.VerifyState();
+    }
+
+    private bool CheckHealthTeam()
+    {
+        bool finish = FighterActionManager.Instance.PlayerTeamFighters.Any(x => x.FighterData.HealthPoints <= 0);
+        Debug.Log(finish);
+        return finish;
     }
 }

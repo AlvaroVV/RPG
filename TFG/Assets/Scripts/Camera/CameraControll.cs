@@ -6,6 +6,7 @@ public class CameraControll : MonoBehaviour
 {
     //Mapa Inicio, (temporal)
     public GameObject background;
+    public GameObject blackPanel;
     private Transform playerTransform;
 
     private bool canMove = true;
@@ -27,7 +28,7 @@ public class CameraControll : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).GetComponent<Transform>();
 
         calcularParametrosCamara();
-        GoToBackgroundGiven(background);
+        GoToMainBackground();
     }
 
 
@@ -60,6 +61,23 @@ public class CameraControll : MonoBehaviour
    
 
 
+    public void GoToMainBackground()
+    {
+        GameObject background = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
+        if (background.GetComponent<TiledMap>() != null)
+        {
+            min_x = background.transform.position.x;
+            max_x = background.transform.position.x + background.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
+
+            max_y = background.transform.position.y;
+            min_y = background.transform.position.y - background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
+
+            checkBackground(background);
+        }
+        else
+            Debug.LogError("El GameObject no tiene componente TiledMap");
+    }
+
     public void GoToBackgroundGiven(GameObject background)
     {
         if (background.GetComponent<TiledMap>() != null)
@@ -80,7 +98,6 @@ public class CameraControll : MonoBehaviour
     {
         //En la pelea la camara no se moverá
         canMove = false;
-
         if (fightStage.GetComponent<TiledMap>() != null)
         {
             float backWidth = fightStage.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
@@ -92,6 +109,17 @@ public class CameraControll : MonoBehaviour
         }
         else
             Debug.LogError("El GameObject no tiene componente TiledMap");
+    }
+
+    public GameObject GoToBlackPanel()
+    {
+        canMove = false;
+        GameObject blacPanel = Instantiate(blackPanel);
+
+        transform.position = new Vector3(blacPanel.transform.position.x,
+                                         blacPanel.transform.position.y,
+                                         transform.position.z);
+        return blacPanel;
     }
 
     void calcularParametrosCamara()

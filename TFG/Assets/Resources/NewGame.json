@@ -2,6 +2,7 @@
     "gameSlotName": "",
             "playerPositionX": -14.480001449584961,
             "playerPositionY": 10.600000381469727,
+			"currentChapter": "FirstChapter",
             "itemsNames": [
                 "Items/HealthPotion"
             ],

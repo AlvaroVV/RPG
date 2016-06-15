@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Linq;
 
 public class FinishBattleState : IState
 {
@@ -19,13 +20,9 @@ public class FinishBattleState : IState
     }
 
     public void changeState()
-    {
-        if (FighterActionManager.Instance.EnemyFighters.Count > 0)
-            tb.ChangeState(tb.ChooseFighter);
-        else
-        {
-           
-            tb.CleanAndFinish();
-        }
+    {     
+        tb.CleanAndFinish();
+
     }
+
 }

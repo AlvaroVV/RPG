@@ -57,7 +57,7 @@ public class TurnBattleHandler : MonoBehaviour{
         //Cogemos listas de Enemigos y Team
         this.Enemy = enemy;
         PlayerTeam = GameGlobals.playerTeamController.currentPlayerTeam;
-      
+        Debug.Log("TURNFIGHT");
         currentState = StartTeam;
 
         while(currentState != null)

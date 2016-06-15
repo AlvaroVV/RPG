@@ -17,7 +17,8 @@ public class MainPanelMenu : MonoBehaviour {
     public GameObject GameNamePanel;
     public GameObject PanelMenu;
     public GameObject NewGameMenu;
-    public GameObject ContinueMenu;
+    public GameObject GameSlotsMenu;
+    public GameObject ContinuePanel;
 
     //Atributes
     public Text slotNameText;
@@ -35,7 +36,6 @@ public class MainPanelMenu : MonoBehaviour {
 
     public void ClickNewGame()
     {
-        PanelMenu.SetActive(false);
         NewGameMenu.SetActive(true);
         SaveLoadManager.NewSlot();
     }
@@ -43,14 +43,31 @@ public class MainPanelMenu : MonoBehaviour {
     public void StartNewGame()
     {
         string name = slotNameText.text;
-        GameSlotInfo.currentGameSlot.gameSlotName = name;
-        SceneManager.LoadScene(1);
+        if (!name.Equals(""))
+        {
+            GameSlotInfo.currentGameSlot.gameSlotName = name;
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    public void ClickStart()
+    {
+        PanelMenu.SetActive(false);
+        GameSlotsMenu.SetActive(true);
     }
 
     public void ClickContinue()
     {
-        PanelMenu.SetActive(false);
-        ContinueMenu.SetActive(true);
+        SceneManager.LoadScene(1);
+    }
+
+    public void ClickDelete()
+    {
+        Debug.Log(GameSlotInfo.currentGameSlot.gameSlotName);
+        SaveLoadManager.DeleteGameSlot();
+        MenuContinue.Instance.RestartPanel();
+        ContinuePanel.SetActive(false);
+        PanelMenu.SetActive(true);
     }
 
     public void ClickExit()
@@ -61,7 +78,7 @@ public class MainPanelMenu : MonoBehaviour {
     public void ButtonBack()
     {
         NewGameMenu.SetActive(false);
-        ContinueMenu.SetActive(false);
+        GameSlotsMenu.SetActive(false);
         PanelMenu.SetActive(true);
     }
 

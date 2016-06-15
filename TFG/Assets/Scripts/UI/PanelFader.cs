@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PanelFader : MonoBehaviour {
 
@@ -11,15 +12,14 @@ public class PanelFader : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake() {
-
-        anim = GetComponent<Animator>();
-	
+        anim = GetComponent<Animator>();	
 	}
+
 
     public IEnumerator FadeToClear()
     {
         isFading = true;
-        anim.SetTrigger(FADE_OUT);
+        anim.SetBool(FADE_OUT,true);
         while (isFading)
             yield return null;
     }
@@ -27,7 +27,7 @@ public class PanelFader : MonoBehaviour {
     public IEnumerator FadeToBlack()
     {
         isFading = true;
-        anim.SetTrigger(FADE_IN);
+        anim.SetBool(FADE_IN,true);
         while (isFading)
             yield return null;
     }

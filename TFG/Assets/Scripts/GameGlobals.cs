@@ -22,6 +22,7 @@ public static class GameGlobals  {
     public const string HURT = "hurt";
 
     //Referencia al Player para cambiar "estado" desde fuera y no tener un Switch enorme con diferentes estados.
+    public static GameObject player = GameObject.FindGameObjectWithTag(TagPlayer);
     public static PlayerMovement playerMovement = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
     public static PlayerTeamController playerTeamController = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerTeamController>();
     public static CameraControll camera = Camera.main.GetComponent<CameraControll>();
@@ -69,7 +70,7 @@ public static class GameGlobals  {
     {       
         yield return ScriptingUtils.DoAFadeIn();
         BackReference.gameObject.SetActive(true);
-        camera.GoToBackgroundGiven(GameObject.FindGameObjectWithTag(TagBackground));
+        camera.GoToMainBackground();
         UIManager.Instance.Pop();
 
         yield return ScriptingUtils.DoAFadeOut();

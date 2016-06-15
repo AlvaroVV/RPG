@@ -18,8 +18,6 @@ public class CharacterFighter : Fighter {
             FighterName = characterData.Name;
             FighterImage = characterData.face;
             FighterAnimator.runtimeAnimatorController = characterData.animatorController;
-            //Provisional
-            FighterData.currentHP = FighterData.healthPoints;
         }
     }
 

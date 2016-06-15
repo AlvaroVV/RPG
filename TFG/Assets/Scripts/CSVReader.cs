@@ -27,7 +27,7 @@ public class CSVReader  {
             if (instance == null)
             {
                 instance = new CSVReader();
-                instance.Read("Internacionalizacion");
+                instance.Read("Internacionalización");
             }
             return instance;
         }
@@ -98,7 +98,7 @@ public class CSVReader  {
                  
     }
 
-    public List<string> getDialogue(string key)
+    public List<string> getSentences(string key)
     {       
         List<string> t = (from word in GetLanguage(currentLanguage)
                  where word.Key.StartsWith(key)
@@ -107,6 +107,18 @@ public class CSVReader  {
         if (t.Count() == 0)
             t.Add("No se encuentra ese diálogo");
         return t;           
+    }
+
+    public List<string[]> getDialogue(string key)
+    {
+    
+        List<string[]> dialogue = (from word in GetLanguage(currentLanguage)
+                            where word.Key.StartsWith(key)
+                            select word.Value).Select(x => x.Split('_')).ToList();
+
+        return dialogue;
+
+                                
     }
 
     

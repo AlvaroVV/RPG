@@ -127,9 +127,9 @@ public class UIManager: MonoBehaviour  {
         return dialoguePanel;
     }
 
-    public PanelFader createFader(string faderName)
+    public PanelFader createFader()
     {
-        GameObject fader = Push(faderName);
+        GameObject fader = Push("UI/PanelFader");
         PanelFader pf = fader.GetComponent<PanelFader>();
 
         return pf;

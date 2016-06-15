@@ -11,7 +11,8 @@ public class GameSlotInfo
 
     public float playerPositionX = -16;
     public float playerPositionY = 11;
-    //public List<CharacterData> characters;
+
+    public string currentChapter = "FirstChapter";
 
     //Lista de items
     public List<string> itemsNames = new List<string>();

@@ -25,12 +25,12 @@ public class HealthPanel : MonoBehaviour {
 
     public void updateCurrentHP()
     {
-        this.HP_Current.text = character.currentHP.ToString();
+        HP_Current.text = character.currentHP.ToString();
     }
 
     public void updateCurrentMP()
     {
-        this.MP_Current.text = character.currentMP.ToString();
+        MP_Current.text = character.currentMP.ToString();
     }
 
 }

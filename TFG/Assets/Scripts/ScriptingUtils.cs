@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class ScriptingUtils  {
 
@@ -9,21 +11,21 @@ public static class ScriptingUtils  {
     {
         if(showTexts)
         {
-            yield return ShowNpcMessage(npc);
+            yield return ShowSentences(npc.id, npc.dialogue);
         }
     }
 
-    public static IEnumerator ShowNpcMessage(NPC npc)
+    public static IEnumerator ShowSentences(string name, List<string> sentence)
     {
-        if (npc.dialogue.Count == 0) yield break;
+        if (sentence.Count == 0) yield break;
 
         DialoguePanel dp = UIManager.Instance.showDialogue("UI/DialoguePanel");
 
         if(dp!=null)
         {
-            foreach(string d in npc.dialogue)
+            foreach(string d in sentence)
             {
-                dp.Show(npc.id, d);
+                yield return dp.Show(name, d);
 
                 while (!Input.GetKeyDown(KeyCode.Space))
                 {
@@ -38,9 +40,34 @@ public static class ScriptingUtils  {
 
     }
 
+    public static IEnumerator ShowDialogue(List<string[]> dialogue)
+    {
+        if (dialogue.Count == 0) yield break;
+
+        DialoguePanel dp = UIManager.Instance.showDialogue("UI/DialoguePanel");
+
+        if (dp != null)
+        {
+            foreach (string[] d in dialogue)
+            {
+                yield return dp.Show(d[0], d[1]);
+
+                while (!Input.GetKeyDown(KeyCode.Space))
+                {
+                    yield return null;
+                }
+
+                yield return null;
+            }
+
+            UIManager.Instance.Pop();
+        }
+
+    }
+
     public static IEnumerator DoAFadeIn()
     {
-        PanelFader pf = UIManager.Instance.createFader("UI/PanelFader");
+        PanelFader pf = UIManager.Instance.createFader();
         if (pf != null)
         {
             yield return pf.StartCoroutine(pf.FadeToBlack());
@@ -51,15 +78,16 @@ public static class ScriptingUtils  {
 
     public static IEnumerator DoAFadeOut()
     {
-        PanelFader pf = UIManager.Instance.createFader("UI/PanelFader");
+        PanelFader pf = UIManager.Instance.createFader();
+
         if (pf != null)
         {
-
             yield return pf.StartCoroutine(pf.FadeToClear());
 
             UIManager.Instance.Pop();
         }
     }
+
 
     public static void addChild(GameObject child, GameObject parent)
     {

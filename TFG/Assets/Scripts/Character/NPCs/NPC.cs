@@ -11,7 +11,7 @@ public abstract class NPC : MonoBehaviour,Interactable {
 
     public IEnumerator Interact()
     {
-        dialogue = CSVReader.Instance.getDialogue(id);
+        dialogue = CSVReader.Instance.getSentences(id);
         yield return null; // Para que al pulsar el Space al comenzar no lo tome a la vez
         yield return InteractNPC();
     }

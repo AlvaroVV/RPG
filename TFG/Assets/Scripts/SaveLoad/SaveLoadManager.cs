@@ -15,7 +15,6 @@ public class GameSlots
         new GameSlotInfo(),
         new GameSlotInfo()
     };
-    public int count = 0;
 } 
 
 
@@ -63,13 +62,15 @@ public static class SaveLoadManager {
 
     }
 
+    
+
     public static void NewSlot()
     {
         //Guardamos la referencia al currentSlot para dirigirnos a él desde las demás clases del juego
+        int slot = LookForGameSlotInfo();
         GameSlotInfo.currentGameSlot = NewGameSlotInfo();
-
-        gamesSlots.gameSlotsInfo[gamesSlots.count] = GameSlotInfo.currentGameSlot;
-        gamesSlots.count++;
+        
+        gamesSlots.gameSlotsInfo[slot] = GameSlotInfo.currentGameSlot;
     }
 
     private static GameSlotInfo NewGameSlotInfo()
@@ -79,6 +80,24 @@ public static class SaveLoadManager {
         Debug.Log(json.text);
         gameSlotInfo = JsonUtility.FromJson<GameSlotInfo>(json.text);
         return gameSlotInfo;
+    }
+
+    public static void DeleteGameSlot()
+    {
+        NewSlot();
+        Save();
+        Load();
+    }
+
+    private static int LookForGameSlotInfo()
+    {
+        for(int i = 0; i<gamesSlots.gameSlotsInfo.Length; i++)
+        {
+            if (gamesSlots.gameSlotsInfo[i] == GameSlotInfo.currentGameSlot)
+                return i;
+        }
+
+        return -1;
     }
 
 }
