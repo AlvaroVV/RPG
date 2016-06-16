@@ -415,6 +415,26 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 413646, guid: 0e789f9a58aa9504fb62944604bcf7d1, type: 2}
   m_PrefabInternal: {fileID: 1061521}
+--- !u!1 &712133773 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 128974, guid: 5392087e0cb119746a647280752288f1, type: 2}
+  m_PrefabInternal: {fileID: 1915831956}
+--- !u!114 &712133774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 712133773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ecf85c032e6fd4fa3af437e510752c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: NPC_needPotion
+  dialogue: []
+  id_accept: NPC_giveSword
+  itemNeed: {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788, type: 2}
+  itemGiven: {fileID: 11400000, guid: 7cbc00acf8efd3944a8a22fb2bd38ee1, type: 2}
 --- !u!1 &790843569
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +764,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11410922, guid: 5392087e0cb119746a647280752288f1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5392087e0cb119746a647280752288f1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1925751255 stripped

@@ -86,5 +86,15 @@ public class PlayerTeamController: MonoBehaviour  {
         return itemPaths;
     }
 
+    public void AddItemData(ItemData data)
+    {
+        items.Add(data);
+    }
+
+    public bool LookForItemInventory(ItemData data)
+    {
+        return items.Contains(data);
+    }
+
 
 }

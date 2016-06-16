@@ -12,7 +12,6 @@ public class PlayerMovement: MonoBehaviour {
     private float input_y;
     private Vector2 movement;
     private PlayerAnimHandler anim;
-    private PlayerTeamController playerTeamController;
 
     [HideInInspector]
     public GameGlobals.PlayerState currentState;
@@ -21,7 +20,6 @@ public class PlayerMovement: MonoBehaviour {
     {
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<PlayerAnimHandler>();
-        playerTeamController = GetComponent<PlayerTeamController>();
     }
 
     void Start()
@@ -32,18 +30,14 @@ public class PlayerMovement: MonoBehaviour {
 
 
     void Update()
-    {       
-        input_x = Input.GetAxisRaw("Horizontal");
-        input_y = Input.GetAxisRaw("Vertical");
-
-        movement = new Vector2(input_x, input_y) * speed;
-
+    {
+        Movement();
     }
 
 
     void FixedUpdate()
     {
-        Movement();
+        rgb.velocity = movement;
         Interact();
     }
 
@@ -52,10 +46,13 @@ public class PlayerMovement: MonoBehaviour {
     {
         if (currentState != GameGlobals.PlayerState.Interacting)
         {
-            rgb.MovePosition(rgb.position + movement * Time.fixedDeltaTime);
-            anim.Estado_Correr_Parado(movement);
+            input_x = Input.GetAxisRaw("Horizontal");
+            input_y = Input.GetAxisRaw("Vertical");
+
+            movement = new Vector2(input_x, input_y) * speed;
+
+            anim.Estado_Correr_Parado(rgb.velocity, movement);
         }
-        
     }
 
     void Interact()
@@ -91,7 +88,8 @@ public class PlayerMovement: MonoBehaviour {
     }
     public void StopMovement()
     {
+        rgb.velocity = new Vector2(0, 0);
         movement = new Vector2(0, 0);
-        anim.Estado_Correr_Parado(movement);
+        anim.Estado_Correr_Parado(rgb.velocity, movement);
     }
 }

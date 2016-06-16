@@ -11,11 +11,11 @@ Boton_Ingles,Inglés,English
 NPC_1,Necesitamos madera para el duro invierno.,We need some wood for the hard Winter.
 NPC_2,Ve al bosque a buscar un poco.,Go to the forest and look for some wood.
 NPC_3,Ten cuidado con los monstruos.,Be careful with monsters.
+NPC_needPotion,Necesito una poción.,I need a potion.
+NPC_giveSword,Toma ésta espada vieja.,Here you have this old sword.
 Sentence_Dream1_1,Donde... ¿dónde estoy?,Where... ¿Where am I?
-Sentence_Dream1_2,¿Qué lugar es éste?,What is this place?
-Dream1_1,Soul_Despierta...,Soul_Wake up...
-Dream1_2,Soul_Pronto... sabrás la verdad.,Soul_Soon... you will know the truth.
-Dream1_3,Felix_¿Quién eres?,Felix_¿Who are you?
-Dream1_4,Felix_¿Qué quieres decir con eso?,Felix_¿What are you talking about?
+Sentence_Dream1_2,¿Qué lugar éste?,What is this place?
+Dream1_1,Soul_Despierta... pronto... sabrás la verdad.,Soul_Wake up... soon... you will know the truth.
+Dream1_2,Felix_¿Quién eres?,Felix_¿Who are you?
 WakenUp1_1,Otra vez ese sueño...,That dream again...
 WakenUp1_2,"Se ha hecho tarde, debería volver a casa.","It's late, i should go back home."

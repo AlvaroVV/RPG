@@ -7,7 +7,7 @@ public class DialogueNPC : NPC {
 
     public override IEnumerator InteractNPC()
     {
-        yield return (ScriptingUtils.showNpcDialogue(this,true));
+        yield return ScriptingUtils.showNpcDialogue(this,true);
     }
 
    
