@@ -8,8 +8,11 @@ public class PlayerAnimHandler: MonoBehaviour {
     private string input_x = "input_x";
     private string input_y = "input_y";
     private string isRunning = "isRunning";
+    private string sleeping = "sleeping";
+    private string wakingUp = "wakingUp";
     private Animator anim;
 
+    private bool finishAnimation;
     
     void Awake()
     {
@@ -35,6 +38,31 @@ public class PlayerAnimHandler: MonoBehaviour {
             anim.SetBool(isRunning, false);
     }
 
+    public IEnumerator Estado_durmiendo()
+    {
+        anim.SetBool(sleeping, true);
+        finishAnimation = false;
+        while (!finishAnimation)
+            yield return null;
+        yield return null;
+    }
+
+    public IEnumerator Estado_wakingUp()
+    {
+        anim.SetBool(wakingUp, true);
+        finishAnimation = false;
+        while (!finishAnimation)
+            yield return null;
+        yield return null;
+
+        anim.SetBool(sleeping, false);
+        anim.SetBool(wakingUp, false);
+    }
+
+    public void FinishAnimation()
+    {
+        finishAnimation = true;
+    }
 	
 }
 

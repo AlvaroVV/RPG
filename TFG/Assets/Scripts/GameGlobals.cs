@@ -25,6 +25,7 @@ public static class GameGlobals  {
     public static GameObject player = GameObject.FindGameObjectWithTag(TagPlayer);
     public static PlayerMovement playerMovement = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
     public static PlayerTeamController playerTeamController = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerTeamController>();
+    public static PlayerAnimHandler playerAnimHandler = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerAnimHandler>();
     public static CameraControll camera = Camera.main.GetComponent<CameraControll>();
 
     //Referencia al background cuando lo inactivas al empezar una batalla

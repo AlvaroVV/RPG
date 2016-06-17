@@ -14,13 +14,12 @@ public class PlayerStoryLoader : MonoBehaviour {
         GameObject chapterObj = Resources.Load("Chapters/"+ChapterName) as GameObject;
         if (chapterObj != null)
         {
-            if (chapterObj.GetComponent<AbstractChapter>().AutoInstanciate)
-            {
-                GameObject chapter = Instantiate(chapterObj);
-                AbstractChapter chapterScript = chapter.GetComponent<AbstractChapter>();
+            GameObject chapter = Instantiate(chapterObj);
 
-                if(ChapterName.Equals("FirstChapter"))
-                    StartCoroutine(chapterScript.ExecuteChapter());
+            if (ChapterName.Equals("FirstChapter"))
+            {
+                AbstractChapter chapterScript = chapter.GetComponent<AbstractChapter>();
+                StartCoroutine(chapterScript.ExecuteChapter());      
             }
         }
         else

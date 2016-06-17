@@ -15,6 +15,10 @@ public class CameraControll : MonoBehaviour
     private Camera camara;
     private float cameraHeigth;
     private float cameraWidth;
+    private float cam_minX;
+    private float cam_maxX;
+    private float cam_minY;
+    private float cam_maxY;
 
     //Atributos mapa
     private float min_x; //X del mapa
@@ -25,7 +29,7 @@ public class CameraControll : MonoBehaviour
 
     void Awake()
     {
-        playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).GetComponent<Transform>();
+        playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).transform;
 
         calcularParametrosCamara();
         GoToMainBackground();
@@ -42,17 +46,8 @@ public class CameraControll : MonoBehaviour
     {
         if (canMove)
         {
-            float positionX = playerTransform.position.x;
-            float positionY = playerTransform.position.y;
-
-            float min_X = min_x + cameraWidth / 2;
-            float max_X = max_x - cameraWidth / 2;
-
-            float min_Y = min_y + cameraHeigth / 2;
-            float max_Y = max_y - cameraHeigth / 2;
-
-            float movimientoX = Mathf.Clamp(positionX, min_X, max_X);
-            float movimientoY = Mathf.Clamp(positionY, min_Y, max_Y);
+            float movimientoX = Mathf.Clamp(playerTransform.position.x, cam_minX, cam_maxX);
+            float movimientoY = Mathf.Clamp(playerTransform.position.y, cam_minY, cam_maxY);
 
             transform.position = new Vector3(movimientoX, movimientoY, transform.position.z);
         }
@@ -133,6 +128,12 @@ public class CameraControll : MonoBehaviour
     {
         float backWidth = background.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
         float backHeigth = background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
+
+        cam_minX = min_x + cameraWidth / 2;
+        cam_maxX = max_x - cameraWidth / 2;
+
+        cam_minY = min_y + cameraHeigth / 2;
+        cam_maxY = max_y - cameraHeigth / 2;
 
         if ((backWidth < cameraWidth) && (backHeigth < cameraHeigth))
         {

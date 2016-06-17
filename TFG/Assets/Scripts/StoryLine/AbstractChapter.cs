@@ -6,7 +6,6 @@ public abstract class AbstractChapter: MonoBehaviour
 {
     public string ChapterName;
     public string NextChapterName;
-    public bool AutoInstanciate = false;
 
     public string GetChapterName()
     {
@@ -40,12 +39,10 @@ public abstract class AbstractChapter: MonoBehaviour
     {
         //Guardamos el siguiente capítulo por si el jugador Guarda, para que se inicialice una vez vuelva a entrar.
         GameSlotInfo.currentGameSlot.currentChapter = NextChapterName;
-        Debug.Log(GameSlotInfo.currentGameSlot.currentChapter);
         GameObject chapterObj = Resources.Load("Chapters/" + NextChapterName) as GameObject;
         if (chapterObj != null)
         {
-            if(chapterObj.GetComponent<AbstractChapter>().AutoInstanciate)
-                Instantiate(chapterObj);
+            Instantiate(chapterObj);
         }
         else
             Debug.LogError("No existe el capítulo -> " + NextChapterName);

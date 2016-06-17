@@ -26,6 +26,7 @@ public class PlayerMovement: MonoBehaviour {
     {
         //Cuando cargamos el personaje le preguntamos al GameSlot donde se guardó la última vez
         transform.position = new Vector3(GameSlotInfo.currentGameSlot.playerPositionX, GameSlotInfo.currentGameSlot.playerPositionY, 0);
+        //anim.Estado_Sleeping();
     }
 
 
@@ -51,7 +52,6 @@ public class PlayerMovement: MonoBehaviour {
 
             movement = new Vector2(input_x, input_y) * speed;
 
-            anim.Estado_Correr_Parado(rgb.velocity, movement);
         }
     }
 

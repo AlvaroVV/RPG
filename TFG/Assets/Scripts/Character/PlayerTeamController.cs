@@ -25,11 +25,18 @@ public class PlayerTeamController: MonoBehaviour  {
     {
         if (Input.GetKeyDown(KeyCode.Escape) && UIManager.Instance.isEmpty())
         {
+            GameGlobals.playerMovement.StateInteracting();
+            Time.timeScale = 0;
             UIManager.Instance.CreateMenuPanel();
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            UIManager.Instance.Pop(); 
+            UIManager.Instance.Pop();
+            if (UIManager.Instance.isEmpty())
+            {
+                Time.timeScale = 1;
+                GameGlobals.playerMovement.StateIdle();
+            }
         }
     }
 

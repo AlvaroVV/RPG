@@ -40,7 +40,7 @@ public class StateMachineEnemy : MonoBehaviour {
         chase = new ChaseState(this);
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        target = GameGlobals.playerMovement.gameObject;
+        target = GameGlobals.player;
     }
 
     void Start()

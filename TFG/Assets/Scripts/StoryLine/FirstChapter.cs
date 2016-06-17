@@ -41,9 +41,13 @@ public class FirstChapter : AbstractChapter
         Destroy(soul);
         GameGlobals.camera.GoToMainBackground();
 
-        yield return ScriptingUtils.DoAFadeOut();
+        StartCoroutine(ScriptingUtils.DoAFadeOut());
+
+        yield return GameGlobals.playerAnimHandler.Estado_durmiendo();
 
         yield return ScriptingUtils.ShowSentences("Felix", sentenceWakeUp);
+
+        yield return GameGlobals.playerAnimHandler.Estado_wakingUp();
 
         Destroy(blackPanel);
 
