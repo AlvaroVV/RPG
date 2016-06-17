@@ -52,6 +52,7 @@ public class PlayerMovement: MonoBehaviour {
 
             movement = new Vector2(input_x, input_y) * speed;
 
+           anim.Estado_Correr_Parado(rgb.velocity, movement);
         }
     }
 
