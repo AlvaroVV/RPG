@@ -19,7 +19,7 @@ public class MissionNPC : NPC
 
         if(GameGlobals.playerTeamController.LookForItemInventory(itemNeed))
         {
-            yield return ScriptingUtils.ShowSentences(id, sentenceAccept);
+            yield return ScriptingUtils.ShowSentences(id_dialogue, sentenceAccept);
 
             GameGlobals.playerTeamController.AddItemData(itemGiven);
         }

@@ -56,11 +56,28 @@ public class PlayerMovement: MonoBehaviour {
         }
     }
 
+    public IEnumerator MoveToPosition(GameObject point)
+    {
+        while (Vector2.Distance(transform.position,point.transform.position) > 0.1)
+        {
+            Vector2 newDirection = new Vector2(point.transform.position.x - rgb.position.x,
+                                                point.transform.position.y - rgb.position.y);
+
+            rgb.position = Vector2.MoveTowards(rgb.position, point.transform.position, Time.deltaTime * 1);
+
+            anim.Estado_Caminar_Parado(newDirection);
+            yield return null;
+        }
+        anim.Estado_Caminar_Parado(Vector2.zero);
+        
+        yield return null;
+    }
+
     void Interact()
     {        
         if (Input.GetKeyDown(KeyCode.Space) && currentState != GameGlobals.PlayerState.Interacting)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, movement, 0.7f, 1 << GameGlobals.LayerInteractable);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, movement, 1.0f, 1 << GameGlobals.LayerInteractable);
             //Si hay algo interactable empezamos la corrutina
             if (hit)
             {

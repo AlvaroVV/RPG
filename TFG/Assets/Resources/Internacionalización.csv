@@ -8,14 +8,19 @@ Botón_Adiós,Botón Adios,Goodbye Button
 Botón_Saludo1,Botón Saludo1,Greetings1 Button
 Boton_Español,Español,Spanish
 Boton_Ingles,Inglés,English
-NPC_1,Necesitamos madera para el duro invierno.,We need some wood for the hard Winter.
-NPC_2,Ve al bosque a buscar un poco.,Go to the forest and look for some wood.
-NPC_3,Ten cuidado con los monstruos.,Be careful with monsters.
-NPC_needPotion,Necesito una poción.,I need a potion.
-NPC_giveSword,Toma ésta espada vieja.,Here you have this old sword.
-Sentence_Dream1_1,Dónde... ¿dónde estoy?,Where... ¿Where am I?
+Capítulo 1,Capítulo 1,Chapter 1
+Sentence_Dream1_1,Donde... ¿dónde estoy?,Where... ¿Where am I?
 Sentence_Dream1_2,¿Qué lugar es éste?,What is this place?
 Dream1_1,Soul_Despierta... pronto... sabrás la verdad.,Soul_Wake up... soon... you will know the truth.
 Dream1_2,Felix_¿Quién eres?,Felix_¿Who are you?
 WakenUp1_1,Otra vez ese sueño...,That dream again...
-WakenUp1_2,"Se ha hecho tarde, debería volver a casa.","It's late, i should go back home."
+WakenUp1_2,Esa voz...¿Qué querrá decir?,That voice... ¿What does it mean?
+WakenUp1_3,"Zack debe estar preocupado, debería volver a casa.","Zack must be worried, i should go back home."
+Capítulo 2,Capítulo 2,Chapter 2
+Felix_Zack_C2_1,"Zack_Otra vez te has quedado dormido, ¿no?","Zack_You were sleeping again, right?"
+Felix_Zack_C2_2,Felix_Siento llegar tarde...,Felix_I'm sorry to be late...
+Felix_Zack_C2_3,Zack_No te preocupes tanto anda...,"Zack_Dont be so worried, there's no problem."
+Felix_Zack_C2_4,Zack_Necesito que vayas al bosque a por madera.,Zack_I need you to go at the forest for some wood.
+Felix_Zack_C2_5,Zack_Ten cuidado con los monstruos.,Zack_Be careful with monsters.
+Felix_Zack_C2_6,Felix_Siempre lo tengo.,Zack_I'm always careful.
+Zack_needWood_1,¿Aún aqui? Ve a por esa madera antes de que anochezca.,¿Still here? Look for that wood.

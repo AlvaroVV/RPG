@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 719849711f87c9749ace892cdc76413a
-timeCreated: 1466169073
+timeCreated: 1466360382
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -15,23 +15,23 @@ TextureImporter:
     21300016: Felix_8
     21300018: Felix_9
     21300020: Felix_10
-    21300022: Felix_11
-    21300024: Felix_12
-    21300026: Felix_13
-    21300028: Felix_14
-    21300030: Felix_15
-    21300032: Felix_16
+    21300022: Felix_walking_down_0
+    21300024: Felix_walking_down_1
+    21300026: Felix_walking_down_2
+    21300028: Felix_walking_down_3
+    21300030: Felix_walking_down_4
+    21300032: Felix_walking_down_5
     21300034: Felix_17
     21300036: Felix_18
     21300038: Felix_19
     21300040: Felix_20
     21300042: Felix_21
-    21300044: Felix_22
-    21300046: Felix_23
-    21300048: Felix_24
-    21300050: Felix_25
-    21300052: Felix_26
-    21300054: Felix_27
+    21300044: Felix_walking_up_0
+    21300046: Felix_walking_up_1
+    21300048: Felix_walking_up_2
+    21300050: Felix_walking_up_3
+    21300052: Felix_walking_up_4
+    21300054: Felix_walking_up_5
     21300056: Felix_28
     21300058: Felix_29
     21300060: Felix_30
@@ -42,12 +42,12 @@ TextureImporter:
     21300070: Felix_35
     21300072: Felix_36
     21300074: Felix_37
-    21300076: Felix_38
-    21300078: Felix_39
-    21300080: Felix_40
-    21300082: Felix_41
-    21300084: Felix_42
-    21300086: Felix_43
+    21300076: Felix_walking_right_0
+    21300078: Felix_walking_right_1
+    21300080: Felix_walking_right_2
+    21300082: Felix_walking_right_3
+    21300084: Felix_walking_right_4
+    21300086: Felix_walking_right_5
     21300088: Felix_44
     21300090: Felix_45
     21300092: Felix_46
@@ -58,12 +58,12 @@ TextureImporter:
     21300102: Felix_51
     21300104: Felix_52
     21300106: Felix_53
-    21300108: Felix_54
-    21300110: Felix_55
-    21300112: Felix_56
-    21300114: Felix_57
-    21300116: Felix_58
-    21300118: Felix_59
+    21300108: Felix_walking_left_0
+    21300110: Felix_walking_left_1
+    21300112: Felix_walking_left_2
+    21300114: Felix_walking_left_3
+    21300116: Felix_walking_left_4
+    21300118: Felix_walking_left_5
     21300120: Felix_60
     21300122: Felix_61
     21300124: Felix_62
@@ -145,35 +145,35 @@ TextureImporter:
     21300276: Felix_138
     21300278: Felix_139
     21300280: Felix_140
-    21300282: Felix_141
-    21300284: Felix_142
-    21300286: Felix_143
-    21300288: Felix_144
-    21300290: Felix_145
-    21300292: Felix_146
+    21300282: Felix_running_UpR_0
+    21300284: Felix_running_UpR_1
+    21300286: Felix_running_UpR_2
+    21300288: Felix_running_UpR_3
+    21300290: Felix_running_UpR_4
+    21300292: Felix_running_UpR_5
     21300294: Felix_147
     21300296: Felix_148
     21300298: Felix_149
-    21300300: Felix_150
-    21300302: Felix_151
-    21300304: Felix_152
-    21300306: Felix_153
-    21300308: Felix_154
-    21300310: Felix_155
+    21300300: Felix_running_UpL_0
+    21300302: Felix_running_UpL_1
+    21300304: Felix_running_UpL_2
+    21300306: Felix_running_UpL_3
+    21300308: Felix_running_UpL_5
+    21300310: Felix_running_UpL_6
     21300312: Felix_156
-    21300314: Felix_157
-    21300316: Felix_158
-    21300318: Felix_159
-    21300320: Felix_160
-    21300322: Felix_161
-    21300324: Felix_162
+    21300314: Felix_running_DownR_0
+    21300316: Felix_running_DownR_1
+    21300318: Felix_running_DownR_2
+    21300320: Felix_running_DownR_3
+    21300322: Felix_running_DownR_4
+    21300324: Felix_running_DownR_5
     21300326: Felix_163
-    21300328: Felix_164
-    21300330: Felix_165
-    21300332: Felix_166
-    21300334: Felix_167
-    21300336: Felix_168
-    21300338: Felix_169
+    21300328: Felix_running_DownL_0
+    21300330: Felix_running_DownL_1
+    21300332: Felix_running_DownL_2
+    21300334: Felix_running_DownL_3
+    21300336: Felix_running_DownL_4
+    21300338: Felix_running_DownL_5
     21300340: Felix_170
     21300342: Felix_171
     21300344: Felix_172
@@ -452,7 +452,7 @@ TextureImporter:
         - {x: -20, y: -20}
         - {x: 20, y: -20}
         - {x: 20, y: 20}
-    - name: Felix_11
+    - name: Felix_walking_down_0
       rect:
         serializedVersion: 2
         x: 396
@@ -463,7 +463,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_12
+    - name: Felix_walking_down_1
       rect:
         serializedVersion: 2
         x: 419
@@ -474,7 +474,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_13
+    - name: Felix_walking_down_2
       rect:
         serializedVersion: 2
         x: 441
@@ -485,7 +485,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_14
+    - name: Felix_walking_down_3
       rect:
         serializedVersion: 2
         x: 464
@@ -496,7 +496,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_15
+    - name: Felix_walking_down_4
       rect:
         serializedVersion: 2
         x: 485
@@ -507,7 +507,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_16
+    - name: Felix_walking_down_5
       rect:
         serializedVersion: 2
         x: 506
@@ -573,7 +573,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_22
+    - name: Felix_walking_up_0
       rect:
         serializedVersion: 2
         x: 396
@@ -584,7 +584,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_23
+    - name: Felix_walking_up_1
       rect:
         serializedVersion: 2
         x: 419
@@ -595,7 +595,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_24
+    - name: Felix_walking_up_2
       rect:
         serializedVersion: 2
         x: 441
@@ -606,7 +606,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_25
+    - name: Felix_walking_up_3
       rect:
         serializedVersion: 2
         x: 464
@@ -617,7 +617,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_26
+    - name: Felix_walking_up_4
       rect:
         serializedVersion: 2
         x: 485
@@ -628,7 +628,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_27
+    - name: Felix_walking_up_5
       rect:
         serializedVersion: 2
         x: 506
@@ -749,7 +749,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_38
+    - name: Felix_walking_right_0
       rect:
         serializedVersion: 2
         x: 396
@@ -760,7 +760,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_39
+    - name: Felix_walking_right_1
       rect:
         serializedVersion: 2
         x: 420
@@ -771,7 +771,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_40
+    - name: Felix_walking_right_2
       rect:
         serializedVersion: 2
         x: 445
@@ -782,7 +782,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_41
+    - name: Felix_walking_right_3
       rect:
         serializedVersion: 2
         x: 468
@@ -793,7 +793,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_42
+    - name: Felix_walking_right_4
       rect:
         serializedVersion: 2
         x: 493
@@ -804,7 +804,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_43
+    - name: Felix_walking_right_5
       rect:
         serializedVersion: 2
         x: 516
@@ -925,7 +925,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_54
+    - name: Felix_walking_left_0
       rect:
         serializedVersion: 2
         x: 393
@@ -936,7 +936,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_55
+    - name: Felix_walking_left_1
       rect:
         serializedVersion: 2
         x: 421
@@ -947,7 +947,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_56
+    - name: Felix_walking_left_2
       rect:
         serializedVersion: 2
         x: 446
@@ -958,7 +958,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_57
+    - name: Felix_walking_left_3
       rect:
         serializedVersion: 2
         x: 469
@@ -969,7 +969,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_58
+    - name: Felix_walking_left_4
       rect:
         serializedVersion: 2
         x: 494
@@ -980,7 +980,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_59
+    - name: Felix_walking_left_5
       rect:
         serializedVersion: 2
         x: 518
@@ -1920,7 +1920,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_141
+    - name: Felix_running_UpR_0
       rect:
         serializedVersion: 2
         x: 29
@@ -1931,7 +1931,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_142
+    - name: Felix_running_UpR_1
       rect:
         serializedVersion: 2
         x: 54
@@ -1942,7 +1942,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_143
+    - name: Felix_running_UpR_2
       rect:
         serializedVersion: 2
         x: 79
@@ -1953,7 +1953,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_144
+    - name: Felix_running_UpR_3
       rect:
         serializedVersion: 2
         x: 102
@@ -1964,7 +1964,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_145
+    - name: Felix_running_UpR_4
       rect:
         serializedVersion: 2
         x: 128
@@ -1975,7 +1975,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_146
+    - name: Felix_running_UpR_5
       rect:
         serializedVersion: 2
         x: 155
@@ -2051,7 +2051,7 @@ TextureImporter:
         - {x: 14.5, y: -27.5}
         - {x: 14.5, y: -23.5}
         - {x: 11.5, y: -13.5}
-    - name: Felix_150
+    - name: Felix_running_UpL_0
       rect:
         serializedVersion: 2
         x: 29
@@ -2062,7 +2062,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_151
+    - name: Felix_running_UpL_1
       rect:
         serializedVersion: 2
         x: 54
@@ -2073,7 +2073,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_152
+    - name: Felix_running_UpL_2
       rect:
         serializedVersion: 2
         x: 79
@@ -2084,7 +2084,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_153
+    - name: Felix_running_UpL_3
       rect:
         serializedVersion: 2
         x: 102
@@ -2095,7 +2095,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_154
+    - name: Felix_running_UpL_5
       rect:
         serializedVersion: 2
         x: 128
@@ -2106,7 +2106,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_155
+    - name: Felix_running_UpL_6
       rect:
         serializedVersion: 2
         x: 155
@@ -2134,7 +2134,7 @@ TextureImporter:
         - {x: 25, y: -27}
         - {x: 25, y: -13}
         - {x: 5, y: 27}
-    - name: Felix_157
+    - name: Felix_running_DownR_0
       rect:
         serializedVersion: 2
         x: 29
@@ -2145,7 +2145,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_158
+    - name: Felix_running_DownR_1
       rect:
         serializedVersion: 2
         x: 54
@@ -2156,7 +2156,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_159
+    - name: Felix_running_DownR_2
       rect:
         serializedVersion: 2
         x: 81
@@ -2167,7 +2167,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_160
+    - name: Felix_running_DownR_3
       rect:
         serializedVersion: 2
         x: 107
@@ -2178,7 +2178,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_161
+    - name: Felix_running_DownR_4
       rect:
         serializedVersion: 2
         x: 133
@@ -2189,7 +2189,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_162
+    - name: Felix_running_DownR_5
       rect:
         serializedVersion: 2
         x: 160
@@ -2221,7 +2221,7 @@ TextureImporter:
         - {x: 19.5, y: -24.5}
         - {x: 24.5, y: -4.5}
         - {x: 24.5, y: 25.5}
-    - name: Felix_164
+    - name: Felix_running_DownL_0
       rect:
         serializedVersion: 2
         x: 28
@@ -2232,7 +2232,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_165
+    - name: Felix_running_DownL_1
       rect:
         serializedVersion: 2
         x: 54
@@ -2243,7 +2243,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_166
+    - name: Felix_running_DownL_2
       rect:
         serializedVersion: 2
         x: 81
@@ -2254,7 +2254,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_167
+    - name: Felix_running_DownL_3
       rect:
         serializedVersion: 2
         x: 107
@@ -2265,7 +2265,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_168
+    - name: Felix_running_DownL_4
       rect:
         serializedVersion: 2
         x: 133
@@ -2276,7 +2276,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Felix_169
+    - name: Felix_running_DownL_5
       rect:
         serializedVersion: 2
         x: 160

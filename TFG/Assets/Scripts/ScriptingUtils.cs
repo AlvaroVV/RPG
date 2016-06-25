@@ -11,7 +11,7 @@ public static class ScriptingUtils  {
     {
         if(showTexts)
         {
-            yield return ShowSentences(npc.id, npc.dialogue);
+            yield return ShowSentences(npc.NPC_name, npc.dialogue);
         }
     }
 

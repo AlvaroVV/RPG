@@ -7,6 +7,8 @@ public class CameraControll : MonoBehaviour
     //Mapa Inicio, (temporal)
     public GameObject background;
     public GameObject blackPanel;
+    public GameObject target;
+
     private Transform playerTransform;
 
     private bool canMove = true;
@@ -29,8 +31,7 @@ public class CameraControll : MonoBehaviour
 
     void Awake()
     {
-        playerTransform = GameObject.FindGameObjectWithTag(GameGlobals.TagPlayer).transform;
-
+        playerTransform = target.transform;
         calcularParametrosCamara();
         GoToMainBackground();
     }
@@ -58,7 +59,6 @@ public class CameraControll : MonoBehaviour
 
     public void GoToMainBackground()
     {
-        GameObject background = GameObject.FindGameObjectWithTag(GameGlobals.TagBackground);
         if (background.GetComponent<TiledMap>() != null)
         {
             min_x = background.transform.position.x;

@@ -8,6 +8,7 @@ public class PlayerAnimHandler: MonoBehaviour {
     private string input_x = "input_x";
     private string input_y = "input_y";
     private string isRunning = "isRunning";
+    private string isWalking = "isWalking";
     private string sleeping = "sleeping";
     private string wakingUp = "wakingUp";
     private Animator anim;
@@ -38,6 +39,18 @@ public class PlayerAnimHandler: MonoBehaviour {
             anim.SetBool(isRunning, false);
     }
 
+    public void Estado_Caminar_Parado(Vector2 movement)
+    {
+        if (movement != Vector2.zero)
+        {
+            anim.SetFloat(input_x, movement.x);
+            anim.SetFloat(input_y, movement.y);
+            anim.SetBool(isWalking, true);
+        }
+        else
+            anim.SetBool(isWalking, false);
+    }
+
     public IEnumerator Estado_durmiendo()
     {
         anim.SetBool(sleeping, true);
@@ -58,6 +71,7 @@ public class PlayerAnimHandler: MonoBehaviour {
         anim.SetBool(sleeping, false);
         anim.SetBool(wakingUp, false);
     }
+
 
     public void FinishAnimation()
     {
