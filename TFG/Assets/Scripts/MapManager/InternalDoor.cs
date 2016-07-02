@@ -1,0 +1,19 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class InternalDoor : MonoBehaviour {
+
+    public string MapName;
+    public GameObject ExitPoint;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+           StartCoroutine( MapManager.Instance.UseInternalDoor(MapName, ExitPoint));
+
+        }
+
+
+    }
+}

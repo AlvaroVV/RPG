@@ -29,6 +29,7 @@ public class UIManager: MonoBehaviour  {
     public GameObject Push(string panelPrefabName)
     {
         //Si ya existe el panel no creamos otro
+
         GameObject panel = panelStack.Where(x => x.name.Equals(panelPrefabName)).SingleOrDefault();
         if (panel != null)
         {   

@@ -56,6 +56,7 @@ public static class SaveLoadManager {
     {
         GameSlotInfo.currentGameSlot.playerPositionX = GameGlobals.playerMovement.transform.position.x;
         GameSlotInfo.currentGameSlot.playerPositionY = GameGlobals.playerMovement.transform.position.y;
+        GameSlotInfo.currentGameSlot.currentMap = MapManager.Instance.GetActualMapName();
         GameSlotInfo.currentGameSlot.itemsNames = GameGlobals.playerTeamController.SaveItems();
         GameSlotInfo.currentGameSlot.characterStates = GameGlobals.playerTeamController.SaveCharacterDatas();
         Save();

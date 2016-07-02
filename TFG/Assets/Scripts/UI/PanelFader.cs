@@ -21,7 +21,10 @@ public class PanelFader : MonoBehaviour {
         isFading = true;
         anim.SetBool(FADE_OUT,true);
         while (isFading)
+        {
             yield return null;
+    
+        }
     }
 
     public IEnumerator FadeToBlack()
@@ -34,6 +37,7 @@ public class PanelFader : MonoBehaviour {
 
     void AnimationComplete()
     {
+        Debug.Log("Finish");
         isFading = false;
     }
 	

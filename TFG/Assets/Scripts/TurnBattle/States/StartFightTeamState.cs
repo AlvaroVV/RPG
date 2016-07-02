@@ -23,8 +23,7 @@ public class StartFightTeamState : IState
         yield return ScriptingUtils.DoAFadeIn();
         FighterActionManager.Instance.CreateFightCursor();//Creamos aqui el Cursor de selección pero DESACTIVADO 
         InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.
-        GameGlobals.camera.GoToFightStage(GameObject.FindGameObjectWithTag(GameGlobals.TagFightStage));
-        GameGlobals.BackReference.gameObject.SetActive(false);
+        MapManager.Instance.GoToFightStage();
 
         yield return ScriptingUtils.DoAFadeOut();
 

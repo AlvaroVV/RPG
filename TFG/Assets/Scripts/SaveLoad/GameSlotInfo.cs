@@ -14,6 +14,8 @@ public class GameSlotInfo
 
     public string currentChapter = "FirstChapter";
 
+    public string currentMap = "MapaInicial";
+
     //Lista de items
     public List<string> itemsNames = new List<string>();
 

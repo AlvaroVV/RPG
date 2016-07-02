@@ -39,7 +39,7 @@ public class FirstChapter : AbstractChapter
         yield return ScriptingUtils.DoAFadeIn();
 
         Destroy(soul);
-        GameGlobals.camera.GoToMainBackground();
+        MapManager.Instance.GoToMainMap();
 
         StartCoroutine(ScriptingUtils.DoAFadeOut());
 

@@ -1,8 +1,9 @@
 {
     "gameSlotName": "",
-            "playerPositionX": -14.480001449584961,
-            "playerPositionY": 10.600000381469727,
+            "playerPositionX": 11,
+            "playerPositionY": -5,
 			"currentChapter": "FirstChapter",
+			"currentMap": "MapaInicial",
             "itemsNames": [
                 "Items/HealthPotion"
             ],

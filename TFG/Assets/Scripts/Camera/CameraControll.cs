@@ -4,8 +4,6 @@ using Tiled2Unity;
 
 public class CameraControll : MonoBehaviour
 {
-    //Mapa Inicio, (temporal)
-    public GameObject background;
     public GameObject blackPanel;
     public GameObject target;
 
@@ -33,7 +31,6 @@ public class CameraControll : MonoBehaviour
     {
         playerTransform = target.transform;
         calcularParametrosCamara();
-        GoToMainBackground();
     }
 
 
@@ -43,6 +40,9 @@ public class CameraControll : MonoBehaviour
         MoverCamara();
     }
 
+    /// <summary>
+    /// Método que mueve la cámara siguiendo al personaje, además tendrá en cuenta los límites del mapa.
+    /// </summary>
     void MoverCamara()
     {
         if (canMove)
@@ -56,23 +56,10 @@ public class CameraControll : MonoBehaviour
 
    
 
-
-    public void GoToMainBackground()
-    {
-        if (background.GetComponent<TiledMap>() != null)
-        {
-            min_x = background.transform.position.x;
-            max_x = background.transform.position.x + background.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();
-
-            max_y = background.transform.position.y;
-            min_y = background.transform.position.y - background.GetComponent<TiledMap>().GetMapHeightInPixelsScaled();
-
-            checkBackground(background);
-        }
-        else
-            Debug.LogError("El GameObject no tiene componente TiledMap");
-    }
-
+    /// <summary>
+    /// Método que calcula el tamaño de un mapa dado
+    /// </summary>
+    /// <param name="background">mapa que se quiere calcular</param>
     public void GoToBackgroundGiven(GameObject background)
     {
         if (background.GetComponent<TiledMap>() != null)
@@ -89,6 +76,10 @@ public class CameraControll : MonoBehaviour
             Debug.LogError("El GameObject no tiene componente TiledMap");
     }
 
+    /// <summary>
+    /// Método que calcula los parámetros del escenario del combate por turno y sitúa la camara en el medio.
+    /// </summary>
+    /// <param name="fightStage"></param>
     public void GoToFightStage(GameObject fightStage)
     {
         //En la pelea la camara no se moverá
@@ -106,8 +97,14 @@ public class CameraControll : MonoBehaviour
             Debug.LogError("El GameObject no tiene componente TiledMap");
     }
 
+    /// <summary>
+    /// Método que crea un Panel Negro y sitúa la cámara en el
+    /// Se utiliza para cinemáticas que no ocurren en un mapa.
+    /// </summary>
+    /// <returns></returns>
     public GameObject GoToBlackPanel()
     {
+        Debug.Log("Camara");
         canMove = false;
         GameObject blacPanel = Instantiate(blackPanel);
 
@@ -117,6 +114,9 @@ public class CameraControll : MonoBehaviour
         return blacPanel;
     }
 
+    /// <summary>
+    /// Método que calcula el tamaño de la cámara teniendo en cuenta la resolución de la pantalla.
+    /// </summary>
     void calcularParametrosCamara()
     {
         camara = Camera.main;
@@ -124,6 +124,10 @@ public class CameraControll : MonoBehaviour
         cameraWidth = cameraHeigth * camara.aspect;
     }
 
+    /// <summary>
+    /// Método que comprueba que el mapa es lo suficientemente grande como para que se mueva la camara.
+    /// </summary>
+    /// <param name="background"></param>
     void checkBackground(GameObject background)
     {
         float backWidth = background.GetComponent<TiledMap>().GetMapWidthInPixelsScaled();

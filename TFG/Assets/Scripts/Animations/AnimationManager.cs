@@ -12,13 +12,18 @@ public class AnimationManager : MonoBehaviour {
     void Start () {
         cameraAnim = Camera.main.GetComponent<Animation>();
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(FirstAnimation());
+        StartCoroutine(MP_CameraMove());
 	}
 
-    public IEnumerator FirstAnimation()
+    /// <summary>
+    /// Código que ejecuta la animación del en el Menú Principal.
+    /// Si el jugador pulsa la tecla "Espacio" en medio de la animacion, esta finaliza.
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator MP_CameraMove()
     {
         cameraAnim.Play("CameraMenu");
-        StartCoroutine(EndAnimation());
+        StartCoroutine(EndCameraAnimation());
 
         yield return WaitForAnimation(cameraAnim);
         audioSource.Play();
@@ -30,7 +35,11 @@ public class AnimationManager : MonoBehaviour {
         
     }
 
-    private IEnumerator EndAnimation()
+    /// <summary>
+    /// Corrutina que comprueba si el usuario pulsa la tecla "espacio", entonces acaba la animación.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator EndCameraAnimation()
     {      
         while (!Input.GetKeyDown(KeyCode.Space) && cameraAnim.isPlaying)
             yield return null;      
@@ -38,6 +47,11 @@ public class AnimationManager : MonoBehaviour {
         cameraAnim["CameraMenu"].time = cameraAnim.clip.length;
     }
 
+    /// <summary>
+    /// Corrutina que espera a que una animación acabe.
+    /// </summary>
+    /// <param name="anim">Componente Animation</param>
+    /// <returns></returns>
     public IEnumerator WaitForAnimation(Animation anim)
     {
         while (anim.isPlaying)
