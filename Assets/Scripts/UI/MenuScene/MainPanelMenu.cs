@@ -33,6 +33,7 @@ public class MainPanelMenu : MonoBehaviour {
     void Start()
     {
         SaveLoadManager.Load();
+        CSVReader.Instance.Read("Texts/Textos");
     }
 
     public void ClickNewGame()

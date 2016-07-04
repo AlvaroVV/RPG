@@ -27,7 +27,7 @@ public class CSVReader  {
             if (instance == null)
             {
                 instance = new CSVReader();
-                instance.Read("Internacionalización");
+                
             }
             return instance;
         }
@@ -39,6 +39,8 @@ public class CSVReader  {
     public void Read(string file)
     {
         try {
+            if (dic_general.Count > 0)
+                return;
             TextAsset data = Resources.Load(file) as TextAsset;
 
             var lines = Regex.Split(data.text, LINE_SPLIT_RE);

@@ -73,7 +73,7 @@ public static class SaveLoadManager {
     private static GameSlotInfo NewGameSlotInfo()
     {
         GameSlotInfo gameSlotInfo = new GameSlotInfo();
-        TextAsset json = Resources.Load("NewGame") as TextAsset;
+        TextAsset json = Resources.Load("Texts/NewGame") as TextAsset;
         Debug.Log(json.text);
         gameSlotInfo = JsonUtility.FromJson<GameSlotInfo>(json.text);
         return gameSlotInfo;
