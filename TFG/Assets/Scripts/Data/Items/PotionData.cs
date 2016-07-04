@@ -12,9 +12,14 @@ public class PotionData : ItemData {
         ItemPath = "Items/" + id;
     }
 
-    public override void UseItem()
+    public override void ApplyEffect(CharacterData data)
     {
-        Character.RestoreHP(Hp_restore);
+         data.RestoreHP(Hp_restore);
+    }
+
+    public override void UseItem(ItemSlot itemSlot)
+    {
+        UIManager.Instance.CreateChooseCharacterPanel(itemSlot);
     }
 
     public override string GetStadisticText(BaseCharacter character)
@@ -22,11 +27,11 @@ public class PotionData : ItemData {
         return "HP " + character.currentHP + "/" + character.healthPoints;
     }
 
-    public override bool ConditionToUse()
+    public override bool ConditionToUse(CharacterData data)
     {
-        if (Character.currentHP + Hp_restore > Character.healthPoints)
+        if (data.currentHP + Hp_restore > data.healthPoints)
         {
-            Debug.Log(Character.Name + " no puede recuperar más HP");
+            Debug.Log(data.Name + " no puede recuperar más HP");
             return false;
         }
         else

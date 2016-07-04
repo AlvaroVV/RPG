@@ -49,7 +49,7 @@ public class InventoryPanel : MonoBehaviour {
         {
             GameObject slotObj = Instantiate(this.slotObj, SlotsPanel.transform.position, SlotsPanel.transform.rotation) as GameObject;
             inventorySlots.Add(slotObj.GetComponent<Slot>());
-            addChild(slotObj, SlotsPanel);
+            ScriptingUtils.addChild(slotObj, SlotsPanel);
         }
     }
 
@@ -60,7 +60,7 @@ public class InventoryPanel : MonoBehaviour {
         {
             Slot slot = LookForSlot(item);
             if (slot != null)
-                slot.AddItem(item);
+                slot.AddItemSlot(item);
         }
     }
 
@@ -87,15 +87,45 @@ public class InventoryPanel : MonoBehaviour {
     {
         Slot slot = LookForSlot(item);
         if (slot != null)
-            slot.AddItem(item);
+            slot.AddItemSlot(item);
         else
             Debug.Log("El Inventario está lleno");
+    }
+
+    public void ChangeItemPositions()
+    {
+        //Slots que participan
+        Slot slotFrom = SlotChangeFrom.GetComponent<Slot>();
+        Slot slotTo = SlotChangeTo.GetComponent<Slot>();
+
+        //ItemsSlots que participan
+        ItemSlot itemSlotFrom = slotFrom.GetItemSlot().GetComponent<ItemSlot>();
+        ItemSlot itemSlotTo = null;
+
+        GameObject itemSlotObj = slotTo.GetItemSlot();
+
+        if(itemSlotObj != null)
+            itemSlotTo = itemSlotObj.GetComponent<ItemSlot>();
+        
+        //Si este slot ya tiene un Item, hay que hacer un cambio
+        if (itemSlotTo != null)
+        {        
+            //Cambiamos el slot de este item por el que movemos
+            itemSlotTo.ChangeParent(SlotChangeFrom);
+            slotFrom.ChangeItemSlot(itemSlotTo.gameObject);
+        }
+        else
+        {
+            //Si no tiene un item, el slot del que proviene se queda vacío
+            slotFrom.ChangeItemSlot(null);
+        }
+        slotTo.ChangeItemSlot(itemSlotFrom.gameObject);
     }
 
     private void CreateTooltip()
     {
         GameObject tooltipObj = Instantiate(Tooltip.gameObject) as GameObject;
-        addChild(tooltipObj, gameObject);
+        ScriptingUtils.addChild(tooltipObj, gameObject);
         tooltip = tooltipObj.GetComponent<Tooltip>();
     }
 
@@ -110,16 +140,5 @@ public class InventoryPanel : MonoBehaviour {
     }
     
 
-    private void addChild(GameObject child, GameObject parent)
-    {
-        if (child != null)
-        {
-            Transform t = child.transform;
-            t.SetParent(parent.transform, false);
-            //t.localPosition = Vector3.zero;
-            t.localRotation = Quaternion.identity;
-            t.localScale = Vector3.one;
-            child.layer = parent.layer;
-        }
-    }
+
 }

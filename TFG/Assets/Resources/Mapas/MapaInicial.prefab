@@ -8504,7 +8504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb348777e56435489508a784bf8676e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapName: MapaInicial
+  InternalMapName: 
   ExitPoint: {fileID: 164094}
 --- !u!114 &11404940
 MonoBehaviour:
@@ -9545,7 +9545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb348777e56435489508a784bf8676e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapName: House_1
+  InternalMapName: House_1
   ExitPoint: {fileID: 104214}
 --- !u!114 &11463092
 MonoBehaviour:

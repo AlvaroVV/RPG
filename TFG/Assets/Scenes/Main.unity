@@ -260,6 +260,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: items.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: currentPlayerTeam.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 407848, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: m_LocalPosition.x
       value: 11
@@ -308,6 +316,51 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.13
       objectReference: {fileID: 0}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: items.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: currentPlayerTeam.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a5270df1bfdcae4ba03cc945daa665f,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: items.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: items.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: items.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cbc00acf8efd3944a8a22fb2bd38ee1,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: currentPlayerTeam.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a21a05d66d556943b0dd6b45bec7d3b,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: currentPlayerTeam.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: cf9af56bf4abcbf41b26662d7fdf8099,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: currentPlayerTeam.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: dfac5e0c12741ad46879d79e354a19c1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
   m_IsPrefabParent: 0
@@ -529,6 +582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14709c9b47086454eaa8a0222ad1d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MapName: Bosque
+  DoorName: Door 1
 --- !u!4 &1952472397
 Transform:
   m_ObjectHideFlags: 0

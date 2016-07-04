@@ -38,31 +38,20 @@ public class ChooseCharacterPanel : MonoBehaviour
             GameObject panelObj = Resources.Load("UI/Inventory/CharacterPanel") as GameObject;
             GameObject panelInstantiate = GameObject.Instantiate(panelObj, characterPanelsParent.transform.position, Quaternion.identity) as GameObject;
 
-            addChild(panelInstantiate, characterPanelsParent);
+            ScriptingUtils.addChild(panelInstantiate, characterPanelsParent);
             panelInstantiate.name = "ChoosePanel_" + charac.CharacterName;
 
             CharacterPanel panel = panelInstantiate.GetComponent<CharacterPanel>();
-            panel.setCharacter(charac, ref itemSlot);
+            panel.SetProperties(charac, itemSlot);
             panels.Add(panel);
         }
     }
 
-    private void addChild(GameObject child, GameObject parent)
-    {
-        if (child != null)
-        {
-            Transform t = child.transform;
-            t.SetParent(parent.transform, false);
-            //t.localPosition = Vector3.zero;
-            t.localRotation = Quaternion.identity;
-            t.localScale = Vector3.one;
-            child.layer = parent.layer;
-        }
-    }
+   
 
     private void ShowItem(ItemSlot item)
     {
-       itemImage.sprite = item.getItem().Image;
+       itemImage.sprite = item.GetItem().Image;
        itemUnits.text = item.getUnits().ToString();
     }
 

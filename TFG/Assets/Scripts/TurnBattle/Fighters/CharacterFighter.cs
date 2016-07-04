@@ -56,7 +56,7 @@ public class CharacterFighter : Fighter {
 
     public override void ChooseState()
     {
-        String state = FighterActionManager.Instance.attackInfo.FighterState.ToString(); 
+        string state = FighterActionManager.Instance.attackInfo.FighterState.ToString(); 
         FighterAnimator.SetTrigger(state);
     }
 

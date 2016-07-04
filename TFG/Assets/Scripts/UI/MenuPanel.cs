@@ -2,18 +2,12 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MenuPanel : MonoBehaviour {
 
     public GameObject HealtPanels;
 
-    private CSVReader displayManager;
-
-
-    void Awake()
-    {
-        displayManager = CSVReader.Instance;
-    }
 
     void Start()
     {
@@ -44,7 +38,7 @@ public class MenuPanel : MonoBehaviour {
             GameObject healthPanelObj = Resources.Load("UI/CombatGUI/HealthPanel") as GameObject;
             GameObject panel = GameObject.Instantiate(healthPanelObj, healthPanelObj.transform.position, healthPanelObj.transform.rotation) as GameObject;
 
-            addChild(panel, HealtPanels);
+            ScriptingUtils.addChild(panel, HealtPanels);
 
             HealthPanel healthPanel = panel.GetComponent<HealthPanel>();
             panel.name = "HealthBar_" + charac.name;
@@ -52,16 +46,9 @@ public class MenuPanel : MonoBehaviour {
         }
     }
 
-    private void addChild(GameObject child, GameObject parent)
+    public void BackToMainPanel()
     {
-        if (child != null)
-        {
-            Transform t = child.transform;
-            t.SetParent(parent.transform, false);
-            //t.localPosition = Vector3.zero;
-            t.localRotation = Quaternion.identity;
-            t.localScale = Vector3.one;
-            child.layer = parent.layer;
-        }
+        SceneManager.LoadScene(0);
     }
+   
 }

@@ -2,41 +2,39 @@
 using System.Collections;
 using System;
 
-public class PatrolState : IStateEnemy
+public class PatrolState : AbstractStateEnemy
 {
-    private StateMachineEnemy sm;
     private int nextWayPoint;
     private Vector3 initialPos;
     private float actualTime;
 
-    public PatrolState(StateMachineEnemy sm)
+    public PatrolState(StateMachineEnemy sm): base(sm)
     {
-        this.sm = sm;
         initialPos = sm.transform.position;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
           nextWayPoint = NextPosition();
     }
 
-    public void ToAlertState()
+    public override void ToAlertState()
     {
         sm.currentState = sm.alert;
     }
 
-    public void ToChaseState()
+    public override void ToChaseState()
     {
         sm.chase.targetDetected = true;
         sm.currentState = sm.chase;   
     }
 
-    public void ToPatrolState()
+    public override void ToPatrolState()
     {
         Debug.Log("Ya está patrullando");
     }
 
-    public void UpdateState()
+    public override void UpdateState()
     {
         if (sm.wayPoints.Length>1)
             Patrol();

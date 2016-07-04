@@ -22,6 +22,7 @@ public class MainPanelMenu : MonoBehaviour {
 
     //Atributes
     public Text slotNameText;
+    public Text slotNameTextContinue;
 
     private static  MainPanelMenu instance;
     void Awake()
@@ -37,7 +38,7 @@ public class MainPanelMenu : MonoBehaviour {
     public void ClickNewGame()
     {
         NewGameMenu.SetActive(true);
-        SaveLoadManager.NewSlot();
+        SaveLoadManager.NewGameSlot();
     }
 
     public void StartNewGame()

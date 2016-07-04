@@ -18,7 +18,6 @@ public class UIManager: MonoBehaviour  {
         }
     }
 
-    private UIManager() { }
 
     void Awake()
     {

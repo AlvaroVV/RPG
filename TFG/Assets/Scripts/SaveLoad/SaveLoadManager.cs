@@ -54,18 +54,14 @@ public static class SaveLoadManager {
 
     public static void SaveSlot()
     {
-        GameSlotInfo.currentGameSlot.playerPositionX = GameGlobals.playerMovement.transform.position.x;
-        GameSlotInfo.currentGameSlot.playerPositionY = GameGlobals.playerMovement.transform.position.y;
-        GameSlotInfo.currentGameSlot.currentMap = MapManager.Instance.GetActualMapName();
-        GameSlotInfo.currentGameSlot.itemsNames = GameGlobals.playerTeamController.SaveItems();
-        GameSlotInfo.currentGameSlot.characterStates = GameGlobals.playerTeamController.SaveCharacterDatas();
+        GameGlobals.playerLoader.SaveGameSlotInfo();
         Save();
 
     }
 
     
 
-    public static void NewSlot()
+    public static void NewGameSlot()
     {
         //Guardamos la referencia al currentSlot para dirigirnos a él desde las demás clases del juego
         int slot = LookForGameSlotInfo();
@@ -85,7 +81,7 @@ public static class SaveLoadManager {
 
     public static void DeleteGameSlot()
     {
-        NewSlot();
+        NewGameSlot();
         Save();
         Load();
     }

@@ -3,15 +3,23 @@ using System.Collections;
 
 public class PlayerLoader : MonoBehaviour {
 
-
-
 	// Use this for initialization
 	void Start () {
         LoadCurrentPosition();
         LoadTeamAndInventory();
-        MapManager.Instance.LoadMap(GameSlotInfo.currentGameSlot.currentMap);
+        LoadCurrentMap();
         LoadCurrentChapter();
 	}
+
+    public string GetActualMapName()
+    {
+       return  MapManager.Instance.GetActualMapName();
+    }
+
+    private void LoadCurrentMap()
+    {
+        MapManager.Instance.LoadMap(GameSlotInfo.currentGameSlot.currentMap);
+    }
 
     private void LoadTeamAndInventory()
     {
@@ -41,8 +49,26 @@ public class PlayerLoader : MonoBehaviour {
             Debug.LogError("No existe un capítulo con ese nombre -> " + ChapterName);
     }
 
+    public void SaveGameSlotInfo()
+    {
+        GameSlotInfo.currentGameSlot.playerPositionX = transform.position.x;
+        GameSlotInfo.currentGameSlot.playerPositionY = transform.position.y;
+        GameSlotInfo.currentGameSlot.currentMap = GetActualMapName();
+        SaveItems();
+        SaveCharacters();
+    }
 
+    private void SaveItems()
+    {
+        GameSlotInfo.currentGameSlot.itemsNames = GetComponent<PlayerTeamController>().SaveItems();
+    }
+
+    private void SaveCharacters()
+    {
+        GameSlotInfo.currentGameSlot.characterStates = GetComponent<PlayerTeamController>().SaveCharacterDatas();
+    }
+}
 
 
 	
-}
+

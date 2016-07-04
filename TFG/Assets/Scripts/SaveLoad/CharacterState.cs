@@ -6,9 +6,7 @@ using System;
 [Serializable]
 public class CharacterState  {
   
-
     public string CharacterName;
-    public string CharacterPath;
 
     public int currentHP;
     public int currentMP;
@@ -28,8 +26,6 @@ public class CharacterState  {
 
     public void SaveCharacter(CharacterData data)
     {
-        CharacterPath = data.CharacterPath;
-
         CharacterName = data.Name;
 
         HealthPoints = data.HealthPoints;

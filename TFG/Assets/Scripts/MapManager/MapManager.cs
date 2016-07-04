@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MapManager : MonoBehaviour {
 
+    public string MapName = "";
+    public string DoorName = "";
 
     public static MapManager Instance
     {
@@ -14,6 +16,12 @@ public class MapManager : MonoBehaviour {
 
     private static MapManager instance;
     private GameObject actualMap;
+
+    void Start()
+    {
+        if (!MapName.Equals("") && !DoorName.Equals(""))
+            StartCoroutine(UseExternalDoor(MapName, DoorName));
+    }
 
     void Awake()
     {

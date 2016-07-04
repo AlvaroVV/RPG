@@ -15,11 +15,16 @@ public class ItemData : ScriptableObject
     public string Id { get { return id; } set { id = value; } }
     public Sprite Image { get { return image; } set { this.image = value; } }
 
-    public BaseCharacter Character { get; set; }
 
-    public virtual void UseItem()
+    public virtual void ApplyEffect(CharacterData data)
+    {
+        Debug.Log("Aplicando Efecto");
+    }
+
+    public virtual void UseItem(ItemSlot itemSlot)
     {
         Debug.Log("Usando " + id);
+
     }
 
     public virtual string GetStadisticText(BaseCharacter character)
@@ -27,19 +32,7 @@ public class ItemData : ScriptableObject
         return "StatisticText";
     }
 
-    public bool CanBeUsed(BaseCharacter character)
-    {
-        //Si Character es null, quiere decir que es un objeto que no necesita de objetivo para ser usado
-        if (character != null)
-        {
-            this.Character = character;
-            return ConditionToUse();
-        }
-        else
-            return true;
-    }
-
-    public virtual bool ConditionToUse()
+    public virtual bool ConditionToUse(CharacterData data)
     {
         return true;
     }

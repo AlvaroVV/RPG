@@ -7,34 +7,46 @@ using System;
 public class CharacterPanel : MonoBehaviour, IPointerClickHandler
 {
 
-    public Image image;
-    public Text text;
+    public Image characterImage;
+    public Text stadisticText;
 
     private CharacterData character;
     private ItemSlot itemSlot;
 
-    public void setCharacter(CharacterData character,ref  ItemSlot itemSlot)
+    public void SetProperties(CharacterData character, ItemSlot itemSlot)
     {
         this.character = character;
         this.itemSlot = itemSlot;
-        this.image.sprite = character.face;
-        this.text.text = itemSlot.getItem().GetStadisticText(character);
+        characterImage.sprite = character.face;
+        stadisticText.text = itemSlot.GetItem().GetStadisticText(character);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        ItemData item = itemSlot.getItem();
-        if (item == null)
+        ApplyItemEffect();
+    }
+
+    private void ApplyItemEffect()
+    {
+      
+        if (itemSlot.isEmpty())
         {
-            Debug.Log("NO QUEDAN OBJETOS");
             UIManager.Instance.RemovePanel(ChooseCharacterPanel.Instance.gameObject);
         }
         else
         {
-            itemSlot.UseItem(character);
-            this.text.text = item.GetStadisticText(character);
-            ChooseCharacterPanel.Instance.UpdateUnits(itemSlot);
+            ItemData item = itemSlot.GetItem();
+
+            if (item.ConditionToUse(character))
+            {                
+                item.ApplyEffect(character);
+                itemSlot.UpdateUnits();                
+                stadisticText.text = item.GetStadisticText(character);
+                ChooseCharacterPanel.Instance.UpdateUnits(itemSlot);
+            }
+
         }
     }
+
 
 }

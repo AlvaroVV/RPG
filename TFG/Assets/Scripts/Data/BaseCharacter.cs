@@ -89,8 +89,7 @@ public class BaseCharacter: ScriptableObject  {
 
     public void RestoreHP(int hp)
     {
-        this.currentHP += hp;
-        Debug.Log(Name + "-> " + currentHP);
-
+        currentHP += hp;
+       
     }
 }

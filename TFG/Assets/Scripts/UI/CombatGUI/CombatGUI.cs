@@ -47,7 +47,7 @@ public class CombatGUI : MonoBehaviour {
         GameObject healthPanelObj = Resources.Load("UI/CombatGUI/HealthPanel") as GameObject;
         GameObject panel = GameObject.Instantiate(healthPanelObj, healthPanelObj.transform.position, healthPanelObj.transform.rotation) as GameObject;
 
-        addChild(panel, HealthPanel);
+        ScriptingUtils.addChild(panel, HealthPanel);
 
         HealthPanel healthPanel = panel.GetComponent<HealthPanel>();
         panel.name = "HealthBar_" + charac.name;
@@ -59,7 +59,7 @@ public class CombatGUI : MonoBehaviour {
         GameObject actionPanelObj = Resources.Load("UI/CombatGUI/ActionPanel") as GameObject;
         GameObject panel = GameObject.Instantiate(actionPanelObj, actionPanelObj.transform.position, actionPanelObj.transform.rotation) as GameObject;
 
-        addChild(panel, ActionPanel);
+        ScriptingUtils.addChild(panel, ActionPanel);
         panel.SetActive(false);
         panel.name = "ActionBar_" + charac.name;
         ActionPanel actionPanel = panel.GetComponent<ActionPanel>();
@@ -71,23 +71,11 @@ public class CombatGUI : MonoBehaviour {
         GameObject actionPanelObj = Resources.Load("UI/CombatGUI/TurnfighterPanel") as GameObject;
         GameObject panel = GameObject.Instantiate(actionPanelObj, actionPanelObj.transform.position, actionPanelObj.transform.rotation) as GameObject;
 
-        addChild(panel, TurnFighterPanels);
+        ScriptingUtils.addChild(panel, TurnFighterPanels);
         panel.SetActive(true);
         panel.name = "TurnFighter_" + fighter.name;
         TurnFighterPanel actionPanel = panel.GetComponent<TurnFighterPanel>();
         fighter.addTurnPanel(actionPanel);
     }
 
-    private void addChild(GameObject child, GameObject parent)
-    {
-        if (child != null)
-        {
-            Transform t = child.transform;
-            t.SetParent(parent.transform, false);
-            //t.localPosition = Vector3.zero;
-            t.localRotation = Quaternion.identity;
-            t.localScale = Vector3.one;
-            child.layer = parent.layer;
-        }
-    }
 }

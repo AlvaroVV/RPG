@@ -57,6 +57,7 @@ public class MenuContinue : MonoBehaviour {
         }
         else
         {
+            MainPanelMenu.Instance.slotNameTextContinue.text = info.gameSlotName;
             MainPanelMenu.Instance.ContinuePanel.SetActive(true);
         }
     }

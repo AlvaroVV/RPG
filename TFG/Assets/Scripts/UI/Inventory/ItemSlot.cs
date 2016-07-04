@@ -42,7 +42,7 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
         }
     }
 
-    public void AddItems(Stack<ItemData> items)
+    public void AddItem(Stack<ItemData> items)
     {
         items = new Stack<ItemData>();
 
@@ -50,7 +50,7 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
     }
 
 
-    public ItemData getItem()
+    public ItemData GetItem()
     {
         if (!isEmpty())
             return items.Peek();
@@ -58,7 +58,7 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
 
     }
 
-    public string getItemName()
+    public string GetItemName()
     {
         if (!isEmpty())
             return items.Peek().name;
@@ -73,8 +73,11 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
 
     public void UpdateUnits()
     {
+        ItemData item = items.Pop();
+        InventoryPanel.Instance.items.Remove(item);
         unitsText.text = (items.Count > 1) ? items.Count.ToString() : string.Empty;
-
+        if (isEmpty())
+            Destroy(gameObject);
     }
 
     public int getUnits()
@@ -82,28 +85,15 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
         return items.Count;
     }
 
-    public void UseItem(BaseCharacter character)
+    public void UseItem()
     {
-        if (!isEmpty() && items.Peek().CanBeUsed(character))
-        {
-            ItemData item = items.Pop();
-            item.UseItem();
-            UpdateUnits();
-            InventoryPanel.Instance.items.Remove(item);
-            if (isEmpty())
-                Destroy(gameObject);
+        if (!isEmpty())
+        { 
+            ItemData item = items.Peek();
+            item.UseItem(this);
         }
     }
 
-    public void ChargeItemSlot()
-    {
-        if (getItem().NeedsPanel)
-        {
-            UIManager.Instance.CreateChooseCharacterPanel(this);
-        }
-        else
-            this.UseItem(null);
-    }
 
 
     /// <summary>
@@ -127,7 +117,7 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
             canvasGroup.blocksRaycasts = false;
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
-            ChargeItemSlot();
+            UseItem();
     }
 
     /// <summary>
@@ -163,7 +153,7 @@ public class ItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler , IEndD
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        InventoryPanel.Instance.ActivateTooltip(getItem());
+        InventoryPanel.Instance.ActivateTooltip(GetItem());
     }
 
     public void OnPointerExit(PointerEventData eventData)

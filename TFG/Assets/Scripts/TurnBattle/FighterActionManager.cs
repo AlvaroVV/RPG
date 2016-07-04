@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class FighterActionManager: MonoBehaviour  {
 
@@ -83,7 +84,6 @@ public class FighterActionManager: MonoBehaviour  {
         {
             if (target is EnemyFighter)
             {
-                Debug.Log("MUERTO");
                 EnemyFighters.Remove((EnemyFighter)target);
                 StackTurnFighter.Remove(target);
                 DestroyObject(target.gameObject);
@@ -179,5 +179,4 @@ public class FighterActionManager: MonoBehaviour  {
         Destroy(gameObject.gameObject);
     }
 
-   
 }

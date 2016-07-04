@@ -10,9 +10,6 @@ public static class GameGlobals  {
     public static LayerMask LayerInteractable = LayerMask.NameToLayer("Interactable");
     //Tags
     public static string TagPlayer = "Player";
-    public static string TagBackground = "Background";
-    public static string TagFightStage = "FightStage";
-    public static string TagTurnBattle = "TurnBattleHandler";
     public static string TagCanvas = "Canvas";
 
     //Atributos enemigo Animator
@@ -26,6 +23,7 @@ public static class GameGlobals  {
     public static PlayerMovement playerMovement = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerMovement>();
     public static PlayerTeamController playerTeamController = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerTeamController>();
     public static PlayerAnimManager playerAnimHandler = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerAnimManager>();
+    public static PlayerLoader playerLoader = GameObject.FindGameObjectWithTag(TagPlayer).GetComponent<PlayerLoader>();
     public static CameraControll camera = Camera.main.GetComponent<CameraControll>();
 
   

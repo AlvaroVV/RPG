@@ -5,6 +5,7 @@ using Tiled2Unity;
 public class CameraControll : MonoBehaviour
 {
     public GameObject blackPanel;
+    public GameObject GameOver;
     public GameObject target;
 
     private Transform playerTransform;
@@ -104,7 +105,6 @@ public class CameraControll : MonoBehaviour
     /// <returns></returns>
     public GameObject GoToBlackPanel()
     {
-        Debug.Log("Camara");
         canMove = false;
         GameObject blacPanel = Instantiate(blackPanel);
 
@@ -112,6 +112,18 @@ public class CameraControll : MonoBehaviour
                                          blacPanel.transform.position.y,
                                          transform.position.z);
         return blacPanel;
+    }
+
+    public GameObject GoToGameOver()
+    {
+        canMove = false;
+        GameObject gameOver = Instantiate(GameOver);
+
+        transform.position = new Vector3(gameOver.transform.position.x,
+                                         gameOver.transform.position.y,
+                                         transform.position.z);
+
+        return gameOver;
     }
 
     /// <summary>

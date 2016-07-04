@@ -2,36 +2,37 @@
 using System.Collections;
 using System;
 
-public class AlertState : IStateEnemy
+public class AlertState : AbstractStateEnemy
 {
-    private StateMachineEnemy sm;
+
     private float currentTime;
 
-    public AlertState(StateMachineEnemy sm)
+    public AlertState(StateMachineEnemy sm):base(sm)
     {
-        this.sm = sm;
+
     }
-    public void OnTriggerEnter2D(Collider2D other)
+
+    public override void OnTriggerEnter2D(Collider2D other)
     {
          ToPatrolState(); // Si choca con algo que no sea el jugador
     }
 
-    public void ToAlertState()
+    public override void ToAlertState()
     {
 
     }
 
-    public void ToChaseState()
+    public override void ToChaseState()
     {
         sm.currentState = sm.chase;
     }
 
-    public void ToPatrolState()
+    public override void ToPatrolState()
     {
         sm.currentState = sm.patrol;
     }
 
-    public void UpdateState()
+    public override void UpdateState()
     {
         Alert();
         Look();

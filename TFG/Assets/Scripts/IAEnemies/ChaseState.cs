@@ -2,42 +2,40 @@
 using System.Collections;
 using System;
 
-public class ChaseState : IStateEnemy
+public class ChaseState : AbstractStateEnemy
 {
-    private StateMachineEnemy sm;
     private SpriteRenderer sR;
     private Color initialColor;
     public bool targetDetected = true;
 
-    public ChaseState(StateMachineEnemy sm)
+    public ChaseState(StateMachineEnemy sm):base(sm)
     {
-        this.sm = sm;
         sR = sm.GetComponentInChildren<SpriteRenderer>();
         initialColor = sR.color;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
         targetDetected = false;
         ToAlertState(); // Si choca con algo que no sea el jugador
     }
 
-    public void ToAlertState()
+    public override void ToAlertState()
     {
         sm.currentState = sm.alert;
     }
 
-    public void ToChaseState()
+    public override void ToChaseState()
     {
         
     }
 
-    public void ToPatrolState()
+    public override void ToPatrolState()
     {        
         sm.currentState = sm.patrol;
     }
 
-    public void UpdateState()
+    public override void UpdateState()
     {
         sm.UpdateAnimation(sm.target.transform.position);
         if ((Vector2.Distance(sm.target.transform.position, sm.transform.position) < sm.RadiusChase) && targetDetected) 

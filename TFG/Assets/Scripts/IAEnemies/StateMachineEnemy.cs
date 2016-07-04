@@ -24,7 +24,7 @@ public class StateMachineEnemy : MonoBehaviour {
     public GameObject target { get; set; }
     public Rigidbody2D rgb { get; set; }
     public Animator anim { get; set; }
-    public IStateEnemy currentState { get; set; }
+    public AbstractStateEnemy currentState { get; set; }
     //States
     public PatrolState patrol { get; set; }
     public AlertState alert { get; set; }
@@ -81,7 +81,6 @@ public class StateMachineEnemy : MonoBehaviour {
         Vector2 position = newPosition - rgb.position;
         anim.SetFloat(GameGlobals.INPUT_Y, position.y *10);
         anim.SetFloat(GameGlobals.INPUT_X, position.x *10);
-        //Flip(position);
     }
 
     public void DestroyEnemy()

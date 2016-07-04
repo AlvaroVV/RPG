@@ -8,7 +8,10 @@ public class PlayerTeamController: MonoBehaviour  {
     public List<CharacterData> currentPlayerTeam;
     public List<ItemData> items;
 
-
+    void Start()
+    {
+        currentPlayerTeam[0].currentHP = 5;
+    }
 
     public void LoadTeamAndInventory()
     {
@@ -52,7 +55,7 @@ public class PlayerTeamController: MonoBehaviour  {
         currentCharacterStates = GameSlotInfo.currentGameSlot.characterStates;
         foreach (CharacterState state in currentCharacterStates)
         {
-            CharacterData character = Resources.Load(state.CharacterPath) as CharacterData;
+            CharacterData character = Resources.Load("Characters/CharactersDatas/" + state.CharacterName) as CharacterData;
             state.LoadCharacter(character);
             currentPlayerTeam.Add(character);
             

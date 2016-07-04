@@ -29,6 +29,7 @@ public class TurnBattleHandler : MonoBehaviour{
     public ExecuteActionState ExecuteAction { get; set; }
     public ResolveActionState ResolveAction { get; set; }
     public VerifyFighterState VerifyFighter { get; set; }
+    public LooseActionState LooseAction { get; set; }
     public FinishBattleState FinishBattle { get; set; }
 
     private IState currentState;
@@ -44,6 +45,7 @@ public class TurnBattleHandler : MonoBehaviour{
         ExecuteAction = new ExecuteActionState(this);
         ResolveAction = new ResolveActionState(this);
         VerifyFighter = new VerifyFighterState(this);
+        LooseAction = new LooseActionState(this);
         FinishBattle = new FinishBattleState(this);
     }
 
@@ -81,6 +83,12 @@ public class TurnBattleHandler : MonoBehaviour{
     {
         FighterActionManager.Instance.CleanAndFinish();
         currentState = null;
+    }
+
+    public void GameOver()
+    {
+        currentState = null;
+        
     }
 
 }

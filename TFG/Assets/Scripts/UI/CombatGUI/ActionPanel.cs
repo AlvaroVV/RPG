@@ -7,7 +7,7 @@ public class ActionPanel : MonoBehaviour {
 
     public Button buttonAttack;
     public Text textName;
-    public Image image;
+    public Image CharacterImage;
     private CharacterFighter characterFighter;
 
 
@@ -22,7 +22,7 @@ public class ActionPanel : MonoBehaviour {
     {
         CharacterData data = characterFighter.FighterData as CharacterData;
         textName.text = data.Name;
-        image.sprite = data.face;
+        CharacterImage.sprite = data.face;
     }
 
     public void SetAction(BaseAttack attackInfo)

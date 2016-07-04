@@ -12,10 +12,6 @@ public class CharacterData : BaseCharacter {
     public Sprite face;
     public string CharacterPath = "";
 
-    void OnEnable()
-    {
-        CharacterPath = "Characters/CharactersDatas/" + CharacterName;
-    }
     public int Experience
     {
         get { return experience; }

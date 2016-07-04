@@ -11,53 +11,45 @@ public class Slot : MonoBehaviour,IDropHandler {
 
     private GameObject itemSlot;
 	
-    public void AddItem(ItemData item)
+    public void AddItemSlot(ItemData item)
     {
         if (itemSlot == null)
         {
             itemSlot = Instantiate(itemPref);
             itemSlot.name = "item_" + item.name;
-            addChild(itemSlot, gameObject);
+            ScriptingUtils.addChild(itemSlot, gameObject);
         }
 
         itemSlot.GetComponent<ItemSlot>().AddItem(item);
     }
 
-    public void AddItems(Stack<ItemData> items)
+    public void AddItemSlot(Stack<ItemData> items)
     {
         if (itemSlot == null)
         {
             itemSlot = Instantiate(itemPref);
-            addChild(itemSlot, gameObject);
+            ScriptingUtils.addChild(itemSlot, gameObject);
         }
 
-        itemSlot.GetComponent<ItemSlot>().AddItems(items);
+        itemSlot.GetComponent<ItemSlot>().AddItem(items);
 
     }
 
-    private void addChild(GameObject child, GameObject parent)
-    {
-        if (child != null)
-        {
-            Transform t = child.transform;
-            t.SetParent(parent.transform, false);
-            //t.localPosition = Vector3.zero;
-            t.localRotation = Quaternion.identity;
-            t.localScale = Vector3.one;
-            child.layer = parent.layer;
-        }
-        
-    }
-
+   
     public bool isEmpty()
     {
         return (itemSlot == null) ? true : false;
     }
 
+    public GameObject GetItemSlot()
+    {
+        return itemSlot;
+    }
+
     public string getItemSlotName()
     {
         if (itemSlot != null)
-            return itemSlot.GetComponent<ItemSlot>().getItemName();
+            return itemSlot.GetComponent<ItemSlot>().GetItemName();
         else
             return "";
     }
@@ -73,30 +65,14 @@ public class Slot : MonoBehaviour,IDropHandler {
         InventoryPanel.Instance.SlotChangeTo = gameObject;
 
         //ItemSlot que se va a mover
-        ItemSlot itemSlotFrom = eventData.pointerDrag.GetComponent<ItemSlot>();
-
-        //Si este slot ya tiene un Item, hay que hacer un cambio
-        if (itemSlot != null)
-        {
-            ItemSlot itemSlotTo = itemSlot.GetComponent<ItemSlot>();
-
-            //Cambiamos el slot de este item por el que movemos
-            itemSlotTo.ChangeParent(InventoryPanel.Instance.SlotChangeFrom);
-            InventoryPanel.Instance.SlotChangeFrom.GetComponent<Slot>().itemSlot = itemSlotTo.gameObject;
-
-        }
-        else
-        {
-            //Si no tiene un item, el slot del que proviene se queda vacío
-            InventoryPanel.Instance.SlotChangeFrom.GetComponent<Slot>().itemSlot = null;
-        }
-
-        itemSlot = itemSlotFrom.gameObject;
+        InventoryPanel.Instance.ChangeItemPositions();
 
     }
 
-    public void ChangeItemslot(GameObject item)
+    public void ChangeItemSlot(GameObject itemSlot)
     {
-        this.itemSlot = item;
+        this.itemSlot = itemSlot;
     }
+
+
 }
