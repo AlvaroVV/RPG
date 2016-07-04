@@ -583,8 +583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14709c9b47086454eaa8a0222ad1d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapName: Bosque
-  DoorName: Door 1
+  MapName: 
+  DoorName: 
 --- !u!4 &1952472397
 Transform:
   m_ObjectHideFlags: 0
