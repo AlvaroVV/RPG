@@ -7,17 +7,18 @@ public class FadeCombatText : MonoBehaviour {
 
     public Color color;
     public string text;
+    public int number;
     public float speed = 0.5f;
     public float fadeTime = 1;
     public Vector3 direction = Vector3.up;
 
-    public Text TextComponent { get; set; }
+    private Text TextComponent { get; set; }
 
     void Start()
     {
         TextComponent = GetComponent<Text>();
         TextComponent.color = color;
-        TextComponent.text = text;
+        TextComponent.text = number.ToString();
         StartCoroutine(TextEffect());
     }
 

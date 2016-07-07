@@ -40,7 +40,7 @@ public class StateMachineEnemy : MonoBehaviour {
         chase = new ChaseState(this);
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        target = GameGlobals.player;
+        target = GameGlobals.GetPlayer();
     }
 
     void Start()
@@ -94,6 +94,8 @@ public class StateMachineEnemy : MonoBehaviour {
         rgb.velocity = Vector3.zero;
         GameGlobals.StartFight(this);        
     }
+
+   
 
     
 

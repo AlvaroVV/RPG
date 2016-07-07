@@ -8,13 +8,28 @@ public class ItemData : ScriptableObject
     public string id = "Item";
     public string description = "Description";
     public Sprite image;
-    public bool NeedsPanel = false;
-    public string ItemPath = "";
 
+
+    private string ItemPath = "";
     public string Description { get { return description; } set { description = value; } }
     public string Id { get { return id; } set { id = value; } }
     public Sprite Image { get { return image; } set { this.image = value; } }
 
+    void OnEnable()
+    {
+        ItemPath = "Items/" + id;
+        OnEnableItem();
+    }
+
+    public virtual void OnEnableItem()
+    {
+        //To Use on Enable;
+    }
+
+    public string GetItemPath()
+    {
+        return ItemPath;
+    }
 
     public virtual void ApplyEffect(CharacterData data)
     {

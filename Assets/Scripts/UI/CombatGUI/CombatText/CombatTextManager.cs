@@ -4,7 +4,7 @@ using System.Collections;
 
 public class CombatTextManager : MonoBehaviour {
 
-    public FadeCombatText DamageText;
+    public FadeCombatText HealthText;
     public BounceCombatText BounceText;
 
     private RectTransform rectTransform;
@@ -25,13 +25,14 @@ public class CombatTextManager : MonoBehaviour {
         rectTransform = GetComponent<RectTransform>();
     }
 
-    public void CreateDamageText(Vector3 position, string text)
+    public GameObject CreateHealthText(Vector3 position, int number)
     {
-        DamageText.text = text;
-        GameObject TextObj = Instantiate(DamageText.gameObject, position, Quaternion.identity) as GameObject;
+        HealthText.number = number;
+        GameObject TextObj = Instantiate(HealthText.gameObject, position, Quaternion.identity) as GameObject;
         TextObj.transform.SetParent(rectTransform);
         TextObj.transform.localScale = Vector3.one;
-        
+
+        return TextObj;
     }
 
     public GameObject CreateBounceText(Vector3 position, int number)

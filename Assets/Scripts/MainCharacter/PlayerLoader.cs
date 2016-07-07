@@ -11,10 +11,7 @@ public class PlayerLoader : MonoBehaviour {
         LoadCurrentChapter();
 	}
 
-    public string GetActualMapName()
-    {
-       return  MapManager.Instance.GetActualMapName();
-    }
+
 
     private void LoadCurrentMap()
     {
@@ -56,6 +53,11 @@ public class PlayerLoader : MonoBehaviour {
         GameSlotInfo.currentGameSlot.currentMap = GetActualMapName();
         SaveItems();
         SaveCharacters();
+    }
+
+    private string GetActualMapName()
+    {
+        return MapManager.Instance.GetActualMapName();
     }
 
     private void SaveItems()

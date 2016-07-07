@@ -36,7 +36,7 @@ public class InventoryPanel : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        items = GameGlobals.playerTeamController.items;
+        items = GameGlobals.GetPlayerTeamController().items;
 
         ChargeSlots();
         ChargeInventory();

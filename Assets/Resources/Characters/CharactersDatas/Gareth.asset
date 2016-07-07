@@ -14,7 +14,7 @@ MonoBehaviour:
   CharacterName: Gareth
   description: Descripcion
   healthPoints: 90
-  currentHP: 60
+  currentHP: 45
   magicPoints: 20
   currentMP: 15
   attackPower: 5
@@ -24,7 +24,7 @@ MonoBehaviour:
   speed: 5
   evasion: 5
   normalAttack: {fileID: 11400000, guid: dc9dc7a63916a8b46a03aedcc4cf6fcb, type: 2}
-  Attacks: []
+  specialAttack: {fileID: 0}
   animatorController: {fileID: 9100000, guid: c9cfc611b246ecf4fa0b8e65e018c818, type: 2}
   type: 1
   experience: 0

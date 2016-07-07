@@ -78,7 +78,7 @@ public class FighterActionManager: MonoBehaviour  {
         //Si es un enemigo lo destruimos, si es un personaje ponemos estado derrotado para que pueda ser resucitado
         Debug.Log(target.FighterData.currentHP);
         //El estado del atacante pasa a Idle
-        currentFighter.FighterAnimator.SetTrigger("Idle");
+        currentFighter.SetIdleState();
         //Comprobamos estado del objetivo
         if(target.FighterData.currentHP <= 0)
         {
@@ -89,12 +89,12 @@ public class FighterActionManager: MonoBehaviour  {
                 DestroyObject(target.gameObject);
             }
             else
-                target.FighterAnimator.SetTrigger("Dead");
+                target.SetDeadState();
 
         }
-        else
+        else if(!target.GetState().Equals("Idle"))
         {
-            target.FighterAnimator.SetTrigger("Idle");
+            target.SetIdleState();
         }
 
         //Eliminamos la información
@@ -111,11 +111,20 @@ public class FighterActionManager: MonoBehaviour  {
         if (attackInfo != null)
         {
             attackEffect = Instantiate(attackInfo.Animation, target.transform.position, Quaternion.identity) as GameObject;
-            target.FighterAnimator.SetTrigger("Hurt");
+            string state = attackInfo.TargetState;
+            if (state.Equals(target.GetState()))
+                return;
+            else
+            {
+                target.FighterAnimator.SetTrigger(state);
+                target.SetState(state);
+            }
         }
         else
             Debug.LogError("No se ha cargado el ataque");
     }
+
+
 
     //FIGHTER CURSOR METHODS
 

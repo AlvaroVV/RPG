@@ -19,7 +19,7 @@ public class StartFightEnemiesState : IState
         Debug.Log("START ENEMIES");
         InstantiateEnemies();
         FighterActionManager.Instance.GetStackTurnOrder();
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
+        yield return ScriptingUtils.WaitForKeyPressed(KeyCode.Space);
         
     }
  

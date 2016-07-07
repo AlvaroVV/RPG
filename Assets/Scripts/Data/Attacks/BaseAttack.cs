@@ -6,11 +6,14 @@ using System;
 public abstract class BaseAttack : ScriptableObject {
 
     public string idAttack = "sword";
+    public string nameAttack = "Name";
     public string descriptionAttack = "description sword attack";
     public GameObject animation; //Animación del ataque
     public GameGlobals.AttackType attackType; //Estado del Fighter: Attack or Magic
 
-    public string Id { get { return CSVReader.Instance.GetWord(idAttack); } set { idAttack = value; } }
+    public string TargetState = "Idle";
+
+    public string NameAttack { get { return CSVReader.Instance.GetWord(idAttack); } set { idAttack = value; } }
 
     public string Description
     {
@@ -28,6 +31,17 @@ public abstract class BaseAttack : ScriptableObject {
         set { attackType = value; }
     }
 
+    public string GetTargetState()
+    {
+        return TargetState;
+    }
+
+    public virtual bool canBeUsed(Fighter fitgher)
+    {
+        return true;
+    }
+
     public abstract GameObject ApplyEffect(Fighter fighter, Fighter target);
+
 
 }

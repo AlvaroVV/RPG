@@ -24,7 +24,6 @@ public static class SaveLoadManager {
 
     public static void Save()
     {
-        Debug.Log(Application.persistentDataPath);
         FileStream file = File.Create(Application.persistentDataPath + "/savedGames.json");
         StreamWriter writer = new StreamWriter(file);
        
@@ -38,9 +37,9 @@ public static class SaveLoadManager {
 
     public static void Load()
     {
+        Debug.Log(Application.persistentDataPath);
         if (File.Exists(Application.persistentDataPath + "/savedGames.json"))
         {
-            Debug.Log(Application.persistentDataPath);
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.json",FileMode.Open);
             StreamReader reader = new StreamReader(file);
             string json = reader.ReadToEnd();
@@ -54,7 +53,7 @@ public static class SaveLoadManager {
 
     public static void SaveSlot()
     {
-        GameGlobals.playerLoader.SaveGameSlotInfo();
+        GameGlobals.GetPlayerLoader().SaveGameSlotInfo();
         Save();
 
     }
@@ -73,6 +72,7 @@ public static class SaveLoadManager {
     private static GameSlotInfo NewGameSlotInfo()
     {
         GameSlotInfo gameSlotInfo = new GameSlotInfo();
+        
         TextAsset json = Resources.Load("Texts/NewGame") as TextAsset;
         Debug.Log(json.text);
         gameSlotInfo = JsonUtility.FromJson<GameSlotInfo>(json.text);

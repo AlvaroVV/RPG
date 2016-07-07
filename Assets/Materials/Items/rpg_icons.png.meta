@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7ccdc527ae466c347a4780abdbc95f2e
-timeCreated: 1464306319
+timeCreated: 1467911971
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -64,7 +64,7 @@ TextureImporter:
     21300114: rpg_icons_57
     21300116: rpg_icons_58
     21300118: rpg_icons_59
-    21300120: rpg_icons_60
+    21300120: AttackItem
     21300122: rpg_icons_61
     21300124: rpg_icons_62
     21300126: rpg_icons_63
@@ -80,7 +80,7 @@ TextureImporter:
     21300146: rpg_icons_73
     21300148: rpg_icons_74
     21300150: rpg_icons_75
-    21300152: rpg_icons_76
+    21300152: pergamino
     21300154: rpg_icons_77
     21300156: rpg_icons_78
     21300158: rpg_icons_79
@@ -899,7 +899,7 @@ TextureImporter:
         - {x: -16, y: -16}
         - {x: 16, y: -16}
         - {x: 16, y: 16}
-    - name: rpg_icons_60
+    - name: AttackItem
       rect:
         serializedVersion: 2
         x: 35
@@ -1140,7 +1140,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: rpg_icons_76
+    - name: pergamino
       rect:
         serializedVersion: 2
         x: 137

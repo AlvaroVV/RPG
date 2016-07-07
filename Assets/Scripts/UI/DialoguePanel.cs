@@ -13,7 +13,7 @@ public class DialoguePanel: MonoBehaviour  {
     {
         image.gameObject.SetActive(false);
 
-        if (title!=null)
+        if (title != null)
             Title.text = title;
         int i = 0;
         string str = "";
@@ -34,6 +34,15 @@ public class DialoguePanel: MonoBehaviour  {
             Title.text = title;
         BodyText.text = body;
         this.image.sprite = image;
+    }
+
+    public IEnumerator ShowInformation(string information)
+    {
+        Title.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+        BodyText.text = information;
+
+        yield return null;
     }
 
 }

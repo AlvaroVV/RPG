@@ -21,7 +21,7 @@ public class BaseCharacter: ScriptableObject  {
 
     //Attacks
     public BaseAttack normalAttack;
-    public List<BaseAttack> Attacks;
+    public BaseAttack specialAttack;
 
     //Animator
     public RuntimeAnimatorController animatorController;

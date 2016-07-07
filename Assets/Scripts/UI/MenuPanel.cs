@@ -33,7 +33,7 @@ public class MenuPanel : MonoBehaviour {
 
     private void addHealthPanels()
     {
-        foreach (CharacterData charac in GameGlobals.playerTeamController.currentPlayerTeam)
+        foreach (CharacterData charac in GameGlobals.GetPlayerTeamController().currentPlayerTeam)
         {
             GameObject healthPanelObj = Resources.Load("UI/CombatGUI/HealthPanel") as GameObject;
             GameObject panel = GameObject.Instantiate(healthPanelObj, healthPanelObj.transform.position, healthPanelObj.transform.rotation) as GameObject;
@@ -48,7 +48,13 @@ public class MenuPanel : MonoBehaviour {
 
     public void BackToMainPanel()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(EndScene());
+    }
+
+    private IEnumerator EndScene()
+    {
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        yield return null;
     }
    
 }

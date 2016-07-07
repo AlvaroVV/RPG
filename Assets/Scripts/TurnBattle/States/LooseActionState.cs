@@ -18,14 +18,19 @@ public class LooseActionState : IState {
 
     public IEnumerator UpdateState()
     {
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
+        yield return new WaitForSeconds(2);
         CombatGUI.Instance.gameObject.SetActive(false);
         yield return ScriptingUtils.DoAFadeIn();
-        GameObject gameOver = GameGlobals.camera.GoToGameOver();
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
+        
+        GameObject gameOver = GameGlobals.GetCameraControll().GoToGameOver();
+        yield return ScriptingUtils.DoAFadeOut();
+        yield return new WaitForSeconds(2);
         yield return ScriptingUtils.DoAFadeIn();
+
         UnityEngine.Object.Destroy(gameOver);
-        SceneManager.LoadScene(0);
+        yield return ScriptingUtils.DoAFadeOut();
+
+        SceneManager.LoadScene(0,LoadSceneMode.Single);
     }
 
 }

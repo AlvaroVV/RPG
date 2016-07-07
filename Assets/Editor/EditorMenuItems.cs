@@ -35,6 +35,12 @@ static class EditorMenuItems
         ScriptableObjectUtility.CreateAsset<DamageAttack>();
     }
 
+    [MenuItem("Assets/Create/Scriptable Object/new HealthAttack")]
+    public static void CreateNewHealthAttack()
+    {
+        ScriptableObjectUtility.CreateAsset<HealthAttack>();
+    }
+
     [MenuItem("Assets/Create/Scriptable Object/new Item")]
     public static void CreateItem()
     {
@@ -45,6 +51,12 @@ static class EditorMenuItems
     public static void CreatePotion()
     {
         ScriptableObjectUtility.CreateAsset<PotionData>();
+    }
+
+    [MenuItem("Assets/Create/Scriptable Object/new Parchment")]
+    public static void CreateParchment()
+    {
+        ScriptableObjectUtility.CreateAsset<PergaminoData>();
     }
 
 }

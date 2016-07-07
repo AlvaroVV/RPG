@@ -6,6 +6,26 @@ using UnityEngine.UI;
 
 public static class ScriptingUtils  {
 
+    public static IEnumerator showInformation(string information)
+    {
+        DialoguePanel dp = UIManager.Instance.showDialogue("UI/DialoguePanel");
+
+        if (dp != null)
+        {
+
+           yield return dp.ShowInformation(information);
+
+            while (!Input.GetKeyDown(KeyCode.Space))
+            {
+                yield return null;
+            }
+
+            yield return null;
+
+        }
+            UIManager.Instance.Pop();
+        
+    }
    
 	public static IEnumerator showNpcDialogue(NPC npc, bool showTexts)
     {
@@ -87,6 +107,16 @@ public static class ScriptingUtils  {
             Debug.Log("AQUI");
             UIManager.Instance.Pop();
         }
+    }
+
+    public static IEnumerator WaitForKeyPressed(KeyCode key)
+    {
+        while (!Input.GetKeyDown(key))
+        {
+            yield return null;
+        }
+
+        yield return null;
     }
 
 

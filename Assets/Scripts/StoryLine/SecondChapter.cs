@@ -19,15 +19,13 @@ public class SecondChapter : AbstractChapter
     public override IEnumerator BodyChapter()
     {
         yield return new WaitForSeconds(1);
-        Debug.Log("EMPIEZA CAP 2");
         foreach (GameObject point in point1)
         {
-            yield return GameGlobals.playerMovement.MoveToPosition(point);
+            yield return GameGlobals.GetPlayerMovement().MoveToPosition(point);
             yield return new WaitForSeconds(0.5f);
         }
 
         yield return ScriptingUtils.ShowDialogue(dialogue);
-        Debug.Log("ACABA CAP 2");
         yield return null;
     }
 }

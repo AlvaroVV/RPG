@@ -57,8 +57,8 @@ public class TurnBattleHandler : MonoBehaviour{
     public IEnumerator StartFight(StateMachineEnemy enemy)
     {
         //Cogemos listas de Enemigos y Team
-        this.Enemy = enemy;
-        PlayerTeam = GameGlobals.playerTeamController.currentPlayerTeam;
+        Enemy = enemy;
+        PlayerTeam = GameGlobals.GetPlayerTeamController().currentPlayerTeam;
 
         currentState = StartTeam;
 
@@ -69,15 +69,6 @@ public class TurnBattleHandler : MonoBehaviour{
         }
     }
 
-    public IEnumerator WaitForKeyPressed(KeyCode key)
-    {
-        while(!Input.GetKeyDown(key))
-        {
-            yield return null;
-        }
-
-        yield return null;
-    }
 
     public void CleanAndFinish()
     {

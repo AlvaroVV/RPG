@@ -86,7 +86,7 @@ public class WalkerNPC : NPC {
     {
         StopMovement();
 
-        Vector2 direction = GameGlobals.player.transform.position - transform.position;
+        Vector2 direction = GameGlobals.GetPlayer().transform.position - transform.position;
         State_Idle_Direction(direction);
 
         yield return ScriptingUtils.showNpcDialogue(this, true);

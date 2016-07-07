@@ -7,6 +7,11 @@ public class DamageAttack : BaseAttack {
 
     public int damage;
 
+    void OnEnable()
+    {
+        TargetState = "Hurt";
+    }
+
     public override GameObject ApplyEffect(Fighter fighter, Fighter target)
     {
         int damage = CalculateDamage(fighter,target);

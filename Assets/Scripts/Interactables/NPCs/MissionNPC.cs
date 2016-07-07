@@ -17,11 +17,11 @@ public class MissionNPC : NPC
 
         yield return ScriptingUtils.showNpcDialogue(this, true);
 
-        if(GameGlobals.playerTeamController.LookForItemInventory(itemNeed))
+        if(GameGlobals.GetPlayerTeamController().LookForItemInventory(itemNeed))
         {
             yield return ScriptingUtils.ShowSentences(id_dialogue, sentenceAccept);
 
-            GameGlobals.playerTeamController.AddItemData(itemGiven);
+            GameGlobals.GetPlayerTeamController().AddItemData(itemGiven);
         }
     }
 }

@@ -22,7 +22,7 @@ public class FirstChapter : AbstractChapter
     public override IEnumerator BodyChapter()
     { 
         
-        GameObject blackPanel = GameGlobals.camera.GoToBlackPanel();
+        GameObject blackPanel = GameGlobals.GetCameraControll().GoToBlackPanel();
 
         yield return new WaitForSeconds(2);
 
@@ -43,11 +43,11 @@ public class FirstChapter : AbstractChapter
 
         StartCoroutine(ScriptingUtils.DoAFadeOut());
 
-        yield return GameGlobals.playerAnimHandler.Estado_durmiendo();
+        yield return GameGlobals.GetPlayerAnimManager().Estado_durmiendo();
 
         yield return ScriptingUtils.ShowSentences("Felix", sentenceWakeUp);
 
-        yield return GameGlobals.playerAnimHandler.Estado_wakingUp();
+        yield return GameGlobals.GetPlayerAnimManager().Estado_wakingUp();
 
         Destroy(blackPanel);
 
@@ -55,7 +55,7 @@ public class FirstChapter : AbstractChapter
 
     private void SetPlayerPosition()
     {
-        GameGlobals.player.transform.position = initialPoint.transform.position;
+        GameGlobals.GetPlayer().transform.position = initialPoint.transform.position;
     }
 
 }

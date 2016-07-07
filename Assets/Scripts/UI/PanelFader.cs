@@ -37,7 +37,6 @@ public class PanelFader : MonoBehaviour {
 
     void AnimationComplete()
     {
-        Debug.Log("Finish");
         isFading = false;
     }
 	

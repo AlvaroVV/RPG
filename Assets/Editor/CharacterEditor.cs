@@ -21,7 +21,7 @@ public class CharacterEditor : Editor {
     SerializedProperty evasion;
     SerializedProperty animController;
     SerializedProperty normalAttack;
-    SerializedProperty attacks;
+    SerializedProperty specialAttack;
     SerializedProperty face;
 
 
@@ -43,7 +43,7 @@ public class CharacterEditor : Editor {
         evasion = serializedObject.FindProperty("evasion");
         animController = serializedObject.FindProperty("animatorController");
         normalAttack = serializedObject.FindProperty("normalAttack");
-        attacks = serializedObject.FindProperty("Attacks");
+        specialAttack = serializedObject.FindProperty("specialAttack");
         face = serializedObject.FindProperty("face");
     }
 
@@ -114,7 +114,7 @@ public class CharacterEditor : Editor {
 
         EditorGUILayout.PropertyField(normalAttack, new GUIContent("Normal Attack"));
 
-        EditorGUILayout.PropertyField(attacks, new GUIContent("Attacks"), true);
+        EditorGUILayout.PropertyField(specialAttack, new GUIContent("Special Attack"));
 
         serializedObject.ApplyModifiedProperties();
 

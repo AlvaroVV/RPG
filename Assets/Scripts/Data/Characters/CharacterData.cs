@@ -10,7 +10,6 @@ public class CharacterData : BaseCharacter {
     public int experience = 0;
     public int abilityPoints = 0;
     public Sprite face;
-    public string CharacterPath = "";
 
     public int Experience
     {

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ed4a30a805281944498eb54168e17ad4
-timeCreated: 1465053156
+timeCreated: 1467909354
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,7 @@ TextureImporter:
     21300004: Item_Sword
     21300006: CharacterPanel
     21300008: tooltip_background
+    21300010: informationPanel
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -134,6 +135,21 @@ TextureImporter:
         - {x: -49.5, y: -50}
         - {x: 49.5, y: -50}
         - {x: 49.5, y: 50}
+    - name: informationPanel
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463
+        width: 189
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -94.5, y: 24.5}
+        - {x: -94.5, y: -24.5}
+        - {x: 94.5, y: -24.5}
+        - {x: 94.5, y: 24.5}
     outline: []
   spritePackingTag: 
   userData: 

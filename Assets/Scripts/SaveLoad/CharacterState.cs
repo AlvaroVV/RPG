@@ -7,7 +7,7 @@ using System;
 public class CharacterState  {
   
     public string CharacterName;
-
+    public string CharacterPath;
     public int currentHP;
     public int currentMP;
 
@@ -21,8 +21,7 @@ public class CharacterState  {
     public int MagicPoints;
     public int MagicPower;
     public int Speed;
-
-    public List<BaseAttack> Attacks;
+    public string SpecialAttack;
 
     public void SaveCharacter(CharacterData data)
     {
@@ -40,7 +39,7 @@ public class CharacterState  {
         Evasion = data.Evasion;
         Experience = data.Experience;
         AbilityPoints = data.AbilityPoints;
-        Attacks = data.Attacks;
+        SpecialAttack = data.specialAttack.idAttack;
         
     }
 
@@ -59,7 +58,7 @@ public class CharacterState  {
         characterData.Experience = Experience;
         characterData.AbilityPoints = AbilityPoints;
 
-        characterData.Attacks = Attacks;
+        //characterData.specialAttack = Attacks;
     }
 
 }

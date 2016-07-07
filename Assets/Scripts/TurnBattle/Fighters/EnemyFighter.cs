@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Linq;
 
 public class EnemyFighter : Fighter {
 
@@ -16,10 +17,6 @@ public class EnemyFighter : Fighter {
         }            
     }
 
-    public override void SetDamage(int damage)
-    {
-        FighterData.currentHP -= damage; 
-    }
 
     public override void ChooseAttack()
     {
@@ -28,8 +25,12 @@ public class EnemyFighter : Fighter {
 
     public override void ChooseTarget()
     {
-        int random = UnityEngine.Random.Range(0, FighterActionManager.Instance.PlayerTeamFighters.Count);
-        FighterActionManager.Instance.target = FighterActionManager.Instance.PlayerTeamFighters[random];
+        //int random = UnityEngine.Random.Range(0, FighterActionManager.Instance.PlayerTeamFighters.Count);
+        CharacterFighter random = (from f in FighterActionManager.Instance.PlayerTeamFighters
+                                   where f.FighterData.currentHP > 0
+                                   select f).OrderBy(x => Guid.NewGuid()).Take(50).FirstOrDefault();
+
+        FighterActionManager.Instance.target = random;
     }
 
     public override void ChooseState()

@@ -20,7 +20,10 @@ public class MapManager : MonoBehaviour {
     void Start()
     {
         if (!MapName.Equals("") && !DoorName.Equals(""))
+        {
             StartCoroutine(UseExternalDoor(MapName, DoorName));
+            CSVReader.Instance.Read("Texts/Textos");
+        }
     }
 
     void Awake()
@@ -50,30 +53,30 @@ public class MapManager : MonoBehaviour {
 
     private IEnumerator UseExternalDoor(string mapName, string doorName)
     {
-        GameGlobals.playerMovement.StateInteracting();
+        GameGlobals.GetPlayerMovement().StateInteracting();
         yield return ScriptingUtils.DoAFadeIn();
 
         Destroy(actualMap);
         LoadMap(mapName);
         Map mapa = actualMap.GetComponent<Map>();
 
-        GameGlobals.player.transform.position = mapa.GetExternalExit(doorName).transform.position;
+        GameGlobals.GetPlayer().transform.position = mapa.GetExternalExit(doorName).transform.position;
 
         yield return ScriptingUtils.DoAFadeOut();
-        GameGlobals.playerMovement.StateIdle();
+        GameGlobals.GetPlayerMovement().StateIdle();
     }
 
     public IEnumerator UseInternalDoor(string mapName, GameObject exitPoint)
     {
         Map mapa = actualMap.GetComponent<Map>();
-        GameGlobals.playerMovement.StateInteracting();
+        GameGlobals.GetPlayerMovement().StateInteracting();
         yield return ScriptingUtils.DoAFadeIn();
 
-        GameGlobals.camera.GoToBackgroundGiven(mapa.GetHouse(mapName));
-        GameGlobals.player.transform.position = exitPoint.transform.position;
+        GameGlobals.GetCameraControll().GoToBackgroundGiven(mapa.GetHouse(mapName));
+        GameGlobals.GetPlayer().transform.position = exitPoint.transform.position;
 
         yield return ScriptingUtils.DoAFadeOut();
-        GameGlobals.playerMovement.StateIdle();
+        GameGlobals.GetPlayerMovement().StateIdle();
 
     }
 
@@ -81,7 +84,7 @@ public class MapManager : MonoBehaviour {
     public void GoToFightStage()
     {
         Map mapa = actualMap.GetComponent<Map>();
-        GameGlobals.camera.GoToFightStage(mapa.GetFightStage());
+        GameGlobals.GetCameraControll().GoToFightStage(mapa.GetFightStage());
         mapa.GetMainMap().SetActive(false);
     }
 
@@ -92,7 +95,7 @@ public class MapManager : MonoBehaviour {
         GameObject mainMap = mapa.GetMainMap();
 
         mainMap.SetActive(true);
-        GameGlobals.camera.GoToBackgroundGiven(mainMap);
+        GameGlobals.GetCameraControll().GoToBackgroundGiven(mainMap);
         
     }
 
@@ -100,6 +103,11 @@ public class MapManager : MonoBehaviour {
     {
         Map mapa = actualMap.GetComponent<Map>();
         return mapa.GetTurnBattleHandler();
+    }
+
+    public void DestroyActualMap()
+    {
+        Destroy(actualMap);
     }
 
     private void addChildMap(GameObject child)

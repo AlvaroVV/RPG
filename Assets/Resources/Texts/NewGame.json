@@ -1,17 +1,17 @@
 {
-    "gameSlotName": "",
-            "playerPositionX": 11,
-            "playerPositionY": -5,
-			"currentChapter": "FirstChapter",
-			"currentMap": "MapaInicial",
+    "gameSlotName": "Alvaro",
+            "playerPositionX": 11.872335433959961,
+            "playerPositionY": -4.584171772003174,
+            "currentChapter": "FirstChapter",
+            "currentMap": "MapaInicial",
             "itemsNames": [
                 "Items/HealthPotion"
             ],
             "characterStates": [
                 {
                     "CharacterName": "Felix",
-                    "CharacterPath": "Characters/CharactersDatas/Felix",
-                    "currentHP": 60,
+                    "CharacterPath": "",
+                    "currentHP": 5,
                     "currentMP": 15,
                     "AbilityPoints": 0,
                     "AttackPower": 10,
@@ -23,7 +23,7 @@
                     "MagicPoints": 25,
                     "MagicPower": 5,
                     "Speed": 25,
-                    "Attacks": []
+                    "SpecialAttack": ""
                 }
             ]
 }

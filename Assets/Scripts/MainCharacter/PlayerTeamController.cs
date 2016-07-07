@@ -4,14 +4,10 @@ using System.Collections.Generic;
 
 public class PlayerTeamController: MonoBehaviour  {
 
-    public List<CharacterState> currentCharacterStates;
+    private List<CharacterState> currentCharacterStates;
     public List<CharacterData> currentPlayerTeam;
     public List<ItemData> items;
 
-    void Start()
-    {
-        currentPlayerTeam[0].currentHP = 5;
-    }
 
     public void LoadTeamAndInventory()
     {
@@ -28,7 +24,7 @@ public class PlayerTeamController: MonoBehaviour  {
     {
         if (Input.GetKeyDown(KeyCode.Escape) && UIManager.Instance.isEmpty())
         {
-            GameGlobals.playerMovement.StateInteracting();
+            GameGlobals.GetPlayerMovement().StateInteracting();
             Time.timeScale = 0;
             UIManager.Instance.CreateMenuPanel();
         }
@@ -38,7 +34,7 @@ public class PlayerTeamController: MonoBehaviour  {
             if (UIManager.Instance.isEmpty())
             {
                 Time.timeScale = 1;
-                GameGlobals.playerMovement.StateIdle();
+                GameGlobals.GetPlayerMovement().StateIdle();
             }
         }
     }
@@ -57,9 +53,17 @@ public class PlayerTeamController: MonoBehaviour  {
         {
             CharacterData character = Resources.Load("Characters/CharactersDatas/" + state.CharacterName) as CharacterData;
             state.LoadCharacter(character);
+            LoadCharacterSpecialAttack(character,state.SpecialAttack);
             currentPlayerTeam.Add(character);
-            
+           
         }
+    }
+
+    private void LoadCharacterSpecialAttack(CharacterData data, string name)
+    {
+        if(!name.Equals(""))
+            data.specialAttack = Resources.Load("Characters/CharactersAttacks/" + name) as BaseAttack;
+       
     }
 
     public List<CharacterState> SaveCharacterDatas()
@@ -90,7 +94,7 @@ public class PlayerTeamController: MonoBehaviour  {
         List<string> itemPaths = new List<string>();
         foreach(ItemData item in items)
         {
-            itemPaths.Add(item.ItemPath);
+            itemPaths.Add(item.GetItemPath());
         }
 
         return itemPaths;

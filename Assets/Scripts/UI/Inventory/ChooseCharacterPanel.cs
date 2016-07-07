@@ -33,7 +33,7 @@ public class ChooseCharacterPanel : MonoBehaviour
 
     private void ChargePanels(ItemSlot itemSlot)
     {
-        foreach (CharacterData charac in GameGlobals.playerTeamController.currentPlayerTeam)
+        foreach (CharacterData charac in GameGlobals.GetPlayerTeamController().currentPlayerTeam)
         {
             GameObject panelObj = Resources.Load("UI/Inventory/CharacterPanel") as GameObject;
             GameObject panelInstantiate = GameObject.Instantiate(panelObj, characterPanelsParent.transform.position, Quaternion.identity) as GameObject;
@@ -51,6 +51,7 @@ public class ChooseCharacterPanel : MonoBehaviour
 
     private void ShowItem(ItemSlot item)
     {
+        itemName.text = item.GetItem().Id;
        itemImage.sprite = item.GetItem().Image;
        itemUnits.text = item.getUnits().ToString();
     }

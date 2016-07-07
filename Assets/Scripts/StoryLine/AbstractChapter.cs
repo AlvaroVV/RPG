@@ -15,7 +15,7 @@ public abstract class AbstractChapter: MonoBehaviour
     public IEnumerator ExecuteChapter()
     {
         //Situamos al jugador en estado Interact para que no pueda moverse mientras ocurre la cinemática
-        GameGlobals.playerMovement.StateInteracting();
+        GameGlobals.GetPlayerMovement().StateInteracting();
 
         //Ejecutamos la cinemática
         yield return BodyChapter();
@@ -27,7 +27,7 @@ public abstract class AbstractChapter: MonoBehaviour
         Destroy(gameObject);
 
         //Dejamos que el jugador vuelva a moverse
-        GameGlobals.playerMovement.StateIdle();
+        GameGlobals.GetPlayerMovement().StateIdle();
         yield return null;
     }
 

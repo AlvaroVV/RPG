@@ -15,7 +15,7 @@ public class FinishBattleState : IState
 
     public IEnumerator UpdateState()
     {
-        yield return tb.WaitForKeyPressed(KeyCode.Space);
+        yield return ScriptingUtils.WaitForKeyPressed(KeyCode.Space);
     }
 
     public void changeState()
