@@ -68,7 +68,7 @@ public class FighterActionManager: MonoBehaviour  {
         while (DamageText != null)
             yield return null;
 
-        StackTurnFighter.RemoveAt(0);
+        StackTurnFighter.Remove(currentFighter);
         StackTurnFighter.Add(currentFighter);
         yield return null;
     }
