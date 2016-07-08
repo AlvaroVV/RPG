@@ -89,7 +89,18 @@ public class BaseCharacter: ScriptableObject  {
 
     public void RestoreHP(int hp)
     {
-        currentHP += hp;
+        if (currentHP + hp > healthPoints)
+            currentHP = healthPoints;
+        else
+            currentHP += hp;
        
+    }
+
+    public void RestoreMP(int mp)
+    {
+        if (currentMP + mp > magicPoints)
+            currentMP = magicPoints;
+        else
+            currentMP += mp;
     }
 }

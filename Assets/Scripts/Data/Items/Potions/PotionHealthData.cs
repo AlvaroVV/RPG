@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 
 [Serializable]
-public class PotionData : ItemData {
+public class PotionHealthData : ItemData {
 
     public int Hp_restore;
 
@@ -24,9 +24,8 @@ public class PotionData : ItemData {
 
     public override bool ConditionToUse(CharacterData data)
     {
-        if (data.currentHP + Hp_restore > data.healthPoints)
+        if (data.currentHP  >= data.healthPoints)
         {
-            Debug.Log(data.Name + " no puede recuperar más HP");
             return false;
         }
         else

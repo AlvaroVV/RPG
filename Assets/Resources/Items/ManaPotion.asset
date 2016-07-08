@@ -8,10 +8,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2755cd3f776902844879ac46dc5370cb, type: 3}
-  m_Name: HealthPotion
+  m_Script: {fileID: 11500000, guid: 61611f7b4cd4c1845b1684401a223e89, type: 3}
+  m_Name: ManaPotion
   m_EditorClassIdentifier: 
-  id: HealthPotion
-  description: "Poci\xF3n que recupera 20 HP"
-  image: {fileID: 21300054, guid: 7ccdc527ae466c347a4780abdbc95f2e, type: 3}
-  Hp_restore: 20
+  id: ManaPotion
+  description: Recupera 10 puntos de MP
+  image: {fileID: 21300060, guid: 7ccdc527ae466c347a4780abdbc95f2e, type: 3}
+  Mana_restore: 10

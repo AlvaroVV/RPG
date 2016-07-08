@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7ccdc527ae466c347a4780abdbc95f2e
-timeCreated: 1467911971
+timeCreated: 1467944401
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -34,7 +34,7 @@ TextureImporter:
     21300054: health_potion
     21300056: rpg_icons_28
     21300058: rpg_icons_29
-    21300060: rpg_icons_30
+    21300060: Mana_potion
     21300062: rpg_icons_31
     21300064: rpg_icons_32
     21300066: rpg_icons_33
@@ -519,7 +519,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: rpg_icons_30
+    - name: Mana_potion
       rect:
         serializedVersion: 2
         x: 109

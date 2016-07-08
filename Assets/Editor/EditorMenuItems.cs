@@ -29,34 +29,35 @@ static class EditorMenuItems
         ScriptableObjectUtility.CreateAsset<CharacterData>();
     }
 
-    [MenuItem("Assets/Create/Scriptable Object/new DamageAttack")]
+    [MenuItem("Assets/Create/Scriptable Object/Attack/new DamageAttack")]
     public static void CreateCharacterAttack()
     {
         ScriptableObjectUtility.CreateAsset<DamageAttack>();
     }
 
-    [MenuItem("Assets/Create/Scriptable Object/new HealthAttack")]
+    [MenuItem("Assets/Create/Scriptable Object/Attack/new HealthAttack")]
     public static void CreateNewHealthAttack()
     {
         ScriptableObjectUtility.CreateAsset<HealthAttack>();
     }
 
-    [MenuItem("Assets/Create/Scriptable Object/new Item")]
-    public static void CreateItem()
-    {
-        ScriptableObjectUtility.CreateAsset<ItemData>();
-    }
 
-    [MenuItem("Assets/Create/Scriptable Object/new Potion")]
+    [MenuItem("Assets/Create/Scriptable Object/Items/new Health Potion")]
     public static void CreatePotion()
     {
-        ScriptableObjectUtility.CreateAsset<PotionData>();
+        ScriptableObjectUtility.CreateAsset<PotionHealthData>();
     }
 
-    [MenuItem("Assets/Create/Scriptable Object/new Parchment")]
+    [MenuItem("Assets/Create/Scriptable Object/Items/new Parchment")]
     public static void CreateParchment()
     {
         ScriptableObjectUtility.CreateAsset<PergaminoData>();
+    }
+
+    [MenuItem("Assets/Create/Scriptable Object/Items/new Mana Potion")]
+    public static void CreateManaPotion()
+    {
+        ScriptableObjectUtility.CreateAsset<PotionManaData>();
     }
 
 }
