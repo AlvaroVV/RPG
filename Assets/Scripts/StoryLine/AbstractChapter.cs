@@ -41,6 +41,7 @@ public abstract class AbstractChapter: MonoBehaviour
 
     public abstract IEnumerator InteractZack();
 
+
     public IEnumerator MovePlayerPositions(List<GameObject> points)
     {
         foreach (GameObject point in points)
@@ -60,10 +61,13 @@ public abstract class AbstractChapter: MonoBehaviour
             GameObject chapter = Instantiate(chapterObj);
             ScriptingUtils.addChild(chapter, MapManager.Instance.gameObject);
             GameGlobals.GetPlayerLoader().SetCurrentChapter(chapter.GetComponent<AbstractChapter>());
-            
+
         }
         else
+        {
+            GameGlobals.GetCameraControll().GoToBlackPanel();
             Debug.LogError("No existe el capítulo -> " + NextChapterName);
+        }
 
     }
 

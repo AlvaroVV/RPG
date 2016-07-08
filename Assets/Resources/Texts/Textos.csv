@@ -20,7 +20,7 @@ Zack_SecondChapter,¿Aún Aqui? encuentra esa poción,¿Still here? find that po
 Capítulo 1,Capítulo 1,Chapter 1
 Sentence_Dream1_1,Donde... ¿dónde estoy?,Where... ¿Where am I?
 Sentence_Dream1_2,¿Qué lugar es éste?,What is this place?
-Dream1_1,Soul_Despierta... pronto... sabrás la verdad.,Soul_Wake up... soon... you will know the truth.
+Dream1_1,Soul_Despierta... necesito tu ayuda...,Soul_Wake up... I need your help.
 Dream1_2,Felix_¿Quién eres?,Felix_¿Who are you?
 WakenUp1_1,Otra vez ese sueño...,That dream again...
 WakenUp1_2,Esa voz...¿Qué querrá decir?,That voice... ¿What does it mean?
@@ -50,3 +50,46 @@ Felix_Sentence1_C4_1,No puede ser...,In can be...
 Felix_Sentence1_C4_2,Los Goblins nunca se alejan tanto del bosque...,The Goblins are never far from the forest...
 Felix_Sentence1_C4_3,Tengo que acabar con él antes de que hiera a alguien...,I have to finish it before it hurts someone...
 Felix_Sentence2_C4_1,Tengo que decírselo a Zack.,I have to tell Zack.
+Zack_Sentence_C4,¡Ve a echar un vistazo rápido!,Go to take a look quick!
+Capítulo5,Capítulo 5,Chapter 5
+Zack_Felix_Dialogue_C5_1,Felix_Los Goblins cada vez se alejan más del bosque.,Felix_Goblins increasingly away over forest.
+Zack_Felix_Dialogue_C5_2,Zack_Esto es muy raro...,Zack_This is so weird...
+Zack_Felix_Dialogue_C5_3,Zack_Debes encontrar al hermitaño del bosque en lo más profundo,Zack_You must find the forest hermit int the deepest zone.
+Zack_Felix_Dialogue_C5_4,Zack_Él sabrá que está pasando en el bosque.,Zack_He must knows what's happening in the forest.
+Zack_Felix_Dialogue_C5_5,Felix_Como quieras...(Seguro que es otro friki del bosque...),Felix_As you want...(I'm sure he is another freak from forest...)
+Zack_Felix_Dialogue_C5_6,Zack_Toma un regalo.,Zack_Take this present.
+Zack_Felix_Dialogue_C5_7,Zack_Con esto podrá aprender el ataque Curar.,Zack_With this you can learn the special attack Heal.
+Zack_Felix_Dialogue_C5_8,Zack_Al usarlo restablecerás la vida de tu objetivo.,Zack_When is used you can heal someone.
+Zack_Felix_Dialogue_C5_9,Zack_Pero solo puede ser usado en batallas.,Zack_But it's can be used only in combats.
+Capítulo 6,Capítulo 6,Chapter 6
+Felix_Sentences_Found_1,(Por fin lo encuentro...),(Finally I found it...)
+Felix_Sentences_Found_2,(¡Pero si es una mujer!),(It's a woman!)
+Felix_Sentcences_Found_3,A ver que me cuenta esta ahora...,So let's what she says now...
+Zack_Sentence_C6_1,Date prisa y encuentra al hermitaño.,Hurry up and find the hermit.
+Sole_Sentences_C6_1,Así que eras tu el que dormía a pierna suelta...,So you are the one who is sleeping all day...
+Sole_Sentences_C6_2,Debo decir que fuí yo quien te despertó.,I must say that it was me who woke you.
+Sole_Sentences_C6_3,No sabía que eras cercano a Zack...,I didn't know you were Zack' son.
+Sole_Sentences_C6_4,Espero que estés a la altura de este trabajo...,I hope you are up to do this job...
+Sole_Sentences_C6_5,El poblado Goblin está alterado por culpa de un enemigo que los ha visitado.,The Goblin town is altered because of an enemy who has visited them.
+Sole_Sentences_C6_6,Se trata de un Ripper y solo son atraídos por anillos mágicos.,It is a Ripper and are only attracted by magic rings.
+Sole_Sentences_C6_7,He visto que uno de los Goblins del bosque había encontrado uno.,I saw that one of the Goblins Forest had found one.
+Sole_Sentences_C6_8,A algunos Goblins les gusta esconderse así que será dificil encontrarlo,Some Goblins love hiding from people.
+Sole_Sentences_C6_9,Fíjate bien en los pasadizos del bosque,Look for some forest passage.
+Sole_Sentences_C6_10,Debemos recuperarlo y acabar con el Ripper o podría atacar la ciudad.,We must recover it and end the Ripper or it could attack the city.
+Sole_Sentences_C6_11,Una vez lo tengamos debemos entregárselo a Zack para que invoque al Ripper.,Once we have it we should give it to Zack to invoke the Ripper.
+Felix_Sentence_C6_1,(Está claro que hoy no duermo...),(I'm sure I won't sleep today...)
+SoleJoin,Sole se ha unido al grupo,Sole has joined the group;
+Capítulo 7,Capítulo 7,Chapter7
+Zack_Sentence_Wrong_C7_1,Sole me lo ha dicho,Sole has told me all.
+Zack_Sentence_Wrong_C7_2,Encuentra ese anillo,You must find that ring.
+Zack_Sentence_Good_C7_1,Muy bien el anillo ya está listo para atraer al Zipper,Good!The ring is ready to call the Ripper.
+Zack_Sentence_Good_C7_2,Debeis ir al árbol sagrado en lo más profundo del bosque.,You must go to the holy tree in the deepest zone of the forest.
+Zack_Sentence_Good_C7_3,En cuanto os acerquéis el Zipper saldrá de su escondite,When you are near to it the Ripper will go out.
+Capítulo 8,Capítulo 8,Chapter8
+Zack_Sentences_C8,¡Dale pal pelo a ese Zipper hijo!,Destroy that insignificant monster son!
+DialogoRipper_1,Felix_¡Ahi está!,Felix_There it is!
+DialogoRipper_2,Felix_Terminemos con esto de una vez.,Felix_Let's end this.
+DialogoRipper_3,Felix_(Lo que sea por dormir...),Felix_(All I want is just sleep...)
+DiálogoFinal_1,Felix_Ya se ha acabado todo por fin.,Everything is over at the end.
+DiálogoFinal_2,Felix_Supongo que ya podré dormir tranquilamente.,I supouse I'll be able to sleep calmly.
+DiálogoFinal_3,Felix_(¿Se acabará aqui todo?),(¿All will end here?)

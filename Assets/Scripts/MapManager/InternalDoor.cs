@@ -10,7 +10,7 @@ public class InternalDoor : MonoBehaviour {
     {
         if (other.tag.Equals("Player"))
         {
-           StartCoroutine( MapManager.Instance.UseInternalDoor(InternalMapName, ExitPoint));
+          // StartCoroutine( MapManager.Instance.UseInternalDoor(InternalMapName, ExitPoint));
 
         }
 

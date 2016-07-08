@@ -13,11 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterName: Goblin
   description: Descripcion
-  healthPoints: 75
-  currentHP: 75
+  healthPoints: 200
+  currentHP: 200
   magicPoints: 20
   currentMP: 15
-  attackPower: 10
+  attackPower: 16
   defensePower: 5
   magicPower: 5
   magicDefense: 5

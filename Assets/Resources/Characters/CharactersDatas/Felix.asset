@@ -14,9 +14,9 @@ MonoBehaviour:
   CharacterName: Felix
   description: Descripcion
   healthPoints: 80
-  currentHP: 5
+  currentHP: 80
   magicPoints: 25
-  currentMP: 15
+  currentMP: 25
   attackPower: 10
   defensePower: 5
   magicPower: 5
@@ -24,7 +24,7 @@ MonoBehaviour:
   speed: 25
   evasion: 7
   normalAttack: {fileID: 11400000, guid: dc9dc7a63916a8b46a03aedcc4cf6fcb, type: 2}
-  specialAttack: {fileID: 11400000, guid: 6bf456f8fd9d0f94ab3b7ee9b6f43ace, type: 2}
+  specialAttack: {fileID: 0}
   animatorController: {fileID: 9100000, guid: 189a654aa90a02941bbf21087043c936, type: 2}
   type: 0
   experience: 0

@@ -8,7 +8,6 @@ public class Map : MonoBehaviour {
     public GameObject FightStage;
     public SoundMap AudioSource;
     public List<GameObject> ExternalExits;
-    public List<GameObject> InternalMaps;
 
     public SoundMap GetAudioSource()
     {
@@ -33,13 +32,6 @@ public class Map : MonoBehaviour {
         return null;
     }
 
-    public GameObject GetHouse(string name)
-    {
-        foreach (GameObject obj in InternalMaps)
-            if (obj.name.Equals(name))
-                return obj;
-        return MainMap;
-    }
 
     public TurnBattleHandler GetTurnBattleHandler()
     {

@@ -20,6 +20,7 @@ public class StateMachineEnemy : MonoBehaviour {
 
     //Lista de enemigos que saldrán al tocarlo
     public List<EnemyData> EnemyTeam;
+    public ItemData item;
 
     public GameObject target { get; set; }
     public Rigidbody2D rgb { get; set; }

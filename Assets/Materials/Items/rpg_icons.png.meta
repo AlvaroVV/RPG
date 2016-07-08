@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7ccdc527ae466c347a4780abdbc95f2e
-timeCreated: 1467975402
+timeCreated: 1467987794
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -29,7 +29,7 @@ TextureImporter:
     21300044: rpg_icons_22
     21300046: rpg_icons_23
     21300048: rpg_icons_24
-    21300050: rpg_icons_25
+    21300050: ring
     21300052: rpg_icons_26
     21300054: health_potion
     21300056: rpg_icons_28
@@ -459,7 +459,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: rpg_icons_25
+    - name: ring
       rect:
         serializedVersion: 2
         x: 411

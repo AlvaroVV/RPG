@@ -72,19 +72,6 @@ public class MapManager : MonoBehaviour {
         GameGlobals.GetPlayerMovement().StateIdle();
     }
 
-    public IEnumerator UseInternalDoor(string mapName, GameObject exitPoint)
-    {
-        Map mapa = actualMap.GetComponent<Map>();
-        GameGlobals.GetPlayerMovement().StateInteracting();
-        yield return ScriptingUtils.DoAFadeIn();
-
-        GameGlobals.GetCameraControll().GoToBackgroundGiven(mapa.GetHouse(mapName));
-        GameGlobals.GetPlayer().transform.position = exitPoint.transform.position;
-
-        yield return ScriptingUtils.DoAFadeOut();
-        GameGlobals.GetPlayerMovement().StateIdle();
-
-    }
 
 
     public void GoToFightStage()

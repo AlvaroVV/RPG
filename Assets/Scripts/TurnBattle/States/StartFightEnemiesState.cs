@@ -35,7 +35,8 @@ public class StartFightEnemiesState : IState
         tb.EnemyDatas = new List<EnemyData>(tb.Enemy.EnemyTeam);
         //Destruimos la IA del enemigo
         FighterActionManager.Instance.DestroyObject(tb.Enemy.gameObject);
-
+        if(tb.Enemy.item !=null)
+            FighterActionManager.Instance.ItemsToWin.Add(tb.Enemy.item);
         for (int i = 0; i< tb.EnemyDatas.Count; i++)
         {
             InstantiateEnemy(tb.EnemyDatas[i], tb.EnemyPoints[i]);        

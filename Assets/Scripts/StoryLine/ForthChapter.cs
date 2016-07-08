@@ -15,7 +15,7 @@ public class ForthChapter : AbstractChapter {
     {
         firstSentence = CSVReader.Instance.getSentences("Felix_Sentence1_C4");
         secondSentence = CSVReader.Instance.getSentences("Felix_Sentence2_C4");
-
+        ZackSentences = CSVReader.Instance.getSentences("Zack_Sentence_C4");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -39,7 +39,6 @@ public class ForthChapter : AbstractChapter {
 
     public override IEnumerator InteractZack()
     {
-        Debug.Log("Capitulo 4");
-        yield return null;
+        yield return ScriptingUtils.ShowSentences("Zack", ZackSentences);
     }
 }

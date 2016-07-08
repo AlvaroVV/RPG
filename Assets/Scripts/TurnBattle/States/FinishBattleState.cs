@@ -33,14 +33,16 @@ public class FinishBattleState : IState
     private IEnumerator ShowItemsWon()
     {
         List<ItemData> ItemsToWin = FighterActionManager.Instance.ItemsToWin;
-        int random = UnityEngine.Random.Range(0, ItemsToWin.Count-1);
-        yield return GiveItem(ItemsToWin[random]);
+        foreach (ItemData item in ItemsToWin)
+        {
+            yield return GiveItem(item);
+        }     
 
     }
 
     private IEnumerator GiveItem(ItemData item)
     {
-        yield return ScriptingUtils.showInformation(Information += " " + "<color=#0473f0>" + item.Id + "</color>");
+        yield return ScriptingUtils.showInformation(Information + " " + "<color=#0473f0>" + item.Id + "</color>");
         GameGlobals.GetPlayerTeamController().AddItemData(item);
     }
 
