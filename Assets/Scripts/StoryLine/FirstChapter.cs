@@ -60,4 +60,8 @@ public class FirstChapter : AbstractChapter
         GameGlobals.GetPlayer().transform.position = initialPoint.transform.position;
     }
 
+    public override IEnumerator InteractZack()
+    {
+        yield return null;
+    }
 }

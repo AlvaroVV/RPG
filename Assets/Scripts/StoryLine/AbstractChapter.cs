@@ -6,6 +6,12 @@ public abstract class AbstractChapter: MonoBehaviour
 {
     public string ChapterName;
     public string NextChapterName;
+    public List<string> ZackSentences { get; set; }
+
+    void Start()
+    {
+        ZackSentences = new List<string>();
+    }
 
     public string GetChapterName()
     {
@@ -33,7 +39,16 @@ public abstract class AbstractChapter: MonoBehaviour
 
     public abstract IEnumerator BodyChapter();
 
+    public abstract IEnumerator InteractZack();
 
+    public IEnumerator MovePlayerPositions(List<GameObject> points)
+    {
+        foreach (GameObject point in points)
+        {
+            yield return GameGlobals.GetPlayerMovement().MoveToPosition(point);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
 
     public void ChangeChapter()
     {
@@ -42,7 +57,10 @@ public abstract class AbstractChapter: MonoBehaviour
         GameObject chapterObj = Resources.Load("Chapters/" + NextChapterName) as GameObject;
         if (chapterObj != null)
         {
-            Instantiate(chapterObj);
+            GameObject chapter = Instantiate(chapterObj);
+            ScriptingUtils.addChild(chapter, MapManager.Instance.gameObject);
+            GameGlobals.GetPlayerLoader().SetCurrentChapter(chapter.GetComponent<AbstractChapter>());
+            
         }
         else
             Debug.LogError("No existe el capítulo -> " + NextChapterName);

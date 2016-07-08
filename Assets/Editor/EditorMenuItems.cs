@@ -60,4 +60,10 @@ static class EditorMenuItems
         ScriptableObjectUtility.CreateAsset<PotionManaData>();
     }
 
+    [MenuItem("Assets/Create/Scriptable Object/Items/new ItemData")]
+    public static void CreateItemData()
+    {
+        ScriptableObjectUtility.CreateAsset<ItemData>();
+    }
+
 }

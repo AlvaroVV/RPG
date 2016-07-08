@@ -1,11 +1,11 @@
 fileFormatVersion: 2
 guid: 7ccdc527ae466c347a4780abdbc95f2e
-timeCreated: 1467944401
+timeCreated: 1467975402
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: rpg_icons_0
-    21300002: rpg_icons_1
+    21300002: Wood
     21300004: rpg_icons_2
     21300006: rpg_icons_3
     21300008: rpg_icons_4
@@ -152,7 +152,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: rpg_icons_1
+    - name: Wood
       rect:
         serializedVersion: 2
         x: 35

@@ -39,7 +39,8 @@ public class CharacterState  {
         Evasion = data.Evasion;
         Experience = data.Experience;
         AbilityPoints = data.AbilityPoints;
-        SpecialAttack = data.specialAttack.idAttack;
+        if(data.specialAttack != null)
+            SpecialAttack = data.specialAttack.idAttack;
         
     }
 

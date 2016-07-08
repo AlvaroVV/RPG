@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerLoader : MonoBehaviour {
 
+    private AbstractChapter currentChapter;
+
 	// Use this for initialization
 	void Start () {
         LoadCurrentPosition();
@@ -35,11 +37,11 @@ public class PlayerLoader : MonoBehaviour {
         if (chapterObj != null)
         {
             GameObject chapter = Instantiate(chapterObj);
-
+            ScriptingUtils.addChild(chapter, MapManager.Instance.gameObject);
+            currentChapter = chapter.GetComponent<AbstractChapter>();
             if (ChapterName.Equals("FirstChapter"))
             {
-                AbstractChapter chapterScript = chapter.GetComponent<AbstractChapter>();
-                StartCoroutine(chapterScript.ExecuteChapter());      
+                StartCoroutine(currentChapter.ExecuteChapter());      
             }
         }
         else
@@ -68,6 +70,16 @@ public class PlayerLoader : MonoBehaviour {
     private void SaveCharacters()
     {
         GameSlotInfo.currentGameSlot.characterStates = GetComponent<PlayerTeamController>().SaveCharacterDatas();
+    }
+
+    public void SetCurrentChapter(AbstractChapter chapter)
+    {
+        currentChapter = chapter;
+    }
+
+    public AbstractChapter GetCurrentChapter()
+    {
+        return currentChapter;
     }
 }
 

@@ -350,7 +350,7 @@ GameObject:
   - 61: {fileID: 6186886}
   - 212: {fileID: 21211676}
   - 95: {fileID: 9545976}
-  - 114: {fileID: 11451628}
+  - 114: {fileID: 11413782}
   m_Layer: 9
   m_Name: NPC_Zack
   m_TagString: Untagged
@@ -2968,7 +2968,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 160, y: -197.99997, z: 0}
+  m_LocalPosition: {x: 160, y: -207.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -8477,7 +8477,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -8774,6 +8774,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialOpacity: 1
+--- !u!114 &11413782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2f80ac6402cf242a04f35ddcd1fd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC_name: 
+  id_dialogue: 
+  dialogue: []
+  Waypoints: []
 --- !u!114 &11414292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9408,21 +9423,6 @@ MonoBehaviour:
   StartTime: 0.1
   Duration: 0.1
   TotalAnimationTime: 1.2
---- !u!114 &11451628
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f408c6e83b4ac7a478c829941b84e15f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPC_name: Zack
-  id_dialogue: Zack_needWood
-  dialogue: []
-  Waypoints: []
 --- !u!114 &11453082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10214,6 +10214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMap: {fileID: 127744}
   FightStage: {fileID: 183526}
+  AudioSource: {fileID: 0}
   ExternalExits:
   - {fileID: 144092}
   InternalMaps:

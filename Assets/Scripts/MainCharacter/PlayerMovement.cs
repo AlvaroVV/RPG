@@ -13,6 +13,7 @@ public class PlayerMovement: MonoBehaviour {
     private Vector2 movement;
     private PlayerAnimManager anim;
 
+
     [HideInInspector]
     public GameGlobals.PlayerState currentState;
 
@@ -20,12 +21,14 @@ public class PlayerMovement: MonoBehaviour {
     {
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<PlayerAnimManager>();
+      
     }
 
 
     void Update()
     {
         Movement();
+        OpenCloseMenuPanel();
     }
 
 
@@ -38,7 +41,7 @@ public class PlayerMovement: MonoBehaviour {
 
     void Movement()
     {
-        if (currentState != GameGlobals.PlayerState.Interacting)
+        if (CanMove())
         {
             input_x = Input.GetAxisRaw("Horizontal");
             input_y = Input.GetAxisRaw("Vertical");
@@ -47,6 +50,26 @@ public class PlayerMovement: MonoBehaviour {
 
            anim.Estado_Correr_Parado(rgb.velocity, movement);
         }
+    }
+
+    public void OpenCloseMenuPanel()
+    {
+        if (CanUseMenu())
+            if (Input.GetKeyDown(KeyCode.Escape) && UIManager.Instance.isEmpty())
+            {
+                StateInMenu();
+                Time.timeScale = 0;
+                UIManager.Instance.CreateMenuPanel();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                UIManager.Instance.Pop();
+                if (UIManager.Instance.isEmpty())
+                {
+                    Time.timeScale = 1;
+                    StateIdle();
+                }
+            }
     }
 
     public IEnumerator MoveToPosition(GameObject point)
@@ -93,6 +116,12 @@ public class PlayerMovement: MonoBehaviour {
         StopMovement();
     }
 
+    public void StateFighting()
+    {
+        currentState = GameGlobals.PlayerState.Fighting;
+        StopMovement();
+    }
+
     public void StateIdle()
     {
         currentState = GameGlobals.PlayerState.Idle;
@@ -104,11 +133,41 @@ public class PlayerMovement: MonoBehaviour {
         anim.Estado_Correr_Parado(rgb.velocity, movement);
     }
 
+    public void StateInMenu()
+    {
+        currentState = GameGlobals.PlayerState.Menu;
+    }
+
+
+    public bool CanUseMenu()
+    {
+        return (!currentState.Equals(GameGlobals.PlayerState.Interacting) && !currentState.Equals(GameGlobals.PlayerState.Fighting));
+    }
+
+    public bool CanMove()
+    {
+        return (currentState.Equals(GameGlobals.PlayerState.Idle));
+    }
+
     public bool isInteracting()
     {
         if (currentState.Equals(GameGlobals.PlayerState.Interacting))
             return true;
         return false;
+    }
+
+    public IEnumerator WaitForStartFight()
+    {
+        while (!currentState.Equals(GameGlobals.PlayerState.Fighting))
+            yield return null;
+        yield return null;
+    }
+
+    public IEnumerator WaitForFinishFight()
+    {
+        while (currentState.Equals(GameGlobals.PlayerState.Fighting))
+            yield return null;
+        yield return null;
     }
 
 }

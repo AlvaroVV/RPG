@@ -14,6 +14,7 @@ public class SecondChapter : AbstractChapter
     {
         StartCoroutine(ExecuteChapter());
         dialogue = CSVReader.Instance.getDialogue("Felix_Zack_C2");
+      
     }
 
     public override IEnumerator BodyChapter()
@@ -26,6 +27,11 @@ public class SecondChapter : AbstractChapter
         }
 
         yield return ScriptingUtils.ShowDialogue(dialogue);
+        yield return null;
+    }
+
+    public override IEnumerator InteractZack()
+    {
         yield return null;
     }
 }

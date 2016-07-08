@@ -37,6 +37,8 @@ public static class GameGlobals
         Idle,
         Running,
         Interacting,
+        Menu,
+        Fighting,
     }
 
     public enum CharacterType
@@ -55,7 +57,7 @@ public static class GameGlobals
 
     public static void StartFight(StateMachineEnemy enemy)
     {
-        GetPlayerMovement().StateInteracting();
+        GetPlayerMovement().StateFighting();
 
         TurnBattleHandler handler = MapManager.Instance.GetTurnBattleHandler();
         handler.StartCoroutine(handler.StartFight(enemy));
