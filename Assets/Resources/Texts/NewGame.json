@@ -11,8 +11,8 @@
                 {
                     "CharacterName": "Felix",
                     "CharacterPath": "",
-                    "currentHP": 5,
-                    "currentMP": 15,
+                    "currentHP": 75,
+                    "currentMP": 25,
                     "AbilityPoints": 0,
                     "AttackPower": 10,
                     "DefensePower": 5,
@@ -23,7 +23,7 @@
                     "MagicPoints": 25,
                     "MagicPower": 5,
                     "Speed": 25,
-                    "SpecialAttack": ""
+                    "SpecialAttack": "Health"
                 }
             ]
 }
