@@ -12,4 +12,7 @@ public class EnemyData : BaseCharacter {
  
     public int Xp { get { return xp; } set { xp = value; } }
     public int Gold { get { return gold; } set { gold = value; } }
+    public List<ItemData> Items {
+        get { return items; } 
+    }
 }

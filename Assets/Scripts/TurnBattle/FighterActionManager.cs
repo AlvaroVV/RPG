@@ -13,6 +13,7 @@ public class FighterActionManager: MonoBehaviour  {
     public List<Fighter> StackTurnFighter { get; set; }
     public List<EnemyFighter> EnemyFighters { get; set; }
     public List<CharacterFighter> PlayerTeamFighters { get; set; }
+    public List<ItemData> ItemsToWin { get; set; }
 
     public Fighter currentFighter { get; set; }
     public BaseAttack attackInfo { get; set; } //Ataque elegido
@@ -28,6 +29,7 @@ public class FighterActionManager: MonoBehaviour  {
         StackTurnFighter = new List<Fighter>();
         PlayerTeamFighters = new List<CharacterFighter>();
         EnemyFighters = new List<EnemyFighter>();
+        ItemsToWin = new List<ItemData>();
     }
 
     //STATE METHODS WITH COROUTINES

@@ -19,9 +19,9 @@ public class EnemyEditor : Editor
     SerializedProperty xp;
     SerializedProperty gold;
     SerializedProperty animController;
-    SerializedProperty attacks;
     SerializedProperty normalAttack;
     SerializedProperty currentHP;
+    SerializedProperty items;
 
 
 
@@ -42,8 +42,8 @@ public class EnemyEditor : Editor
         xp = serializedObject.FindProperty("xp");
         gold = serializedObject.FindProperty("gold");
         animController = serializedObject.FindProperty("animatorController");
-        attacks = serializedObject.FindProperty("Attacks");
         normalAttack = serializedObject.FindProperty("normalAttack");
+        items = serializedObject.FindProperty("items");
     }
 
     public override void OnInspectorGUI()
@@ -117,8 +117,7 @@ public class EnemyEditor : Editor
 
         EditorGUILayout.PropertyField(normalAttack, new GUIContent("Normal Attack"));
 
-        EditorGUILayout.PropertyField(attacks, new GUIContent("Attacks"), true);
-
+        EditorGUILayout.PropertyField(items, new GUIContent("items"), true);
 
         serializedObject.ApplyModifiedProperties();
 

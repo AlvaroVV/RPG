@@ -24,7 +24,9 @@ MonoBehaviour:
   speed: 16
   evasion: 3
   normalAttack: {fileID: 11400000, guid: 8cc716f51ab4ecd4a845b9503cb3a716, type: 2}
-  Attacks: []
+  specialAttack: {fileID: 0}
   animatorController: {fileID: 9100000, guid: 262f21ffffd9a0f4bbd1796683365ab5, type: 2}
   xp: 10
   gold: 15
+  items:
+  - {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788, type: 2}

@@ -104,4 +104,11 @@ public class PlayerMovement: MonoBehaviour {
         anim.Estado_Correr_Parado(rgb.velocity, movement);
     }
 
+    public bool isInteracting()
+    {
+        if (currentState.Equals(GameGlobals.PlayerState.Interacting))
+            return true;
+        return false;
+    }
+
 }

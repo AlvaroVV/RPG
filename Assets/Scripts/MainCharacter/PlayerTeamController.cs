@@ -28,21 +28,22 @@ public class PlayerTeamController: MonoBehaviour  {
 
     private void OpenCloseMenuPanel()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && UIManager.Instance.isEmpty())
-        {
-            GameGlobals.GetPlayerMovement().StateInteracting();
-            Time.timeScale = 0;
-            UIManager.Instance.CreateMenuPanel();
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UIManager.Instance.Pop();
-            if (UIManager.Instance.isEmpty())
+        if(!GameGlobals.GetPlayerMovement().isInteracting())
+            if (Input.GetKeyDown(KeyCode.Escape) && UIManager.Instance.isEmpty())
             {
-                Time.timeScale = 1;
-                GameGlobals.GetPlayerMovement().StateIdle();
+                GameGlobals.GetPlayerMovement().StateInteracting();
+                Time.timeScale = 0;
+                UIManager.Instance.CreateMenuPanel();
             }
-        }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                UIManager.Instance.Pop();
+                if (UIManager.Instance.isEmpty())
+                {
+                    Time.timeScale = 1;
+                    GameGlobals.GetPlayerMovement().StateIdle();
+                }
+            }
     }
 
 

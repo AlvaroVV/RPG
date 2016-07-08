@@ -57,9 +57,10 @@ public class StartFightEnemiesState : IState
 
         enemyInstantiate.name = ChooseName(enemyDataClone.CharacterName);
         enemyFighter.FighterName = enemyInstantiate.name;
-
+  
         FighterActionManager.Instance.EnemyFighters.Add(enemyFighter);
         FighterActionManager.Instance.StackTurnFighter.Add(enemyFighter);
+        FighterActionManager.Instance.ItemsToWin.AddRange(enemyData.Items);
     }
 
     private string ChooseName(string name)
