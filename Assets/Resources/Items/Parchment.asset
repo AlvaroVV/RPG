@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d5309ba67fdf85408acbd27ad373e79, type: 3}
-  m_Name: Parchment_Health
+  m_Name: Parchment
   m_EditorClassIdentifier: 
   id: Parchment
   description: "Ense\xF1a el ataque: Health"

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7ccdc527ae466c347a4780abdbc95f2e
-timeCreated: 1467987794
+timeCreated: 1467998294
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -32,10 +32,10 @@ TextureImporter:
     21300050: ring
     21300052: rpg_icons_26
     21300054: health_potion
-    21300056: rpg_icons_28
-    21300058: rpg_icons_29
+    21300056: maxHealth
+    21300058: MaxManaPotion
     21300060: Mana_potion
-    21300062: rpg_icons_31
+    21300062: StrongPotion
     21300064: rpg_icons_32
     21300066: rpg_icons_33
     21300068: rpg_icons_34
@@ -497,7 +497,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: rpg_icons_28
+    - name: maxHealth
       rect:
         serializedVersion: 2
         x: 41
@@ -508,7 +508,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: rpg_icons_29
+    - name: MaxManaPotion
       rect:
         serializedVersion: 2
         x: 74
@@ -530,7 +530,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: rpg_icons_31
+    - name: StrongPotion
       rect:
         serializedVersion: 2
         x: 143

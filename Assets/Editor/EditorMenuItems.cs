@@ -66,4 +66,20 @@ static class EditorMenuItems
         ScriptableObjectUtility.CreateAsset<ItemData>();
     }
 
+    [MenuItem("Assets/Create/Scriptable Object/Items/new ItemMaxHealthPotion")]
+    public static void CreateItemMaxHealth()
+    {
+        ScriptableObjectUtility.CreateAsset<PotionMaxHealthData>();
+    }
+    [MenuItem("Assets/Create/Scriptable Object/Items/new ItemMaxManaPotion")]
+    public static void CreateMaxManaPotion()
+    {
+        ScriptableObjectUtility.CreateAsset<PotionMaxMana>();
+    }
+    [MenuItem("Assets/Create/Scriptable Object/Items/new ItemMaxStrong")]
+    public static void CreateMaxStrong()
+    {
+        ScriptableObjectUtility.CreateAsset<PotionMaxStrongData>();
+    }
+
 }

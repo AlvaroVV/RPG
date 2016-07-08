@@ -53,7 +53,7 @@ public class MenuPanel : MonoBehaviour {
 
     private IEnumerator EndScene()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        Application.Quit();
         yield return null;
     }
    

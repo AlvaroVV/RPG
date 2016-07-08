@@ -30,9 +30,12 @@ BackHome,(Debería de ir a casa primero...),(I should go home first...)
 Felix_Zack_C2_1,"Zack_Otra vez te has quedado dormido, ¿no?","Zack_You were sleeping again, right?"
 Felix_Zack_C2_2,Felix_Siento llegar tarde...,Felix_I'm sorry to be late...
 Felix_Zack_C2_3,Zack_No te preocupes tanto anda...,"Zack_Dont be so worried, there's no problem."
-Felix_Zack_C2_4,Zack_Necesito que vayas al bosque a por madera.,Zack_I need you to go at the forest for some wood.
-Felix_Zack_C2_5,Zack_Ten cuidado con los monstruos.,Zack_Be careful with monsters.
-Felix_Zack_C2_6,Felix_Siempre lo tengo.,Zack_I'm always careful.
+Felix_Zack_C2_4,Zack_¿Has traído la madera que te pedí?.,Zack_Have you brought the wood?.
+Felix_Zack_C2_5,Felix_Mmmmmm se me olvidó...,Felix_Mmmmmm I forgot it.
+Felix_Zack_C2_6,Zack_Fijo que te dormiste cerca.,Zack_I'm sure you were sleeping next to it.
+Felix_Zack_C2_7,Zack_Recuerda pulsar "Espacio" para interactuar.,Zack_Remember pressing "Space" to interact.
+Felix_Zack_C2_8,Zack_Y puedes abrir el menú con "Esc".,Felix_And you can open the menu with "Esc".
+Felix_Zack_C2_9,Felix_Lo sé lo sé.,Felix_I know it don't worry.
 Zack_needWood_1,¿Aún aqui? Ve a por esa madera antes de que anochezca.,¿Still here? Look for that wood.
 Capítulo 3, Capítulo 3,Chapter3
 NoGoodIdea,(Creo que no es una buena idea... de momento...),(I think is not a good idea...right now...)

@@ -304,7 +304,7 @@ Prefab:
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: items.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788,
+      objectReference: {fileID: 11400000, guid: 02d1f88da8edbff48a5432a1c8e70c1f,
         type: 2}
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: currentPlayerTeam.Array.data[0]
@@ -319,12 +319,12 @@ Prefab:
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: items.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: ee1cb492964e04a488fd449ef8164788,
+      objectReference: {fileID: 11400000, guid: ace20e95ba4220b4d9047181d9b4eabb,
         type: 2}
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: items.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: cea19b351c7d1fd409929626018bd90b,
+      objectReference: {fileID: 11400000, guid: 02d1f88da8edbff48a5432a1c8e70c1f,
         type: 2}
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: items.Array.data[3]

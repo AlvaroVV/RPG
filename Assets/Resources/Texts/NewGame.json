@@ -5,13 +5,22 @@
             "currentChapter": "FirstChapter",
             "currentMap": "MapaInicial",
             "itemsNames": [
-                "Items/HealthPotion"
+                "Items/HealthPotion",
+				"Items/HealthPotion",
+				"Items/HealthPotion",
+				"Items/HealthPotion",
+				"Items/HealthPotion",
+				"Items/ManaPotion",
+				"Items/ManaPotion",
+				"Items/ManaPotion",
+				"Items/ManaPotion",
+				"Items/ManaPotion"
             ],
             "characterStates": [
                 {
                     "CharacterName": "Felix",
                     "CharacterPath": "",
-                    "currentHP": 75,
+                    "currentHP": 80,
                     "currentMP": 25,
                     "AbilityPoints": 0,
                     "AttackPower": 10,
@@ -23,7 +32,7 @@
                     "MagicPoints": 25,
                     "MagicPower": 5,
                     "Speed": 25,
-                    "SpecialAttack": "Health"
+                    "SpecialAttack": ""
                 }
             ]
 }
