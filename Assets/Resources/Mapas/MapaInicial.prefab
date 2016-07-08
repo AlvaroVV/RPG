@@ -977,7 +977,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452838}
   m_Layer: 0
-  m_Name: ExternalExit_1
+  m_Name: ExternalInDoor_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1912,7 +1912,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 457700}
   m_Layer: 0
-  m_Name: ExternalExits
+  m_Name: ExternalInDoors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9881,8 +9881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2080fb76938a6bc45839d95bb9601c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapName: Bosque
-  DoorName: Door 1
+  MapName: Cruce
+  DoorName: ExternalInDoor_1
 --- !u!114 &11485490
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -267,7 +267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: currentPlayerTeam.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 407848, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: m_LocalPosition.x
@@ -299,7 +299,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 407848, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: items.Array.data[0]
@@ -310,6 +310,11 @@ Prefab:
       propertyPath: currentPlayerTeam.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 6a5270df1bfdcae4ba03cc945daa665f,
+        type: 2}
+    - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
+      propertyPath: currentPlayerTeam.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a21a05d66d556943b0dd6b45bec7d3b,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
@@ -532,8 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14709c9b47086454eaa8a0222ad1d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapName: 
-  DoorName: 
+  MapName: Cruce
+  DoorName: ExternalInDoor_1
 --- !u!4 &1952472397
 Transform:
   m_ObjectHideFlags: 0
