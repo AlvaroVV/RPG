@@ -20,6 +20,7 @@ public class StartFightTeamState : IState
     public IEnumerator UpdateState()
     {
         Debug.Log("START_TEAM");
+        MapManager.Instance.GetActualMap().GetAudioSource().PlayFightStageSound();
         yield return ScriptingUtils.DoAFadeIn();
         FighterActionManager.Instance.CreateFightCursor();//Creamos aqui el Cursor de selección pero DESACTIVADO 
         InstantiateTeam(); // Los creamos aqui para que al empezar la batalla ya estén en posicion.

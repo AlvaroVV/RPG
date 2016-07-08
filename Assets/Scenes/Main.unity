@@ -267,15 +267,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: currentPlayerTeam.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 407848, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: 8.9
       objectReference: {fileID: 0}
     - target: {fileID: 407848, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.8
+      value: -38.5
       objectReference: {fileID: 0}
     - target: {fileID: 407848, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: m_LocalPosition.z
@@ -537,8 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14709c9b47086454eaa8a0222ad1d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapName: Cruce
-  DoorName: ExternalInDoor_1
+  MapName: 
+  DoorName: 
 --- !u!4 &1952472397
 Transform:
   m_ObjectHideFlags: 0

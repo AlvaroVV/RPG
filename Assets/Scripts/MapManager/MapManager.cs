@@ -36,6 +36,12 @@ public class MapManager : MonoBehaviour {
     {
         return actualMap.name;
     }
+
+    public Map GetActualMap()
+    {
+        return actualMap.GetComponent<Map>();
+    }
+
 	
     public void LoadMap(string mapName)
     {       

@@ -16,6 +16,7 @@ public class FinishBattleState : IState
     public IEnumerator UpdateState()
     {
         yield return ScriptingUtils.WaitForKeyPressed(KeyCode.Space);
+        MapManager.Instance.GetActualMap().GetAudioSource().PlayAmbientSound();
     }
 
     public void changeState()

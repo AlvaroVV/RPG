@@ -8,7 +8,12 @@ public class PlayerTeamController: MonoBehaviour  {
     public List<CharacterData> currentPlayerTeam;
     public List<ItemData> items;
 
+    void Start()
+    {
+        currentPlayerTeam[0].currentHP = 5;
+        currentPlayerTeam[1].currentHP = 0;
 
+    }
 
     public void LoadTeamAndInventory()
     {

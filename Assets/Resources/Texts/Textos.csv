@@ -1,16 +1,19 @@
 Id,Español,English
-Lenguaje,Lenguaje,Language
-Hola,Hola,Hello
-Adiós,Adiós,Goodbye
-Saludo1,¡Ey tio! ¿Qué tal todo?,¡Hey man!¿What about you?
-Botón_Hola,Botón Hola,Hello Button
-Botón_Adiós,Botón Adios,Goodbye Button
-Botón_Saludo1,Botón Saludo1,Greetings1 Button
-Boton_Español,Español,Spanish
-Boton_Ingles,Inglés,English
+Button_Start,Comenzar,Start
+Button_Options,Opciones,Options
+Button_Exit,Salir,Exit
+Button_Delete,Borrar,Delete
+Button_Continue,Continuar,Continue
+Label_ChooseGame,Elige Partida,Choose Game
+Label_NewGame,Juego Nuevo,New Game
+Label_Continue,Continuar,Continue
+Label_Language,Idiomas,Languages
+Button_Spanish,Español,Spanish
+Button_English,Inglés,English
 ItemSpawn,Has encontrado: ,You have found: 
 ParchmentHealth,Pergamino: Curar,Parchment: Health
 Blow,Zarpazo,Blow
+Attack_Health,Curar,Heal
 Capítulo 1,Capítulo 1,Chapter 1
 Sentence_Dream1_1,Donde... ¿dónde estoy?,Where... ¿Where am I?
 Sentence_Dream1_2,¿Qué lugar es éste?,What is this place?

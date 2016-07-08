@@ -18,13 +18,14 @@ public class LooseActionState : IState {
 
     public IEnumerator UpdateState()
     {
+        MapManager.Instance.GetActualMap().GetAudioSource().PlayGameOver();
         yield return new WaitForSeconds(2);
         CombatGUI.Instance.gameObject.SetActive(false);
         yield return ScriptingUtils.DoAFadeIn();
         
         GameObject gameOver = GameGlobals.GetCameraControll().GoToGameOver();
         yield return ScriptingUtils.DoAFadeOut();
-        yield return new WaitForSeconds(2);
+        yield return ScriptingUtils.WaitForKeyPressed(KeyCode.Space);
         yield return ScriptingUtils.DoAFadeIn();
 
         UnityEngine.Object.Destroy(gameOver);

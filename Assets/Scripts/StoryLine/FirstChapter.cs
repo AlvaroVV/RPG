@@ -17,6 +17,8 @@ public class FirstChapter : AbstractChapter
         senteceDream = CSVReader.Instance.getSentences("Sentence_Dream1");
         dialogueDream = CSVReader.Instance.getDialogue("Dream1");
         sentenceWakeUp = CSVReader.Instance.getSentences("WakenUp1");
+
+        MapManager.Instance.GetActualMap().gameObject.SetActive(false);
     }
 
     public override IEnumerator BodyChapter()
@@ -40,7 +42,7 @@ public class FirstChapter : AbstractChapter
 
         Destroy(soul);
         MapManager.Instance.GoToMainMap();
-
+        MapManager.Instance.GetActualMap().gameObject.SetActive(true);
         StartCoroutine(ScriptingUtils.DoAFadeOut());
 
         yield return GameGlobals.GetPlayerAnimManager().Estado_durmiendo();

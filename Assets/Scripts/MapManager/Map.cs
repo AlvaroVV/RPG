@@ -6,8 +6,14 @@ public class Map : MonoBehaviour {
 
     public GameObject MainMap;
     public GameObject FightStage;
+    public SoundMap AudioSource;
     public List<GameObject> ExternalExits;
     public List<GameObject> InternalMaps;
+
+    public SoundMap GetAudioSource()
+    {
+        return AudioSource;
+    }
 
     public GameObject GetFightStage()
     {
