@@ -4,6 +4,8 @@ Button_Options,Opciones,Options
 Button_Exit,Salir,Exit
 Button_Delete,Borrar,Delete
 Button_Continue,Continuar,Continue
+Label_EnterName,Escribe un nombre,Enter name
+Label_Name,Nombre,Name
 Label_ChooseGame,Elige Partida,Choose Game
 Label_NewGame,Juego Nuevo,New Game
 Label_Continue,Continuar,Continue

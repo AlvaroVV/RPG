@@ -304,7 +304,7 @@ Prefab:
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: items.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 02d1f88da8edbff48a5432a1c8e70c1f,
+      objectReference: {fileID: 11400000, guid: b24cd4f8ae59a134593fb0dc2df62746,
         type: 2}
     - target: {fileID: 11456552, guid: 373e6ab8738e7a547ac2d31cb9dbae36, type: 2}
       propertyPath: currentPlayerTeam.Array.data[0]

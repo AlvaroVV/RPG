@@ -81,12 +81,14 @@ public class MainPanelMenu : MonoBehaviour {
     public void ClickSpanish()
     {
         CSVReader.Instance.ChangeLanguage(CSVReader.ESPAÑOL);
+        MenuContinue.Instance.RestartPanel();
         ButtonBack();
     }
 
     public void ClickEnglish()
     {
         CSVReader.Instance.ChangeLanguage(CSVReader.ENGLISH);
+        MenuContinue.Instance.RestartPanel();
         ButtonBack();
     }
 

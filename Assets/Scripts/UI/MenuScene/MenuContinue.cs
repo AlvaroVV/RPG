@@ -36,7 +36,11 @@ public class MenuContinue : MonoBehaviour {
         for (int i = 0; i< infos.Length; i++)
         {
             GameObject boton = Instantiate(button) as GameObject;
-            boton.GetComponentInChildren<Text>().text = infos[i].gameSlotName;
+
+            string name = infos[i].gameSlotName;
+            if (name.Equals(""))
+                name = CSVReader.Instance.GetWord("Label_NewGame");  
+            boton.GetComponentInChildren<Text>().text = name;
 
             Button buttonTemp = boton.GetComponent<Button>();
             GameSlotInfo info = infos[i];

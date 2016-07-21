@@ -67,6 +67,7 @@ GameObject:
   - 224: {fileID: 22446174}
   - 222: {fileID: 22254702}
   - 114: {fileID: 11456674}
+  - 114: {fileID: 11419618}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -517,6 +518,7 @@ GameObject:
   - 224: {fileID: 22443724}
   - 222: {fileID: 22291776}
   - 114: {fileID: 11429880}
+  - 114: {fileID: 11438430}
   m_Layer: 5
   m_Name: NameTextLabel
   m_TagString: Untagged
@@ -1568,6 +1570,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11419618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da552b71773a4914cbbe69f8d8a877a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Label_EnterName
 --- !u!114 &11419730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1796,6 +1810,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11438430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da552b71773a4914cbbe69f8d8a877a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Label_Name
 --- !u!114 &11439506
 MonoBehaviour:
   m_ObjectHideFlags: 1
