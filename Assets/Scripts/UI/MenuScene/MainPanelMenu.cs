@@ -73,7 +73,8 @@ public class MainPanelMenu : MonoBehaviour {
     public void ClickDelete()
     {
         SaveLoadManager.DeleteGameSlot();
-        MenuContinue.Instance.RestartPanel();
+        if(MenuContinue.Instance!=null)
+            MenuContinue.Instance.RestartPanel();
         ContinuePanel.SetActive(false);
         PanelMenu.SetActive(true);
     }
@@ -81,14 +82,16 @@ public class MainPanelMenu : MonoBehaviour {
     public void ClickSpanish()
     {
         CSVReader.Instance.ChangeLanguage(CSVReader.ESPAÑOL);
-        MenuContinue.Instance.RestartPanel();
+        if (MenuContinue.Instance != null)
+            MenuContinue.Instance.RestartPanel();
         ButtonBack();
     }
 
     public void ClickEnglish()
     {
         CSVReader.Instance.ChangeLanguage(CSVReader.ENGLISH);
-        MenuContinue.Instance.RestartPanel();
+        if (MenuContinue.Instance != null)
+            MenuContinue.Instance.RestartPanel();
         ButtonBack();
     }
 

@@ -22,6 +22,7 @@ public class MenuContinue : MonoBehaviour {
 
     void Awake()
     {
+        Debug.Log("HOLA");
         instance = this;
     }
 

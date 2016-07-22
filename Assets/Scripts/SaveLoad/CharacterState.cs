@@ -40,7 +40,7 @@ public class CharacterState  {
         Experience = data.Experience;
         AbilityPoints = data.AbilityPoints;
         if(data.specialAttack != null)
-            SpecialAttack = data.specialAttack.NameAttack;
+            SpecialAttack = data.specialAttack.idAttack;
         
     }
 

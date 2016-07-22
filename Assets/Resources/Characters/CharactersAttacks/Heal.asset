@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f639405d28e9e2468f197f4a4dad102, type: 3}
-  m_Name: Health
+  m_Name: Heal
   m_EditorClassIdentifier: 
-  idAttack: Attack_Health
-  nameAttack: Health
+  idAttack: Heal
+  nameAttack: Heal
   descriptionAttack: Cura a un aliado
   animation: {fileID: 144316, guid: 13f52f1ad0fbd9445b79819131535f11, type: 2}
   attackType: 1
